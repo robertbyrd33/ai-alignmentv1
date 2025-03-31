@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Alignment 3D Visualization</title>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- TWEEN.js for smooth animations -->
+    <script src="https://cdn.jsdelivr.net/npm/@tweenjs/tween.js@18.6.4/dist/tween.umd.js"></script>
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Visualization area -->
+        <div id="visualization-container">
+            <div id="scene-container"></div>
+            
+            <!-- Controls -->
+            <div class="controls">
+                <button id="zoom-in">Zoom In</button>
+                <button id="zoom-out">Zoom Out</button>
+                <button id="reset-view">Reset View</button>
+                <button id="toggle-rotation">Toggle Rotation</button>
+            </div>
+            
+            <!-- Legend -->
+            <div class="legend">
+                <h3>Node Types</h3>
+                <div class="legend-item">
+                    <span class="legend-color component-group"></span>
+                    <span>Component Group</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color component"></span>
+                    <span>Component</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color subcomponent"></span>
+                    <span>Subcomponent</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color capability"></span>
+                    <span>Capability</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color function"></span>
+                    <span>Function</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color specification"></span>
+                    <span>Specification</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color integration"></span>
+                    <span>Integration</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color technique"></span>
+                    <span>Technique</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color application"></span>
+                    <span>Application</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color input"></span>
+                    <span>Input</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color output"></span>
+                    <span>Output</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Details panel -->
+        <div id="details-panel">
+            <div class="details-header">
+                <h2 id="details-title">Select a node to view details</h2>
+                <div id="breadcrumb-navigation" class="breadcrumb-container"></div>
+                <div class="global-controls">
+                    <button id="expand-collapse-all" class="action-button">Expand All</button>
+                </div>
+            </div>
+            <div id="details-content" class="scrollable-content"></div>
+            <div id="literature-references" class="literature-section">
+                <h3>Literature References</h3>
+                <div id="references-content" class="empty-section">No literature references available</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Three.js import map -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/"
+            }
+        }
+    </script>
+
+    <!-- Main visualization script -->
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { DragControls } from 'three/addons/controls/DragControls.js';
+        
+        // Main visualization class
+        class AIAlignmentVisualization {
+            constructor() {
+                // Core properties
+                this.container = document.getElementById('scene-container');
+                this.scene = null;
+                this.camera = null;
+                this.renderer = null;
+                this.controls = null;
+                this.raycaster = null;
+                this.mouse = null;
+                this.clock = new THREE.Clock();
+                
+                // Node management
+                this.nodes = new Map(); // Three.js node objects by ID
+                this.links = new Map(); // Three.js link objects
+                this.graphData = null; // Data from API
+                this.expandedNodes = new Set(); // Tracks which nodes are expanded
+                this.selectedNode = null; // Currently selected node
+                this.nodePositions = new Map(); // Positions of nodes
+                this.hoverDisplay = null; // Element for hover text
+                
+                // Animation state
+                this.isRotating = false;
+                this.isDragging = false;
+                
+                // Initialize
+                this.init();
+                this.setupEventListeners();
+                this.loadData();
+            }
+            
+            init() {
+                // Setup Three.js scene
+                this.scene = new THREE.Scene();
+                this.scene.background = new THREE.Color(0x0f1015);
+                
+                // Setup renderer
+                this.renderer = new THREE.WebGLRenderer({ antialias: true });
+                this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.container.appendChild(this.renderer.domElement);
+                
+                // Setup camera
+                this.camera = new THREE.PerspectiveCamera(
+                    60, 
+                    this.container.clientWidth / this.container.clientHeight, 
+                    0.1, 
+                    10000
+                );
+                this.camera.position.z = 500;
+                
+                // Setup controls
+                this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+                this.controls.enableDamping = true;
+                this.controls.dampingFactor = 0.25;
+                
+                // Raycaster for interaction
+                this.raycaster = new THREE.Raycaster();
+                this.mouse = new THREE.Vector2();
+                
+                // Add lighting
+                const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+                this.scene.add(ambientLight);
+                
+                const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
+                directionalLight.position.set(1, 1, 1);
+                this.scene.add(directionalLight);
+                
+                const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.8);
+                directionalLight2.position.set(-1, -1, -1);
+                this.scene.add(directionalLight2);
+                
+                // Create hover display
+                this.hoverDisplay = this.createHoverDisplay();
+                
+                // Start animation loop
+                this.animate();
+                
+                // Handle window resize
+                window.addEventListener('resize', () => this.onWindowResize());
+            }
+            
+            setupEventListeners() {
+                // Control buttons
+                document.getElementById('zoom-in').addEventListener('click', () => this.zoomIn());
+                document.getElementById('zoom-out').addEventListener('click', () => this.zoomOut());
+                document.getElementById('reset-view').addEventListener('click', () => this.resetView());
+                document.getElementById('toggle-rotation').addEventListener('click', () => this.toggleRotation());
+                
+                // Mouse events
+                this.container.addEventListener('mousemove', (event) => this.onMouseMove(event));
+                this.container.addEventListener('click', (event) => this.onClick(event));
+            }
+            
+            loadData() {
+                fetch('/api/graph')
+                    .then(response => response.json())
+                    .then(data => {
+                        this.graphData = data;
+                        
+                        // Log node counts by level for debugging
+                        const nodesByLevel = {};
+                        data.nodes.forEach(node => {
+                            if (!nodesByLevel[node.level]) {
+                                nodesByLevel[node.level] = 0;
+                            }
+                            nodesByLevel[node.level]++;
+                        });
+                        
+                        console.log("Nodes by level in data:");
+                        for (const level in nodesByLevel) {
+                            console.log(`Level ${level}: ${nodesByLevel[level]} nodes`);
+                        }
+                        
+                        // Log node types for deeper levels
+                        const deeperNodes = data.nodes.filter(node => node.level >= 5);
+                        if (deeperNodes.length > 0) {
+                            console.log(`Found ${deeperNodes.length} nodes at level 5+`);
+                            const nodeTypes = {};
+                            deeperNodes.forEach(node => {
+                                if (!nodeTypes[node.type]) {
+                                    nodeTypes[node.type] = 0;
+                                }
+                                nodeTypes[node.type]++;
+                            });
+                            
+                            console.log("Deeper node types:", nodeTypes);
+                        } else {
+                            console.log("No nodes found beyond level 4");
+                        }
+                        
+                        this.initializeGraph();
+                    })
+                    .catch(error => {
+                        console.error('Error loading graph data:', error);
+                        document.getElementById('details-content').innerHTML = `
+                            <div class="error-message">
+                                <h3>Error Loading Data</h3>
+                                <p>${error.message || 'Could not load visualization data'}</p>
+                            </div>
+                        `;
+                    });
+            }
+            
+            initializeGraph() {
+                // Start with just the root node
+                const rootNode = this.graphData.nodes.find(node => node.level === 0);
+                if (rootNode) {
+                    // Mark root as expanded
+                    this.expandedNodes.add(rootNode.id);
+                    
+                    // Get visible nodes and links
+                    const visibleNodes = this.getVisibleNodes();
+                    const visibleLinks = this.getVisibleLinks(visibleNodes);
+                    
+                    // Position and create visual elements
+                    this.positionNodes(visibleNodes);
+                    this.createNodeObjects(visibleNodes);
+                    this.createLinkObjects(visibleLinks);
+                    
+                    // Auto-select the root node
+                    this.selectNode(rootNode);
+                    
+                    console.log(`Initialized graph with ${visibleNodes.length} nodes`);
+                } else {
+                    console.error("No root node found in graph data");
+                }
+            }
+            
+            getVisibleNodes() {
+                // Get nodes that should be visible based on expanded parents
+                if (!this.graphData || !this.graphData.nodes) {
+                    console.error("Graph data not loaded yet");
+                    return [];
+                }
+                
+                // Start with root nodes (level 0)
+                let visibleNodes = this.graphData.nodes.filter(node => node.level === 0);
+                const expandedNodeIds = new Set(Array.from(this.expandedNodes));
+                
+                console.log(`Expanded nodes at start: ${Array.from(expandedNodeIds).join(', ')}`);
+                
+                // We'll process level by level to ensure complete hierarchy visibility
+                for (let level = 1; level <= 10; level++) {
+                    console.log(`Processing level ${level} nodes`);
+                    
+                    // Get all nodes at this level
+                    const nodesAtLevel = this.graphData.nodes.filter(node => node.level === level);
+                    if (nodesAtLevel.length === 0) break; // No more nodes at this level
+                    
+                    // Find nodes whose parents are expanded
+                    const visibleNodesAtLevel = nodesAtLevel.filter(node => 
+                        node.parent && expandedNodeIds.has(node.parent)
+                    );
+                    
+                    console.log(`Found ${visibleNodesAtLevel.length} visible nodes at level ${level}`);
+                    
+                    // Add these nodes to visible set
+                    visibleNodes = visibleNodes.concat(visibleNodesAtLevel);
+                    
+                    // Add any expanded nodes at this level to our tracking set for next level
+                    visibleNodesAtLevel.forEach(node => {
+                        if (this.expandedNodes.has(node.id)) {
+                            expandedNodeIds.add(node.id);
+                        }
+                    });
+                }
+                
+                console.log(`Total visible nodes: ${visibleNodes.length}`);
+                return visibleNodes;
+            }
+            
+            getVisibleLinks(visibleNodes) {
+                // Create a set of visible node IDs for faster lookup
+                const nodeIds = new Set(visibleNodes.map(node => node.id));
+                
+                // Filter links where both source and target are visible
+                return this.graphData.links.filter(link => {
+                    const source = typeof link.source === 'object' ? link.source.id : link.source;
+                    const target = typeof link.target === 'object' ? link.target.id : link.target;
+                    return nodeIds.has(source) && nodeIds.has(target);
+                });
+            }
+            
+            positionNodes(nodes) {
+                // Position the root node at the center
+                const rootNode = nodes.find(node => !node.parent);
+                if (rootNode) {
+                    this.nodePositions.set(rootNode.id, { x: 0, y: 0, z: 0 });
+                }
+                
+                // Group nodes by level and parent for better clustering
+                const nodesByLevel = {};
+                const nodesByParent = {};
+                for (const node of nodes) {
+                    // Group by level
+                    if (!nodesByLevel[node.level]) {
+                        nodesByLevel[node.level] = [];
+                    }
+                    nodesByLevel[node.level].push(node);
+                    
+                    // Group by parent
+                    if (node.parent) {
+                        if (!nodesByParent[node.parent]) {
+                            nodesByParent[node.parent] = [];
+                        }
+                        nodesByParent[node.parent].push(node);
+                    }
+                }
+                
+                // Position nodes level by level
+                for (let level = 1; level <= 10; level++) {
+                    if (!nodesByLevel[level]) continue;
+                    
+                    // For each parent at this level, position its children in a cluster
+                    const processedNodes = new Set();
+                    
+                    nodesByLevel[level].forEach(node => {
+                        if (processedNodes.has(node.id)) return;
+                        
+                        const siblings = nodesByParent[node.parent] || [];
+                        if (siblings.length === 0) return;
+                        
+                        // Get parent position
+                        const parentPos = this.nodePositions.get(node.parent) || { x: 0, y: 0, z: 0 };
+                        const baseRadius = this.getOrbitRadius(level);
+                        
+                        // Position siblings in a clustered arrangement
+                        siblings.forEach((sibling, index) => {
+                            processedNodes.add(sibling.id);
+                            
+                            // Calculate position in the cluster
+                            const angleStep = (2 * Math.PI) / siblings.length;
+                            const angle = index * angleStep;
+                            
+                            // Add some randomness to prevent perfect alignment
+                            const randomness = 0.2; // 20% random variation
+                            const radiusVariation = baseRadius * (1 + (Math.random() - 0.5) * randomness);
+                            const angleVariation = angle + (Math.random() - 0.5) * 0.2;
+                            
+                            // Calculate base position
+                            let x = parentPos.x + radiusVariation * Math.cos(angleVariation);
+                            let y = parentPos.y + (level * 20) + (Math.random() - 0.5) * 20;
+                            let z = parentPos.z + radiusVariation * Math.sin(angleVariation);
+                            
+                            // Store position
+                            this.nodePositions.set(sibling.id, { x, y, z });
+                        });
+                    });
+                }
+                
+                // Apply force-directed spacing to prevent overlaps
+                this.applyForceDirectedSpacing(nodes);
+            }
+            
+            applyForceDirectedSpacing(nodes) {
+                const iterations = 50;
+                const k = 50; // Force strength
+                
+                for (let iter = 0; iter < iterations; iter++) {
+                    let maxForce = 0;
+                    
+                    // Calculate repulsive forces between all nodes
+                    for (let i = 0; i < nodes.length; i++) {
+                        const nodeA = nodes[i];
+                        const posA = this.nodePositions.get(nodeA.id);
+                        if (!posA) continue;
+                        
+                        let fx = 0, fy = 0, fz = 0;
+                        
+                        // Calculate forces with other nodes
+                        for (let j = 0; j < nodes.length; j++) {
+                            if (i === j) continue;
+                            
+                            const nodeB = nodes[j];
+                            const posB = this.nodePositions.get(nodeB.id);
+                            if (!posB) continue;
+                            
+                            // Calculate distance
+                            const dx = posA.x - posB.x;
+                            const dy = posA.y - posB.y;
+                            const dz = posA.z - posB.z;
+                            const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+                            
+                            if (distance === 0) continue;
+                            
+                            // Calculate repulsive force
+                            const minDist = (this.getNodeSize(nodeA.type) + this.getNodeSize(nodeB.type)) * 3;
+                            if (distance < minDist) {
+                                const force = k * (1 / distance - 1 / minDist);
+                                fx += (dx / distance) * force;
+                                fy += (dy / distance) * force;
+                                fz += (dz / distance) * force;
+                            }
+                        }
+                        
+                        // Apply forces
+                        posA.x += fx * 0.1;
+                        posA.y += fy * 0.1;
+                        posA.z += fz * 0.1;
+                        
+                        maxForce = Math.max(maxForce, Math.sqrt(fx * fx + fy * fy + fz * fz));
+                    }
+                    
+                    // Break if forces are small enough
+                    if (maxForce < 0.1) break;
+                }
+            }
+            
+            calculateMinSpacing(nodes) {
+                // Calculate minimum spacing needed between nodes based on their sizes
+                let maxSize = 0;
+                for (const node of nodes) {
+                    const size = this.getNodeSize(node.type);
+                    maxSize = Math.max(maxSize, size);
+                }
+                // Scale padding based on node size - smaller nodes get less padding
+                const scaleFactor = maxSize > 20 ? 3.0 : (maxSize > 10 ? 2.5 : 2.0);
+                return maxSize * scaleFactor;
+            }
+            
+            ensureMinSpacing(position, siblings, minSpacing, currentIndex) {
+                // Ensure minimum spacing from sibling nodes
+                let finalPos = { ...position };
+                let attempts = 0;
+                const maxAttempts = 10;
+                
+                while (attempts < maxAttempts) {
+                    let hasCollision = false;
+                    
+                    // Check distance from all siblings
+                    for (let i = 0; i < siblings.length; i++) {
+                        if (i === currentIndex) continue;
+                        
+                        const siblingPos = this.nodePositions.get(siblings[i].id);
+                        if (!siblingPos) continue;
+                        
+                        const distance = Math.sqrt(
+                            Math.pow(finalPos.x - siblingPos.x, 2) +
+                            Math.pow(finalPos.y - siblingPos.y, 2) +
+                            Math.pow(finalPos.z - siblingPos.z, 2)
+                        );
+                        
+                        if (distance < minSpacing) {
+                            hasCollision = true;
+                            // Move away from collision
+                            const direction = {
+                                x: finalPos.x - siblingPos.x,
+                                y: finalPos.y - siblingPos.y,
+                                z: finalPos.z - siblingPos.z
+                            };
+                            const length = Math.sqrt(
+                                direction.x * direction.x +
+                                direction.y * direction.y +
+                                direction.z * direction.z
+                            );
+                            
+                            if (length > 0) {
+                                finalPos.x += (direction.x / length) * (minSpacing - distance);
+                                finalPos.y += (direction.y / length) * (minSpacing - distance);
+                                finalPos.z += (direction.z / length) * (minSpacing - distance);
+                            }
+                        }
+                    }
+                    
+                    if (!hasCollision) break;
+                    attempts++;
+                }
+                
+                return finalPos;
+            }
+            
+            getOrbitRadius(level) {
+                // Adjusted radii for more spherical arrangement
+                const baseRadius = 150;
+                const radiusByLevel = {
+                    1: baseRadius * 1.0,     // First layer
+                    2: baseRadius * 1.4,     // Second layer
+                    3: baseRadius * 1.8,     // Third layer
+                    4: baseRadius * 2.2,     // Fourth layer
+                    5: baseRadius * 2.6,     // Fifth layer
+                    6: baseRadius * 3.0,     // Sixth layer
+                    7: baseRadius * 3.4,     // Seventh layer
+                    8: baseRadius * 3.8,     // Eighth layer
+                    9: baseRadius * 4.2,     // Ninth layer (inputs)
+                    10: baseRadius * 4.2     // Tenth layer (outputs, same as inputs)
+                };
+                
+                return radiusByLevel[level] || baseRadius;
+            }
+            
+            createNodeObjects(nodes) {
+                // Clear existing nodes first
+                this.nodes.forEach(node => {
+                    this.scene.remove(node);
+                });
+                this.nodes.clear();
+                
+                // Create new node objects
+                for (const nodeData of nodes) {
+                    // Create geometry based on node type and level
+                    const size = this.getNodeSize(nodeData.type, nodeData.level);
+                    const geometry = new THREE.SphereGeometry(size, 32, 32);
+                    
+                    // Create material with appropriate color
+                    const color = this.getNodeColor(nodeData.type);
+                    const material = new THREE.MeshPhongMaterial({
+                        color: color,
+                        shininess: 80,
+                        emissive: new THREE.Color(color).multiplyScalar(0.2)
+                    });
+                    
+                    // Create mesh
+                    const mesh = new THREE.Mesh(geometry, material);
+                    mesh.userData = { node: nodeData };
+                    
+                    // Position based on calculated positions
+                    if (this.nodePositions.has(nodeData.id)) {
+                        const pos = this.nodePositions.get(nodeData.id);
+                        mesh.position.set(pos.x, pos.y, pos.z);
+                    } else {
+                        // Fallback position if not calculated
+                        mesh.position.set(
+                            (Math.random() - 0.5) * 200,
+                            (Math.random() - 0.5) * 200,
+                            (Math.random() - 0.5) * 200
+                        );
+                    }
+                    
+                    // Add to scene and store
+                    this.scene.add(mesh);
+                    this.nodes.set(nodeData.id, mesh);
+                }
+            }
+            
+            createLinkObjects(links) {
+                // Clear existing links
+                this.links.forEach(link => {
+                    this.scene.remove(link);
+                });
+                this.links.clear();
+                
+                // Create new link objects
+                for (const linkData of links) {
+                    const sourceId = typeof linkData.source === 'object' ? linkData.source.id : linkData.source;
+                    const targetId = typeof linkData.target === 'object' ? linkData.target.id : linkData.target;
+                    
+                    // Get source and target nodes
+                    const sourceNode = this.nodes.get(sourceId);
+                    const targetNode = this.nodes.get(targetId);
+                    
+                    if (!sourceNode || !targetNode) continue;
+                    
+                    // Create material for link
+                    const material = new THREE.LineBasicMaterial({
+                        color: this.getLinkColor(linkData.type),
+                        opacity: 0.7,
+                        transparent: true
+                    });
+                    
+                    // Create geometry with positions
+                    const geometry = new THREE.BufferGeometry().setFromPoints([
+                        sourceNode.position,
+                        targetNode.position
+                    ]);
+                    
+                    // Create line
+                    const line = new THREE.Line(geometry, material);
+                    line.userData = { link: linkData, sourceId, targetId };
+                    
+                    // Add to scene and store
+                    this.scene.add(line);
+                    this.links.set(`${sourceId}-${targetId}`, line);
+                }
+            }
+            
+            updateLinkPositions() {
+                // Update positions of all links (when nodes move)
+                this.links.forEach((line, id) => {
+                    const { sourceId, targetId } = line.userData;
+                    const sourceNode = this.nodes.get(sourceId);
+                    const targetNode = this.nodes.get(targetId);
+                    
+                    if (sourceNode && targetNode) {
+                        // Create new geometry with updated positions
+                        const points = [
+                            sourceNode.position.clone(),
+                            targetNode.position.clone()
+                        ];
+                        line.geometry.setFromPoints(points);
+                        line.geometry.attributes.position.needsUpdate = true;
+                    }
+                });
+            }
+            
+            getNodeSize(nodeType, level) {
+                // Base sizes by node type
+                const sizeByType = {
+                    'component_group': 40,
+                    'component': 30,
+                    'subcomponent': 25,
+                    'capability': 20,
+                    'function': 16,
+                    'specification': 14,
+                    'integration': 12,
+                    'technique': 10,
+                    'application': 9,
+                    'input': 8,
+                    'output': 8
+                };
+                
+                // Get base size for type or default
+                let size = sizeByType[nodeType] || 15;
+                
+                // Adjust for level (deeper levels get slightly smaller)
+                if (level > 5) {
+                    size *= (1 - ((level - 5) * 0.08));
+                }
+                
+                return size;
+            }
+            
+            getNodeColor(nodeType) {
+                // Color map for different node types
+                const colors = {
+                    'component_group': 0x3498db,
+                    'component': 0x2ecc71,
+                    'subcomponent': 0xe74c3c,
+                    'capability': 0xf39c12,
+                    'function': 0x9b59b6,
+                    'specification': 0x1abc9c,
+                    'integration': 0x34495e,
+                    'technique': 0xd35400,
+                    'application': 0x27ae60,
+                    'input': 0x8e44ad,
+                    'output': 0x16a085
+                };
+                
+                return colors[nodeType] || 0x95a5a6;
+            }
+            
+            getLinkColor(linkType) {
+                // Color map for different link types
+                const colors = {
+                    'contains': 0xaed6f1,
+                    'has_capability': 0xf9e79f,
+                    'has_function': 0xd2b4de,
+                    'has_specification': 0xabebc6,
+                    'has_integration': 0x85c1e9,
+                    'has_technique': 0xf5cba7,
+                    'has_application': 0xa2d9ce,
+                    'has_input': 0xbb8fce,
+                    'has_output': 0x7dcea0
+                };
+                
+                return colors[linkType] || 0xbdc3c7;
+            }
+            
+            capitalizeFirstLetter(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+            
+            createHoverDisplay() {
+                // Create element for hover text if it doesn't exist
+                if (!document.getElementById('hover-node-name')) {
+                    const display = document.createElement('div');
+                    display.id = 'hover-node-name';
+                    display.style.position = 'fixed';
+                    display.style.top = '50%';
+                    display.style.left = '50%';
+                    display.style.transform = 'translate(-50%, -50%)';
+                    display.style.zIndex = '9999';
+                    display.style.opacity = '0';
+                    display.style.pointerEvents = 'none';
+                    document.body.appendChild(display);
+                    return display;
+                }
+                return document.getElementById('hover-node-name');
+            }
+            
+            onMouseMove(event) {
+                // Calculate mouse position in normalized device coordinates
+                const rect = this.container.getBoundingClientRect();
+                this.mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+                this.mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+                
+                // Update raycaster
+                this.raycaster.setFromCamera(this.mouse, this.camera);
+                
+                // Check for intersections with nodes
+                const intersects = this.raycaster.intersectObjects(Array.from(this.nodes.values()));
+                
+                // Show/hide hover display
+                if (intersects.length > 0) {
+                    const node = intersects[0].object.userData.node;
+                    this.showHoverText(node.name, node.type);
+                } else {
+                    this.hideHoverText();
+                }
+            }
+            
+            showHoverText(name, type) {
+                // Update and show hover text
+                this.hoverDisplay.innerHTML = `
+                    <div class="node-type">${this.capitalizeFirstLetter(type.replace('_', ' '))}</div>
+                    <div class="node-name">${name}</div>
+                `;
+                this.hoverDisplay.style.opacity = '1';
+                
+                // Force the hover text to be on top
+                document.body.appendChild(this.hoverDisplay);
+            }
+            
+            hideHoverText() {
+                // Hide hover text
+                if (this.hoverDisplay) {
+                    this.hoverDisplay.style.opacity = '0';
+                }
+            }
+            
+            onClick(event) {
+                // Calculate mouse position
+                const rect = this.container.getBoundingClientRect();
+                this.mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+                this.mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+                
+                // Update raycaster
+                this.raycaster.setFromCamera(this.mouse, this.camera);
+                
+                // Check for intersections with nodes
+                const intersects = this.raycaster.intersectObjects(Array.from(this.nodes.values()));
+                
+                if (intersects.length > 0) {
+                    const clickedNode = intersects[0].object;
+                    const nodeData = clickedNode.userData.node;
+                    
+                    console.log(`Clicked on node: ${nodeData.id} (${nodeData.name}) - Type: ${nodeData.type}, Level: ${nodeData.level}`);
+                    
+                    // Show node details
+                    this.selectNode(nodeData);
+                    
+                    // Handle different node types
+                    if (nodeData.type === 'application') {
+                        console.log(`Clicked on application node: ${nodeData.name}`);
+                        
+                        if (!this.expandedNodes.has(nodeData.id)) {
+                            // First expand the application node
+                            this.expandNode(nodeData.id);
+                            
+                            // Find all input and output nodes
+                            const inputNodes = this.graphData.nodes.filter(node => 
+                                node.parent === nodeData.id && node.type === 'input'
+                            );
+                            const outputNodes = this.graphData.nodes.filter(node => 
+                                node.parent === nodeData.id && node.type === 'output'
+                            );
+                            
+                            console.log(`Found ${inputNodes.length} input nodes and ${outputNodes.length} output nodes`);
+                            
+                            // Expand all input and output nodes
+                            [...inputNodes, ...outputNodes].forEach(node => {
+                                this.expandedNodes.add(node.id);
+                            });
+                            
+                            // Update visualization after expanding
+                            const visibleNodes = this.getVisibleNodes();
+                            const visibleLinks = this.getVisibleLinks(visibleNodes);
+                            this.positionNodes(visibleNodes);
+                            this.createNodeObjects(visibleNodes);
+                            this.createLinkObjects(visibleLinks);
+                        } else {
+                            this.collapseNode(nodeData.id);
+                        }
+                    }
+                    else if (nodeData.type === 'input') {
+                        // Handle input node clicks
+                        if (!this.expandedNodes.has(nodeData.id)) {
+                            this.expandNode(nodeData.id);
+                            // Ensure outputs are visible
+                            const outputNodes = this.graphData.nodes.filter(node => 
+                                node.parent === nodeData.id && node.type === 'output'
+                            );
+                            console.log(`Found ${outputNodes.length} outputs for input: ${nodeData.id}`);
+                        } else {
+                            this.collapseNode(nodeData.id);
+                        }
+                    }
+                    else if (nodeData.type === 'specification' || nodeData.level >= 5) {
+                        console.log(`Clicked on deep node: ${nodeData.name}`);
+                        
+                        if (!this.expandedNodes.has(nodeData.id)) {
+                            this.expandNode(nodeData.id);
+                            
+                            const childNodes = this.graphData.nodes.filter(node => node.parent === nodeData.id);
+                            childNodes.forEach(child => {
+                                if (!this.expandedNodes.has(child.id)) {
+                                    this.expandNode(child.id);
+                                }
+                            });
+                        } else {
+                            this.collapseNode(nodeData.id);
+                        }
+                    } 
+                    else if (nodeData.expandable || nodeData.has_children) {
+                        this.toggleNodeExpansion(nodeData.id);
+                    }
+                }
+            }
+            
+            selectNode(nodeData) {
+                // Update UI to show selected node details
+                const detailsTitle = document.getElementById('details-title');
+                const detailsContent = document.getElementById('details-content');
+                
+                // Set title
+                detailsTitle.textContent = nodeData.name;
+                
+                // Show loading indicator
+                detailsContent.innerHTML = `
+                    <div class="loading-indicator">
+                        <div class="spinner"></div>
+                        <span>Loading details...</span>
+                    </div>
+                `;
+                
+                // Load node details
+                fetch(`/api/details/${nodeData.id}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        this.displayNodeDetails(data);
+                        this.updateBreadcrumbs(nodeData.id);
+                    })
+                    .catch(error => {
+                        detailsContent.innerHTML = `
+                            <div class="error-message">
+                                <h3>Error</h3>
+                                <p>Could not load details: ${error.message}</p>
+                            </div>
+                        `;
+                    });
+                
+                // Track selected node
+                this.selectedNode = nodeData;
+            }
+            
+            displayNodeDetails(data) {
+                const detailsContent = document.getElementById('details-content');
+                
+                // Clear previous content
+                detailsContent.innerHTML = '';
+                
+                // Add description section
+                if (data.description) {
+                    const descSection = document.createElement('div');
+                    descSection.className = 'detail-section';
+                    descSection.innerHTML = `
+                        <div class="section-header">
+                            <h3>Description</h3>
+                            <span class="section-toggle">▼</span>
+                        </div>
+                        <div class="section-content">
+                            <p>${data.description}</p>
+                        </div>
+                    `;
+                    detailsContent.appendChild(descSection);
+                }
+                
+                // Add purpose section if available
+                if (data.purpose) {
+                    const purposeSection = document.createElement('div');
+                    purposeSection.className = 'detail-section';
+                    purposeSection.innerHTML = `
+                        <div class="section-header">
+                            <h3>Purpose</h3>
+                            <span class="section-toggle">▼</span>
+                        </div>
+                        <div class="section-content">
+                            <p>${data.purpose}</p>
+                        </div>
+                    `;
+                    detailsContent.appendChild(purposeSection);
+                }
+                
+                // Add special debugging section for specifications and deeper levels
+                if (data.type === 'specification' || data.level >= 5) {
+                    const debugSection = document.createElement('div');
+                    debugSection.className = 'detail-section debug-section';
+                    
+                    // Find children of this node
+                    let childNodes = [];
+                    if (this.graphData) {
+                        childNodes = this.graphData.nodes.filter(n => n.parent === data.id);
+                    }
+                    
+                    // Also fetch additional data directly from the API
+                    const hasIntegration = data.integration !== undefined;
+                    
+                    // For application nodes, get more details about inputs and outputs
+                    let inputOutputInfo = '';
+                    if (data.type === 'application') {
+                        const inputNodes = childNodes.filter(n => n.type === 'input');
+                        let outputCount = 0;
+                        
+                        // Find related outputs
+                        inputNodes.forEach(input => {
+                            const outputsForThisInput = this.graphData.nodes.filter(n => 
+                                n.parent === input.id && n.type === 'output'
+                            );
+                            outputCount += outputsForThisInput.length;
+                        });
+                        
+                        inputOutputInfo = `
+                            <div class="application-io-info">
+                                <p><strong>Inputs:</strong> ${inputNodes.length}</p>
+                                <p><strong>Outputs:</strong> ${outputCount} (nested under inputs)</p>
+                                <p class="small-note">When you click an application, both inputs and their outputs will be shown</p>
+                            </div>
+                        `;
+                    }
+                    
+                    debugSection.innerHTML = `
+                        <div class="section-header">
+                            <h3>Node Details</h3>
+                            <span class="section-toggle">▼</span>
+                        </div>
+                        <div class="section-content">
+                            <p><strong>ID:</strong> ${data.id}</p>
+                            <p><strong>Type:</strong> ${data.type}</p>
+                            <p><strong>Level:</strong> ${data.level}</p>
+                            <p><strong>Expandable:</strong> ${data.expandable || false}</p>
+                            <p><strong>Has Children:</strong> ${data.has_children || false}</p>
+                            <p><strong>Children Count:</strong> ${childNodes.length}</p>
+                            ${data.type !== 'application' ? `<p><strong>Has Integration Object:</strong> ${hasIntegration}</p>` : ''}
+                            
+                            ${inputOutputInfo}
+                            
+                            ${childNodes.length > 0 ? `
+                                <div class="child-nodes">
+                                    <p><strong>Children:</strong></p>
+                                    <ul>
+                                        ${childNodes.map(child => `
+                                            <li>
+                                                <span class="clickable-item" data-node-id="${child.id}">${child.type} - ${child.name}</span>
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+                            ` : ''}
+                            
+                            ${data.type === 'specification' ? `
+                                <div class="force-expand-section">
+                                    <button id="force-expand-btn" class="debug-button">Force Show Child Nodes</button>
+                                    <p class="small-note">Use if nodes exist in data but aren't showing in visualization</p>
+                                </div>
+                            ` : ''}
+                            
+                            ${data.type === 'application' ? `
+                                <div class="force-expand-section">
+                                    <button id="force-expand-app-btn" class="debug-button">Force Show Inputs & Outputs</button>
+                                    <p class="small-note">Force expansion of all inputs and their outputs</p>
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                    
+                    detailsContent.appendChild(debugSection);
+                    
+                    // Add event listeners after adding to DOM
+                    if (data.type === 'specification') {
+                        const expandBtn = debugSection.querySelector('#force-expand-btn');
+                        if (expandBtn) {
+                            expandBtn.addEventListener('click', () => {
+                                this.forceExpandChildren(data.id);
+                            });
+                        }
+                    }
+                    
+                    // Add event listener for application force expand
+                    if (data.type === 'application') {
+                        const appExpandBtn = debugSection.querySelector('#force-expand-app-btn');
+                        if (appExpandBtn) {
+                            appExpandBtn.addEventListener('click', () => {
+                                this.forceExpandApplication(data.id);
+                            });
+                        }
+                    }
+                    
+                    // Add click handlers for child nodes
+                    debugSection.querySelectorAll('.clickable-item[data-node-id]').forEach(item => {
+                        item.addEventListener('click', () => {
+                            const nodeId = item.getAttribute('data-node-id');
+                            this.navigateToNode(nodeId);
+                        });
+                    });
+                }
+                
+                // Add components section for component groups
+                if (data.components && data.components.length > 0) {
+                    const componentsSection = document.createElement('div');
+                    componentsSection.className = 'detail-section';
+                    
+                    let componentsHtml = `
+                        <div class="section-header">
+                            <h3>Components</h3>
+                            <span class="section-toggle">▼</span>
+                        </div>
+                        <div class="section-content">
+                    `;
+                    
+                    data.components.forEach(component => {
+                        componentsHtml += `
+                            <div class="clickable-item" data-id="${component.id}">
+                                <span class="node-type-badge component">Component</span>
+                                <strong>${component.name}</strong>
+                                ${component.description ? 
+                                    `<div class="item-description">${component.description}</div>` : ''}
+                            </div>
+                        `;
+                    });
+                    
+                    componentsHtml += `</div>`;
+                    componentsSection.innerHTML = componentsHtml;
+                    detailsContent.appendChild(componentsSection);
+                    
+                    // Add click handlers for components
+                    componentsSection.querySelectorAll('.clickable-item').forEach(item => {
+                        item.addEventListener('click', () => {
+                            const id = item.getAttribute('data-id');
+                            // Find the node in our data
+                            const node = this.graphData.nodes.find(n => n.id === id);
+                            if (node) {
+                                this.selectNode(node);
+                                this.toggleNodeExpansion(id);
+                            }
+                        });
+                    });
+                }
+                
+                // Add capabilities section for subcomponents
+                if (data.capabilities && data.capabilities.length > 0) {
+                    const capabilitiesSection = document.createElement('div');
+                    capabilitiesSection.className = 'detail-section';
+                    
+                    let capabilitiesHtml = `
+                        <div class="section-header">
+                            <h3>Capabilities</h3>
+                            <span class="section-toggle">▼</span>
+                        </div>
+                        <div class="section-content">
+                    `;
+                    
+                    data.capabilities.forEach(capability => {
+                        if (typeof capability === 'object' && capability.name) {
+                            capabilitiesHtml += `
+                                <div class="clickable-item" data-id="${data.id}-capability-${capability.name.toLowerCase().replace(/\s+/g, '-')}">
+                                    <span class="node-type-badge capability">Capability</span>
+                                    <strong>${capability.name}</strong>
+                                    ${capability.description ? 
+                                        `<div class="item-description">${capability.description}</div>` : ''}
+                                </div>
+                            `;
+                        }
+                    });
+                    
+                    capabilitiesHtml += `</div>`;
+                    capabilitiesSection.innerHTML = capabilitiesHtml;
+                    detailsContent.appendChild(capabilitiesSection);
+                }
+                
+                // Add additional dynamic content based on node type
+                // This would be expanded with more sections as needed
+                
+                // Setup section toggles
+                this.setupSectionToggles();
+            }
+            
+            setupSectionToggles() {
+                // Add event listeners to section toggle buttons
+                document.querySelectorAll('.section-toggle').forEach(toggle => {
+                    if (!toggle.hasAttribute('data-initialized')) {
+                        toggle.addEventListener('click', (e) => {
+                            const content = e.target.closest('.section-header').nextElementSibling;
+                            const isCollapsed = toggle.classList.contains('collapsed');
+                            
+                            if (isCollapsed) {
+                                content.style.display = 'block';
+                                toggle.classList.remove('collapsed');
+                                toggle.textContent = '▼';
+                            } else {
+                                content.style.display = 'none';
+                                toggle.classList.add('collapsed');
+                                toggle.textContent = '▶';
+                            }
+                        });
+                        
+                        toggle.setAttribute('data-initialized', 'true');
+                    }
+                });
+            }
+            
+            updateBreadcrumbs(nodeId) {
+                const breadcrumbContainer = document.getElementById('breadcrumb-navigation');
+                breadcrumbContainer.innerHTML = '';
+                
+                // Fetch hierarchy path
+                fetch(`/api/hierarchy-path/${nodeId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.path && data.path.length > 0) {
+                            data.path.forEach((item, index) => {
+                                const isLast = index === data.path.length - 1;
+                                
+                                const breadcrumbItem = document.createElement('div');
+                                breadcrumbItem.className = 'breadcrumb-item' + (isLast ? '' : ' clickable');
+                                breadcrumbItem.textContent = item.name;
+                                
+                                if (!isLast) {
+                                    // Add separator
+                                    breadcrumbItem.innerHTML += '<span class="breadcrumb-separator">›</span>';
+                                    
+                                    // Make clickable
+                                    breadcrumbItem.addEventListener('click', () => {
+                                        // Find node in graph data
+                                        const node = this.graphData.nodes.find(n => n.id === item.id);
+                                        if (node) {
+                                            this.selectNode(node);
+                                        }
+                                    });
+                                }
+                                
+                                breadcrumbContainer.appendChild(breadcrumbItem);
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error loading breadcrumbs:', error);
+                    });
+            }
+            
+            toggleNodeExpansion(nodeId) {
+                console.log(`Toggling expansion for node: ${nodeId}`);
+                
+                // Either expand or collapse based on current state
+                if (this.expandedNodes.has(nodeId)) {
+                    console.log(`Node was expanded, collapsing: ${nodeId}`);
+                    this.collapseNode(nodeId);
+                } else {
+                    console.log(`Node was collapsed, expanding: ${nodeId}`);
+                    
+                    // Always mark the node as expanded
+                    this.expandedNodes.add(nodeId);
+                    
+                    // Even if there are no direct children, this will ensure the node is marked as expanded
+                    // which allows its children at all levels to become visible
+                    this.expandNode(nodeId);
+                }
+                
+                // Log expanded nodes for debugging
+                console.log(`Current expanded nodes: ${Array.from(this.expandedNodes).join(', ')}`);
+            }
+            
+            expandNode(nodeId) {
+                console.log(`Expanding node: ${nodeId}`);
+                
+                // Add to expanded set
+                this.expandedNodes.add(nodeId);
+                
+                // Get node data to check its level
+                const nodeData = this.graphData.nodes.find(node => node.id === nodeId);
+                if (!nodeData) {
+                    console.error(`Node data not found for ID: ${nodeId}`);
+                    return;
+                }
+                
+                console.log(`Expanding node at level ${nodeData.level}: ${nodeData.name}`);
+                
+                // Special handling for specific node types
+                if (nodeData.type === 'application') {
+                    // For applications, we want to automatically expand their inputs to show outputs
+                    console.log(`Expanding application node: ${nodeData.id}`);
+                    
+                    // Find all input children
+                    const inputNodes = this.graphData.nodes.filter(node => 
+                        node.parent === nodeData.id && node.type === 'input'
+                    );
+                    
+                    // Also mark inputs as expanded to ensure outputs are visible
+                    inputNodes.forEach(input => {
+                        console.log(`Auto-marking input as expanded: ${input.id}`);
+                        this.expandedNodes.add(input.id);
+                    });
+                }
+                else if (nodeData.type === 'specification' && nodeData.level === 5) {
+                    console.log(`Checking for integration children of specification: ${nodeData.id}`);
+                    
+                    // For specifications, look for integrations that might exist in the backend data
+                    const specNode = this.findNodeInBackendData(nodeData.id);
+                    if (specNode && specNode.integration) {
+                        console.log(`Found integration for specification: ${specNode.integration.id}`);
+                        
+                        // Ensure the integration node exists in our graph data
+                        const integrationExists = this.graphData.nodes.some(n => n.id === specNode.integration.id);
+                        
+                        if (!integrationExists) {
+                            console.log(`Integration node ${specNode.integration.id} not in graph data. May need backend update.`);
+                        }
+                    }
+                }
+                
+                // Get child links for this node
+                const childLinks = this.graphData.links.filter(link => {
+                    const source = typeof link.source === 'object' ? link.source.id : link.source;
+                    return source === nodeId;
+                });
+                
+                console.log(`Found ${childLinks.length} direct child links for node ${nodeId}`);
+                
+                // Even with no direct children, we need to mark this node as expanded
+                // to ensure visibility of deeper levels
+                
+                // Get all visible nodes based on current expanded state
+                const visibleNodes = this.getVisibleNodes();
+                const visibleLinks = this.getVisibleLinks(visibleNodes);
+                
+                console.log(`After expansion: ${visibleNodes.length} nodes visible, ${visibleLinks.length} links visible`);
+                
+                // Position all nodes
+                this.positionNodes(visibleNodes);
+                
+                // Update visual elements
+                this.createNodeObjects(visibleNodes);
+                this.createLinkObjects(visibleLinks);
+            }
+            
+            // Helper to find a node in the backend data by ID
+            findNodeInBackendData(nodeId) {
+                // First check if this node's details are already loaded
+                const fetchUrl = `/api/details/${nodeId}`;
+                
+                console.log(`Fetching details for node: ${nodeId}`);
+                
+                // Make a synchronous request to get the node details
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', fetchUrl, false); // false makes it synchronous
+                xhr.send(null);
+                
+                if (xhr.status === 200) {
+                    try {
+                        const nodeData = JSON.parse(xhr.responseText);
+                        console.log(`Found node data for ${nodeId}`);
+                        return nodeData;
+                    } catch (error) {
+                        console.error(`Error parsing node data for ${nodeId}: ${error}`);
+                    }
+                } else {
+                    console.error(`Failed to get node data for ${nodeId}: ${xhr.status}`);
+                }
+                
+                return null;
+            }
+            
+            collapseNode(nodeId) {
+                console.log(`Collapsing node: ${nodeId}`);
+                
+                // Remove from expanded set
+                this.expandedNodes.delete(nodeId);
+                
+                // Also collapse any child nodes that were expanded
+                const childrenToCollapse = this.findAllChildren(nodeId);
+                
+                for (const childId of childrenToCollapse) {
+                    this.expandedNodes.delete(childId);
+                }
+                
+                // Update the visualization
+                const visibleNodes = this.getVisibleNodes();
+                const visibleLinks = this.getVisibleLinks(visibleNodes);
+                
+                // Position nodes
+                this.positionNodes(visibleNodes);
+                
+                // Update visual elements
+                this.createNodeObjects(visibleNodes);
+                this.createLinkObjects(visibleLinks);
+            }
+            
+            findAllChildren(nodeId) {
+                // Find all children recursively
+                const children = [];
+                
+                // Get direct children
+                const directChildren = this.graphData.nodes.filter(node => node.parent === nodeId);
+                
+                // Add them and their children recursively
+                for (const child of directChildren) {
+                    children.push(child.id);
+                    children.push(...this.findAllChildren(child.id));
+                }
+                
+                return children;
+            }
+            
+            onWindowResize() {
+                // Update camera aspect ratio
+                this.camera.aspect = this.container.clientWidth / this.container.clientHeight;
+                this.camera.updateProjectionMatrix();
+                
+                // Update renderer size
+                this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+            }
+            
+            animate() {
+                requestAnimationFrame(() => this.animate());
+                
+                // Update controls
+                this.controls.update();
+                
+                const deltaTime = this.clock.getDelta();
+                const time = Date.now() * 0.001;
+                
+                if (this.isRotating) {
+                    // Rotate root node around its axis
+                    const rootNode = Array.from(this.nodes.values()).find(node => !node.userData.node.parent);
+                    if (rootNode) {
+                        rootNode.rotation.y += deltaTime * 0.2;
+                    }
+                    
+                    // Animate other nodes
+                    this.nodes.forEach((nodeMesh, nodeId) => {
+                        const nodeData = nodeMesh.userData.node;
+                        if (!nodeData.parent) return;
+                        
+                        const basePos = this.nodePositions.get(nodeId);
+                        if (!basePos) return;
+                        
+                        // Calculate orbital parameters
+                        const level = nodeData.level;
+                        const orbitSpeed = 0.1 * Math.pow(0.85, level - 1); // Slower for outer levels
+                        const wobbleAmount = Math.min(0.1, level * 0.01);
+                        
+                        // Calculate orbital motion
+                        const radius = Math.sqrt(basePos.x * basePos.x + basePos.z * basePos.z);
+                        const currentAngle = Math.atan2(nodeMesh.position.z - basePos.z, nodeMesh.position.x - basePos.x);
+                        const newAngle = currentAngle + orbitSpeed * deltaTime;
+                        
+                        // Add wobble effect
+                        const wobbleX = Math.sin(time * 1.1 + level) * wobbleAmount * radius;
+                        const wobbleY = Math.sin(time * 0.7 + level) * wobbleAmount * radius;
+                        const wobbleZ = Math.sin(time * 0.9 + level) * wobbleAmount * radius;
+                        
+                        // Update position with smooth transition
+                        nodeMesh.position.x = basePos.x + radius * Math.cos(newAngle) + wobbleX;
+                        nodeMesh.position.y = basePos.y + wobbleY;
+                        nodeMesh.position.z = basePos.z + radius * Math.sin(newAngle) + wobbleZ;
+                        
+                        // Add node rotation
+                        nodeMesh.rotation.y += deltaTime * orbitSpeed * 0.5;
+                        nodeMesh.rotation.x = Math.sin(time * 0.5) * wobbleAmount * 0.2;
+                    });
+                    
+                    // Update link positions
+                    this.updateLinkPositions();
+                }
+                
+                // Render scene
+                this.renderer.render(this.scene, this.camera);
+                
+                // Update TWEEN animations
+                if (TWEEN) {
+                    TWEEN.update();
+                }
+            }
+            
+            // Control functions
+            zoomIn() {
+                const targetZ = this.camera.position.z * 0.8;
+                new TWEEN.Tween(this.camera.position)
+                    .to({ z: targetZ }, 300)
+                    .easing(TWEEN.Easing.Quadratic.Out)
+                    .start();
+            }
+            
+            zoomOut() {
+                const targetZ = this.camera.position.z * 1.2;
+                new TWEEN.Tween(this.camera.position)
+                    .to({ z: targetZ }, 300)
+                    .easing(TWEEN.Easing.Quadratic.Out)
+                    .start();
+            }
+            
+            resetView() {
+                new TWEEN.Tween(this.camera.position)
+                    .to({ x: 0, y: 0, z: 500 }, 500)
+                    .easing(TWEEN.Easing.Quadratic.Out)
+                    .start();
+                    
+                new TWEEN.Tween(this.scene.rotation)
+                    .to({ x: 0, y: 0, z: 0 }, 500)
+                    .easing(TWEEN.Easing.Quadratic.Out)
+                    .start();
+                    
+                this.controls.reset();
+            }
+            
+            toggleRotation() {
+                this.isRotating = !this.isRotating;
+            }
+            
+            // Add new method to force expanding children for a given specification node
+            forceExpandChildren(specificationId) {
+                console.log(`Force expanding children for specification: ${specificationId}`);
+                
+                // Get the specification details directly from the backend
+                const specData = this.findNodeInBackendData(specificationId);
+                
+                if (!specData) {
+                    console.error(`Could not find specification data for: ${specificationId}`);
+                    alert('Could not load specification details');
+                    return;
+                }
+                
+                console.log('Specification data:', specData);
+                
+                // Check if the specification has an integration
+                if (specData.integration) {
+                    const integrationData = specData.integration;
+                    console.log('Found integration:', integrationData);
+                    
+                    // Create integration node if it doesn't exist
+                    const integrationId = integrationData.id;
+                    const integrationExists = this.graphData.nodes.some(n => n.id === integrationId);
+                    
+                    if (!integrationExists) {
+                        console.log(`Adding missing integration node: ${integrationId}`);
+                        
+                        // Add the integration node
+                        const newIntegrationNode = {
+                            id: integrationId,
+                            name: integrationData.name,
+                            type: 'integration',
+                            description: integrationData.description,
+                            parent: specificationId,
+                            level: 6,
+                            expandable: integrationData.techniques && integrationData.techniques.length > 0,
+                            has_children: integrationData.techniques && integrationData.techniques.length > 0
+                        };
+                        
+                        // Add the node to the graph data
+                        this.graphData.nodes.push(newIntegrationNode);
+                        
+                        // Add link from specification to integration
+                        this.graphData.links.push({
+                            source: specificationId,
+                            target: integrationId,
+                            type: 'has_integration'
+                        });
+                        
+                        // Now check for techniques and add them
+                        if (integrationData.techniques && integrationData.techniques.length > 0) {
+                            integrationData.techniques.forEach(technique => {
+                                const techniqueId = technique.id;
+                                const techniqueExists = this.graphData.nodes.some(n => n.id === techniqueId);
+                                
+                                if (!techniqueExists) {
+                                    console.log(`Adding missing technique node: ${techniqueId}`);
+                                    
+                                    // Add the technique node
+                                    const newTechniqueNode = {
+                                        id: techniqueId,
+                                        name: technique.name,
+                                        type: 'technique',
+                                        description: technique.description,
+                                        parent: integrationId,
+                                        level: 7,
+                                        expandable: technique.applications && technique.applications.length > 0,
+                                        has_children: technique.applications && technique.applications.length > 0
+                                    };
+                                    
+                                    // Add the node to the graph data
+                                    this.graphData.nodes.push(newTechniqueNode);
+                                    
+                                    // Add link from integration to technique
+                                    this.graphData.links.push({
+                                        source: integrationId,
+                                        target: techniqueId,
+                                        type: 'has_technique'
+                                    });
+                                }
+                            });
+                        }
+                    }
+                    
+                    // Mark the specification as expanded
+                    this.expandedNodes.add(specificationId);
+                    
+                    // Ensure the integration is expanded
+                    if (integrationId) {
+                        this.expandedNodes.add(integrationId);
+                    }
+                    
+                    // Update the visualization
+                    const visibleNodes = this.getVisibleNodes();
+                    const visibleLinks = this.getVisibleLinks(visibleNodes);
+                    
+                    console.log(`After force expansion: ${visibleNodes.length} nodes visible`);
+                    
+                    // Position all nodes
+                    this.positionNodes(visibleNodes);
+                    
+                    // Update visual elements
+                    this.createNodeObjects(visibleNodes);
+                    this.createLinkObjects(visibleLinks);
+                    
+                    // Refresh the node details display
+                    this.selectNode(this.selectedNode);
+                } else {
+                    console.warn('No integration found in this specification');
+                    alert('No integration found in this specification');
+                }
+            }
+            
+            // Method to force expand an application node with all its inputs and outputs
+            forceExpandApplication(applicationId) {
+                console.log(`Force expanding application with all inputs and outputs: ${applicationId}`);
+                
+                // Get the application details
+                const appNodeData = this.graphData.nodes.find(node => node.id === applicationId);
+                if (!appNodeData) {
+                    console.error(`Could not find application data for: ${applicationId}`);
+                    return;
+                }
+                
+                // Mark application as expanded
+                this.expandedNodes.add(applicationId);
+                
+                // Get backend application data to ensure we have all inputs
+                const appData = this.findNodeInBackendData(applicationId);
+                
+                // Get all inputs currently in the graph
+                const inputNodes = this.graphData.nodes.filter(node => 
+                    node.parent === applicationId && node.type === 'input'
+                );
+                
+                console.log(`Found ${inputNodes.length} input nodes for application: ${appNodeData.name}`);
+                
+                // Mark all inputs as expanded to show outputs
+                inputNodes.forEach(input => {
+                    this.expandedNodes.add(input.id);
+                    
+                    // Look for outputs of this input
+                    const outputNodes = this.graphData.nodes.filter(node => 
+                        node.parent === input.id && node.type === 'output'
+                    );
+                    
+                    console.log(`Found ${outputNodes.length} output nodes for input: ${input.name}`);
+                });
+                
+                // Add missing inputs and outputs from backend data if available
+                if (appData && appData.inputs) {
+                    const backendInputs = Array.isArray(appData.inputs) ? appData.inputs : [appData.inputs];
+                    
+                    // Check if we need to create missing input nodes
+                    backendInputs.forEach(inputData => {
+                        if (typeof inputData !== 'object') return;
+                        
+                        const inputName = inputData.name || (typeof inputData === 'string' ? inputData : 'Input');
+                        const inputId = inputData.id || `${applicationId}-input-${inputName.toLowerCase().replace(/\s+/g, '-')}`;
+                        
+                        // Check if input already exists in graph data
+                        const inputExists = this.graphData.nodes.some(n => n.id === inputId);
+                        
+                        if (!inputExists) {
+                            console.log(`Adding missing input node: ${inputId}`);
+                            
+                            // Create input node
+                            const newInputNode = {
+                                id: inputId,
+                                name: inputName,
+                                type: 'input',
+                                description: inputData.description || '',
+                                parent: applicationId,
+                                level: 9,
+                                expandable: inputData.outputs && inputData.outputs.length > 0,
+                                has_children: inputData.outputs && inputData.outputs.length > 0
+                            };
+                            
+                            // Add to graph data
+                            this.graphData.nodes.push(newInputNode);
+                            
+                            // Add link
+                            this.graphData.links.push({
+                                source: applicationId,
+                                target: inputId,
+                                type: 'has_input'
+                            });
+                            
+                            // Mark as expanded
+                            this.expandedNodes.add(inputId);
+                            
+                            // Add outputs if available
+                            if (inputData.outputs) {
+                                const outputs = Array.isArray(inputData.outputs) ? inputData.outputs : [inputData.outputs];
+                                
+                                outputs.forEach(outputData => {
+                                    if (typeof outputData !== 'object') return;
+                                    
+                                    const outputName = outputData.name || (typeof outputData === 'string' ? outputData : 'Output');
+                                    const outputId = outputData.id || `${inputId}-output-${outputName.toLowerCase().replace(/\s+/g, '-')}`;
+                                    
+                                    // Check if output already exists
+                                    const outputExists = this.graphData.nodes.some(n => n.id === outputId);
+                                    
+                                    if (!outputExists) {
+                                        console.log(`Adding missing output node: ${outputId}`);
+                                        
+                                        // Create output node
+                                        const newOutputNode = {
+                                            id: outputId,
+                                            name: outputName,
+                                            type: 'output',
+                                            description: outputData.description || '',
+                                            parent: inputId,
+                                            level: 10,
+                                            expandable: false,
+                                            has_children: false
+                                        };
+                                        
+                                        // Add to graph data
+                                        this.graphData.nodes.push(newOutputNode);
+                                        
+                                        // Add link
+                                        this.graphData.links.push({
+                                            source: inputId,
+                                            target: outputId,
+                                            type: 'has_output'
+                                        });
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+                
+                // Update visualization
+                const visibleNodes = this.getVisibleNodes();
+                const visibleLinks = this.getVisibleLinks(visibleNodes);
+                
+                console.log(`After force expansion: ${visibleNodes.length} nodes visible, ${visibleLinks.length} links visible`);
+                
+                // Position nodes
+                this.positionNodes(visibleNodes);
+                
+                // Update visual elements
+                this.createNodeObjects(visibleNodes);
+                this.createLinkObjects(visibleLinks);
+                
+                // Refresh node details display
+                this.selectNode(this.selectedNode);
+            }
+            
+            // Helper method to expand an input node and ensure its outputs are visible
+            expandInputWithOutputs(inputId) {
+                console.log(`Expanding input with outputs: ${inputId}`);
+                
+                // Mark the input as expanded
+                this.expandedNodes.add(inputId);
+                
+                // Find output nodes
+                const outputNodes = this.graphData.nodes.filter(node => 
+                    node.parent === inputId && node.type === 'output'
+                );
+                
+                console.log(`Found ${outputNodes.length} output nodes for input: ${inputId}`);
+                
+                // Get all visible nodes and update the visualization
+                const visibleNodes = this.getVisibleNodes();
+                const visibleLinks = this.getVisibleLinks(visibleNodes);
+                
+                console.log(`After expanding input with outputs: ${visibleNodes.length} nodes visible`);
+                
+                // Position all nodes
+                this.positionNodes(visibleNodes);
+                
+                // Update visual elements
+                this.createNodeObjects(visibleNodes);
+                this.createLinkObjects(visibleLinks);
+            }
+        }
+        
+        // Initialize visualization when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            const visualization = new AIAlignmentVisualization();
+        });
+    </script>
+</body>
+</html> 
