@@ -1,0 +1,2125 @@
+{
+  "_documentation": "This subcomponent implements technologies that generate human-understandable explanations of AI decisions, reasoning processes, and behaviors, supporting transparency, trust, and verification of alignment through accessible representations of complex AI systems.",
+  "id": "explanation-systems",
+  "name": "Explanation Systems",
+  "description": "Technologies that generate human-understandable explanations of AI decisions, reasoning processes, and behaviors to support transparency, trust, and verification of alignment. These systems transform complex AI decision processes into accessible formats that enable humans to verify, critique, and trust AI reasoning and behaviors.",
+  "type": "subcomponent",
+  "parent": "interpretability-tools",
+  
+  "capabilities": [
+    {
+      "id": "explanation-systems.explanation-generation",
+      "name": "Explanation Generation",
+      "description": "Capability to generate comprehensive explanations of AI system behavior and decision processes",
+      "implements_component_capabilities": ["interpretability-tools.explanation-capability"],
+      "type": "capability",
+      "parent": "explanation-systems",
+      "functions": [
+        {
+          "id": "explanation-systems.explanation-generation.natural-language-explanation",
+          "name": "Natural Language Explanation",
+          "description": "Generate natural language explanations of AI system reasoning and decision processes",
+          "implements_component_functions": ["interpretability-tools.decision-explanation", "interpretability-tools.explain-decisions"],
+          "type": "function",
+          "parent": "explanation-systems.explanation-generation",
+          "specifications": [
+            {
+              "id": "explanation-systems.explanation-generation.natural-language-explanation.explanation-format",
+              "name": "Explanation Format",
+              "description": "Technical specifications for natural language explanation formats",
+              "type": "specification",
+              "parent": "explanation-systems.explanation-generation.natural-language-explanation",
+              "requirements": [
+                "Standardized format for reasoning process explanation",
+                "Methods for appropriate detail level based on audience",
+                "Techniques for translating internal representations to natural language",
+                "Verification mechanisms for explanation accuracy"
+              ],
+              "integration": {
+                "id": "explanation-systems.explanation-generation.natural-language-explanation.explanation-format.implementation",
+                "name": "Explanation Format Implementation",
+                "description": "Integration approach for implementing natural language explanations",
+                "type": "integration",
+                "parent": "explanation-systems.explanation-generation.natural-language-explanation.explanation-format",
+                "techniques": [
+                  {
+                    "id": "explanation-systems.explanation-generation.natural-language-explanation.explanation-format.implementation.language-generation",
+                    "name": "Language Generation Technique",
+                    "description": "Technique for generating human-readable explanations of AI decisions",
+                    "type": "technique",
+                    "parent": "explanation-systems.explanation-generation.natural-language-explanation.explanation-format.implementation",
+                    "applications": [
+                      {
+                        "id": "explanation-systems.explanation-generation.natural-language-explanation.explanation-format.implementation.language-generation.decision-explainer",
+                        "name": "Decision Explainer",
+                        "description": "Application that produces natural language explanations for AI decisions",
+                        "type": "application",
+                        "parent": "explanation-systems.explanation-generation.natural-language-explanation.explanation-format.implementation.language-generation",
+                        "inputs": [
+                          {
+                            "name": "Decision Data",
+                            "description": "Information about the decision being explained",
+                            "data_type": "decision_record",
+                            "constraints": "Must include all relevant factors considered in the decision"
+                          },
+                          {
+                            "name": "Model State",
+                            "description": "Internal state of the AI model when making the decision",
+                            "data_type": "model_state",
+                            "constraints": "Must capture relevant activations and processing steps"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Explanation Text",
+                            "description": "Natural language explanation of the AI decision",
+                            "data_type": "text",
+                            "interpretation": "Human-readable explanation of decision factors and reasoning process"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "explanation-systems.explanation-generation.visual-explanation",
+          "name": "Visual Explanation",
+          "description": "Generate visual explanations of AI system reasoning and decision processes",
+          "implements_component_functions": ["interpretability-tools.decision-explanation", "interpretability-tools.explain-decisions"],
+          "type": "function",
+          "parent": "explanation-systems.explanation-generation",
+          "specifications": [
+            {
+              "id": "explanation-systems.explanation-generation.visual-explanation.visualization-format",
+              "name": "Visualization Format",
+              "description": "Technical specifications for visual explanation formats",
+              "type": "specification",
+              "parent": "explanation-systems.explanation-generation.visual-explanation",
+              "requirements": [
+                "Standardized visualization types for different aspects of model behavior",
+                "Methods for highlighting key decision factors visually",
+                "Techniques for dimension reduction for complex internal states",
+                "Interactive visualization capabilities for exploration"
+              ],
+              "integration": {
+                "id": "explanation-systems.explanation-generation.visual-explanation.visualization-format.implementation",
+                "name": "Visualization Format Implementation",
+                "description": "Integration approach for implementing visual explanations",
+                "type": "integration",
+                "parent": "explanation-systems.explanation-generation.visual-explanation.visualization-format",
+                "techniques": [
+                  {
+                    "id": "explanation-systems.explanation-generation.visual-explanation.visualization-format.implementation.feature-visualization",
+                    "name": "Feature Visualization Technique",
+                    "description": "Technique for visualizing features and their importance in AI decisions",
+                    "type": "technique",
+                    "parent": "explanation-systems.explanation-generation.visual-explanation.visualization-format.implementation",
+                    "applications": [
+                      {
+                        "id": "explanation-systems.explanation-generation.visual-explanation.visualization-format.implementation.feature-visualization.feature-visualizer",
+                        "name": "Feature Visualizer",
+                        "description": "Application that produces visual explanations of feature importance",
+                        "type": "application",
+                        "parent": "explanation-systems.explanation-generation.visual-explanation.visualization-format.implementation.feature-visualization",
+                        "inputs": [
+                          {
+                            "name": "Feature Importance",
+                            "description": "Importance scores for features in the decision",
+                            "data_type": "importance_scores",
+                            "constraints": "Must include normalized importance values for all relevant features"
+                          },
+                          {
+                            "name": "Input Data",
+                            "description": "The input data for which the decision is being explained",
+                            "data_type": "input_data",
+                            "constraints": "Must be in a format compatible with the model"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Visual Explanation",
+                            "description": "Visual representation of feature importance",
+                            "data_type": "visualization",
+                            "interpretation": "Highlights which parts of the input most influenced the decision"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "explanation-systems.explanation-generation.behavioral-summary",
+          "name": "Behavioral Summary",
+          "description": "Generate summaries of AI system behavior patterns",
+          "implements_component_functions": ["interpretability-tools.analyze-behavior"],
+          "type": "function",
+          "parent": "explanation-systems.explanation-generation",
+          "specifications": [
+            {
+              "id": "explanation-systems.explanation-generation.behavioral-summary.summary-format",
+              "name": "Summary Format",
+              "description": "Technical specifications for behavioral summary formats",
+              "type": "specification",
+              "parent": "explanation-systems.explanation-generation.behavioral-summary",
+              "requirements": [
+                "Methods for aggregating behavior patterns across multiple instances",
+                "Techniques for identifying consistent behavioral traits",
+                "Metrics for quantifying behavioral tendencies",
+                "Formats for concise yet comprehensive behavior summaries"
+              ],
+              "integration": {
+                "id": "explanation-systems.explanation-generation.behavioral-summary.summary-format.implementation",
+                "name": "Summary Format Implementation",
+                "description": "Integration approach for implementing behavioral summaries",
+                "type": "integration",
+                "parent": "explanation-systems.explanation-generation.behavioral-summary.summary-format",
+                "techniques": [
+                  {
+                    "id": "explanation-systems.explanation-generation.behavioral-summary.summary-format.implementation.pattern-extraction",
+                    "name": "Pattern Extraction Technique",
+                    "description": "Technique for extracting and summarizing behavioral patterns",
+                    "type": "technique",
+                    "parent": "explanation-systems.explanation-generation.behavioral-summary.summary-format.implementation",
+                    "applications": [
+                      {
+                        "id": "explanation-systems.explanation-generation.behavioral-summary.summary-format.implementation.pattern-extraction.behavior-summarizer",
+                        "name": "Behavior Summarizer",
+                        "description": "Application that produces summaries of AI behavioral patterns",
+                        "type": "application",
+                        "parent": "explanation-systems.explanation-generation.behavioral-summary.summary-format.implementation.pattern-extraction",
+                        "inputs": [
+                          {
+                            "name": "Behavior Records",
+                            "description": "Records of AI system behavior across multiple instances",
+                            "data_type": "behavior_log",
+                            "constraints": "Must include decisions and contexts across diverse scenarios"
+                          },
+                          {
+                            "name": "Analysis Parameters",
+                            "description": "Parameters controlling the analysis and summarization",
+                            "data_type": "analysis_config",
+                            "constraints": "Must specify summary granularity and focus areas"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Behavior Summary",
+                            "description": "Summary of consistent behavioral patterns",
+                            "data_type": "summary_text",
+                            "interpretation": "Describes characteristic behaviors and tendencies of the AI system"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explanation-systems.contextual-explanations",
+      "name": "Contextual Explanations",
+      "description": "Capability to adapt explanations based on context, audience, and situation",
+      "implements_component_capabilities": ["interpretability-tools.explanation-capability"],
+      "type": "capability",
+      "parent": "explanation-systems",
+      "functions": [
+        {
+          "id": "explanation-systems.contextual-explanations.audience-adaptation",
+          "name": "Audience Adaptation",
+          "description": "Adapt explanations to the specific audience's knowledge and needs",
+          "implements_component_functions": ["interpretability-tools.decision-explanation"],
+          "type": "function",
+          "parent": "explanation-systems.contextual-explanations",
+          "specifications": [
+            {
+              "id": "explanation-systems.contextual-explanations.audience-adaptation.adaptation-framework",
+              "name": "Adaptation Framework",
+              "description": "Technical specifications for audience-adaptive explanations",
+              "type": "specification",
+              "parent": "explanation-systems.contextual-explanations.audience-adaptation",
+              "requirements": [
+                "Methods for modeling audience knowledge and capabilities",
+                "Techniques for dynamically adjusting explanation complexity",
+                "Protocols for selecting appropriate explanation formats",
+                "Mechanisms for gathering and incorporating audience feedback"
+              ],
+              "integration": {
+                "id": "explanation-systems.contextual-explanations.audience-adaptation.adaptation-framework.implementation",
+                "name": "Adaptation Framework Implementation",
+                "description": "Integration approach for implementing audience-adaptive explanations",
+                "type": "integration",
+                "parent": "explanation-systems.contextual-explanations.audience-adaptation.adaptation-framework",
+                "techniques": [
+                  {
+                    "id": "explanation-systems.contextual-explanations.audience-adaptation.adaptation-framework.implementation.audience-modeling",
+                    "name": "Audience Modeling Technique",
+                    "description": "Technique for modeling audience characteristics to adapt explanations",
+                    "type": "technique",
+                    "parent": "explanation-systems.contextual-explanations.audience-adaptation.adaptation-framework.implementation",
+                    "applications": [
+                      {
+                        "id": "explanation-systems.contextual-explanations.audience-adaptation.adaptation-framework.implementation.audience-modeling.adaptive-explainer",
+                        "name": "Adaptive Explainer",
+                        "description": "Application that tailors explanations to specific audience needs",
+                        "type": "application",
+                        "parent": "explanation-systems.contextual-explanations.audience-adaptation.adaptation-framework.implementation.audience-modeling",
+                        "inputs": [
+                          {
+                            "name": "Audience Profile",
+                            "description": "Profile of the audience receiving the explanation",
+                            "data_type": "audience_profile",
+                            "constraints": "Must include expertise level, background knowledge, and explanation preferences"
+                          },
+                          {
+                            "name": "Explanation Content",
+                            "description": "Base content to be adapted for the audience",
+                            "data_type": "explanation_content",
+                            "constraints": "Must include core explanation elements that can be adjusted"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Tailored Explanation",
+                            "description": "Explanation adapted to the specific audience",
+                            "data_type": "adapted_explanation",
+                            "interpretation": "Explanation with appropriate complexity, terminology, and format for the audience"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "explanation-systems.contextual-explanations.context-awareness",
+          "name": "Context Awareness",
+          "description": "Adapt explanations based on the operational context and situation",
+          "implements_component_functions": ["interpretability-tools.analyze-behavior"],
+          "type": "function",
+          "parent": "explanation-systems.contextual-explanations",
+          "specifications": [
+            {
+              "id": "explanation-systems.contextual-explanations.context-awareness.context-framework",
+              "name": "Context Framework",
+              "description": "Technical specifications for context-aware explanations",
+              "type": "specification",
+              "parent": "explanation-systems.contextual-explanations.context-awareness",
+              "requirements": [
+                "Methods for modeling operational context and situation",
+                "Techniques for identifying contextually relevant explanation elements",
+                "Protocols for prioritizing information based on context",
+                "Mechanisms for context-driven explanation formatting"
+              ],
+              "integration": {
+                "id": "explanation-systems.contextual-explanations.context-awareness.context-framework.implementation",
+                "name": "Context Framework Implementation",
+                "description": "Integration approach for implementing context-aware explanations",
+                "type": "integration",
+                "parent": "explanation-systems.contextual-explanations.context-awareness.context-framework",
+                "techniques": [
+                  {
+                    "id": "explanation-systems.contextual-explanations.context-awareness.context-framework.implementation.context-sensing",
+                    "name": "Context Sensing Technique",
+                    "description": "Technique for sensing and interpreting operational context",
+                    "type": "technique",
+                    "parent": "explanation-systems.contextual-explanations.context-awareness.context-framework.implementation",
+                    "applications": [
+                      {
+                        "id": "explanation-systems.contextual-explanations.context-awareness.context-framework.implementation.context-sensing.context-adaptive-explainer",
+                        "name": "Context-Adaptive Explainer",
+                        "description": "Application that adapts explanations based on operational context",
+                        "type": "application",
+                        "parent": "explanation-systems.contextual-explanations.context-awareness.context-framework.implementation.context-sensing",
+                        "inputs": [
+                          {
+                            "name": "Context Data",
+                            "description": "Data about the current operational context",
+                            "data_type": "context_data",
+                            "constraints": "Must include situation factors, urgency level, and environmental conditions"
+                          },
+                          {
+                            "name": "Explanation Content",
+                            "description": "Base content to be adapted for the context",
+                            "data_type": "explanation_content",
+                            "constraints": "Must include explanation elements that can be prioritized or filtered"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Context-Adapted Explanation",
+                            "description": "Explanation adapted to the operational context",
+                            "data_type": "adapted_explanation",
+                            "interpretation": "Explanation with appropriate focus, detail level, and format for the context"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explanation-systems.natural-language-explanation",
+      "name": "Natural Language Explanation",
+      "description": "Generating natural language explanations of model decisions and reasoning",
+      "implements_component_capabilities": ["interpretability-tools.explanation-capability"],
+      "type": "capability",
+      "parent": "explanation-systems",
+      "functions": [
+        {
+          "id": "explanation-systems.natural-language-explanation.explanation-generation",
+          "name": "Explanation Generation",
+          "description": "Generate natural language explanations of AI system reasoning and decision processes",
+          "implements_component_functions": ["interpretability-tools.decision-explanation"],
+          "type": "function",
+          "parent": "explanation-systems.natural-language-explanation",
+          "specifications": [
+            {
+              "id": "explanation-systems.natural-language-explanation.explanation-generation.explanation-design",
+              "name": "Explanation Design",
+              "description": "Technical specifications for generating natural language explanations of AI reasoning",
+              "type": "specification",
+              "parent": "explanation-systems.natural-language-explanation.explanation-generation",
+              "requirements": [
+                "Methods for translating internal system states into comprehensible language",
+                "Techniques for appropriate explanation abstraction level selection",
+                "Protocols for causal reasoning presentation",
+                "Standards for explanation quality and verifiability"
+              ],
+              "integration": {
+                "id": "explanation-systems.natural-language-explanation.explanation-generation.explanation-design.implementation",
+                "name": "Explanation Design Implementation",
+                "description": "Integration approach for implementing explanation generation",
+                "type": "integration",
+                "parent": "explanation-systems.natural-language-explanation.explanation-generation.explanation-design",
+                "techniques": [
+                  {
+                    "id": "explanation-systems.natural-language-explanation.explanation-generation.explanation-design.implementation.reasoning-translation",
+                    "name": "Reasoning Translation Technique",
+                    "description": "Technique for translating AI reasoning steps into natural language",
+                    "type": "technique",
+                    "parent": "explanation-systems.natural-language-explanation.explanation-generation.explanation-design.implementation",
+                    "applications": [
+                      {
+                        "id": "explanation-systems.natural-language-explanation.explanation-generation.explanation-design.implementation.reasoning-translation.decision-explainer",
+                        "name": "AI Decision Explainer",
+                        "description": "System for generating comprehensive natural language explanations of AI decisions",
+                        "type": "application",
+                        "parent": "explanation-systems.natural-language-explanation.explanation-generation.explanation-design.implementation.reasoning-translation",
+                        "inputs": [
+                          {
+                            "name": "Decision Context",
+                            "description": "Context and inputs that led to the decision requiring explanation",
+                            "data_type": "context_data",
+                            "constraints": "Must include relevant factors considered in the decision process"
+                          },
+                          {
+                            "name": "Internal States",
+                            "description": "Internal system states and reasoning traces from the decision process",
+                            "data_type": "system_states",
+                            "constraints": "Must include key activation patterns and processing steps"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Natural Language Explanation",
+                            "description": "Human-readable explanation of the AI system's reasoning process",
+                            "data_type": "explanation_text",
+                            "interpretation": "Provides insights into the causal factors and reasoning steps"
+                          },
+                          {
+                            "name": "Confidence Indicators",
+                            "description": "Indications of the system's confidence in its explanation",
+                            "data_type": "confidence_metrics",
+                            "interpretation": "Shows which aspects of the explanation are most reliable"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "explanation-systems.natural-language-explanation.reasoning-narration",
+          "name": "Reasoning Narration",
+          "description": "Narrate the reasoning process of AI systems in human-understandable language",
+          "implements_component_functions": ["interpretability-tools.decision-explanation"],
+          "type": "function",
+          "parent": "explanation-systems.natural-language-explanation",
+          "specifications": [
+            {
+              "id": "explanation-systems.natural-language-explanation.reasoning-narration.narrative-design",
+              "name": "Narrative Design",
+              "description": "Technical specifications for narrative explanation of AI reasoning processes",
+              "type": "specification",
+              "parent": "explanation-systems.natural-language-explanation.reasoning-narration",
+              "requirements": [
+                "Methods for constructing coherent narratives from reasoning steps",
+                "Techniques for appropriate abstraction and detail balance",
+                "Protocols for translating technical concepts into accessible language",
+                "Standards for narrative clarity and comprehensiveness"
+              ],
+              "integration": {
+                "id": "explanation-systems.natural-language-explanation.reasoning-narration.narrative-design.implementation",
+                "name": "Narrative Design Implementation",
+                "description": "Integration approach for implementing reasoning narration",
+                "type": "integration",
+                "parent": "explanation-systems.natural-language-explanation.reasoning-narration.narrative-design",
+                "techniques": [
+                  {
+                    "id": "explanation-systems.natural-language-explanation.reasoning-narration.narrative-design.implementation.process-narration",
+                    "name": "Process Narration Technique",
+                    "description": "Technique for narrating AI reasoning processes step-by-step",
+                    "type": "technique",
+                    "parent": "explanation-systems.natural-language-explanation.reasoning-narration.narrative-design.implementation",
+                    "applications": [
+                      {
+                        "id": "explanation-systems.natural-language-explanation.reasoning-narration.narrative-design.implementation.process-narration.reasoning-narrator",
+                        "name": "AI Reasoning Narrator",
+                        "description": "System for generating step-by-step narratives of AI reasoning processes",
+                        "type": "application",
+                        "parent": "explanation-systems.natural-language-explanation.reasoning-narration.narrative-design.implementation.process-narration",
+                        "inputs": [
+                          {
+                            "name": "Reasoning Trace",
+                            "description": "Complete trace of the AI system's reasoning process",
+                            "data_type": "reasoning_graph",
+                            "constraints": "Must include sequential reasoning steps with dependencies"
+                          },
+                          {
+                            "name": "Audience Parameters",
+                            "description": "Parameters defining the target audience and appropriate level of detail",
+                            "data_type": "audience_profile",
+                            "constraints": "Must specify technical knowledge level and explanation needs"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Step-by-Step Narrative",
+                            "description": "Coherent narrative explaining the AI system's reasoning process",
+                            "data_type": "narrative_text",
+                            "interpretation": "Provides chronological explanation of reasoning with appropriate causality"
+                          },
+                          {
+                            "name": "Key Decision Points",
+                            "description": "Highlights of critical decision points in the reasoning process",
+                            "data_type": "decision_point_index",
+                            "interpretation": "Identifies pivotal moments in the reasoning that determined outcomes"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explanation-systems.decision-visualization",
+      "name": "Decision Visualization",
+      "description": "Visualizing decision factors and their relationships in intuitive formats",
+      "implements_component_capabilities": ["interpretability-tools.visualization"],
+      "type": "capability",
+      "parent": "explanation-systems",
+      "functions": [
+        {
+          "id": "explanation-systems.decision-visualization.representation-translation",
+          "name": "Representation Translation",
+          "description": "Translate internal AI representations into human-interpretable formats",
+          "implements_component_functions": ["interpretability-tools.feature-inspection"],
+          "type": "function",
+          "parent": "explanation-systems.decision-visualization",
+          "specifications": [
+            {
+              "id": "explanation-systems.decision-visualization.representation-translation.translation-framework",
+              "name": "Translation Framework",
+              "description": "Technical specifications for translating internal representations into human-interpretable formats",
+              "type": "specifications",
+              "parent": "explanation-systems.decision-visualization.representation-translation",
+              "requirements": [
+                "Methods for transforming complex model representations into intuitive visuals",
+                "Techniques for appropriate abstraction level selection",
+                "Protocols for ensuring visual representation accuracy",
+                "Standards for visual clarity and information retention"
+              ],
+              "integration": {
+                "id": "explanation-systems.decision-visualization.representation-translation.translation-framework.implementation",
+                "name": "Translation Framework Implementation",
+                "description": "Integration approach for implementing representation translation",
+                "type": "integration",
+                "parent": "explanation-systems.decision-visualization.representation-translation.translation-framework",
+                "techniques": [
+                  {
+                    "id": "explanation-systems.decision-visualization.representation-translation.translation-framework.implementation.visual-mapping",
+                    "name": "Visual Mapping Technique",
+                    "description": "Technique for mapping internal model states to visual representations",
+                    "type": "technique",
+                    "parent": "explanation-systems.decision-visualization.representation-translation.translation-framework.implementation",
+                    "applications": [
+                      {
+                        "id": "explanation-systems.decision-visualization.representation-translation.translation-framework.implementation.visual-mapping.representation-visualizer",
+                        "name": "AI Representation Visualizer",
+                        "description": "System for generating intuitive visualizations of internal AI representations",
+                        "type": "application",
+                        "parent": "explanation-systems.decision-visualization.representation-translation.translation-framework.implementation.visual-mapping",
+                        "inputs": [
+                          {
+                            "name": "Model Representations",
+                            "description": "Internal representations from the AI system being visualized",
+                            "data_type": "representation_data",
+                            "constraints": "Must include feature vectors, embeddings, or other internal states"
+                          },
+                          {
+                            "name": "Visualization Parameters",
+                            "description": "Parameters defining the visualization approach and style",
+                            "data_type": "visualization_config",
+                            "constraints": "Must specify dimensionality reduction, color mapping, and layout settings"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Visual Representation",
+                            "description": "Human-interpretable visualization of internal AI representations",
+                            "data_type": "visual_output",
+                            "interpretation": "Provides intuitive understanding of complex model internals"
+                          },
+                          {
+                            "name": "Translation Metadata",
+                            "description": "Information about the translation process and potential limitations",
+                            "data_type": "metadata",
+                            "interpretation": "Indicates reliability and information loss in the visualization"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "explanation-systems.decision-visualization.explanation-presentation",
+          "name": "Explanation Presentation",
+          "description": "Present explanations in formats optimized for human understanding and usability",
+          "implements_component_functions": ["interpretability-tools.decision-explanation"],
+          "type": "function",
+          "parent": "explanation-systems.decision-visualization",
+          "specifications": [
+            {
+              "id": "explanation-systems.decision-visualization.explanation-presentation.presentation-framework",
+              "name": "Presentation Framework",
+              "description": "Technical specifications for presenting explanations in human-optimized formats",
+              "type": "specification",
+              "parent": "explanation-systems.decision-visualization.explanation-presentation",
+              "requirements": [
+                "Methods for effective visual communication of complex concepts",
+                "Techniques for structuring explanations for maximum comprehension",
+                "Protocols for adaptive presentation based on user expertise",
+                "Standards for usability and cognitive ergonomics in explanation interfaces"
+              ],
+              "integration": {
+                "id": "explanation-systems.decision-visualization.explanation-presentation.presentation-framework.implementation",
+                "name": "Presentation Framework Implementation",
+                "description": "Integration approach for implementing explanation presentation frameworks",
+                "type": "integration",
+                "parent": "explanation-systems.decision-visualization.explanation-presentation.presentation-framework",
+                "techniques": [
+                  {
+                    "id": "explanation-systems.decision-visualization.explanation-presentation.presentation-framework.implementation.user-centered-presentation",
+                    "name": "User-Centered Presentation Technique",
+                    "description": "Technique for presenting explanations tailored to human cognitive processes",
+                    "type": "technique",
+                    "parent": "explanation-systems.decision-visualization.explanation-presentation.presentation-framework.implementation",
+                    "applications": [
+                      {
+                        "id": "explanation-systems.decision-visualization.explanation-presentation.presentation-framework.implementation.user-centered-presentation.explanation-dashboard",
+                        "name": "Explanation Dashboard",
+                        "description": "Interactive dashboard for presenting AI explanations in user-optimized formats",
+                        "type": "application",
+                        "parent": "explanation-systems.decision-visualization.explanation-presentation.presentation-framework.implementation.user-centered-presentation",
+                        "inputs": [
+                          {
+                            "name": "Explanation Content",
+                            "description": "Raw explanation content to be presented",
+                            "data_type": "explanation_data",
+                            "constraints": "Must include visual elements, textual descriptions, and interaction parameters"
+                          },
+                          {
+                            "name": "User Profile",
+                            "description": "Information about the user receiving the explanation",
+                            "data_type": "user_profile",
+                            "constraints": "Must specify expertise level, presentation preferences, and domain knowledge"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Interactive Explanation",
+                            "description": "User-optimized interactive explanation of AI decisions",
+                            "data_type": "interactive_visualization",
+                            "interpretation": "Provides intuitive understanding with appropriate detail level and interaction"
+                          },
+                          {
+                            "name": "User Feedback Metrics",
+                            "description": "Metrics on user engagement and comprehension",
+                            "data_type": "feedback_metrics",
+                            "interpretation": "Indicates explanation effectiveness and areas for improvement"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explanation-systems.counterfactual-reasoning",
+      "name": "Counterfactual Reasoning",
+      "description": "Providing counterfactual explanations of alternative outcomes and decision boundaries",
+      "implements_component_capabilities": ["interpretability-tools.causal-understanding"],
+      "type": "capability",
+      "parent": "explanation-systems",
+      "functions": [
+        {
+          "id": "explanation-systems.counterfactual-reasoning.verification-support",
+          "name": "Verification Support",
+          "description": "Support verification of AI behavior through comprehensive explanations",
+          "implements_component_functions": ["interpretability-tools.decision-explanation"],
+          "type": "function",
+          "parent": "explanation-systems.counterfactual-reasoning",
+          "specifications": [
+            {
+              "id": "explanation-systems.counterfactual-reasoning.verification-support.verification-framework",
+              "name": "Verification Framework",
+              "description": "Technical specifications for supporting verification through counterfactual explanations",
+              "type": "specification",
+              "parent": "explanation-systems.counterfactual-reasoning.verification-support",
+              "requirements": [
+                "Methods for generating informative counterfactual cases",
+                "Techniques for boundary case identification and exploration",
+                "Protocols for verification-targeted counterfactual generation",
+                "Standards for verification coverage and completeness"
+              ],
+              "integration": {
+                "id": "explanation-systems.counterfactual-reasoning.verification-support.verification-framework.implementation",
+                "name": "Verification Framework Implementation",
+                "description": "Integration approach for implementing verification-supporting counterfactuals",
+                "type": "integration",
+                "parent": "explanation-systems.counterfactual-reasoning.verification-support.verification-framework",
+                "techniques": [
+                  {
+                    "id": "explanation-systems.counterfactual-reasoning.verification-support.verification-framework.implementation.boundary-exploration",
+                    "name": "Boundary Exploration Technique",
+                    "description": "Technique for exploring decision boundaries through counterfactual cases",
+                    "type": "technique",
+                    "parent": "explanation-systems.counterfactual-reasoning.verification-support.verification-framework.implementation",
+                    "applications": [
+                      {
+                        "id": "explanation-systems.counterfactual-reasoning.verification-support.verification-framework.implementation.boundary-exploration.verification-explorer",
+                        "name": "Counterfactual Verification Explorer",
+                        "description": "System for generating counterfactual cases to verify AI behavior and decision boundaries",
+                        "type": "application",
+                        "parent": "explanation-systems.counterfactual-reasoning.verification-support.verification-framework.implementation.boundary-exploration",
+                        "inputs": [
+                          {
+                            "name": "System Behavior",
+                            "description": "Behavioral data from the AI system being verified",
+                            "data_type": "behavior_data",
+                            "constraints": "Must include decision outputs and internal state information"
+                          },
+                          {
+                            "name": "Verification Requirements",
+                            "description": "Specific verification requirements to be addressed",
+                            "data_type": "verification_spec",
+                            "constraints": "Must specify aspects of behavior requiring verification"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Counterfactual Test Cases",
+                            "description": "Generated counterfactual cases that probe decision boundaries",
+                            "data_type": "counterfactual_set",
+                            "interpretation": "Provides test cases for verifying system behavior at critical boundaries"
+                          },
+                          {
+                            "name": "Verification Assessment",
+                            "description": "Assessment of system behavior based on counterfactual responses",
+                            "data_type": "verification_report",
+                            "interpretation": "Summarizes verification findings and potential issues"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "explanation-systems.counterfactual-reasoning.misalignment-identification",
+          "name": "Misalignment Identification",
+          "description": "Help identify potential misalignment through explanation of model reasoning",
+          "implements_component_functions": ["interpretability-tools.decision-explanation"],
+          "type": "function",
+          "parent": "explanation-systems.counterfactual-reasoning",
+          "specifications": [
+            {
+              "id": "explanation-systems.counterfactual-reasoning.misalignment-identification.misalignment-detection",
+              "name": "Misalignment Detection Framework",
+              "description": "Technical specifications for detecting misalignment through counterfactual reasoning",
+              "type": "specification",
+              "parent": "explanation-systems.counterfactual-reasoning.misalignment-identification",
+              "requirements": [
+                "Methods for generating alignment-probing counterfactuals",
+                "Techniques for identifying inconsistencies in model behavior",
+                "Protocols for systematic exploration of misalignment edge cases",
+                "Standards for misalignment classification and reporting"
+              ],
+              "integration": {
+                "id": "explanation-systems.counterfactual-reasoning.misalignment-identification.misalignment-detection.implementation",
+                "name": "Misalignment Detection Implementation",
+                "description": "Integration approach for implementing misalignment detection via counterfactuals",
+                "type": "integration",
+                "parent": "explanation-systems.counterfactual-reasoning.misalignment-identification.misalignment-detection",
+                "techniques": [
+                  {
+                    "id": "explanation-systems.counterfactual-reasoning.misalignment-identification.misalignment-detection.implementation.behavioral-inconsistency",
+                    "name": "Behavioral Inconsistency Technique",
+                    "description": "Technique for identifying behavioral inconsistencies through counterfactual cases",
+                    "type": "technique",
+                    "parent": "explanation-systems.counterfactual-reasoning.misalignment-identification.misalignment-detection.implementation",
+                    "applications": [
+                      {
+                        "id": "explanation-systems.counterfactual-reasoning.misalignment-identification.misalignment-detection.implementation.behavioral-inconsistency.misalignment-detector",
+                        "name": "Counterfactual Misalignment Detector",
+                        "description": "System for detecting potential misalignment through counterfactual analysis",
+                        "type": "application",
+                        "parent": "explanation-systems.counterfactual-reasoning.misalignment-identification.misalignment-detection.implementation.behavioral-inconsistency",
+                        "inputs": [
+                          {
+                            "name": "System Behavior",
+                            "description": "Behavioral data from the AI system being analyzed",
+                            "data_type": "behavior_data",
+                            "constraints": "Must include decision outputs across varied scenarios"
+                          },
+                          {
+                            "name": "Alignment Specifications",
+                            "description": "Specifications of intended alignment properties",
+                            "data_type": "alignment_spec",
+                            "constraints": "Must define expected behavior and value-aligned responses"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Misalignment Indicators",
+                            "description": "Indicators of potential misalignment with supporting evidence",
+                            "data_type": "misalignment_report",
+                            "interpretation": "Highlights areas where system behavior deviates from alignment expectations"
+                          },
+                          {
+                            "name": "Counterfactual Examples",
+                            "description": "Specific counterfactual cases demonstrating misalignment",
+                            "data_type": "example_set",
+                            "interpretation": "Provides concrete examples of scenarios where misalignment occurs"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explanation-systems.adaptive-explanation",
+      "name": "Adaptive Explanation",
+      "description": "Adapting explanations to different user expertise levels and contexts",
+      "implements_component_capabilities": ["interpretability-tools.explanation-capability", "interpretability-tools.conceptual-understanding"],
+      "type": "capability",
+      "parent": "explanation-systems",
+      "functions": [
+        {
+          "id": "explanation-systems.adaptive-explanation.trust-building",
+          "name": "Trust Building",
+          "description": "Build appropriate trust through transparent explanations of AI behavior",
+          "implements_component_functions": ["interpretability-tools.decision-explanation"],
+          "type": "function",
+          "parent": "explanation-systems.adaptive-explanation",
+          "specifications": [
+            {
+              "id": "explanation-systems.adaptive-explanation.trust-building.trust-framework",
+              "name": "Trust Building Framework",
+              "description": "Technical specifications for building appropriate trust through transparent explanations",
+              "type": "specification",
+              "parent": "explanation-systems.adaptive-explanation.trust-building",
+              "requirements": [
+                "Methods for generating trust-calibrated explanations",
+                "Techniques for appropriate transparency level selection",
+                "Protocols for building warranted trust without over-trust",
+                "Standards for measuring and evaluating explanation trustworthiness"
+              ],
+              "integration": {
+                "id": "explanation-systems.adaptive-explanation.trust-building.trust-framework.implementation",
+                "name": "Trust Framework Implementation",
+                "description": "Integration approach for implementing trust-building explanations",
+                "type": "integration",
+                "parent": "explanation-systems.adaptive-explanation.trust-building.trust-framework",
+                "techniques": [
+                  {
+                    "id": "explanation-systems.adaptive-explanation.trust-building.trust-framework.implementation.calibrated-transparency",
+                    "name": "Calibrated Transparency Technique",
+                    "description": "Technique for providing appropriate transparency to build warranted trust",
+                    "type": "technique",
+                    "parent": "explanation-systems.adaptive-explanation.trust-building.trust-framework.implementation",
+                    "applications": [
+                      {
+                        "id": "explanation-systems.adaptive-explanation.trust-building.trust-framework.implementation.calibrated-transparency.trust-calibration",
+                        "name": "Trust Calibration System",
+                        "description": "System for calibrating user trust through tailored explanations",
+                        "type": "application",
+                        "parent": "explanation-systems.adaptive-explanation.trust-building.trust-framework.implementation.calibrated-transparency",
+                        "inputs": [
+                          {
+                            "name": "System Reliability",
+                            "description": "Reliability data of the AI system being explained",
+                            "data_type": "reliability_metrics",
+                            "constraints": "Must include known limitations and confidence levels across domains"
+                          },
+                          {
+                            "name": "User Trust Profile",
+                            "description": "Profile of the user's current trust level and calibration needs",
+                            "data_type": "trust_profile",
+                            "constraints": "Must include trust disposition, domain knowledge, and interaction history"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Trust-Calibrated Explanation",
+                            "description": "Explanation designed to build appropriately calibrated trust",
+                            "data_type": "explanation_package",
+                            "interpretation": "Provides transparency that matches the system's actual capabilities"
+                          },
+                          {
+                            "name": "Trust Evaluation Metrics",
+                            "description": "Metrics for evaluating trust calibration effectiveness",
+                            "data_type": "trust_metrics",
+                            "interpretation": "Measures alignment between user trust and system reliability"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "explanation-systems.adaptive-explanation.oversight-support",
+              "name": "Oversight Support",
+              "description": "Support human oversight through accessible and adaptive explanations",
+              "implements_component_functions": ["interpretability-tools.decision-explanation"],
+              "type": "function",
+              "parent": "explanation-systems.adaptive-explanation",
+              "specifications": [
+                {
+                  "id": "explanation-systems.adaptive-explanation.oversight-support.oversight-framework",
+                  "name": "Oversight Support Framework",
+                  "description": "Technical specifications for supporting oversight through adaptive explanations",
+                  "type": "specification",
+                  "parent": "explanation-systems.adaptive-explanation.oversight-support",
+                  "requirements": [
+                    "Methods for generating oversight-optimized explanations",
+                    "Techniques for highlighting decision aspects requiring oversight",
+                    "Protocols for adapting explanations to oversight requirements",
+                    "Standards for explanation completeness and verification"
+                  ],
+                  "integration": {
+                    "id": "explanation-systems.adaptive-explanation.oversight-support.oversight-framework.implementation",
+                    "name": "Oversight Framework Implementation",
+                    "description": "Integration approach for implementing oversight-supporting explanations",
+                    "type": "integration",
+                    "parent": "explanation-systems.adaptive-explanation.oversight-support.oversight-framework",
+                    "techniques": [
+                      {
+                        "id": "explanation-systems.adaptive-explanation.oversight-support.oversight-framework.implementation.oversight-focused-adaptation",
+                        "name": "Oversight-Focused Adaptation Technique",
+                        "description": "Technique for adapting explanations to oversight needs",
+                        "type": "technique",
+                        "parent": "explanation-systems.adaptive-explanation.oversight-support.oversight-framework.implementation",
+                        "applications": [
+                          {
+                            "id": "explanation-systems.adaptive-explanation.oversight-support.oversight-framework.implementation.oversight-focused-adaptation.oversight-assistant",
+                            "name": "Oversight Explanation Assistant",
+                            "description": "System providing adaptive explanations optimized for human oversight",
+                            "type": "application",
+                            "parent": "explanation-systems.adaptive-explanation.oversight-support.oversight-framework.implementation.oversight-focused-adaptation",
+                            "inputs": [
+                              {
+                                "name": "System Decision Data",
+                                "description": "Decision data from the AI system requiring oversight",
+                                "data_type": "decision_data",
+                                "constraints": "Must include decision factors, confidence levels, and context"
+                              },
+                              {
+                                "name": "Oversight Requirements",
+                                "description": "Specific oversight requirements and focus areas",
+                                "data_type": "oversight_spec",
+                                "constraints": "Must specify oversight priorities, verification needs, and required detail level"
+                              }
+                            ],
+                            "outputs": [
+                              {
+                                "name": "Oversight-Optimized Explanation",
+                                "description": "Explanation tailored for effective human oversight",
+                                "data_type": "oversight_explanation",
+                                "interpretation": "Highlights key aspects requiring verification and oversight attention"
+                              },
+                              {
+                                "name": "Verification Points",
+                                "description": "Specific points in the decision process requiring verification",
+                                "data_type": "verification_points",
+                                "interpretation": "Provides structured guidance for thorough oversight"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explanation-systems.interactive-exploration",
+      "name": "Interactive Exploration",
+      "description": "Supporting interactive exploration of AI reasoning through responsive interfaces",
+      "implements_component_capabilities": ["interpretability-tools.explanation-capability", "interpretability-tools.conceptual-understanding"],
+      "type": "capability",
+      "parent": "explanation-systems",
+      "functions": [
+        {
+          "id": "explanation-systems.interactive-exploration.oversight-support",
+          "name": "Oversight Support",
+          "description": "Support human oversight through accessible and adaptive explanations",
+          "implements_component_functions": ["interpretability-tools.decision-explanation"],
+          "type": "function",
+          "parent": "explanation-systems.interactive-exploration",
+          "specifications": [
+            {
+              "id": "explanation-systems.interactive-exploration.oversight-support.interactive-oversight",
+              "name": "Interactive Oversight Framework",
+              "description": "Technical specifications for supporting oversight through interactive exploration interfaces",
+              "type": "specifications",
+              "parent": "explanation-systems.interactive-exploration.oversight-support",
+              "requirements": [
+                "Methods for creating interactive oversight interfaces",
+                "Techniques for responsive exploration of decision factors",
+                "Protocols for effective oversight interaction patterns",
+                "Standards for oversight completeness and verification"
+              ],
+              "integration": {
+                "id": "explanation-systems.interactive-exploration.oversight-support.interactive-oversight.implementation",
+                "name": "Interactive Oversight Implementation",
+                "description": "Integration approach for implementing interactive oversight exploration",
+                "type": "integration",
+                "parent": "explanation-systems.interactive-exploration.oversight-support.interactive-oversight",
+                "techniques": [
+                  {
+                    "id": "explanation-systems.interactive-exploration.oversight-support.interactive-oversight.implementation.interactive-investigation",
+                    "name": "Interactive Investigation Technique",
+                    "description": "Technique for interactive investigation of AI decisions for oversight",
+                    "type": "technique",
+                    "parent": "explanation-systems.interactive-exploration.oversight-support.interactive-oversight.implementation",
+                    "applications": [
+                      {
+                        "id": "explanation-systems.interactive-exploration.oversight-support.interactive-oversight.implementation.interactive-investigation.exploration-interface",
+                        "name": "Interactive Oversight Explorer",
+                        "description": "Interactive interface for exploring AI decisions to support human oversight",
+                        "type": "application",
+                        "parent": "explanation-systems.interactive-exploration.oversight-support.interactive-oversight.implementation.interactive-investigation",
+                        "inputs": [
+                          {
+                            "name": "Decision Process",
+                            "description": "Complete decision process data from the AI system",
+                            "data_type": "decision_trace",
+                            "constraints": "Must include full decision path and intermediate states"
+                          },
+                          {
+                            "name": "User Interactions",
+                            "description": "Oversight user's exploration actions and queries",
+                            "data_type": "interaction_stream",
+                            "constraints": "Must capture exploration paths and information needs"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Interactive Decision Map",
+                            "description": "Interactive visualization of decision process for exploration",
+                            "data_type": "interactive_map",
+                            "interpretation": "Enables navigation through decision components with appropriate detail"
+                          },
+                          {
+                            "name": "Exploration History",
+                            "description": "Record of oversight exploration path and findings",
+                            "data_type": "exploration_log",
+                            "interpretation": "Documents oversight coverage and discovered insights"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "explanation-systems.interactive-exploration.misalignment-identification",
+          "name": "Misalignment Identification",
+          "description": "Help identify potential misalignment through explanation of model reasoning",
+          "implements_component_functions": ["interpretability-tools.decision-explanation"],
+          "type": "function",
+          "parent": "explanation-systems.interactive-exploration",
+          "specifications": [
+            {
+              "id": "explanation-systems.interactive-exploration.misalignment-identification.interactive-detection",
+              "name": "Interactive Detection Framework",
+              "description": "Technical specifications for identifying misalignment through interactive exploration",
+              "type": "specifications",
+              "parent": "explanation-systems.interactive-exploration.misalignment-identification",
+              "requirements": [
+                "Methods for interactive exploration of potential misalignment",
+                "Techniques for user-guided misalignment detection",
+                "Protocols for collaborative human-AI misalignment identification",
+                "Standards for misalignment evidence collection and verification"
+              ],
+              "integration": {
+                "id": "explanation-systems.interactive-exploration.misalignment-identification.interactive-detection.implementation",
+                "name": "Interactive Detection Implementation",
+                "description": "Integration approach for implementing interactive misalignment detection",
+                "type": "integration",
+                "parent": "explanation-systems.interactive-exploration.misalignment-identification.interactive-detection",
+                "techniques": [
+                  {
+                    "id": "explanation-systems.interactive-exploration.misalignment-identification.interactive-detection.implementation.collaborative-investigation",
+                    "name": "Collaborative Investigation Technique",
+                    "description": "Technique for collaborative human-AI investigation of potential misalignment",
+                    "type": "technique",
+                    "parent": "explanation-systems.interactive-exploration.misalignment-identification.interactive-detection.implementation",
+                    "applications": [
+                      {
+                        "id": "explanation-systems.interactive-exploration.misalignment-identification.interactive-detection.implementation.collaborative-investigation.misalignment-explorer",
+                        "name": "Interactive Misalignment Explorer",
+                        "description": "Interactive system for exploring and identifying potential misalignment in AI behavior",
+                        "type": "application",
+                        "parent": "explanation-systems.interactive-exploration.misalignment-identification.interactive-detection.implementation.collaborative-investigation",
+                        "inputs": [
+                          {
+                            "name": "System Behavior",
+                            "description": "Complete behavior data from the AI system being analyzed",
+                            "data_type": "behavior_data",
+                            "constraints": "Must include decision pathways and intermediate representations"
+                          },
+                          {
+                            "name": "Exploration Queries",
+                            "description": "User queries and exploration directives",
+                            "data_type": "query_stream",
+                            "constraints": "Must allow free-form investigation of system behavior"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Misalignment Evidence",
+                            "description": "Collected evidence of potential misalignment",
+                            "data_type": "evidence_collection",
+                            "interpretation": "Documents instances and patterns of potentially misaligned behavior"
+                          },
+                          {
+                            "name": "Investigation Trail",
+                            "description": "Record of the investigation process and discoveries",
+                            "data_type": "investigation_log",
+                            "interpretation": "Captures the reasoning process that led to misalignment findings"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  
+  "overview": {
+    "_documentation": "This section provides a concise overview of the explanation systems subcomponent, its purpose, capabilities, and functions for making AI systems understandable to humans.",
+    "purpose": "To transform complex AI decision processes into understandable formats that enable humans to verify, critique, and trust AI reasoning and behaviors through accessible explanations",
+    "key_capabilities": [
+      {
+        "id": "explanation-systems.natural-language-explanation",
+        "name": "Natural Language Explanation",
+        "description": "Generating natural language explanations of model decisions and reasoning",
+        "implements_component_capabilities": ["interpretability-tools.explanation-capability"],
+        "enables_functions": ["representation-translation", "trust-building"],
+        "supported_by_literature": ["Lundberg2017", "Kim2018", "Ribeiro2016"]
+      },
+      {
+        "id": "explanation-systems.decision-visualization",
+        "name": "Decision Visualization",
+        "description": "Visualizing decision factors and their relationships in intuitive formats",
+        "implements_component_capabilities": ["interpretability-tools.visualization"],
+        "enables_functions": ["representation-translation", "oversight-support"],
+        "supported_by_literature": ["Olah2017", "Hohman2019", "Wexler2020"]
+      },
+      {
+        "id": "explanation-systems.counterfactual-reasoning",
+        "name": "Counterfactual Reasoning",
+        "description": "Providing counterfactual explanations of alternative outcomes and decision boundaries",
+        "implements_component_capabilities": ["interpretability-tools.causal-understanding"],
+        "enables_functions": ["misalignment-identification", "verification-support"],
+        "supported_by_literature": ["Wachter2018", "Miller2019", "Pearl2018"]
+      },
+      {
+        "id": "explanation-systems.adaptive-explanation",
+        "name": "Adaptive Explanation",
+        "description": "Adapting explanations to different user expertise levels and contexts",
+        "implements_component_capabilities": ["interpretability-tools.explanation-capability", "interpretability-tools.conceptual-understanding"],
+        "enables_functions": ["trust-building", "oversight-support"],
+        "supported_by_literature": ["Wang2019", "Sokol2020", "Lage2019"]
+      },
+      {
+        "id": "explanation-systems.interactive-exploration",
+        "name": "Interactive Exploration",
+        "description": "Supporting interactive exploration of AI reasoning through responsive interfaces",
+        "implements_component_capabilities": ["interpretability-tools.explanation-capability", "interpretability-tools.conceptual-understanding"],
+        "enables_functions": ["oversight-support", "misalignment-identification"],
+        "supported_by_literature": ["Olah2018", "Wexler2020", "Hohman2019"]
+      }
+    ],
+    "primary_functions": [
+      {
+        "id": "explanation-systems.explanation-generation",
+        "name": "Explanation Generation",
+        "description": "Generate comprehensive explanations of AI system behavior and decisions",
+        "implements_component_functions": ["interpretability-tools.decision-explanation"],
+        "enabled_by_capabilities": ["explanation-systems.natural-language-explanation", "explanation-systems.decision-visualization"],
+        "implemented_by_techniques": ["explanation-systems.post-hoc-explanation", "explanation-systems.self-explaining-models"],
+        "implemented_by_applications": ["explanation-systems.feature-attribution", "explanation-systems.decision-rationale-generation"],
+        "supported_by_literature": ["Ribeiro2016", "Lundberg2017", "Wang2019"]
+      },
+      {
+        "id": "explanation-systems.reasoning-narration",
+        "name": "Reasoning Narration",
+        "description": "Narrate the reasoning process behind AI decisions in human-understandable terms",
+        "implements_component_functions": ["interpretability-tools.decision-explanation"],
+        "enabled_by_capabilities": ["explanation-systems.natural-language-explanation", "explanation-systems.counterfactual-reasoning"],
+        "implemented_by_techniques": ["explanation-systems.self-explaining-models", "explanation-systems.contrastive-explanation"],
+        "implemented_by_applications": ["explanation-systems.decision-rationale-generation", "explanation-systems.class-differentiation"],
+        "supported_by_literature": ["Miller2019", "Wang2019", "Chen2019"]
+      },
+      {
+        "id": "explanation-systems.explanation-presentation",
+        "name": "Explanation Presentation",
+        "description": "Present explanations in formats optimized for human understanding and usability",
+        "implements_component_functions": ["interpretability-tools.decision-explanation"],
+        "enabled_by_capabilities": ["explanation-systems.adaptive-explanation", "explanation-systems.decision-visualization"],
+        "implemented_by_techniques": ["explanation-systems.interactive-explanation", "explanation-systems.post-hoc-explanation"],
+        "implemented_by_applications": ["explanation-systems.interactive-visualization", "explanation-systems.activation-visualization"],
+        "supported_by_literature": ["Wexler2020", "Hohman2019", "Weld2019"]
+      },
+      {
+        "id": "explanation-systems.representation-translation",
+        "name": "Representation Translation",
+        "description": "Translate internal AI representations into human-interpretable formats",
+        "implements_component_functions": ["interpretability-tools.explanation-generation"],
+        "enabled_by_capabilities": ["explanation-systems.natural-language-explanation", "explanation-systems.decision-visualization"],
+        "implemented_by_techniques": ["explanation-systems.post-hoc-explanation", "explanation-systems.self-explaining-models"],
+        "implemented_by_applications": ["explanation-systems.feature-attribution", "explanation-systems.activation-visualization"]
+      },
+      {
+        "id": "explanation-systems.verification-support",
+        "name": "Verification Support",
+        "description": "Support verification of AI behavior through comprehensive explanations",
+        "implements_component_functions": ["interpretability-tools.decision-explanation"],
+        "enabled_by_capabilities": ["explanation-systems.decision-visualization", "explanation-systems.counterfactual-reasoning"],
+        "implemented_by_techniques": ["explanation-systems.post-hoc-explanation", "explanation-systems.contrastive-explanation"],
+        "implemented_by_applications": ["explanation-systems.counterfactual-generation", "explanation-systems.trade-off-exploration"]
+      },
+      {
+        "id": "explanation-systems.misalignment-identification",
+        "name": "Misalignment Identification",
+        "description": "Help identify potential misalignment through explanation of model reasoning",
+        "implements_component_functions": ["interpretability-tools.decision-explanation"],
+        "enabled_by_capabilities": ["explanation-systems.counterfactual-reasoning", "explanation-systems.interactive-exploration"],
+        "implemented_by_techniques": ["explanation-systems.contrastive-explanation", "explanation-systems.interactive-explanation"],
+        "implemented_by_applications": ["explanation-systems.class-differentiation", "explanation-systems.what-if-analysis"]
+      },
+      {
+        "id": "explanation-systems.oversight-support",
+        "name": "Oversight Support",
+        "description": "Support human oversight through accessible and adaptive explanations",
+        "implements_component_functions": ["interpretability-tools.decision-explanation"],
+        "enabled_by_capabilities": ["explanation-systems.adaptive-explanation", "explanation-systems.interactive-exploration"],
+        "implemented_by_techniques": ["explanation-systems.self-explaining-models", "explanation-systems.interactive-explanation"],
+        "implemented_by_applications": ["explanation-systems.decision-rationale-generation", "explanation-systems.query-based-explanation"]
+      },
+      {
+        "id": "explanation-systems.trust-building",
+        "name": "Trust Building",
+        "description": "Build appropriate trust through transparent explanations of AI behavior",
+        "implements_component_functions": ["interpretability-tools.explanation-dissemination"],
+        "enabled_by_capabilities": ["explanation-systems.adaptive-explanation", "explanation-systems.natural-language-explanation"],
+        "implemented_by_techniques": ["explanation-systems.self-explaining-models", "explanation-systems.interactive-explanation"],
+        "implemented_by_applications": ["explanation-systems.decision-rationale-generation", "explanation-systems.interactive-visualization"]
+      }
+    ]
+  },
+  
+  "implementation": {
+    "_documentation": "This section details the techniques and applications used to implement explanation systems for AI alignment.",
+    "techniques": [
+      {
+        "id": "explanation-systems.visualization-generation",
+        "name": "Visualization Generation",
+        "description": "Methods for generating visual representations of AI behavior and decision processes",
+        "implements_integration_approaches": ["interpretability-tools.feature-analysis-integration"],
+        "implements_functions": ["explanation-systems.explanation-presentation", "explanation-systems.representation-translation"],
+        "addresses_considerations": ["explanation-complexity", "human-interpretability"],
+        "supported_by_literature": ["Wexler2020", "Hohman2019", "Olah2017"],
+        "uses_inputs": ["model-internals", "model-outputs", "feature-importance"],
+        "produces_outputs": ["visual-explanations", "decision-visualizations", "process-diagrams"],
+        "applications": [
+          {
+            "id": "explanation-systems.visual-summary",
+            "name": "Visual Summary Generation",
+            "description": "Creating visual summaries of complex model behavior",
+            "fulfills_functions": ["explanation-systems.explanation-presentation"],
+            "uses_inputs": ["model-outputs", "feature-importance"],
+            "produces_outputs": ["visual-explanations", "decision-diagrams"],
+            "examples": [
+              "Decision trees approximating complex model behavior",
+              "Visual summaries of reasoning steps in AI systems",
+              "Graphical representations of decision hierarchies"
+            ],
+            "supported_by_literature": ["Wexler2020", "Hohman2019", "Olah2017"]
+          }
+        ]
+      },
+      {
+        "id": "explanation-systems.feature-highlighting",
+        "name": "Feature Highlighting",
+        "description": "Methods for highlighting important features that influenced AI decisions",
+        "implements_integration_approaches": ["interpretability-tools.feature-analysis-integration"],
+        "implements_functions": ["explanation-systems.explanation-generation", "explanation-systems.representation-translation"],
+        "addresses_considerations": ["explanation-fidelity", "human-interpretability"],
+        "supported_by_literature": ["Ribeiro2016", "Lundberg2017", "Simonyan2014"],
+        "uses_inputs": ["feature-importance", "input-features", "model-outputs"],
+        "produces_outputs": ["highlighted-features", "importance-visualizations"],
+        "applications": [
+          {
+            "id": "explanation-systems.importance-highlighting",
+            "name": "Importance Highlighting",
+            "description": "Visually highlighting features based on their importance to decisions",
+            "fulfills_functions": ["explanation-systems.explanation-generation"],
+            "uses_inputs": ["feature-importance", "input-features"],
+            "produces_outputs": ["highlighted-features", "importance-visualizations"],
+            "examples": [
+              "Text highlighting in NLP models showing important words and phrases",
+              "Heatmaps overlaid on images showing important regions",
+              "Feature importance bars for tabular data models"
+            ],
+            "supported_by_literature": ["Ribeiro2016", "Lundberg2017", "Simonyan2014"]
+          }
+        ]
+      },
+      {
+        "id": "explanation-systems.post-hoc-explanation",
+        "name": "Post-hoc Explanation",
+        "description": "Methods that explain AI decisions after they've been made by analyzing model behavior without requiring changes to the underlying model",
+        "implements_functions": ["explanation-systems.representation-translation", "explanation-systems.verification-support"],
+        "addresses_considerations": ["explanation-fidelity", "explanation-complexity"],
+        "supported_by_literature": ["Ribeiro2016", "Lundberg2017"],
+        "uses_inputs": ["model-outputs", "model-internals", "input-features"],
+        "produces_outputs": ["feature-importance", "visual-explanations", "counterfactual-examples"],
+        "applications": [
+          {
+            "id": "explanation-systems.feature-attribution",
+            "name": "Feature Attribution",
+            "description": "Explaining decisions by attributing importance to input features",
+            "fulfills_functions": ["explanation-systems.representation-translation"],
+            "uses_inputs": ["model-outputs", "input-features"],
+            "produces_outputs": ["feature-importance", "attribution-maps"],
+            "examples": [
+              "LIME explanations highlighting important text segments in NLP models",
+              "SHAP values showing feature contributions to predictions",
+              "Integrated gradients showing pixel-level contributions to image classifications"
+            ],
+            "supported_by_literature": ["Ribeiro2016", "Lundberg2017", "Doshi-Velez2017"]
+          },
+          {
+            "id": "explanation-systems.activation-visualization",
+            "name": "Activation Visualization",
+            "description": "Visualizing neuron activations to reveal internal representations",
+            "fulfills_functions": ["explanation-systems.representation-translation"],
+            "uses_inputs": ["model-internals", "layer-activations"],
+            "produces_outputs": ["activation-maps", "feature-visualizations"],
+            "examples": [
+              "Channel visualizations for convolutional neural networks",
+              "Attention pattern visualization in transformer models",
+              "Neuron activation maps across different inputs"
+            ],
+            "supported_by_literature": ["Olah2017", "Olah2018", "Elhage2021"]
+          },
+          {
+            "id": "explanation-systems.counterfactual-generation",
+            "name": "Counterfactual Generation",
+            "description": "Generating counterfactual examples to explain decision boundaries",
+            "fulfills_functions": ["explanation-systems.verification-support"],
+            "uses_inputs": ["model-outputs", "input-features", "decision-boundaries"],
+            "produces_outputs": ["counterfactual-examples", "minimal-changes"],
+            "examples": [
+              "Minimal input changes that would change a model's decision",
+              "Generating alternative scenarios that would lead to different outcomes",
+              "Identifying decision boundary examples for verification"
+            ],
+            "supported_by_literature": ["Wachter2018", "Pearl2018", "Miller2019"]
+          }
+        ]
+      },
+      {
+        "id": "explanation-systems.self-explaining-models",
+        "name": "Self-Explaining Models",
+        "description": "Models designed from the ground up to provide explanations alongside their decisions",
+        "implements_functions": ["explanation-systems.representation-translation", "explanation-systems.oversight-support", "explanation-systems.trust-building"],
+        "addresses_considerations": ["explanation-fidelity", "human-interpretability"],
+        "supported_by_literature": ["Alvarez-Melis2018", "Chen2019"],
+        "uses_inputs": ["input-features", "training-data", "explanation-targets"],
+        "produces_outputs": ["decisions-with-explanations", "reasoning-steps", "attention-weights"],
+        "applications": [
+          {
+            "id": "explanation-systems.attention-visualization",
+            "name": "Attention Visualization",
+            "description": "Revealing model attention patterns to explain focus areas",
+            "fulfills_functions": ["explanation-systems.representation-translation"],
+            "uses_inputs": ["attention-weights", "input-features"],
+            "produces_outputs": ["attention-heatmaps", "focus-explanations"],
+            "examples": [
+              "Transformer attention visualization showing word relationships",
+              "Visual attention maps for image recognition models",
+              "Attention flow tracking across multiple processing layers"
+            ],
+            "supported_by_literature": ["Elhage2021", "Olah2017", "Olah2018"]
+          },
+          {
+            "id": "explanation-systems.decision-rationale-generation",
+            "name": "Decision Rationale Generation",
+            "description": "Generating natural language rationales for decisions",
+            "fulfills_functions": ["explanation-systems.oversight-support", "explanation-systems.trust-building"],
+            "uses_inputs": ["model-reasoning", "decision-context"],
+            "produces_outputs": ["reasoning-narratives", "decision-justifications"],
+            "examples": [
+              "Step-by-step reasoning traces from large language models",
+              "Justifications for recommendations in recommendation systems",
+              "Explanation of factors considered in risk assessment systems"
+            ],
+            "supported_by_literature": ["Chen2019", "Kim2018", "Wang2019"]
+          },
+          {
+            "id": "explanation-systems.prototype-comparison",
+            "name": "Prototype Comparison",
+            "description": "Explaining decisions by comparing to learned prototypical cases",
+            "fulfills_functions": ["explanation-systems.representation-translation"],
+            "uses_inputs": ["prototypical-examples", "similarity-metrics"],
+            "produces_outputs": ["similar-examples", "comparison-metrics"],
+            "examples": [
+              "Case-based explanations referencing prototypical examples",
+              "Similarity metrics to training examples for decisions",
+              "Explanation by analogy to known reference cases"
+            ],
+            "supported_by_literature": ["Kim2018", "Alvarez-Melis2018", "Chen2019"]
+          }
+        ]
+      },
+      {
+        "id": "explanation-systems.interactive-explanation",
+        "name": "Interactive Explanation",
+        "description": "Explanation methods that allow users to interact with explanations to explore model behavior",
+        "implements_functions": ["explanation-systems.misalignment-identification", "explanation-systems.oversight-support", "explanation-systems.trust-building"],
+        "addresses_considerations": ["explanation-adaptivity", "human-interpretability"],
+        "supported_by_literature": ["Weld2019", "Kulesza2015"],
+        "uses_inputs": ["user-questions", "interaction-history", "model-behavior"],
+        "produces_outputs": ["interactive-visualizations", "query-responses", "adaptive-explanations"],
+        "applications": [
+          {
+            "id": "explanation-systems.query-based-explanation",
+            "name": "Query-Based Explanation",
+            "description": "Allowing users to ask specific questions about model behavior",
+            "fulfills_functions": ["explanation-systems.oversight-support", "explanation-systems.misalignment-identification"],
+            "uses_inputs": ["user-questions", "model-behavior"],
+            "produces_outputs": ["targeted-explanations", "answer-traces"],
+            "examples": [
+              "Question-answering interfaces for model behavior",
+              "Natural language queries about decision factors",
+              "Structured query interfaces for model exploration"
+            ],
+            "supported_by_literature": ["Sokol2020", "Lage2019", "Wang2019"]
+          },
+          {
+            "id": "explanation-systems.interactive-visualization",
+            "name": "Interactive Visualization",
+            "description": "Visual interfaces that allow exploration of model behavior",
+            "fulfills_functions": ["explanation-systems.trust-building"],
+            "uses_inputs": ["user-interactions", "model-behavior"],
+            "produces_outputs": ["interactive-dashboards", "explorable-visualizations"],
+            "examples": [
+              "Interactive dashboards showing feature importance",
+              "Decision boundary exploration tools",
+              "Model behavior visualization with adjustable parameters"
+            ],
+            "supported_by_literature": ["Wexler2020", "Hohman2019", "Olah2018"]
+          },
+          {
+            "id": "explanation-systems.what-if-analysis",
+            "name": "What-If Analysis",
+            "description": "Tools allowing users to explore counterfactual scenarios",
+            "fulfills_functions": ["explanation-systems.misalignment-identification"],
+            "uses_inputs": ["user-modifications", "model-behavior"],
+            "produces_outputs": ["counterfactual-predictions", "sensitivity-analyses"],
+            "examples": [
+              "Interactive input modification with updated predictions",
+              "Sensitivity analysis tools for feature changes",
+              "Model response exploration across input variations"
+            ],
+            "supported_by_literature": ["Wachter2018", "Wexler2020", "Pearl2018"]
+          }
+        ]
+      },
+      {
+        "id": "explanation-systems.contrastive-explanation",
+        "name": "Contrastive Explanation",
+        "description": "Explanation methods that highlight differences between different decisions or options",
+        "implements_functions": ["explanation-systems.verification-support", "explanation-systems.misalignment-identification"],
+        "addresses_considerations": ["explanation-adaptivity", "explanation-fidelity"],
+        "supported_by_literature": ["Miller2019", "Dhurandhar2018"],
+        "uses_inputs": ["class-differences", "decision-boundaries", "contrast-cases"],
+        "produces_outputs": ["differentiating-features", "contrastive-reasons", "distinguishing-factors"],
+        "applications": [
+          {
+            "id": "explanation-systems.class-differentiation",
+            "name": "Class Differentiation",
+            "description": "Explaining what differentiates one class from another",
+            "fulfills_functions": ["explanation-systems.misalignment-identification"],
+            "uses_inputs": ["class-definitions", "decision-boundaries"],
+            "produces_outputs": ["distinguishing-features", "boundary-characteristics"],
+            "examples": [
+              "Explanation of differences between two classification outcomes",
+              "Boundary feature analysis between similar categories",
+              "Highlighting key distinguishing factors between classes"
+            ],
+            "supported_by_literature": ["Miller2019", "Dhurandhar2018"]
+          },
+          {
+            "id": "explanation-systems.trade-off-exploration",
+            "name": "Trade-off Exploration",
+            "description": "Examining trade-offs between different values or objectives",
+            "fulfills_functions": ["explanation-systems.verification-support"],
+            "uses_inputs": ["competing-objectives", "value-priorities"],
+            "produces_outputs": ["trade-off-analyses", "value-tension-maps"],
+            "examples": [
+              "Visualization of fairness vs. accuracy trade-offs",
+              "Pareto frontier exploration for multi-objective systems",
+              "Explicit value priority analysis in decisions"
+            ],
+            "supported_by_literature": ["Miller2019", "Pearl2018", "Lipton2018"]
+          }
+        ]
+      }
+    ],
+    "implementation_considerations": [
+      {
+        "id": "explanation-systems.explanation-fidelity",
+        "name": "Explanation Fidelity",
+        "aspect": "Accuracy and Truthfulness",
+        "considerations": [
+          "Risk of simplifications that misrepresent actual model behavior",
+          "Balancing accuracy with comprehensibility in explanations",
+          "Identifying when explanations are misleading or incomplete",
+          "Developing faithful explanations for increasingly complex models",
+          "Verification of explanation accuracy through empirical testing"
+        ],
+        "derives_from_integration_considerations": [
+          "interpretability-tools.explanation-accuracy",
+          "interpretability-tools.model-complexity"
+        ],
+        "addressed_by_techniques": [
+          "explanation-systems.post-hoc-explanation", 
+          "explanation-systems.self-explaining-models", 
+          "explanation-systems.contrastive-explanation"
+        ],
+        "supported_by_literature": [
+          "Ribeiro2016",
+          "Lundberg2017",
+          "Doshi-Velez2017"
+        ]
+      },
+      {
+        "id": "explanation-systems.human-interpretability",
+        "name": "Human Interpretability",
+        "aspect": "Human Understanding",
+        "considerations": [
+          "Adapting explanations to different levels of user expertise",
+          "Cognitive limitations in processing complex explanations",
+          "Presentation formats that facilitate human understanding",
+          "Cultural and linguistic factors affecting explanation interpretation",
+          "User mental models and their influence on explanation effectiveness"
+        ],
+        "derives_from_integration_considerations": [
+          "interpretability-tools.usability",
+          "interpretability-tools.audience-adaptation"
+        ],
+        "addressed_by_techniques": [
+          "explanation-systems.self-explaining-models", 
+          "explanation-systems.interactive-explanation"
+        ],
+        "supported_by_literature": [
+          "Hohman2019",
+          "Wexler2020",
+          "Miller2019"
+        ]
+      },
+      {
+        "id": "explanation-systems.explanation-adaptivity",
+        "name": "Explanation Adaptivity",
+        "aspect": "Context Sensitivity",
+        "considerations": [
+          "Customizing explanations based on user needs and backgrounds",
+          "Context-sensitive explanation selection and presentation",
+          "Progressive disclosure of explanation complexity",
+          "Balancing explanation thoroughness with cognitive load",
+          "Learning from user feedback to improve explanation relevance"
+        ],
+        "derives_from_integration_considerations": [
+          "interpretability-tools.audience-adaptation",
+          "interpretability-tools.explanation-customization"
+        ],
+        "addressed_by_techniques": [
+          "explanation-systems.interactive-explanation", 
+          "explanation-systems.contrastive-explanation"
+        ],
+        "supported_by_literature": [
+          "Wang2019",
+          "Sokol2020",
+          "Lage2019"
+        ]
+      },
+      {
+        "id": "explanation-systems.gaming-prevention",
+        "name": "Gaming Prevention",
+        "aspect": "Security and Manipulation",
+        "considerations": [
+          "Risk of explanations revealing gaming opportunities",
+          "Strategic partial transparency to prevent exploitation",
+          "Balancing transparency with security considerations",
+          "Detection of explanation-based system manipulation attempts",
+          "Adaptive explanation systems that identify gaming behavior"
+        ],
+        "derives_from_integration_considerations": [
+          "interpretability-tools.transparency-security",
+          "interpretability-tools.gaming-resistance"
+        ],
+        "addressed_by_techniques": [
+          "explanation-systems.contrastive-explanation", 
+          "explanation-systems.interactive-explanation"
+        ],
+        "supported_by_literature": [
+          "Lakkaraju2020",
+          "Lipton2018",
+          "Rudin2019"
+        ]
+      },
+      {
+        "id": "explanation-systems.explanation-complexity",
+        "name": "Explanation Complexity",
+        "aspect": "Complexity Management",
+        "considerations": [
+          "Hierarchical explanations with varying levels of detail",
+          "Abstraction techniques to simplify complex reasoning",
+          "Appropriate complexity metrics for different explanation types",
+          "Selective explanation focusing on most relevant factors",
+          "Managing explanation scope for highly complex models"
+        ],
+        "derives_from_integration_considerations": [
+          "interpretability-tools.model-complexity",
+          "interpretability-tools.information-overload"
+        ],
+        "addressed_by_techniques": [
+          "explanation-systems.post-hoc-explanation", 
+          "explanation-systems.interactive-explanation"
+        ],
+        "supported_by_literature": [
+          "Miller2019",
+          "Wachter2018",
+          "Lipton2018"
+        ]
+      }
+    ]
+  },
+  
+  "technical_specifications": {
+    "_documentation": "This section provides technical details about inputs, outputs, performance characteristics, and integration interfaces for explanation system implementations.",
+    "input_requirements": [
+      {
+        "id": "explanation-systems.model-access",
+        "name": "Model Access",
+        "description": "Access to AI model internals for explanation generation",
+        "format": "API or direct access to model parameters and states",
+        "constraints": "Can range from black-box access for post-hoc methods to white-box for intrinsic explanations",
+        "related_techniques": [
+          "explanation-systems.post-hoc-explanation",
+          "explanation-systems.self-explaining-models"
+        ],
+        "used_by_applications": [
+          "explanation-systems.feature-attribution",
+          "explanation-systems.activation-visualization"
+        ],
+        "supports_functions": [
+          "explanation-systems.explanation-generation",
+          "explanation-systems.representation-translation"
+        ]
+      },
+      {
+        "id": "explanation-systems.context-information",
+        "name": "Context Information",
+        "description": "Contextual data to frame explanations appropriately",
+        "format": "Domain knowledge, application context, and explanation requirements",
+        "constraints": "Must be relevant to the specific explanation domain and audience",
+        "related_techniques": [
+          "explanation-systems.interactive-explanation",
+          "explanation-systems.contrastive-explanation"
+        ],
+        "used_by_applications": [
+          "explanation-systems.decision-rationale-generation",
+          "explanation-systems.trade-off-exploration"
+        ],
+        "supports_functions": [
+          "explanation-systems.explanation-presentation",
+          "explanation-systems.trust-building"
+        ]
+      },
+      {
+        "id": "explanation-systems.audience-profiles",
+        "name": "Audience Profiles",
+        "description": "Information about user expertise to tailor explanation complexity",
+        "format": "User expertise level, technical background, and preferences",
+        "constraints": "Must be adaptable to different user types from novices to experts",
+        "related_techniques": [
+          "explanation-systems.interactive-explanation",
+          "explanation-systems.self-explaining-models"
+        ],
+        "used_by_applications": [
+          "explanation-systems.query-based-explanation",
+          "explanation-systems.interactive-visualization"
+        ],
+        "supports_functions": [
+          "explanation-systems.trust-building",
+          "explanation-systems.explanation-presentation"
+        ]
+      }
+    ],
+    
+    "output_specifications": [
+      {
+        "id": "explanation-systems.natural-language-explanations",
+        "name": "Natural Language Explanations",
+        "description": "Verbal or textual explanations of AI decisions and reasoning",
+        "format": "Text at varying levels of detail and technicality",
+        "usage": "User-facing explanations and documentation of AI behavior",
+        "produced_by_techniques": [
+          "explanation-systems.post-hoc-explanation",
+          "explanation-systems.self-explaining-models"
+        ],
+        "produced_by_applications": [
+          "explanation-systems.decision-rationale-generation",
+          "explanation-systems.query-based-explanation"
+        ],
+        "fulfills_functions": [
+          "explanation-systems.explanation-generation",
+          "explanation-systems.trust-building"
+        ]
+      },
+      {
+        "id": "explanation-systems.visual-explanations",
+        "name": "Visual Explanations",
+        "description": "Graphical representations of model reasoning and decision factors",
+        "format": "Heatmaps, graphs, charts, and other visual formats",
+        "usage": "Intuitive visualization of complex decision processes",
+        "produced_by_techniques": [
+          "explanation-systems.visualization-generation",
+          "explanation-systems.feature-highlighting"
+        ],
+        "produced_by_applications": [
+          "explanation-systems.visual-summary",
+          "explanation-systems.importance-highlighting"
+        ],
+        "fulfills_functions": [
+          "explanation-systems.explanation-presentation",
+          "explanation-systems.representation-translation"
+        ]
+      },
+      {
+        "id": "explanation-systems.interactive-exploration-interfaces",
+        "name": "Interactive Exploration Interfaces",
+        "description": "Interactive tools for exploring model behavior",
+        "format": "User-manipulable interfaces with real-time feedback",
+        "usage": "Detailed investigation of model behaviors and decision boundaries",
+        "produced_by_techniques": [
+          "explanation-systems.interactive-explanation"
+        ],
+        "produced_by_applications": [
+          "explanation-systems.interactive-visualization",
+          "explanation-systems.what-if-analysis"
+        ],
+        "fulfills_functions": [
+          "explanation-systems.oversight-support",
+          "explanation-systems.misalignment-identification"
+        ]
+      },
+      {
+        "id": "explanation-systems.multimodal-explanations",
+        "name": "Multimodal Explanations",
+        "description": "Combined formats leveraging multiple communication channels",
+        "format": "Integrated text, visuals, and interactive elements",
+        "usage": "Comprehensive explanation delivery for complex systems",
+        "produced_by_techniques": [
+          "explanation-systems.visualization-generation",
+          "explanation-systems.interactive-explanation"
+        ],
+        "produced_by_applications": [
+          "explanation-systems.visual-summary",
+          "explanation-systems.interactive-visualization"
+        ],
+        "fulfills_functions": [
+          "explanation-systems.explanation-presentation",
+          "explanation-systems.trust-building"
+        ]
+      }
+    ],
+    
+    "performance_characteristics": {
+      "throughput": "Capacity to generate 10-100 detailed explanations per minute depending on complexity",
+      "latency": "Response time for explanations ranging from immediate (simple) to several minutes (complex analyses)",
+      "scalability": "Explanation complexity should scale with model complexity while maintaining understandability",
+      "resource_utilization": "Explanation generation typically requires 10-30% of the computational resources of the model being explained",
+      "related_considerations": [
+        "explanation-systems.explanation-complexity",
+        "explanation-systems.explanation-fidelity",
+        "explanation-systems.human-interpretability"
+      ]
+    }
+  },
+  
+  "literature": {
+    "_documentation": "This section lists the literature references that inform explanation system approaches, providing the academic foundation for the techniques.",
+    "references": [
+      "Doshi-Velez2017", "Lundberg2017", "Kim2018", "Olah2017", "Elhage2021",
+      "Ribeiro2016", "Lipton2018", "Wachter2018", "Miller2019", "Pearl2018",
+      "Hohman2019", "Wexler2020", "Alvarez-Melis2018", "Chen2019", "Wang2019",
+      "Sokol2020", "Lage2019", "Olah2018", "Lakkaraju2019", "Kahneman2011",
+      "Lakkaraju2020", "Rudin2019"
+    ]
+  },
+  
+  "literature_connections": [
+    {
+      "reference_id": "Doshi-Velez2017",
+      "technique": "explanation-systems.post-hoc-explanation",
+      "relevant_aspects": "Frameworks for rigorously evaluating the quality and usefulness of AI explanations"
+    },
+    {
+      "reference_id": "Lundberg2017",
+      "technique": "explanation-systems.post-hoc-explanation",
+      "relevant_aspects": "Unified framework for attributing model predictions to input features for explanations"
+    },
+    {
+      "reference_id": "Kim2018",
+      "technique": "explanation-systems.self-explaining-models",
+      "relevant_aspects": "Methods for explaining neural network decisions in terms of human-understandable concepts"
+    },
+    {
+      "reference_id": "Olah2017",
+      "technique": "explanation-systems.visualization-generation",
+      "relevant_aspects": "Visualization techniques that form the foundation for many explanation interfaces"
+    },
+    {
+      "reference_id": "Elhage2021",
+      "technique": "explanation-systems.self-explaining-models",
+      "relevant_aspects": "Methods for explaining transformer model behavior through circuit analysis"
+    },
+    {
+      "reference_id": "Ribeiro2016",
+      "technique": "explanation-systems.feature-highlighting",
+      "relevant_aspects": "Local interpretable model-agnostic explanations for explaining individual predictions of black-box models"
+    },
+    {
+      "reference_id": "Lipton2018",
+      "technique": "explanation-systems.post-hoc-explanation",
+      "relevant_aspects": "Critical analysis of interpretability goals, definitions, and the mythos of model interpretability"
+    },
+    {
+      "reference_id": "Wachter2018",
+      "technique": "explanation-systems.contrastive-explanation",
+      "relevant_aspects": "Counterfactual explanations that show what changes would alter the outcome of model decisions"
+    },
+    {
+      "reference_id": "Miller2019",
+      "technique": "explanation-systems.contrastive-explanation",
+      "relevant_aspects": "Social science perspectives on explanation, emphasizing contrastive and selective explanations"
+    },
+    {
+      "reference_id": "Pearl2018",
+      "technique": "explanation-systems.contrastive-explanation",
+      "relevant_aspects": "Causal inference methods for explaining the causes behind model decisions"
+    },
+    {
+      "reference_id": "Hohman2019",
+      "technique": "explanation-systems.visualization-generation",
+      "relevant_aspects": "Visual analytics approaches for explaining and exploring deep learning models"
+    },
+    {
+      "reference_id": "Wexler2020",
+      "technique": "explanation-systems.interactive-explanation",
+      "relevant_aspects": "Interactive tools that allow non-experts to explore and understand model behavior"
+    },
+    {
+      "reference_id": "Alvarez-Melis2018",
+      "technique": "explanation-systems.self-explaining-models",
+      "relevant_aspects": "Self-explaining neural networks that provide built-in interpretability"
+    },
+    {
+      "reference_id": "Chen2019",
+      "technique": "explanation-systems.self-explaining-models",
+      "relevant_aspects": "This looks like that explanations through concept-based networks"
+    },
+    {
+      "reference_id": "Wang2019",
+      "technique": "explanation-systems.interactive-explanation",
+      "relevant_aspects": "Human-AI collaborative frameworks for creating more effective explanations"
+    },
+    {
+      "reference_id": "Sokol2020",
+      "technique": "explanation-systems.interactive-explanation",
+      "relevant_aspects": "Conversational explanation interfaces that adapt to user knowledge and needs"
+    },
+    {
+      "reference_id": "Lage2019",
+      "technique": "explanation-systems.interactive-explanation",
+      "relevant_aspects": "Human evaluation methodologies for assessing explanation effectiveness"
+    },
+    {
+      "reference_id": "Olah2018",
+      "technique": "explanation-systems.visualization-generation",
+      "relevant_aspects": "Building blocks for interactive exploration of neural networks"
+    },
+    {
+      "reference_id": "Lakkaraju2020",
+      "technique": "explanation-systems.post-hoc-explanation",
+      "relevant_aspects": "Methods for detecting deceptive explanation techniques and explanation manipulation"
+    },
+    {
+      "reference_id": "Dhurandhar2018",
+      "technique": "explanation-systems.contrastive-explanation",
+      "relevant_aspects": "Contrastive explanations that highlight relevant features that should be present or absent"
+    },
+    {
+      "reference_id": "Rudin2019",
+      "technique": "explanation-systems.self-explaining-models",
+      "relevant_aspects": "Arguments for inherently interpretable models rather than post-hoc explanations"
+    }
+  ],
+  
+  "relationships": {
+    "_documentation": "This section describes how the explanation systems subcomponent relates to other subcomponents, parent components, and external components.",
+    "items": [
+      {
+        "target_id": "feature-analysis",
+        "relationship_type": "bidirectional_exchange",
+        "description": "Feature analysis provides low-level insights that explanation systems translate into understandable formats",
+        "related_functions": ["explanation-systems.representation-translation", "explanation-systems.explanation-presentation"],
+        "related_techniques": ["explanation-systems.feature-attribution", "explanation-systems.activation-visualization", "explanation-systems.interactive-explanation"],
+        "related_inputs": ["importance-scores", "feature-maps"],
+        "related_outputs": ["natural-language-explanations", "visual-explanations"]
+      },
+      {
+        "target_id": "mechanistic-interpretability",
+        "relationship_type": "bidirectional_exchange",
+        "description": "Mechanistic interpretability provides technical understanding that explanation systems transform for human consumption",
+        "related_functions": ["explanation-systems.representation-translation", "explanation-systems.explanation-generation"],
+        "related_techniques": ["explanation-systems.post-hoc-explanation", "explanation-systems.self-explaining-models", "explanation-systems.contrastive-explanation"],
+        "related_inputs": ["algorithm-descriptions", "circuit-diagrams"],
+        "related_outputs": ["natural-language-explanations", "visual-explanations"]
+      },
+      {
+        "target_id": "proxy-understanding",
+        "relationship_type": "bidirectional_exchange",
+        "description": "Explanation systems can reveal when models are using proxy objectives rather than intended goals",
+        "related_functions": ["explanation-systems.misalignment-identification", "explanation-systems.oversight-support"],
+        "related_techniques": ["explanation-systems.post-hoc-explanation", "explanation-systems.counterfactual-generation"],
+        "related_inputs": ["proxy-metrics", "shortcut-indicators"],
+        "related_outputs": ["counterfactual-explanations", "interactive-explanations"]
+      }
+    ]
+  },
+  
+  "integration": {
+    "internal_integrations": [
+      {
+        "target_subcomponent": "feature-analysis",
+        "integration_type": "data_exchange",
+        "description": "Translates feature importance into human-understandable explanations",
+        "data_flow": "Feature analysis provides importance metrics that explanation systems transform into visual and verbal explanations accessible to humans",
+        "related_function": [
+          "explanation-systems.representation-translation", 
+          "explanation-systems.explanation-presentation"
+        ],
+        "related_architectural_pattern": [
+          "interpretability-tools.feature-translation-pattern",
+          "interpretability-tools.layered-explanation-pattern"
+        ],
+        "enabled_by_techniques": ["explanation-systems.feature-attribution", "explanation-systems.activation-visualization", "explanation-systems.interactive-explanation"],
+        "related_inputs": ["importance-scores", "feature-maps"],
+        "related_outputs": ["natural-language-explanations", "visual-explanations"]
+      },
+      {
+        "target_subcomponent": "mechanistic-interpretability",
+        "integration_type": "data_exchange",
+        "description": "Transforms circuit analysis into accessible explanations",
+        "data_flow": "Mechanistic interpretability provides detailed circuit analysis that explanation systems simplify and translate into language and visualizations for human understanding",
+        "related_function": [
+          "explanation-systems.representation-translation", 
+          "explanation-systems.explanation-generation"
+        ],
+        "related_architectural_pattern": [
+          "interpretability-tools.circuit-translation-pattern",
+          "interpretability-tools.abstraction-pattern"
+        ],
+        "enabled_by_techniques": ["explanation-systems.post-hoc-explanation", "explanation-systems.self-explaining-models", "explanation-systems.contrastive-explanation"],
+        "related_inputs": ["algorithm-descriptions", "circuit-diagrams"],
+        "related_outputs": ["natural-language-explanations", "visual-explanations"]
+      },
+      {
+        "target_subcomponent": "proxy-understanding",
+        "integration_type": "data_exchange",
+        "description": "Explains identified proxy behaviors in understandable terms",
+        "data_flow": "Proxy understanding identifies shortcut behaviors that explanation systems highlight and explain through counterfactuals and interactive explanations",
+        "related_function": [
+          "explanation-systems.misalignment-identification", 
+          "explanation-systems.oversight-support"
+        ],
+        "related_architectural_pattern": [
+          "interpretability-tools.proxy-detection-pattern",
+          "interpretability-tools.misalignment-visibility-pattern"
+        ],
+        "enabled_by_techniques": ["explanation-systems.post-hoc-explanation", "explanation-systems.counterfactual-generation"],
+        "related_inputs": ["proxy-metrics", "shortcut-indicators"],
+        "related_outputs": ["counterfactual-explanations", "interactive-explanations"]
+      }
+    ],
+    "external_integrations": [
+      {
+        "system": "oversight-mechanisms",
+        "component": "oversight-mechanisms/monitoring-systems",
+        "integration_type": "api",
+        "description": "Provides explanations for flagged decisions during monitoring",
+        "endpoint": "/api/oversight/explain-flagged",
+        "data_format": "Decision explanation package with multiple explanation modalities",
+        "related_function": [
+          "explanation-systems.oversight-support", 
+          "explanation-systems.explanation-generation"
+        ],
+        "related_architectural_pattern": [
+          "interpretability-tools.monitoring-integration-pattern",
+          "interpretability-tools.alert-response-pattern"
+        ],
+        "enabled_by_techniques": ["explanation-systems.post-hoc-explanation", "explanation-systems.contrastive-explanation"],
+        "related_inputs": ["decision-records", "monitoring-alerts"],
+        "related_outputs": ["natural-language-explanations", "visual-explanations"]
+      },
+      {
+        "system": "democratic-alignment",
+        "component": "democratic-alignment/participatory-value-definition",
+        "integration_type": "api",
+        "description": "Generates public-facing explanations for democratic governance",
+        "endpoint": "/api/democratic-alignment/public-explanations",
+        "data_format": "Multi-level explanations targeted at different stakeholder profiles",
+        "related_function": [
+          "explanation-systems.trust-building", 
+          "explanation-systems.explanation-presentation"
+        ],
+        "related_architectural_pattern": [
+          "interpretability-tools.public-transparency-pattern",
+          "interpretability-tools.stakeholder-adaptation-pattern"
+        ],
+        "enabled_by_techniques": ["explanation-systems.post-hoc-explanation", "explanation-systems.interactive-explanation"],
+        "related_inputs": ["audience-profiles", "decision-records"],
+        "related_outputs": ["natural-language-explanations", "interactive-explanations"]
+      },
+      {
+        "system": "value-learning",
+        "component": "value-learning/explicit-value-encoding",
+        "integration_type": "api",
+        "description": "Explains how explicit values influenced specific decisions",
+        "endpoint": "/api/value-learning/value-attribution",
+        "data_format": "Value attribution maps with explanation narratives",
+        "related_function": [
+          "explanation-systems.explanation-generation", 
+          "explanation-systems.trust-building"
+        ],
+        "related_architectural_pattern": [
+          "interpretability-tools.value-explanation-pattern",
+          "interpretability-tools.attribution-pattern"
+        ],
+        "enabled_by_techniques": ["explanation-systems.post-hoc-explanation", "explanation-systems.contrastive-explanation"],
+        "related_inputs": ["value-specifications", "decision-records"],
+        "related_outputs": ["natural-language-explanations", "counterfactual-explanations"]
+      }
+    ]
+  }
+} 

@@ -1,0 +1,88 @@
+{
+  "_documentation": "This template defines the structure for a component group file, which represents the highest level in the AI alignment network hierarchy.",
+  
+  "id": "ai-alignment",
+  "name": "AI Alignment",
+  "type": "component_group",
+  "description": "Methods to ensure AI systems remain aligned with human values and intentions.",
+  
+  "components": [
+    {
+      "id": "technical-safeguards",
+      "name": "Technical Safeguards",
+      "type": "component",
+      "description": "Technical mechanisms built into AI systems to ensure alignment."
+    },
+    {
+      "id": "value-learning",
+      "name": "Value Learning",
+      "type": "component",
+      "description": "Methods for AI to learn and adhere to human values."
+    },
+    {
+      "id": "interpretability-tools",
+      "name": "Interpretability Tools",
+      "type": "component",
+      "description": "Tools and methods to understand AI systems' reasoning."
+    },
+    {
+      "id": "oversight-mechanisms",
+      "name": "Oversight Mechanisms",
+      "type": "component",
+      "description": "Systems for monitoring and controlling AI behavior."
+    },
+    {
+      "id": "democratic-alignment",
+      "name": "Democratic Alignment",
+      "type": "component",
+      "description": "Methods to align AI with democratic processes and values."
+    }
+  ],
+  
+  "overview": {
+    "purpose": "The overall purpose and function of this component group in the AI alignment architecture",
+    "architectural_significance": "Why this group exists and how it contributes to the overall alignment goals",
+    "key_principles": [
+      "Principle 1 that guides design and implementation of components in this group",
+      "Principle 2 that guides design and implementation of components in this group"
+    ]
+  },
+  
+  "literature": {
+    "references": [
+      "AuthorYear1", 
+      "AuthorYear2"
+    ]
+  },
+  
+  "literature_connections": [
+    {
+      "reference_id": "AuthorYear1",
+      "relevant_aspects": "Brief description of how this reference informs the design of this component group"
+    },
+    {
+      "reference_id": "AuthorYear2",
+      "relevant_aspects": "Brief description of how this reference informs the design of this component group"
+    }
+  ],
+  
+  "cross_connections": [
+    {
+      "source_id": "technical-safeguards",
+      "target_id": "interpretability-tools",
+      "type": "enables",
+      "description": "Technical safeguards enable better interpretability of AI systems."
+    }
+  ],
+  
+  "metadata": {
+    "considerations": [
+      {
+        "name": "Top-level Alignment Strategy",
+        "description": "Overall approach to ensuring AI acts in accordance with human intention.",
+        "options": ["Value Learning", "Capability Control", "Motivation Selection", "Hybrid Approaches"],
+        "implications": "The chosen alignment strategy affects which components are prioritized and how they integrate."
+      }
+    ]
+  }
+} 

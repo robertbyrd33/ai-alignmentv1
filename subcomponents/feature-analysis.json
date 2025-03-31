@@ -1,0 +1,2036 @@
+{
+  "_documentation": "This subcomponent implements techniques for understanding how neural networks represent and process information through identification and interpretation of the features they learn and utilize, providing methods to visualize and analyze what AI systems detect, prioritize, and use in their decision-making processes.",
+  "id": "feature-analysis",
+  "name": "Feature Analysis",
+  "description": "Techniques for understanding how neural networks represent and process information through identification and interpretation of the features they learn and utilize. These techniques enable visualization and attribution of model internals, making AI reasoning processes more transparent and understandable.",
+  "type": "subcomponent",
+  "parent": "interpretability-tools",
+  
+  "capabilities": [
+    {
+      "id": "feature-analysis.feature-identification",
+      "name": "Feature Identification",
+      "type": "capability",
+      "description": "Identifying learned features in neural networks",
+      "implements_component_capabilities": ["interpretability-tools.feature-analysis-capability"],
+      "parent": "feature-analysis",
+      
+      "functions": [
+        {
+          "id": "feature-analysis.feature-identification.feature-detection",
+          "name": "Feature Detection",
+          "type": "function",
+          "description": "Detect and identify features learned by AI systems",
+          "implements_component_functions": [
+            "interpretability-tools.feature-inspection",
+            "interpretability-tools.deep-understanding",
+            "interpretability-tools.feature-analysis"
+          ],
+          "parent": "feature-analysis.feature-identification",
+          "specifications": [
+            {
+              "id": "feature-analysis.feature-identification.feature-detection.detection-specs",
+              "name": "Feature Detection Specifications",
+              "description": "Technical specifications for detecting and identifying features learned by AI systems",
+              "type": "specification",
+              "parent": "feature-analysis.feature-identification.feature-detection",
+              "requirements": [
+                "Access to model weights and intermediate representations",
+                "Statistical methods for feature identification",
+                "Feature significance evaluation metrics",
+                "Multi-layer feature detection capabilities"
+              ],
+              "integration": {
+                "id": "feature-analysis.feature-identification.feature-detection.detection-specs.detection-integration",
+                "name": "Feature Detection Integration",
+                "description": "Integration approach for feature detection with model analysis systems",
+                "type": "integration",
+                "parent": "feature-analysis.feature-identification.feature-detection.detection-specs",
+                "techniques": [
+                  {
+                    "id": "feature-analysis.feature-identification.feature-detection.detection-specs.detection-integration.feature-mining",
+                    "name": "Feature Mining Technique",
+                    "description": "Techniques for mining and identifying learned features in neural networks",
+                    "type": "technique",
+                    "parent": "feature-analysis.feature-identification.feature-detection.detection-specs.detection-integration",
+                    "applications": [
+                      {
+                        "id": "feature-analysis.feature-identification.feature-detection.detection-specs.detection-integration.feature-mining.detector",
+                        "name": "Neural Feature Detector",
+                        "description": "Application that detects and identifies features learned by neural networks",
+                        "type": "application",
+                        "parent": "feature-analysis.feature-identification.feature-detection.detection-specs.detection-integration.feature-mining",
+                        "inputs": [
+                          {
+                            "name": "model",
+                            "type": "object",
+                            "description": "Neural network model to analyze"
+                          },
+                          {
+                            "name": "layer_selection",
+                            "type": "array",
+                            "description": "Specific layers to analyze for features"
+                          },
+                          {
+                            "name": "detection_parameters",
+                            "type": "object",
+                            "description": "Parameters controlling feature detection sensitivity and methods"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "detected_features",
+                            "type": "array",
+                            "description": "Array of detected features with properties and metrics"
+                          },
+                          {
+                            "name": "feature_correlations",
+                            "type": "object",
+                            "description": "Correlations between detected features"
+                          },
+                          {
+                            "name": "feature_significance",
+                            "type": "array",
+                            "description": "Significance scores for each detected feature"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "feature-analysis.feature-identification.feature-categorization",
+          "name": "Feature Categorization",
+          "type": "function",
+          "description": "Categorize and organize features into meaningful groups",
+          "implements_component_functions": [
+            "interpretability-tools.feature-inspection",
+            "interpretability-tools.component-analysis",
+            "interpretability-tools.feature-analysis"
+          ],
+          "parent": "feature-analysis.feature-identification",
+          "specifications": [
+            {
+              "id": "feature-analysis.feature-identification.feature-categorization.categorization-specs",
+              "name": "Feature Categorization Specifications",
+              "description": "Technical specifications for categorizing and organizing features into meaningful groups",
+              "type": "specification",
+              "parent": "feature-analysis.feature-identification.feature-categorization",
+              "requirements": [
+                "Feature similarity and relationship analysis",
+                "Hierarchical categorization mechanisms",
+                "Semantic grouping of related features",
+                "Category validation and refinement methodologies"
+              ],
+              "integration": {
+                "id": "feature-analysis.feature-identification.feature-categorization.categorization-specs.categorization-integration",
+                "name": "Feature Categorization Integration",
+                "description": "Integration approach for feature categorization with analysis frameworks",
+                "type": "integration",
+                "parent": "feature-analysis.feature-identification.feature-categorization.categorization-specs",
+                "techniques": [
+                  {
+                    "id": "feature-analysis.feature-identification.feature-categorization.categorization-specs.categorization-integration.clustering",
+                    "name": "Feature Clustering Technique",
+                    "description": "Techniques for clustering similar features into meaningful categories",
+                    "type": "technique",
+                    "parent": "feature-analysis.feature-identification.feature-categorization.categorization-specs.categorization-integration",
+                    "applications": [
+                      {
+                        "id": "feature-analysis.feature-identification.feature-categorization.categorization-specs.categorization-integration.clustering.categorizer",
+                        "name": "Feature Categorization System",
+                        "description": "Application that categorizes neural network features into meaningful groups",
+                        "type": "application",
+                        "parent": "feature-analysis.feature-identification.feature-categorization.categorization-specs.categorization-integration.clustering",
+                        "inputs": [
+                          {
+                            "name": "detected_features",
+                            "type": "array",
+                            "description": "Array of features to be categorized"
+                          },
+                          {
+                            "name": "similarity_metrics",
+                            "type": "object",
+                            "description": "Metrics for determining feature similarity"
+                          },
+                          {
+                            "name": "categorization_parameters",
+                            "type": "object",
+                            "description": "Parameters controlling categorization processes"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "feature_categories",
+                            "type": "object",
+                            "description": "Hierarchical categorization of features"
+                          },
+                          {
+                            "name": "category_relationships",
+                            "type": "array",
+                            "description": "Relationships between different feature categories"
+                          },
+                          {
+                            "name": "category_descriptions",
+                            "type": "object",
+                            "description": "Semantic descriptions of identified categories"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "feature-analysis.feature-identification.feature-extraction",
+          "name": "Feature Extraction",
+          "type": "function",
+          "description": "Extract and visualize what features an AI system has learned",
+          "parent": "feature-analysis.feature-identification",
+          "specifications": [
+            {
+              "id": "feature-analysis.feature-identification.feature-extraction.extraction-specs",
+              "name": "Feature Extraction Specifications",
+              "description": "Technical specifications for extracting and analyzing learned features from neural networks",
+              "type": "specifications",
+              "parent": "feature-analysis.feature-identification.feature-extraction",
+              "requirements": [
+                "Access to model weights and activations at different network layers",
+                "Statistical methods for identifying relevant features and patterns",
+                "Dimensionality reduction techniques for processing high-dimensional feature spaces",
+                "Visualization capabilities for human-interpretable representation of features"
+              ],
+              "integration": {
+                "id": "feature-analysis.feature-identification.feature-extraction.extraction-specs.extraction-integration",
+                "name": "Feature Extraction Integration",
+                "description": "Integration approach for feature extraction with model architecture and visualization systems",
+                "type": "integration",
+                "parent": "feature-analysis.feature-identification.feature-extraction.extraction-specs",
+                "techniques": [
+                  {
+                    "id": "feature-analysis.feature-identification.feature-extraction.extraction-specs.extraction-integration.activation-maximization",
+                    "name": "Activation Maximization Technique",
+                    "description": "Techniques for optimizing inputs to maximize the activation of specific neurons or channels",
+                    "type": "technique",
+                    "parent": "feature-analysis.feature-identification.feature-extraction.extraction-specs.extraction-integration",
+                    "applications": [
+                      {
+                        "id": "feature-analysis.feature-identification.feature-extraction.extraction-specs.extraction-integration.activation-maximization.neuron-visualization",
+                        "name": "Neuron Visualization System",
+                        "description": "Implementation of neuron visualization through activation maximization and related techniques",
+                        "type": "application",
+                        "parent": "feature-analysis.feature-identification.feature-extraction.extraction-specs.extraction-integration.activation-maximization",
+                        "inputs": [
+                          {
+                            "name": "model",
+                            "type": "object",
+                            "description": "Neural network model with accessible weights and activations"
+                          },
+                          {
+                            "name": "target_neurons",
+                            "type": "array",
+                            "description": "Specific neurons or channels to visualize"
+                          },
+                          {
+                            "name": "optimization_params",
+                            "type": "object",
+                            "description": "Parameters controlling the optimization process for feature visualization"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "feature_visualizations",
+                            "type": "array",
+                            "description": "Visual representations of features that activate specific neurons"
+                          },
+                          {
+                            "name": "activation_statistics",
+                            "type": "object",
+                            "description": "Statistical information about neuron activations"
+                          },
+                          {
+                            "name": "feature_interpretations",
+                            "type": "object",
+                            "description": "Human-readable interpretations of identified features"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "feature-analysis.feature-identification.pattern-detection",
+          "name": "Pattern Detection",
+          "type": "function",
+          "description": "Detect and analyze patterns in neural network activations and behavior",
+          "parent": "feature-analysis.feature-identification",
+          "specifications": [
+            {
+              "id": "feature-analysis.feature-identification.pattern-detection.pattern-specs",
+              "name": "Pattern Detection Specifications",
+              "description": "Technical specifications for detecting and analyzing activation patterns in neural networks",
+              "type": "specifications",
+              "parent": "feature-analysis.feature-identification.pattern-detection",
+              "requirements": [
+                "Analysis of activation patterns across multiple inputs and network layers",
+                "Statistical correlation analysis between neurons and activation clusters",
+                "Detection of recurring patterns and motifs in network behavior",
+                "Tracking of information flow through network pathways"
+              ],
+              "integration": {
+                "id": "feature-analysis.feature-identification.pattern-detection.pattern-specs.pattern-integration",
+                "name": "Pattern Detection Integration",
+                "description": "Integration approach for pattern detection with neural network analysis frameworks",
+                "type": "integration",
+                "parent": "feature-analysis.feature-identification.pattern-detection.pattern-specs",
+                "techniques": [
+                  {
+                    "id": "feature-analysis.feature-identification.pattern-detection.pattern-specs.pattern-integration.activation-clustering",
+                    "name": "Activation Clustering Technique",
+                    "description": "Techniques for clustering similar activation patterns to identify recurring motifs",
+                    "type": "technique",
+                    "parent": "feature-analysis.feature-identification.pattern-detection.pattern-specs.pattern-integration",
+                    "applications": [
+                      {
+                        "id": "feature-analysis.feature-identification.pattern-detection.pattern-specs.pattern-integration.activation-clustering.pattern-analyzer",
+                        "name": "Neural Pattern Analyzer",
+                        "description": "Implementation of activation pattern analysis across neural network layers",
+                        "type": "application",
+                        "parent": "feature-analysis.feature-identification.pattern-detection.pattern-specs.pattern-integration.activation-clustering",
+                        "inputs": [
+                          {
+                            "name": "model",
+                            "type": "object",
+                            "description": "Neural network model to analyze"
+                          },
+                          {
+                            "name": "input_dataset",
+                            "type": "array",
+                            "description": "Dataset of inputs to process through the network"
+                          },
+                          {
+                            "name": "analysis_config",
+                            "type": "object",
+                            "description": "Configuration parameters for pattern detection algorithms"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "activation_patterns",
+                            "type": "array",
+                            "description": "Identified patterns in neural activations"
+                          },
+                          {
+                            "name": "pattern_relationships",
+                            "type": "object",
+                            "description": "Relationships and correlations between detected patterns"
+                          },
+                          {
+                            "name": "information_pathways",
+                            "type": "array",
+                            "description": "Identified pathways of information flow through the network"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feature-analysis.representation-visualization",
+      "name": "Representation Visualization",
+      "type": "capability",
+      "description": "Visualizing internal representations in human-understandable forms",
+      "implements_component_capabilities": ["interpretability-tools.visualization", "interpretability-tools.feature-analysis-capability"],
+      "parent": "feature-analysis",
+      
+      "functions": [
+        {
+          "id": "feature-analysis.representation-visualization.latent-space-mapping",
+          "name": "Latent Space Mapping",
+          "type": "function",
+          "description": "Map and visualize the latent space of neural networks",
+          "implements_component_functions": [
+            "interpretability-tools.feature-inspection",
+            "interpretability-tools.deep-understanding"
+          ],
+          "parent": "feature-analysis.representation-visualization",
+          "specifications": [
+            {
+              "id": "feature-analysis.representation-visualization.latent-space-mapping.mapping-specs",
+              "name": "Latent Space Mapping Specifications",
+              "description": "Technical specifications for mapping and visualizing neural network latent spaces",
+              "type": "specification",
+              "parent": "feature-analysis.representation-visualization.latent-space-mapping",
+              "requirements": [
+                "Dimensionality reduction for high-dimensional latent spaces",
+                "Interactive visualization of latent space structures",
+                "Trajectory and manifold identification within latent spaces",
+                "Semantic annotation of latent space regions"
+              ],
+              "integration": {
+                "id": "feature-analysis.representation-visualization.latent-space-mapping.mapping-specs.mapping-integration",
+                "name": "Latent Space Mapping Integration",
+                "description": "Integration approach for latent space mapping with visualization systems",
+                "type": "integration",
+                "parent": "feature-analysis.representation-visualization.latent-space-mapping.mapping-specs",
+                "techniques": [
+                  {
+                    "id": "feature-analysis.representation-visualization.latent-space-mapping.mapping-specs.mapping-integration.dimension-reduction",
+                    "name": "Dimensionality Reduction Technique",
+                    "description": "Techniques for reducing high-dimensional latent spaces for visualization",
+                    "type": "technique",
+                    "parent": "feature-analysis.representation-visualization.latent-space-mapping.mapping-specs.mapping-integration",
+                    "applications": [
+                      {
+                        "id": "feature-analysis.representation-visualization.latent-space-mapping.mapping-specs.mapping-integration.dimension-reduction.latent-visualizer",
+                        "name": "Latent Space Visualizer",
+                        "description": "Application that maps and visualizes neural network latent spaces",
+                        "type": "application",
+                        "parent": "feature-analysis.representation-visualization.latent-space-mapping.mapping-specs.mapping-integration.dimension-reduction",
+                        "inputs": [
+                          {
+                            "name": "model",
+                            "type": "object",
+                            "description": "Neural network model whose latent space will be mapped"
+                          },
+                          {
+                            "name": "target_layers",
+                            "type": "array",
+                            "description": "Specific layers whose latent spaces will be mapped"
+                          },
+                          {
+                            "name": "sample_data",
+                            "type": "array",
+                            "description": "Sample data points for latent space projection"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "latent_map",
+                            "type": "object",
+                            "description": "Visualization of the mapped latent space"
+                          },
+                          {
+                            "name": "cluster_analysis",
+                            "type": "object",
+                            "description": "Analysis of clusters and structures in the latent space"
+                          },
+                          {
+                            "name": "semantic_annotations",
+                            "type": "array",
+                            "description": "Semantic annotations of latent space regions"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "feature-analysis.representation-visualization.activation-visualization",
+          "name": "Activation Visualization",
+          "type": "function",
+          "description": "Visualize activations of neurons in neural networks",
+          "implements_component_functions": [
+            "interpretability-tools.feature-inspection"
+          ],
+          "parent": "feature-analysis.representation-visualization",
+          "specifications": [
+            {
+              "id": "feature-analysis.representation-visualization.activation-visualization.activation-specs",
+              "name": "Activation Visualization Specifications",
+              "description": "Technical specifications for visualizing neural network activations",
+              "type": "specification",
+              "parent": "feature-analysis.representation-visualization.activation-visualization",
+              "requirements": [
+                "Access to model layer activations for given inputs",
+                "Visualization techniques for high-dimensional activation spaces",
+                "Dimensionality reduction methods for complex activation patterns",
+                "Support for comparing activations across different inputs"
+              ],
+              "integration": {
+                "id": "feature-analysis.representation-visualization.activation-visualization.activation-specs.activation-integration",
+                "name": "Activation Visualization Integration",
+                "description": "Integration approach for activation visualization with model inspection frameworks",
+                "type": "integration",
+                "parent": "feature-analysis.representation-visualization.activation-visualization.activation-specs",
+                "techniques": [
+                  {
+                    "id": "feature-analysis.representation-visualization.activation-visualization.activation-specs.activation-integration.heatmap-technique",
+                    "name": "Activation Heatmap Technique",
+                    "description": "Techniques for visualizing neuron activations using heatmaps and similar visualization methods",
+                    "type": "technique",
+                    "parent": "feature-analysis.representation-visualization.activation-visualization.activation-specs.activation-integration",
+                    "applications": [
+                      {
+                        "id": "feature-analysis.representation-visualization.activation-visualization.activation-specs.activation-integration.heatmap-technique.activation-explorer",
+                        "name": "Activation Explorer",
+                        "description": "Application for exploring and visualizing neural network activations",
+                        "type": "application",
+                        "parent": "feature-analysis.representation-visualization.activation-visualization.activation-specs.activation-integration.heatmap-technique",
+                        "inputs": [
+                          {
+                            "name": "model",
+                            "type": "object",
+                            "description": "Neural network model to analyze"
+                          },
+                          {
+                            "name": "input_data",
+                            "type": "array",
+                            "description": "Input data to process through the model"
+                          },
+                          {
+                            "name": "target_layers",
+                            "type": "array",
+                            "description": "Specific layers to visualize activations for"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "activation_visualizations",
+                            "type": "array",
+                            "description": "Visual representations of neuron activations"
+                          },
+                          {
+                            "name": "activation_statistics",
+                            "type": "object",
+                            "description": "Statistical summaries of activation patterns"
+                          },
+                          {
+                            "name": "interactive_exploration",
+                            "type": "object",
+                            "description": "Interactive tools for exploring activations"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "feature-analysis.representation-visualization.feature-visualization",
+          "name": "Feature Visualization",
+          "type": "function",
+          "description": "Methods for generating visual representations of the features detected by neural networks",
+          "parent": "feature-analysis.representation-visualization",
+          "specifications": [
+            {
+              "id": "feature-analysis.representation-visualization.feature-visualization.visualization-specs",
+              "name": "Feature Visualization Specifications",
+              "description": "Technical specifications for generating interpretable visualizations of neural network features",
+              "type": "specifications",
+              "parent": "feature-analysis.representation-visualization.feature-visualization",
+              "requirements": [
+                "Techniques for optimizing inputs to maximize neuron activations",
+                "Regularization methods to ensure human-interpretable visualizations",
+                "Support for visualizing features at different levels of abstraction",
+                "Interactive interfaces for exploring feature visualizations"
+              ],
+              "integration": {
+                "id": "feature-analysis.representation-visualization.feature-visualization.visualization-specs.visualization-integration",
+                "name": "Feature Visualization Integration",
+                "description": "Integration approach for feature visualization with interpretability frameworks",
+                "type": "integration",
+                "parent": "feature-analysis.representation-visualization.feature-visualization.visualization-specs",
+                "techniques": [
+                  {
+                    "id": "feature-analysis.representation-visualization.feature-visualization.visualization-specs.visualization-integration.lucid-visualization",
+                    "name": "Lucid Visualization Technique",
+                    "description": "Techniques for generating clear, interpretable visualizations of neural network features",
+                    "type": "technique",
+                    "parent": "feature-analysis.representation-visualization.feature-visualization.visualization-specs.visualization-integration",
+                    "applications": [
+                      {
+                        "id": "feature-analysis.representation-visualization.feature-visualization.visualization-specs.visualization-integration.lucid-visualization.feature-renderer",
+                        "name": "Feature Rendering System",
+                        "description": "Implementation of feature visualization techniques for neural network interpretation",
+                        "type": "application",
+                        "parent": "feature-analysis.representation-visualization.feature-visualization.visualization-specs.visualization-integration.lucid-visualization",
+                        "inputs": [
+                          {
+                            "name": "model",
+                            "type": "object",
+                            "description": "Neural network model with features to visualize"
+                          },
+                          {
+                            "name": "visualization_targets",
+                            "type": "array",
+                            "description": "Target neurons, channels, or feature maps to visualize"
+                          },
+                          {
+                            "name": "rendering_options",
+                            "type": "object",
+                            "description": "Parameters controlling the visualization process and style"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "feature_images",
+                            "type": "array",
+                            "description": "Visual representations of neural network features"
+                          },
+                          {
+                            "name": "feature_metadata",
+                            "type": "object",
+                            "description": "Information about the visualized features and their properties"
+                          },
+                          {
+                            "name": "interactive_visualizations",
+                            "type": "object",
+                            "description": "Interactive interfaces for exploring feature visualizations"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "feature-analysis.representation-visualization.concept-mapping",
+          "name": "Concept Mapping",
+          "type": "function",
+          "description": "Map high-level concepts to their representations within neural networks",
+          "parent": "feature-analysis.representation-visualization",
+          "specifications": [
+            {
+              "id": "feature-analysis.representation-visualization.concept-mapping.concept-specs",
+              "name": "Concept Mapping Specifications",
+              "description": "Technical specifications for mapping high-level concepts to neural network representations",
+              "type": "specifications",
+              "parent": "feature-analysis.representation-visualization.concept-mapping",
+              "requirements": [
+                "Methods for defining and representing human-understandable concepts",
+                "Techniques for identifying concept activations across network layers",
+                "Quantification of concept sensitivity and importance",
+                "Tools for exploring concept representations interactively"
+              ],
+              "integration": {
+                "id": "feature-analysis.representation-visualization.concept-mapping.concept-specs.concept-integration",
+                "name": "Concept Mapping Integration",
+                "description": "Integration approach for concept mapping with model interpretability frameworks",
+                "type": "integration",
+                "parent": "feature-analysis.representation-visualization.concept-mapping.concept-specs",
+                "techniques": [
+                  {
+                    "id": "feature-analysis.representation-visualization.concept-mapping.concept-specs.concept-integration.tcav",
+                    "name": "TCAV Technique",
+                    "description": "Testing with Concept Activation Vectors to quantify concept sensitivity",
+                    "type": "technique",
+                    "parent": "feature-analysis.representation-visualization.concept-mapping.concept-specs.concept-integration",
+                    "applications": [
+                      {
+                        "id": "feature-analysis.representation-visualization.concept-mapping.concept-specs.concept-integration.tcav.concept-analyzer",
+                        "name": "Concept Analysis System",
+                        "description": "Implementation of concept analysis using TCAV and related techniques",
+                        "type": "application",
+                        "parent": "feature-analysis.representation-visualization.concept-mapping.concept-specs.concept-integration.tcav",
+                        "inputs": [
+                          {
+                            "name": "model",
+                            "type": "object",
+                            "description": "Neural network model to analyze"
+                          },
+                          {
+                            "name": "concept_examples",
+                            "type": "array",
+                            "description": "Examples of concepts to test for in the network"
+                          },
+                          {
+                            "name": "mapping_configuration",
+                            "type": "object",
+                            "description": "Configuration for concept mapping algorithms"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "concept_activations",
+                            "type": "object",
+                            "description": "Quantitative measures of concept activation in the network"
+                          },
+                          {
+                            "name": "concept_maps",
+                            "type": "array",
+                            "description": "Mappings between concepts and neural network components"
+                          },
+                          {
+                            "name": "concept_hierarchy",
+                            "type": "object",
+                            "description": "Hierarchical organization of concepts detected in the network"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feature-analysis.importance-quantification",
+      "name": "Importance Quantification",
+      "type": "capability",
+      "description": "Quantifying the importance of features in model decision-making",
+      "implements_component_capabilities": ["interpretability-tools.attribution", "interpretability-tools.feature-analysis-capability", "interpretability-tools.explanation-capability"],
+      "parent": "feature-analysis",
+      
+      "functions": [
+        {
+          "id": "feature-analysis.importance-quantification.feature-attribution",
+          "name": "Feature Attribution",
+          "type": "function",
+          "description": "Attribute model decisions to specific features or inputs",
+          "implements_component_functions": [
+            "interpretability-tools.decision-explanation",
+            "interpretability-tools.explain-decisions",
+            "interpretability-tools.component-analysis",
+            "interpretability-tools.feature-analysis"
+          ],
+          "parent": "feature-analysis.importance-quantification",
+          "specifications": [
+            {
+              "id": "feature-analysis.importance-quantification.feature-attribution.attribution-specs",
+              "name": "Feature Attribution Specifications",
+              "description": "Technical specifications for attributing model decisions to specific input features",
+              "type": "specification",
+              "parent": "feature-analysis.importance-quantification.feature-attribution",
+              "requirements": [
+                "Algorithms for computing feature importance scores",
+                "Methods for handling both local and global attributions",
+                "Visualization techniques for displaying attribution results",
+                "Support for different model architectures and input types"
+              ],
+              "integration": {
+                "id": "feature-analysis.importance-quantification.feature-attribution.attribution-specs.attribution-integration",
+                "name": "Feature Attribution Integration",
+                "description": "Integration approach for feature attribution with explanation systems",
+                "type": "integration",
+                "parent": "feature-analysis.importance-quantification.feature-attribution.attribution-specs",
+                "techniques": [
+                  {
+                    "id": "feature-analysis.importance-quantification.feature-attribution.attribution-specs.attribution-integration.gradient-technique",
+                    "name": "Gradient-based Attribution Technique",
+                    "description": "Techniques for attributing predictions to input features using gradient-based methods",
+                    "type": "technique",
+                    "parent": "feature-analysis.importance-quantification.feature-attribution.attribution-specs.attribution-integration",
+                    "applications": [
+                      {
+                        "id": "feature-analysis.importance-quantification.feature-attribution.attribution-specs.attribution-integration.gradient-technique.attribution-system",
+                        "name": "Feature Attribution System",
+                        "description": "Application for attributing model decisions to specific input features",
+                        "type": "application",
+                        "parent": "feature-analysis.importance-quantification.feature-attribution.attribution-specs.attribution-integration.gradient-technique",
+                        "inputs": [
+                          {
+                            "name": "model",
+                            "type": "object",
+                            "description": "Machine learning model to analyze"
+                          },
+                          {
+                            "name": "input_instance",
+                            "type": "object",
+                            "description": "Specific input instance to explain"
+                          },
+                          {
+                            "name": "target_output",
+                            "type": "string",
+                            "description": "Target output or decision to explain"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "feature_importance",
+                            "type": "object",
+                            "description": "Importance scores for each input feature"
+                          },
+                          {
+                            "name": "attribution_visualization",
+                            "type": "object",
+                            "description": "Visual representation of attribution results"
+                          },
+                          {
+                            "name": "explanation_summary",
+                            "type": "string",
+                            "description": "Human-readable summary of the attribution results"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "feature-analysis.importance-quantification.attribution-analysis",
+          "name": "Attribution Analysis",
+          "type": "function",
+          "description": "Analyzing what model features contribute to specific predictions",
+          "parent": "feature-analysis.importance-quantification",
+          "specifications": [
+            {
+              "id": "feature-analysis.importance-quantification.attribution-analysis.attribution-specs",
+              "name": "Attribution Analysis Specifications",
+              "description": "Technical specifications for attributing neural network predictions to input features",
+              "type": "specifications",
+              "parent": "feature-analysis.importance-quantification.attribution-analysis",
+              "requirements": [
+                "Methods for attributing model predictions to input features",
+                "Axiomatic approaches to attribution with theoretical guarantees",
+                "Visualization techniques for displaying attribution maps",
+                "Algorithms for analyzing attribution across multiple instances"
+              ],
+              "integration": {
+                "id": "feature-analysis.importance-quantification.attribution-analysis.attribution-specs.attribution-integration",
+                "name": "Attribution Analysis Integration",
+                "description": "Integration approach for attribution analysis with interpretability frameworks",
+                "type": "integration",
+                "parent": "feature-analysis.importance-quantification.attribution-analysis.attribution-specs",
+                "techniques": [
+                  {
+                    "id": "feature-analysis.importance-quantification.attribution-analysis.attribution-specs.attribution-integration.integrated-gradients",
+                    "name": "Integrated Gradients Technique",
+                    "description": "Techniques for attributing predictions to input features using integrated gradients",
+                    "type": "technique",
+                    "parent": "feature-analysis.importance-quantification.attribution-analysis.attribution-specs.attribution-integration",
+                    "applications": [
+                      {
+                        "id": "feature-analysis.importance-quantification.attribution-analysis.attribution-specs.attribution-integration.integrated-gradients.attribution-engine",
+                        "name": "Attribution Engine",
+                        "description": "Implementation of attribution analysis techniques for neural network interpretation",
+                        "type": "application",
+                        "parent": "feature-analysis.importance-quantification.attribution-analysis.attribution-specs.attribution-integration.integrated-gradients",
+                        "inputs": [
+                          {
+                            "name": "model",
+                            "type": "object",
+                            "description": "Neural network model to analyze"
+                          },
+                          {
+                            "name": "input_samples",
+                            "type": "array",
+                            "description": "Sample inputs for attribution analysis"
+                          },
+                          {
+                            "name": "attribution_config",
+                            "type": "object",
+                            "description": "Configuration parameters for attribution algorithms"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "attribution_maps",
+                            "type": "array",
+                            "description": "Visual maps showing feature importance for each prediction"
+                          },
+                          {
+                            "name": "feature_importance",
+                            "type": "object",
+                            "description": "Quantitative measures of feature importance for model decisions"
+                          },
+                          {
+                            "name": "attribution_statistics",
+                            "type": "object",
+                            "description": "Statistical analysis of attribution patterns across samples"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "feature-analysis.importance-quantification.influence-assessment",
+          "name": "Influence Assessment",
+          "type": "function",
+          "description": "Assessment of how features influence model decision-making processes",
+          "parent": "feature-analysis.importance-quantification",
+          "specifications": [
+            {
+              "id": "feature-analysis.importance-quantification.influence-assessment.influence-specs",
+              "name": "Influence Assessment Specifications",
+              "description": "Technical specifications for assessing the influence of features and training examples on model behavior",
+              "type": "specifications",
+              "parent": "feature-analysis.importance-quantification.influence-assessment",
+              "requirements": [
+                "Methods for tracing the influence of training data on model predictions",
+                "Techniques for identifying influential features in decision-making processes",
+                "Counterfactual analysis tools for exploring feature influence",
+                "Quantitative metrics for influence assessment and comparison"
+              ],
+              "integration": {
+                "id": "feature-analysis.importance-quantification.influence-assessment.influence-specs.influence-integration",
+                "name": "Influence Assessment Integration",
+                "description": "Integration approach for influence assessment with interpretability frameworks",
+                "type": "integration",
+                "parent": "feature-analysis.importance-quantification.influence-assessment.influence-specs",
+                "techniques": [
+                  {
+                    "id": "feature-analysis.importance-quantification.influence-assessment.influence-specs.influence-integration.influence-function",
+                    "name": "Influence Function Technique",
+                    "description": "Techniques for tracking the influence of training examples on model predictions",
+                    "type": "technique",
+                    "parent": "feature-analysis.importance-quantification.influence-assessment.influence-specs.influence-integration",
+                    "applications": [
+                      {
+                        "id": "feature-analysis.importance-quantification.influence-assessment.influence-specs.influence-integration.influence-function.influence-tracker",
+                        "name": "Influence Tracker",
+                        "description": "Implementation of influence assessment techniques for neural network interpretation",
+                        "type": "application",
+                        "parent": "feature-analysis.importance-quantification.influence-assessment.influence-specs.influence-integration.influence-function",
+                        "inputs": [
+                          {
+                            "name": "model",
+                            "type": "object",
+                            "description": "Neural network model to analyze"
+                          },
+                          {
+                            "name": "training_data",
+                            "type": "array",
+                            "description": "Training examples to analyze for influence"
+                          },
+                          {
+                            "name": "test_examples",
+                            "type": "array",
+                            "description": "Test examples for influence assessment"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "influence_scores",
+                            "type": "object",
+                            "description": "Quantitative measures of training example influence on predictions"
+                          },
+                          {
+                            "name": "feature_influence_maps",
+                            "type": "array",
+                            "description": "Maps showing the influence of specific features on model behavior"
+                          },
+                          {
+                            "name": "counterfactual_analysis",
+                            "type": "object",
+                            "description": "Analysis of how changes in features would affect model decisions"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feature-analysis.relationship-mapping",
+      "name": "Relationship Mapping",
+      "type": "capability",
+      "description": "Mapping relationships between features and concepts",
+      "implements_component_capabilities": ["interpretability-tools.conceptual-understanding", "interpretability-tools.feature-analysis-capability", "interpretability-tools.explanation-capability"],
+      "parent": "feature-analysis",
+      
+      "functions": [
+        {
+          "id": "feature-analysis.relationship-mapping.semantic-analysis",
+          "name": "Semantic Analysis",
+          "type": "function",
+          "description": "Analyzing the semantic meaning of features and their relationships",
+          "parent": "feature-analysis.relationship-mapping",
+          "specifications": [
+            {
+              "id": "feature-analysis.relationship-mapping.semantic-analysis.semantic-specs",
+              "name": "Semantic Analysis Specifications",
+              "description": "Technical specifications for analyzing the semantic meaning of neural network representations",
+              "type": "specifications",
+              "parent": "feature-analysis.relationship-mapping.semantic-analysis",
+              "requirements": [
+                "Methods for mapping neural activations to semantic spaces",
+                "Techniques for analyzing semantic relationships between features",
+                "Tools for comparing semantic representations across network layers",
+                "Alignment of neural representations with human semantic understanding"
+              ],
+              "integration": {
+                "id": "feature-analysis.relationship-mapping.semantic-analysis.semantic-specs.semantic-integration",
+                "name": "Semantic Analysis Integration",
+                "description": "Integration approach for semantic analysis with interpretability frameworks",
+                "type": "integration",
+                "parent": "feature-analysis.relationship-mapping.semantic-analysis.semantic-specs",
+                "techniques": [
+                  {
+                    "id": "feature-analysis.relationship-mapping.semantic-analysis.semantic-specs.semantic-integration.semantic-embedding",
+                    "name": "Semantic Embedding Technique",
+                    "description": "Techniques for embedding neural representations in semantic spaces",
+                    "type": "technique",
+                    "parent": "feature-analysis.relationship-mapping.semantic-analysis.semantic-specs.semantic-integration",
+                    "applications": [
+                      {
+                        "id": "feature-analysis.relationship-mapping.semantic-analysis.semantic-specs.semantic-integration.semantic-embedding.semantic-mapper",
+                        "name": "Semantic Mapping System",
+                        "description": "Implementation of semantic analysis techniques for neural network interpretation",
+                        "type": "application",
+                        "parent": "feature-analysis.relationship-mapping.semantic-analysis.semantic-specs.semantic-integration.semantic-embedding",
+                        "inputs": [
+                          {
+                            "name": "model",
+                            "type": "object",
+                            "description": "Neural network model to analyze"
+                          },
+                          {
+                            "name": "semantic_reference",
+                            "type": "object",
+                            "description": "Reference semantic system for alignment (e.g., WordNet, ConceptNet)"
+                          },
+                          {
+                            "name": "test_examples",
+                            "type": "array",
+                            "description": "Examples for analyzing semantic representations"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "semantic_maps",
+                            "type": "array",
+                            "description": "Maps of neural representations in semantic space"
+                          },
+                          {
+                            "name": "semantic_relationships",
+                            "type": "object",
+                            "description": "Analysis of relationships between semantic concepts in the model"
+                          },
+                          {
+                            "name": "cross_layer_semantics",
+                            "type": "object",
+                            "description": "Comparison of semantic representations across network layers"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "feature-analysis.relationship-mapping.alignment-verification",
+          "name": "Alignment Verification",
+          "type": "function",
+          "description": "Facilitate auditing model behaviors for alignment by analyzing feature representations",
+          "parent": "feature-analysis.relationship-mapping",
+          "specifications": [
+            {
+              "id": "feature-analysis.relationship-mapping.alignment-verification.alignment-specs",
+              "name": "Alignment Verification Specifications",
+              "description": "Technical specifications for verifying model alignment through feature analysis",
+              "type": "specifications",
+              "parent": "feature-analysis.relationship-mapping.alignment-verification",
+              "requirements": [
+                "Methods for analyzing feature representations for alignment with human values",
+                "Techniques for detecting proxy goals and reward hacking in representations",
+                "Tools for evaluating robustness of representations to distributional shifts",
+                "Verification of representational invariances that reflect alignment properties"
+              ],
+              "integration": {
+                "id": "feature-analysis.relationship-mapping.alignment-verification.alignment-specs.alignment-integration",
+                "name": "Alignment Verification Integration",
+                "description": "Integration approach for alignment verification with interpretability frameworks",
+                "type": "integration",
+                "parent": "feature-analysis.relationship-mapping.alignment-verification.alignment-specs",
+                "techniques": [
+                  {
+                    "id": "feature-analysis.relationship-mapping.alignment-verification.alignment-specs.alignment-integration.proxy-detection",
+                    "name": "Proxy Detection Technique",
+                    "description": "Techniques for detecting proxy goals and misalignment in neural representations",
+                    "type": "technique",
+                    "parent": "feature-analysis.relationship-mapping.alignment-verification.alignment-specs.alignment-integration",
+                    "applications": [
+                      {
+                        "id": "feature-analysis.relationship-mapping.alignment-verification.alignment-specs.alignment-integration.proxy-detection.alignment-auditor",
+                        "name": "Alignment Auditing System",
+                        "description": "Implementation of alignment verification techniques for neural network interpretation",
+                        "type": "application",
+                        "parent": "feature-analysis.relationship-mapping.alignment-verification.alignment-specs.alignment-integration.proxy-detection",
+                        "inputs": [
+                          {
+                            "name": "model",
+                            "type": "object",
+                            "description": "Neural network model to analyze for alignment"
+                          },
+                          {
+                            "name": "value_specifications",
+                            "type": "object",
+                            "description": "Formal specifications of desired alignment properties"
+                          },
+                          {
+                            "name": "test_scenarios",
+                            "type": "array",
+                            "description": "Test scenarios for evaluating alignment across contexts"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "alignment_assessment",
+                            "type": "object",
+                            "description": "Comprehensive assessment of model alignment properties"
+                          },
+                          {
+                            "name": "misalignment_risks",
+                            "type": "array",
+                            "description": "Identified risks of misalignment in model representations"
+                          },
+                          {
+                            "name": "robustness_analysis",
+                            "type": "object",
+                            "description": "Analysis of alignment robustness under distribution shifts"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "feature-analysis.relationship-mapping.causal-analysis",
+          "name": "Causal Analysis",
+          "type": "function",
+          "description": "Analyze causal relationships between features and outcomes",
+          "implements_component_functions": [
+            "interpretability-tools.explain-decisions"
+          ],
+          "parent": "feature-analysis.relationship-mapping",
+          "specifications": [
+            {
+              "id": "feature-analysis.relationship-mapping.causal-analysis.causal-specs",
+              "name": "Causal Analysis Specifications",
+              "description": "Technical specifications for analyzing causal relationships between features and model outcomes",
+              "type": "specification",
+              "parent": "feature-analysis.relationship-mapping.causal-analysis",
+              "requirements": [
+                "Causal inference methods for machine learning models",
+                "Counterfactual reasoning capabilities",
+                "Intervention mechanisms for testing causal hypotheses",
+                "Statistical methods for isolating causal effects"
+              ],
+              "integration": {
+                "id": "feature-analysis.relationship-mapping.causal-analysis.causal-specs.causal-integration",
+                "name": "Causal Analysis Integration",
+                "description": "Integration approach for causal analysis with model explanation frameworks",
+                "type": "integration",
+                "parent": "feature-analysis.relationship-mapping.causal-analysis.causal-specs",
+                "techniques": [
+                  {
+                    "id": "feature-analysis.relationship-mapping.causal-analysis.causal-specs.causal-integration.counterfactual-technique",
+                    "name": "Counterfactual Analysis Technique",
+                    "description": "Techniques for analyzing model behavior through counterfactual interventions",
+                    "type": "technique",
+                    "parent": "feature-analysis.relationship-mapping.causal-analysis.causal-specs.causal-integration",
+                    "applications": [
+                      {
+                        "id": "feature-analysis.relationship-mapping.causal-analysis.causal-specs.causal-integration.counterfactual-technique.causal-explorer",
+                        "name": "Causal Explorer",
+                        "description": "Application for exploring causal relationships in AI model decision-making",
+                        "type": "application",
+                        "parent": "feature-analysis.relationship-mapping.causal-analysis.causal-specs.causal-integration.counterfactual-technique",
+                        "inputs": [
+                          {
+                            "name": "model",
+                            "type": "object",
+                            "description": "Machine learning model to analyze"
+                          },
+                          {
+                            "name": "feature_data",
+                            "type": "object",
+                            "description": "Feature data to analyze for causal relationships"
+                          },
+                          {
+                            "name": "causal_hypotheses",
+                            "type": "array",
+                            "description": "Hypotheses about causal relationships to test"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "causal_graph",
+                            "type": "object",
+                            "description": "Graph representation of discovered causal relationships"
+                          },
+                          {
+                            "name": "effect_strengths",
+                            "type": "object",
+                            "description": "Quantified strength of causal effects"
+                          },
+                          {
+                            "name": "counterfactual_examples",
+                            "type": "array",
+                            "description": "Examples demonstrating causal relationships through interventions"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "feature-analysis.relationship-mapping.correlation-mapping",
+          "name": "Correlation Mapping",
+          "type": "function",
+          "description": "Mapping features based on their correlation with outcomes",
+          "implements_component_functions": [
+            "interpretability-tools.explain-decisions"
+          ],
+          "parent": "feature-analysis.relationship-mapping",
+          "specifications": [
+            {
+              "id": "feature-analysis.relationship-mapping.correlation-mapping.correlation-specs",
+              "name": "Correlation Mapping Specifications",
+              "description": "Technical specifications for mapping correlations between features and model outcomes",
+              "type": "specification",
+              "parent": "feature-analysis.relationship-mapping.correlation-mapping",
+              "requirements": [
+                "Statistical correlation analysis methods",
+                "Feature relationship visualization techniques",
+                "Multi-dimensional correlation analysis",
+                "Hierarchical correlation structure identification"
+              ],
+              "integration": {
+                "id": "feature-analysis.relationship-mapping.correlation-mapping.correlation-specs.correlation-integration",
+                "name": "Correlation Mapping Integration",
+                "description": "Integration approach for correlation mapping with feature analysis frameworks",
+                "type": "integration",
+                "parent": "feature-analysis.relationship-mapping.correlation-mapping.correlation-specs",
+                "techniques": [
+                  {
+                    "id": "feature-analysis.relationship-mapping.correlation-mapping.correlation-specs.correlation-integration.correlation-analysis-technique",
+                    "name": "Correlation Analysis Technique",
+                    "description": "Techniques for analyzing correlative relationships between features and outcomes",
+                    "type": "technique",
+                    "parent": "feature-analysis.relationship-mapping.correlation-mapping.correlation-specs.correlation-integration",
+                    "applications": [
+                      {
+                        "id": "feature-analysis.relationship-mapping.correlation-mapping.correlation-specs.correlation-integration.correlation-analysis-technique.correlation-mapper",
+                        "name": "Correlation Mapper",
+                        "description": "Application for mapping correlations between features and outcomes in AI systems",
+                        "type": "application",
+                        "parent": "feature-analysis.relationship-mapping.correlation-mapping.correlation-specs.correlation-integration.correlation-analysis-technique",
+                        "inputs": [
+                          {
+                            "name": "feature_data",
+                            "type": "object",
+                            "description": "Feature data to analyze for correlations"
+                          },
+                          {
+                            "name": "outcome_data",
+                            "type": "array",
+                            "description": "Outcome data to correlate with features"
+                          },
+                          {
+                            "name": "correlation_parameters",
+                            "type": "object",
+                            "description": "Parameters controlling correlation analysis methods"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "correlation_matrix",
+                            "type": "object",
+                            "description": "Matrix of correlation values between features and outcomes"
+                          },
+                          {
+                            "name": "correlation_visualization",
+                            "type": "object",
+                            "description": "Visual representation of feature correlations"
+                          },
+                          {
+                            "name": "feature_clusters",
+                            "type": "array",
+                            "description": "Clusters of features with similar correlation patterns"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  
+  "overview": {
+    "_documentation": "This section provides a concise overview of the feature analysis subcomponent, its purpose, capabilities, and functions for interpreting AI models.",
+    "purpose": "To provide systematic methods for understanding what features AI systems detect, prioritize, and utilize in their decision-making processes, making internal representations accessible to human interpretation",
+    "key_capabilities": [
+      {
+        "id": "feature-analysis.feature-identification",
+        "name": "Feature Identification",
+        "description": "Identifying learned features in neural networks",
+        "implements_component_capabilities": ["interpretability-tools.feature-analysis-capability"],
+        "enables_functions": ["feature-analysis.feature-extraction", "feature-analysis.feature-visualization"],
+        "supported_by_literature": ["Olah2017", "Zeiler2014"]
+      },
+      {
+        "id": "feature-analysis.representation-visualization",
+        "name": "Representation Visualization",
+        "description": "Visualizing internal representations in human-understandable forms",
+        "implements_component_capabilities": ["interpretability-tools.visualization", "interpretability-tools.feature-analysis-capability"],
+        "enables_functions": ["feature-analysis.feature-visualization", "feature-analysis.concept-mapping"],
+        "supported_by_literature": ["Olah2017", "Wongsuphasawat2018"]
+      },
+      {
+        "id": "feature-analysis.importance-quantification",
+        "name": "Importance Quantification",
+        "description": "Quantifying the importance of features in model decision-making",
+        "implements_component_capabilities": ["interpretability-tools.attribution", "interpretability-tools.feature-analysis-capability", "interpretability-tools.explanation-capability"],
+        "enables_functions": ["feature-analysis.attribution-analysis", "feature-analysis.influence-assessment"],
+        "supported_by_literature": ["Lundberg2017", "Simonyan2013"]
+      },
+      {
+        "id": "feature-analysis.relationship-mapping",
+        "name": "Relationship Mapping",
+        "description": "Mapping relationships between features and concepts",
+        "implements_component_capabilities": ["interpretability-tools.conceptual-understanding", "interpretability-tools.feature-analysis-capability", "interpretability-tools.explanation-capability"],
+        "enables_functions": ["feature-analysis.concept-mapping", "feature-analysis.semantic-analysis"],
+        "supported_by_literature": ["Kim2018", "Maaten2008"]
+      }
+    ],
+    "primary_functions": [
+      {
+        "id": "feature-analysis.feature-extraction",
+        "name": "Feature Extraction",
+        "description": "Extract and visualize what features an AI system has learned",
+        "implements_component_functions": ["interpretability-tools.model-understanding", "interpretability-tools.feature-inspection"],
+        "enabled_by_capabilities": ["feature-analysis.feature-identification", "feature-analysis.representation-visualization"],
+        "implemented_by_techniques": ["feature-analysis.feature-visualization", "feature-analysis.neuron-analysis"],
+        "implemented_by_applications": ["feature-analysis.activation-maximization", "feature-analysis.neuron-visualization"],
+        "supported_by_literature": ["Olah2017", "Zeiler2014", "Nguyen2016"]
+      },
+      {
+        "id": "feature-analysis.pattern-detection",
+        "name": "Pattern Detection",
+        "description": "Detect and analyze patterns in neural network activations and behavior",
+        "implements_component_functions": ["interpretability-tools.feature-inspection", "interpretability-tools.pattern-visualization"],
+        "enabled_by_capabilities": ["feature-analysis.feature-identification", "feature-analysis.relationship-mapping"],
+        "implemented_by_techniques": ["feature-analysis.neuron-analysis", "feature-analysis.feature-visualization"],
+        "implemented_by_applications": ["feature-analysis.neuron-visualization", "feature-analysis.embedding-probing"],
+        "supported_by_literature": ["Olah2017", "Bau2017", "Kim2018"]
+      },
+      {
+        "id": "feature-analysis.attribution-analysis",
+        "name": "Attribution Analysis",
+        "description": "Analyze how features influence model outputs through attribution methods",
+        "implements_component_functions": ["interpretability-tools.decision-explanation"],
+        "enabled_by_capabilities": ["feature-analysis.importance-quantification"],
+        "implemented_by_techniques": ["feature-analysis.attribution-methods"],
+        "implemented_by_applications": ["feature-analysis.saliency-mapping", "feature-analysis.feature-contribution"],
+        "supported_by_literature": ["Lundberg2017", "Simonyan2013", "Sundararajan2017"]
+      },
+      {
+        "id": "feature-analysis.concept-mapping",
+        "name": "Concept Mapping",
+        "description": "Provide human-understandable representations of model internals through concept mapping",
+        "implements_component_functions": ["interpretability-tools.model-understanding"],
+        "enabled_by_capabilities": ["feature-analysis.relationship-mapping", "feature-analysis.representation-visualization"],
+        "implemented_by_techniques": ["feature-analysis.neuron-analysis", "feature-analysis.dimensionality-reduction"],
+        "implemented_by_applications": ["feature-analysis.concept-detection", "feature-analysis.embedding-visualization"],
+        "supported_by_literature": ["Kim2018", "Bau2017", "Maaten2008"]
+      },
+      {
+        "id": "feature-analysis.model-debugging",
+        "name": "Model Debugging",
+        "description": "Assist in debugging and improving model performance using feature insights",
+        "implements_component_functions": ["interpretability-tools.model-improvement"],
+        "enabled_by_capabilities": ["feature-analysis.feature-identification", "feature-analysis.importance-quantification"],
+        "implemented_by_techniques": ["feature-analysis.feature-visualization", "feature-analysis.attribution-methods"],
+        "implemented_by_applications": ["feature-analysis.error-analysis", "feature-analysis.feature-refinement"],
+        "supported_by_literature": ["Zeiler2014", "Ribeiro2016", "Hohman2019"]
+      },
+      {
+        "id": "feature-analysis.alignment-verification",
+        "name": "Alignment Verification",
+        "description": "Facilitate auditing model behaviors for alignment by analyzing feature representations",
+        "implements_component_functions": ["interpretability-tools.alignment-verification"],
+        "enabled_by_capabilities": ["feature-analysis.relationship-mapping", "feature-analysis.importance-quantification"],
+        "implemented_by_techniques": ["feature-analysis.attribution-methods", "feature-analysis.dimensionality-reduction"],
+        "implemented_by_applications": ["feature-analysis.proxy-detection", "feature-analysis.value-representation"],
+        "supported_by_literature": ["Brundage2020", "Kim2018", "Elhage2021"]
+      }
+    ]
+  },
+  
+  "implementation": {
+    "_documentation": "This section details the techniques and their applications used to implement feature analysis in AI systems, enabling transparency and understanding of AI decision-making.",
+    "techniques": [
+      {
+        "id": "feature-analysis.gradient-visualization",
+        "name": "Gradient Visualization",
+        "description": "Methods for visualizing gradients of model outputs with respect to inputs to understand feature importance",
+        "implements_integration_approaches": ["interpretability-tools.feature-analysis-integration"],
+        "implements_functions": ["feature-analysis.feature-extraction", "feature-analysis.attribution-analysis"],
+        "addresses_considerations": ["interpretability-limitations", "computational-requirements"],
+        "supported_by_literature": ["Simonyan2013", "Sundararajan2017"],
+        "uses_inputs": ["model-gradients", "input-examples"],
+        "produces_outputs": ["gradient-maps", "attribution-visualizations"],
+        "applications": [
+          {
+            "id": "feature-analysis.gradient-saliency",
+            "name": "Gradient Saliency Mapping",
+            "description": "Computing saliency maps based on input gradients to highlight important regions",
+            "fulfills_functions": ["feature-analysis.attribution-analysis"],
+            "uses_inputs": ["model-gradients", "input-examples"],
+            "produces_outputs": ["saliency-maps"],
+            "examples": [
+              "Vanilla gradient visualization for image classification models",
+              "SmoothGrad for reducing noise in gradient visualizations",
+              "Integrated gradients for attributing predictions to input features"
+            ],
+            "supported_by_literature": ["Simonyan2013", "Sundararajan2017"]
+          }
+        ]
+      },
+      {
+        "id": "feature-analysis.feature-attribution",
+        "name": "Feature Attribution",
+        "description": "Techniques for attributing model decisions to specific input features or internal representations",
+        "implements_integration_approaches": ["interpretability-tools.feature-analysis-integration", "interpretability-tools.mechanistic-understanding-integration", "interpretability-tools.explanation-generation-integration"],
+        "implements_functions": ["feature-analysis.attribution-analysis", "feature-analysis.feature-extraction"],
+        "addresses_considerations": ["interpretability-limitations", "human-factors"],
+        "supported_by_literature": ["Lundberg2017", "Ribeiro2016"],
+        "uses_inputs": ["model-outputs", "input-examples", "model-internals"],
+        "produces_outputs": ["attribution-scores", "feature-importance"],
+        "applications": [
+          {
+            "id": "feature-analysis.importance-scoring",
+            "name": "Feature Importance Scoring",
+            "description": "Quantifying the contribution of each feature to model decisions",
+            "fulfills_functions": ["feature-analysis.attribution-analysis"],
+            "uses_inputs": ["model-outputs", "input-examples"],
+            "produces_outputs": ["attribution-scores", "feature-importance"],
+            "examples": [
+              "SHAP values for consistent feature attribution across samples",
+              "LIME for local interpretable model-agnostic explanations",
+              "Occlusion sensitivity analysis for identifying critical features"
+            ],
+            "supported_by_literature": ["Lundberg2017", "Ribeiro2016"]
+          }
+        ]
+      },
+      {
+        "id": "feature-analysis.representation-analysis",
+        "name": "Representation Analysis",
+        "description": "Methods for analyzing internal representations and embeddings to understand what information models encode",
+        "implements_integration_approaches": ["interpretability-tools.mechanistic-understanding-integration"],
+        "implements_functions": ["feature-analysis.concept-mapping", "feature-analysis.feature-extraction"],
+        "addresses_considerations": ["interpretability-limitations", "generalization-challenges"],
+        "supported_by_literature": ["Bau2020", "Kim2018"],
+        "uses_inputs": ["model-embeddings", "model-activations"],
+        "produces_outputs": ["representation-maps", "embedding-analyses"],
+        "applications": [
+          {
+            "id": "feature-analysis.embedding-probing",
+            "name": "Embedding Space Probing",
+            "description": "Probing embedding spaces to understand encoded semantic features",
+            "fulfills_functions": ["feature-analysis.concept-mapping"],
+            "uses_inputs": ["model-embeddings"],
+            "produces_outputs": ["representation-maps", "concept-vectors"],
+            "examples": [
+              "Linear probing to detect emergent features in embeddings",
+              "Concept activation vectors to identify encoded human concepts",
+              "Semantic analysis of representation spaces to map conceptual organization"
+            ],
+            "supported_by_literature": ["Kim2018", "Bau2017"]
+          }
+        ]
+      },
+      {
+        "id": "feature-analysis.feature-visualization",
+        "name": "Feature Visualization",
+        "description": "Methods for generating visual representations of the features detected by neural networks across different layers",
+        "implements_integration_approaches": ["interpretability-tools.feature-analysis-integration", "interpretability-tools.mechanistic-understanding-integration"],
+        "implements_functions": ["feature-analysis.feature-extraction", "feature-analysis.model-debugging"],
+        "addresses_considerations": ["interpretability-limitations", "human-factors"],
+        "supported_by_literature": ["Olah2017"],
+        "uses_inputs": ["model-weights", "model-activations"],
+        "produces_outputs": ["feature-visualizations", "activation-maps"],
+        "applications": [
+          {
+            "id": "feature-analysis.activation-maximization",
+            "name": "Activation Maximization",
+            "description": "Generating maximally activating inputs for specific neurons or channels",
+            "fulfills_functions": ["feature-analysis.feature-extraction"],
+            "uses_inputs": ["model-weights", "optimization-parameters"],
+            "produces_outputs": ["synthesized-inputs", "feature-visualizations"],
+            "examples": [
+              "Generating images that maximally activate specific neurons in vision models",
+              "Synthesizing inputs that reveal what language model attention heads focus on",
+              "Creating visualizations of features across network layers to understand hierarchical representations"
+            ],
+            "supported_by_literature": ["Olah2017", "Nguyen2016"]
+          },
+          {
+            "id": "feature-analysis.neuron-visualization",
+            "name": "Neuron Visualization",
+            "description": "Visualizing what neurons in networks respond to across different inputs",
+            "fulfills_functions": ["feature-analysis.feature-extraction", "feature-analysis.concept-mapping"],
+            "uses_inputs": ["model-activations", "input-examples"],
+            "produces_outputs": ["activation-maps", "neuron-response-profiles"],
+            "examples": [
+              "Visualizing convolutional filters to show what patterns they detect",
+              "Mapping attention patterns in transformer models to understand what parts of inputs they focus on",
+              "Creating atlases of neuron behaviors across different types of inputs"
+            ],
+            "supported_by_literature": ["Olah2017", "Zeiler2014"]
+          }
+        ]
+      },
+      {
+        "id": "feature-analysis.attribution-methods",
+        "name": "Attribution Methods",
+        "description": "Techniques that assign importance scores to input features based on their contribution to model outputs",
+        "implements_functions": ["feature-analysis.attribution-analysis", "feature-analysis.alignment-verification"],
+        "addresses_considerations": ["generalization-challenges", "computational-requirements"],
+        "supported_by_literature": ["Lundberg2017"],
+        "uses_inputs": ["model-gradients", "input-examples", "model-outputs"],
+        "produces_outputs": ["importance-scores", "attribution-maps"],
+        "applications": [
+          {
+            "id": "feature-analysis.saliency-mapping",
+            "name": "Saliency Mapping",
+            "description": "Generating maps highlighting important regions in inputs that influence decisions",
+            "fulfills_functions": ["feature-analysis.attribution-analysis"],
+            "uses_inputs": ["model-gradients", "input-examples"],
+            "produces_outputs": ["saliency-maps", "attribution-visualizations"],
+            "examples": [
+              "Generating heatmaps highlighting important image regions for classification decisions",
+              "Visualizing which words most influenced a language model's output",
+              "Creating attention maps showing where models focus when making predictions"
+            ],
+            "supported_by_literature": ["Simonyan2013", "Sundararajan2017"]
+          },
+          {
+            "id": "feature-analysis.feature-contribution",
+            "name": "Feature Contribution Analysis",
+            "description": "Quantifying how much each feature contributes to model predictions",
+            "fulfills_functions": ["feature-analysis.attribution-analysis", "feature-analysis.alignment-verification"],
+            "uses_inputs": ["model-outputs", "input-examples", "model-gradients"],
+            "produces_outputs": ["importance-scores", "feature-rankings"],
+            "examples": [
+              "Ranking features by their importance for specific predictions",
+              "Comparing feature importance across different model architectures",
+              "Identifying which features are used for proxy objectives rather than intended goals"
+            ],
+            "supported_by_literature": ["Lundberg2017", "Ribeiro2016"]
+          }
+        ]
+      },
+      {
+        "id": "feature-analysis.neuron-analysis",
+        "name": "Neuron Analysis",
+        "description": "Studying individual neurons or groups of neurons to understand their roles and behaviors within a network",
+        "implements_functions": ["feature-analysis.feature-extraction", "feature-analysis.concept-mapping"],
+        "addresses_considerations": ["interpretability-limitations", "human-factors"],
+        "supported_by_literature": ["Olah2017"],
+        "uses_inputs": ["model-activations", "input-examples"],
+        "produces_outputs": ["neuron-behaviors", "concept-mappings"],
+        "applications": [
+          {
+            "id": "feature-analysis.concept-detection",
+            "name": "Concept Detection",
+            "description": "Identifying specialized neurons that detect specific concepts",
+            "fulfills_functions": ["feature-analysis.concept-mapping"],
+            "uses_inputs": ["model-activations", "labeled-examples"],
+            "produces_outputs": ["concept-neuron-mappings", "interpretability-datasets"],
+            "examples": [
+              "Identifying neurons that respond to specific objects, attributes, or semantic concepts",
+              "Mapping how abstract concepts are represented by groups of neurons",
+              "Tracking how concept representations evolve during model training"
+            ],
+            "supported_by_literature": ["Bau2017", "Kim2018"]
+          },
+          {
+            "id": "feature-analysis.circuit-analysis",
+            "name": "Circuit Analysis",
+            "description": "Understanding how groups of neurons work together in functional circuits",
+            "fulfills_functions": ["feature-analysis.concept-mapping", "feature-analysis.model-debugging"],
+            "uses_inputs": ["model-weights", "model-activations"],
+            "produces_outputs": ["circuit-diagrams", "pathway-analyses"],
+            "examples": [
+              "Tracing information flow through networks to understand feature composition",
+              "Identifying circuits responsible for specific capabilities or behaviors",
+              "Mapping how different neurons interact to implement complex functionality"
+            ],
+            "supported_by_literature": ["Olah2017", "Elhage2021"]
+          }
+        ]
+      },
+      {
+        "id": "feature-analysis.dimensionality-reduction",
+        "name": "Dimensionality Reduction",
+        "description": "Methods to project high-dimensional representations into lower-dimensional spaces for analysis and visualization",
+        "implements_functions": ["feature-analysis.concept-mapping", "feature-analysis.alignment-verification"],
+        "addresses_considerations": ["computational-requirements", "human-factors"],
+        "supported_by_literature": ["Olah2017", "Brundage2020"],
+        "uses_inputs": ["model-embeddings", "activation-vectors"],
+        "produces_outputs": ["reduced-representations", "embedding-visualizations"],
+        "applications": [
+          {
+            "id": "feature-analysis.embedding-visualization",
+            "name": "Embedding Visualization",
+            "description": "Visualizing embeddings to understand semantic relationships between concepts",
+            "fulfills_functions": ["feature-analysis.concept-mapping"],
+            "uses_inputs": ["model-embeddings", "labeled-examples"],
+            "produces_outputs": ["2d-projections", "3d-visualizations"],
+            "examples": [
+              "Visualizing word embeddings to reveal semantic relationships in language models",
+              "Mapping the latent space of generative models to understand content organization",
+              "Visualizing how different examples cluster in representation space"
+            ],
+            "supported_by_literature": ["Maaten2008", "McInnes2018"]
+          },
+          {
+            "id": "feature-analysis.activation-space-analysis",
+            "name": "Activation Space Analysis",
+            "description": "Analyzing patterns in activation space to identify feature relationships",
+            "fulfills_functions": ["feature-analysis.concept-mapping", "feature-analysis.alignment-verification"],
+            "uses_inputs": ["activation-vectors", "model-outputs"],
+            "produces_outputs": ["activation-clusters", "feature-directions"],
+            "examples": [
+              "Identifying principal directions in activation space that correspond to meaningful properties",
+              "Detecting emergent features that weren't explicitly trained for",
+              "Mapping how feature representations change across model depth"
+            ],
+            "supported_by_literature": ["Bau2017", "Kim2018"]
+          }
+        ]
+      }
+    ],
+    "implementation_considerations": [
+      {
+        "id": "interpretability-limitations",
+        "name": "Interpretability Limitations",
+        "aspect": "Interpretability Challenges",
+        "derives_from_integration_considerations": ["interpretability-tools-explainability", "interpretability-tools-granularity"],
+        "addressed_by_techniques": ["feature-analysis.feature-visualization", "feature-analysis.neuron-analysis", "feature-analysis.dimensionality-reduction"],
+        "considerations": [
+          "Feature visualization may not capture distributed representations accurately",
+          "Higher-level concepts often emerge from combinations of features",
+          "Abstract concepts may lack intuitive visual representations",
+          "Analysis methods may themselves introduce biases or artifacts"
+        ],
+        "supported_by_literature": ["Olah2017", "Lipton2018", "Doshi-Velez2017"]
+      },
+      {
+        "id": "generalization-challenges",
+        "name": "Generalization Challenges",
+        "aspect": "Generalization Issues",
+        "derives_from_integration_considerations": ["interpretability-tools-consistency", "interpretability-tools-robustness"],
+        "addressed_by_techniques": ["feature-analysis.attribution-methods", "feature-analysis.neuron-analysis"],
+        "considerations": [
+          "Features may behave differently for edge cases or adversarial examples",
+          "Interpretation techniques that work well for one model architecture may fail for others",
+          "Unstable features may change significantly with small input perturbations",
+          "Model updates can dramatically change feature representations"
+        ],
+        "supported_by_literature": ["Kim2018", "Lundberg2017", "Elhage2021"]
+      },
+      {
+        "id": "computational-requirements",
+        "name": "Computational Requirements",
+        "aspect": "Computational Constraints",
+        "derives_from_integration_considerations": ["interpretability-tools-efficiency", "interpretability-tools-scalability"],
+        "addressed_by_techniques": ["feature-analysis.dimensionality-reduction", "feature-analysis.attribution-methods"],
+        "considerations": [
+          "Generating comprehensive feature visualizations can be computationally expensive",
+          "Analysis of large models may require specialized hardware",
+          "Real-time feature analysis poses speed and resource challenges",
+          "Storage requirements for feature maps across model layers"
+        ],
+        "supported_by_literature": ["Wongsuphasawat2018", "McInnes2018", "Hohman2019"]
+      },
+      {
+        "id": "human-factors",
+        "name": "Human Factors",
+        "aspect": "Human-Computer Interaction",
+        "derives_from_integration_considerations": ["interpretability-tools-usability", "interpretability-tools-comprehensibility"],
+        "addressed_by_techniques": ["feature-analysis.dimensionality-reduction", "feature-analysis.feature-visualization"],
+        "considerations": [
+          "The semantic gap between technical visualizations and intuitive understanding",
+          "Cognitive biases in human interpretation of feature visualizations",
+          "Expertise requirements for meaningful feature analysis",
+          "Balancing detail with usability in feature representations"
+        ],
+        "supported_by_literature": ["Hohman2019", "Doshi-Velez2017", "Lipton2018"]
+      }
+    ]
+  },
+  
+  "technical_specifications": {
+    "_documentation": "This section provides technical details about inputs, outputs, performance characteristics, and integration interfaces for feature analysis implementations.",
+    "input_requirements": [
+      {
+        "id": "model-gradients",
+        "name": "Model Gradients",
+        "description": "Gradient information from model outputs with respect to inputs or activations",
+        "format": "Numerical tensor data with same dimensionality as inputs or activations",
+        "constraints": "Requires differentiable components of the model",
+        "related_techniques": ["feature-analysis.gradient-visualization", "feature-analysis.attribution-methods"],
+        "supports_functions": ["feature-analysis.attribution-analysis", "feature-analysis.feature-extraction"],
+        "used_by_applications": ["feature-analysis.gradient-saliency", "feature-analysis.saliency-mapping", "feature-analysis.feature-contribution"]
+      },
+      {
+        "id": "model-activations",
+        "name": "Model Activations",
+        "description": "Activation patterns from specific layers or components within the model",
+        "format": "Multi-dimensional tensor data capturing neuron or feature map activations",
+        "constraints": "Requires model instrumentation for internal data access",
+        "related_techniques": ["feature-analysis.neuron-analysis", "feature-analysis.feature-visualization"],
+        "supports_functions": ["feature-analysis.feature-extraction", "feature-analysis.concept-mapping"],
+        "used_by_applications": ["feature-analysis.neuron-visualization", "feature-analysis.concept-detection", "feature-analysis.circuit-analysis"]
+      },
+      {
+        "id": "model-weights",
+        "name": "Model Weights",
+        "description": "Learned parameters of the model",
+        "format": "Model parameter tensors organized by layer or component",
+        "constraints": "Requires direct access to model architecture and parameters",
+        "related_techniques": ["feature-analysis.feature-visualization", "feature-analysis.neuron-analysis"],
+        "supports_functions": ["feature-analysis.feature-extraction", "feature-analysis.model-debugging"],
+        "used_by_applications": ["feature-analysis.activation-maximization", "feature-analysis.circuit-analysis"]
+      },
+      {
+        "id": "model-embeddings",
+        "name": "Model Embeddings",
+        "description": "Latent space representations of inputs or concepts",
+        "format": "Vector or tensor representations in embedding space",
+        "constraints": "Requires models with explicit embedding representations",
+        "related_techniques": ["feature-analysis.representation-analysis", "feature-analysis.dimensionality-reduction"],
+        "supports_functions": ["feature-analysis.concept-mapping", "feature-analysis.pattern-detection"],
+        "used_by_applications": ["feature-analysis.embedding-probing", "feature-analysis.embedding-visualization"]
+      },
+      {
+        "id": "input-examples",
+        "name": "Input Examples",
+        "description": "Sample inputs for feature analysis and visualization",
+        "format": "Domain-specific data inputs (images, text, etc.) in model-compatible format",
+        "constraints": "Should represent diverse and relevant use cases",
+        "related_techniques": ["feature-analysis.attribution-methods", "feature-analysis.neuron-analysis"],
+        "supports_functions": ["feature-analysis.attribution-analysis", "feature-analysis.feature-extraction"],
+        "used_by_applications": ["feature-analysis.saliency-mapping", "feature-analysis.neuron-visualization"]
+      }
+    ],
+    
+    "output_specifications": [
+      {
+        "id": "feature-visualizations",
+        "name": "Feature Visualizations",
+        "description": "Visual representations of features learned by the model",
+        "format": "Images or other visual media showing maximally activating patterns",
+        "usage": "Enables human interpretation of what features the model has learned",
+        "produced_by_techniques": ["feature-analysis.feature-visualization"],
+        "produced_by_applications": ["feature-analysis.activation-maximization", "feature-analysis.neuron-visualization"],
+        "fulfills_functions": ["feature-analysis.feature-extraction", "feature-analysis.pattern-detection"]
+      },
+      {
+        "id": "importance-scores",
+        "name": "Feature Importance Scores",
+        "description": "Quantitative measures of each feature's contribution to model outputs",
+        "format": "Numerical scores or rankings associated with input features",
+        "usage": "Provides insight into which inputs most influence model decisions",
+        "produced_by_techniques": ["feature-analysis.attribution-methods"],
+        "produced_by_applications": ["feature-analysis.feature-contribution", "feature-analysis.importance-scoring"],
+        "fulfills_functions": ["feature-analysis.attribution-analysis", "feature-analysis.model-debugging"]
+      },
+      {
+        "id": "saliency-maps",
+        "name": "Saliency Maps",
+        "description": "Visualizations highlighting regions of inputs most relevant to model decisions",
+        "format": "Heatmaps or overlays indicating importance of input regions",
+        "usage": "Reveals what parts of the input the model focuses on",
+        "produced_by_techniques": ["feature-analysis.gradient-visualization", "feature-analysis.attribution-methods"],
+        "produced_by_applications": ["feature-analysis.gradient-saliency", "feature-analysis.saliency-mapping"],
+        "fulfills_functions": ["feature-analysis.attribution-analysis", "feature-analysis.feature-extraction"]
+      },
+      {
+        "id": "concept-mappings",
+        "name": "Concept Mappings",
+        "description": "Associations between model features and human-understandable concepts",
+        "format": "Mappings from neurons or features to semantic concepts with confidence scores",
+        "usage": "Bridges the gap between model internals and human understanding",
+        "produced_by_techniques": ["feature-analysis.neuron-analysis", "feature-analysis.representation-analysis"],
+        "produced_by_applications": ["feature-analysis.concept-detection", "feature-analysis.embedding-probing"],
+        "fulfills_functions": ["feature-analysis.concept-mapping", "feature-analysis.alignment-verification"]
+      },
+      {
+        "id": "embedding-visualizations",
+        "name": "Embedding Visualizations",
+        "description": "Reduced-dimensional visualizations of embedding spaces",
+        "format": "2D or 3D visualizations of high-dimensional representations",
+        "usage": "Enables exploration of semantic relationships in latent space",
+        "produced_by_techniques": ["feature-analysis.dimensionality-reduction"],
+        "produced_by_applications": ["feature-analysis.embedding-visualization", "feature-analysis.activation-space-analysis"],
+        "fulfills_functions": ["feature-analysis.concept-mapping", "feature-analysis.pattern-detection"]
+      }
+    ],
+    
+    "performance_characteristics": {
+      "throughput": "Can process 1-100 samples per second depending on model size and analysis depth",
+      "latency": "Basic attribution methods: 10-100ms; Feature visualization: 1-60s; Full network analysis: minutes to hours",
+      "scalability": "Computational complexity scales linearly with input size and quadratically with model size for many techniques",
+      "resource_utilization": "Memory usage from 2-10x the model size; GPU acceleration recommended for most techniques",
+      "related_considerations": [
+        "computational-requirements",
+        "human-factors",
+        "interpretability-limitations"
+      ]
+    }
+  },
+  
+  "literature": {
+    "_documentation": "This section lists the literature references that inform feature analysis approaches, providing the academic foundation for the techniques.",
+    "references": [
+      "Olah2017", "Brundage2020", "Kim2018", "Lundberg2017", "Zeiler2014", 
+      "Bau2017", "Nguyen2016", "Wongsuphasawat2018", "Maaten2008", "McInnes2018",
+      "Doshi-Velez2017", "Elhage2021", "Hohman2019", "Pearl2018", "Lipton2018"
+    ]
+  },
+  
+  "literature_connections": [
+    {
+      "reference_id": "Olah2017",
+      "technique": "feature-analysis.feature-visualization",
+      "relevant_aspects": "Primary reference for feature visualization techniques in neural networks, introducing activation maximization and feature visualization methods"
+    },
+    {
+      "reference_id": "Brundage2020",
+      "technique": "feature-analysis.dimensionality-reduction",
+      "relevant_aspects": "Connection to mechanisms for verifiable claims about AI behavior and feature representation analysis"
+    },
+    {
+      "reference_id": "Kim2018",
+      "technique": "feature-analysis.neuron-analysis",
+      "relevant_aspects": "Methods for mapping neural network features to human-interpretable concepts through Concept Activation Vectors (TCAV)"
+    },
+    {
+      "reference_id": "Lundberg2017",
+      "technique": "feature-analysis.attribution-methods",
+      "relevant_aspects": "Unified framework for attributing model predictions to input features using SHAP values"
+    },
+    {
+      "reference_id": "Zeiler2014",
+      "technique": "feature-analysis.feature-visualization",
+      "relevant_aspects": "Visualization of learned features in convolutional networks through deconvolution approaches"
+    },
+    {
+      "reference_id": "Bau2017",
+      "technique": "feature-analysis.neuron-analysis",
+      "relevant_aspects": "Quantifying interpretability of deep networks through systematic mapping of network units to concepts"
+    },
+    {
+      "reference_id": "Nguyen2016",
+      "technique": "feature-analysis.feature-visualization",
+      "relevant_aspects": "Advanced techniques for synthesizing preferred inputs for neurons in deep neural networks"
+    },
+    {
+      "reference_id": "Wongsuphasawat2018",
+      "technique": "feature-analysis.dimensionality-reduction",
+      "relevant_aspects": "Interactive visualization systems for exploring deep neural network behavior"
+    },
+    {
+      "reference_id": "Maaten2008",
+      "technique": "feature-analysis.dimensionality-reduction",
+      "relevant_aspects": "Dimensionality reduction technique (t-SNE) commonly used for visualizing high-dimensional feature spaces"
+    },
+    {
+      "reference_id": "McInnes2018",
+      "technique": "feature-analysis.dimensionality-reduction",
+      "relevant_aspects": "Efficient dimensionality reduction algorithms (UMAP) for visualizing neural network representations"
+    },
+    {
+      "reference_id": "Doshi-Velez2017",
+      "technique": "feature-analysis.neuron-analysis",
+      "relevant_aspects": "Rigorous frameworks for evaluating interpretability in machine learning"
+    },
+    {
+      "reference_id": "Elhage2021",
+      "technique": "feature-analysis.neuron-analysis",
+      "relevant_aspects": "Mathematical framework for understanding how features and circuits form in neural networks"
+    },
+    {
+      "reference_id": "Hohman2019",
+      "technique": "feature-analysis.feature-visualization",
+      "relevant_aspects": "Survey of visual analytics approaches for deep learning interpretability"
+    },
+    {
+      "reference_id": "Pearl2018",
+      "technique": "feature-analysis.attribution-methods",
+      "relevant_aspects": "Causal frameworks for understanding model behavior and attributions"
+    },
+    {
+      "reference_id": "Lipton2018",
+      "technique": "feature-analysis.neuron-analysis",
+      "relevant_aspects": "Critical analysis of interpretability definitions and approaches in machine learning"
+    },
+    {
+      "reference_id": "Ribeiro2016",
+      "technique": "feature-analysis.attribution-methods",
+      "relevant_aspects": "Local interpretable model-agnostic explanations (LIME) for explaining individual predictions"
+    },
+    {
+      "reference_id": "Sundararajan2017",
+      "technique": "feature-analysis.gradient-visualization",
+      "relevant_aspects": "Axiomatic attribution methods using integrated gradients for deep networks"
+    }
+  ],
+  
+  "relationships": {
+    "_documentation": "This section describes how the feature analysis subcomponent relates to other subcomponents, parent components, and external components.",
+    "items": [
+      {
+        "target_id": "mechanistic-interpretability",
+        "relationship_type": "bidirectional_exchange",
+        "description": "Feature analysis provides the foundation for mechanistic interpretability by identifying the basic building blocks that mechanisms operate on",
+        "related_functions": ["feature-analysis.feature-extraction", "feature-analysis.feature-visualization", "feature-analysis.concept-mapping"],
+        "related_techniques": ["feature-analysis.feature-visualization", "feature-analysis.neuron-analysis", "feature-analysis.dimensionality-reduction"],
+        "related_inputs": ["model-parameters", "activation-data", "model-weights"],
+        "related_outputs": ["feature-maps", "importance-scores", "concept-associations", "neuron-behaviors"]
+      },
+      {
+        "target_id": "explanation-systems",
+        "relationship_type": "bidirectional_exchange",
+        "description": "Feature analysis results serve as inputs to explanation systems that generate human-understandable explanations",
+        "related_functions": ["feature-analysis.feature-visualization", "feature-analysis.importance-attribution", "feature-analysis.concept-mapping"],
+        "related_techniques": ["feature-analysis.attribution-methods", "feature-analysis.dimensionality-reduction", "feature-analysis.neuron-analysis"],
+        "related_inputs": ["model-parameters", "activation-data", "model-outputs"],
+        "related_outputs": ["importance-scores", "concept-associations", "feature-visualizations"]
+      },
+      {
+        "target_id": "proxy-understanding",
+        "relationship_type": "bidirectional_exchange",
+        "description": "Feature analysis helps identify potential proxy objectives or shortcuts in model reasoning",
+        "related_functions": ["feature-analysis.feature-extraction", "feature-analysis.importance-attribution", "feature-analysis.concept-mapping"],
+        "related_techniques": ["feature-analysis.neuron-analysis", "feature-analysis.attribution-methods", "feature-analysis.dimensionality-reduction"],
+        "related_inputs": ["activation-data", "training-data", "model-outputs"],
+        "related_outputs": ["feature-maps", "importance-scores", "concept-associations"]
+      }
+    ]
+  },
+  
+  "integration": {
+    "internal_integrations": [
+      {
+        "target_subcomponent": "mechanistic-interpretability",
+        "integration_type": "data_exchange",
+        "description": "Provides feature identification and importance information for deeper mechanism analysis",
+        "data_flow": "Feature analysis extracts and visualizes features that mechanistic interpretability uses to understand computational mechanisms in neural networks",
+        "related_function": ["feature-analysis.feature-extraction", "feature-analysis.feature-visualization", "feature-analysis.concept-mapping"],
+        "related_architectural_pattern": ["interpretability-tools.feature-analysis-pattern"],
+        "enabled_by_techniques": ["feature-analysis.feature-visualization", "feature-analysis.neuron-analysis", "feature-analysis.dimensionality-reduction"],
+        "related_inputs": ["model-parameters", "activation-data", "model-weights"],
+        "related_outputs": ["feature-maps", "importance-scores", "concept-associations", "neuron-behaviors"]
+      },
+      {
+        "target_subcomponent": "explanation-systems",
+        "integration_type": "data_exchange",
+        "description": "Provides identified features and importance rankings for generating explanations",
+        "data_flow": "Feature analysis determines important features and concepts that explanation systems translate into human-understandable explanations",
+        "related_function": ["feature-analysis.feature-visualization", "feature-analysis.importance-attribution", "feature-analysis.concept-mapping"],
+        "related_architectural_pattern": ["interpretability-tools.explanation-pattern"],
+        "enabled_by_techniques": ["feature-analysis.attribution-methods", "feature-analysis.dimensionality-reduction", "feature-analysis.neuron-analysis"],
+        "related_inputs": ["model-parameters", "activation-data", "model-outputs"],
+        "related_outputs": ["importance-scores", "concept-associations", "feature-visualizations"]
+      },
+      {
+        "target_subcomponent": "proxy-understanding",
+        "integration_type": "data_exchange",
+        "description": "Shares feature behavior information for proxy detection",
+        "data_flow": "Feature analysis provides feature patterns and correlations that proxy understanding uses to identify unintended shortcuts or proxy objectives",
+        "related_function": ["feature-analysis.feature-extraction", "feature-analysis.importance-attribution", "feature-analysis.concept-mapping"],
+        "related_architectural_pattern": ["interpretability-tools.proxy-detection-pattern"],
+        "enabled_by_techniques": ["feature-analysis.neuron-analysis", "feature-analysis.attribution-methods", "feature-analysis.dimensionality-reduction"],
+        "related_inputs": ["activation-data", "training-data", "model-outputs"],
+        "related_outputs": ["feature-maps", "importance-scores", "concept-associations"]
+      }
+    ],
+    "external_integrations": [
+      {
+        "system": "value-learning",
+        "component": "value-learning/explicit-value-encoding",
+        "integration_type": "api",
+        "description": "Validates if learned features align with encoded values",
+        "endpoint": "/api/value-learning/validate-features",
+        "data_format": "JSON mapping of features to value specifications",
+        "related_function": ["feature-analysis.concept-mapping", "feature-analysis.correlation-analysis"],
+        "related_architectural_pattern": ["value-learning.feature-validation-pattern"],
+        "enabled_by_techniques": ["feature-analysis.concept-mapping", "feature-analysis.importance-attribution"],
+        "related_inputs": ["value-specifications", "activation-data"],
+        "related_outputs": ["concept-associations", "importance-scores"]
+      },
+      {
+        "system": "technical-safeguards",
+        "component": "technical-safeguards/formal-verification",
+        "integration_type": "api",
+        "description": "Provides feature insights for safety verification",
+        "endpoint": "/api/technical-safeguards/feature-verification",
+        "data_format": "Structured feature maps with safety annotations",
+        "related_function": ["feature-analysis.feature-extraction", "feature-analysis.importance-attribution"],
+        "related_architectural_pattern": ["technical-safeguards.feature-verification-pattern"],
+        "enabled_by_techniques": ["feature-analysis.feature-visualization", "feature-analysis.attribution-methods"],
+        "related_inputs": ["model-parameters", "activation-data"],
+        "related_outputs": ["feature-maps", "importance-scores"]
+      },
+      {
+        "system": "oversight-mechanisms",
+        "component": "oversight-mechanisms/monitoring-systems",
+        "integration_type": "api",
+        "description": "Provides interpretable features for monitoring AI behavior",
+        "endpoint": "/api/oversight/feature-monitoring",
+        "data_format": "Real-time feature activation data with anomaly detection",
+        "related_function": ["feature-analysis.feature-extraction", "feature-analysis.correlation-analysis"],
+        "related_architectural_pattern": ["oversight-mechanisms.feature-monitoring-pattern"],
+        "enabled_by_techniques": ["feature-analysis.feature-visualization", "feature-analysis.neuron-analysis"],
+        "related_inputs": ["activation-data"],
+        "related_outputs": ["feature-maps", "importance-scores"]
+      }
+    ]
+  }
+} 

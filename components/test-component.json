@@ -1,0 +1,130 @@
+{
+  "_documentation": "This is a test component for verifying the hierarchy analyzer functionality.",
+  "id": "test-component",
+  "name": "Test Component",
+  "type": "component",
+  "parent": "ai-alignment",
+  "description": "A properly formatted test component for verifying the analyzer's ability to detect correct structures and relationships.",
+  
+  "overview": {
+    "purpose": "To test the hierarchy analyzer's capability to process correctly formatted components",
+    "key_capabilities": [
+      {
+        "id": "test-component.test-capability",
+        "name": "Test Capability",
+        "description": "A test capability for the analyzer",
+        "implemented_by_subcomponents": [
+          "test-subcomponent"
+        ]
+      }
+    ],
+    "primary_functions": [
+      {
+        "id": "test-component.test-function",
+        "name": "Test Function",
+        "description": "A test function for the analyzer",
+        "implemented_by_subcomponents": [
+          "test-subcomponent"
+        ]
+      }
+    ]
+  },
+  
+  "capabilities": {
+    "_documentation": "Test capabilities section",
+    "items": [
+      {
+        "id": "test-component.test-capability",
+        "name": "Test Capability",
+        "type": "capability",
+        "description": "A test capability for the analyzer with all required fields",
+        "implemented_by_subcomponents": [
+          "test-subcomponent"
+        ],
+        "implements_subcomponent_capabilities": [
+          "test-subcomponent.test-capability"
+        ],
+        "supported_by_literature": [
+          "TestAuthor2023"
+        ],
+        "related_capabilities": [
+          "test-component.additional-capability"
+        ]
+      },
+      {
+        "id": "test-component.additional-capability",
+        "name": "Additional Capability",
+        "type": "capability",
+        "description": "Another test capability for the analyzer",
+        "implemented_by_subcomponents": [
+          "test-subcomponent"
+        ],
+        "supported_by_literature": [
+          "TestAuthor2023"
+        ],
+        "related_capabilities": [
+          "test-component.test-capability"
+        ]
+      }
+    ]
+  },
+  
+  "functions": {
+    "_documentation": "Test functions section",
+    "items": [
+      {
+        "id": "test-component.test-function",
+        "name": "Test Function",
+        "type": "function",
+        "description": "A test function for the analyzer with all required fields",
+        "implemented_by_subcomponents": [
+          "test-subcomponent"
+        ],
+        "implements_subcomponent_functions": [
+          "test-subcomponent.test-function"
+        ],
+        "supported_by_literature": [
+          "TestAuthor2023"
+        ],
+        "related_functions": [
+          "test-component.additional-function"
+        ]
+      },
+      {
+        "id": "test-component.additional-function",
+        "name": "Additional Function",
+        "type": "function",
+        "description": "Another test function for the analyzer",
+        "implemented_by_subcomponents": [
+          "test-subcomponent"
+        ],
+        "supported_by_literature": [
+          "TestAuthor2023"
+        ],
+        "related_functions": [
+          "test-component.test-function"
+        ]
+      }
+    ]
+  },
+  
+  "integration_approaches": [
+    {
+      "id": "test-component.test-integration",
+      "name": "Test Integration",
+      "description": "A test integration approach",
+      "implemented_by_techniques": [
+        "test-subcomponent.test-technique"
+      ]
+    }
+  ],
+  
+  "subcomponents": [
+    {
+      "id": "test-subcomponent",
+      "name": "Test Subcomponent",
+      "type": "subcomponent",
+      "description": "A test subcomponent that this component contains."
+    }
+  ]
+} 

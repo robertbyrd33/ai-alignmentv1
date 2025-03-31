@@ -1,0 +1,291 @@
+{
+  "_documentation": "This template defines the structure for a component file, which represents the middle level in the AI alignment network hierarchy.",
+  
+  "id": "component-id",
+  "name": "Component Name",
+  "type": "component",
+  "parent": "ai-alignment",
+  "description": "Detailed description of the component and its role in AI alignment.",
+  
+  "overview": {
+    "purpose": "The primary purpose and function of this component",
+    "key_capabilities": [
+      {
+        "id": "example-component.capability-1",
+        "name": "Example Capability 1",
+        "description": "Description of this capability",
+        "implemented_by_subcomponents": [
+          "example-subcomponent-1",
+          "example-subcomponent-2"
+        ]
+      },
+      {
+        "id": "example-component.capability-2",
+        "name": "Example Capability 2",
+        "description": "Description of this capability",
+        "implemented_by_subcomponents": [
+          "example-subcomponent-1"
+        ]
+      }
+    ],
+    "primary_functions": [
+      {
+        "id": "example-component.function-1",
+        "name": "Example Function 1",
+        "description": "Description of this function",
+        "implemented_by_subcomponents": [
+          "example-subcomponent-1",
+          "example-subcomponent-2"
+        ]
+      },
+      {
+        "id": "example-component.function-2",
+        "name": "Example Function 2",
+        "description": "Description of this function",
+        "implemented_by_subcomponents": [
+          "example-subcomponent-2"
+        ]
+      }
+    ]
+  },
+  
+  "capabilities": {
+    "_documentation": "This section duplicates and expands on overview.key_capabilities. Required for network model navigation.",
+    "items": [
+      {
+        "id": "example-component.capability-1",
+        "name": "Example Capability 1",
+        "description": "More detailed description of this capability",
+        "implemented_by_subcomponents": [
+          "example-subcomponent-1",
+          "example-subcomponent-2"
+        ],
+        "supported_by_literature": [
+          "AuthorYear1",
+          "AuthorYear2"
+        ],
+        "related_capabilities": [
+          "example-component.capability-2"
+        ]
+      },
+      {
+        "id": "example-component.capability-2",
+        "name": "Example Capability 2",
+        "description": "More detailed description of this capability",
+        "implemented_by_subcomponents": [
+          "example-subcomponent-1"
+        ],
+        "supported_by_literature": [
+          "AuthorYear3"
+        ],
+        "related_capabilities": [
+          "example-component.capability-1"
+        ]
+      }
+    ]
+  },
+  
+  "functions": {
+    "_documentation": "This section duplicates and expands on overview.primary_functions. Required for network model navigation.",
+    "items": [
+      {
+        "id": "example-component.function-1",
+        "name": "Example Function 1",
+        "description": "More detailed description of this function",
+        "implemented_by_subcomponents": [
+          "example-subcomponent-1",
+          "example-subcomponent-2"
+        ],
+        "supported_by_literature": [
+          "AuthorYear1"
+        ],
+        "related_functions": [
+          "example-component.function-2"
+        ]
+      },
+      {
+        "id": "example-component.function-2",
+        "name": "Example Function 2",
+        "description": "More detailed description of this function",
+        "implemented_by_subcomponents": [
+          "example-subcomponent-2"
+        ],
+        "supported_by_literature": [
+          "AuthorYear2"
+        ],
+        "related_functions": [
+          "example-component.function-1"
+        ]
+      }
+    ]
+  },
+  
+  "integration_approaches": [
+    {
+      "id": "example-component.integration-approach-1",
+      "name": "Integration Approach 1",
+      "description": "Description of how this approach integrates subcomponents",
+      "implemented_by_techniques": [
+        "example-subcomponent-1.technique-1",
+        "example-subcomponent-2.technique-2"
+      ]
+    },
+    {
+      "id": "example-component.integration-approach-2",
+      "name": "Integration Approach 2",
+      "description": "Description of how this approach integrates subcomponents",
+      "implemented_by_techniques": [
+        "example-subcomponent-1.technique-3",
+        "example-subcomponent-2.technique-1"
+      ]
+    }
+  ],
+  
+  "integration_considerations": [
+    {
+      "id": "example-component.consideration-1",
+      "name": "Integration Consideration 1",
+      "description": "Description of this consideration for integration",
+      "implemented_by_considerations": [
+        "example-subcomponent-1.implementation-consideration-1",
+        "example-subcomponent-2.implementation-consideration-3"
+      ]
+    },
+    {
+      "id": "example-component.consideration-2",
+      "name": "Integration Consideration 2",
+      "description": "Description of this consideration for integration",
+      "implemented_by_considerations": [
+        "example-subcomponent-1.implementation-consideration-2",
+        "example-subcomponent-2.implementation-consideration-1"
+      ]
+    }
+  ],
+  
+  "relationships": {
+    "components": [
+      {
+        "id": "other-component-1",
+        "relationship_type": "bidirectional",
+        "description": "Description of how these components interact",
+        "integration_points": [
+          {
+            "this_component_function": "example-component.function-1",
+            "other_component_function": "other-component-1.function-3",
+            "description": "Description of this specific integration point"
+          }
+        ]
+      },
+      {
+        "id": "other-component-2",
+        "relationship_type": "provides_to",
+        "description": "Description of how these components interact",
+        "integration_points": [
+          {
+            "this_component_function": "example-component.function-2",
+            "other_component_function": "other-component-2.function-1",
+            "description": "Description of this specific integration point"
+          }
+        ]
+      }
+    ]
+  },
+  
+  "subcomponents": [
+    {
+      "id": "subcomponent-1",
+      "name": "Subcomponent 1",
+      "type": "subcomponent",
+      "description": "Description of the first subcomponent."
+    },
+    {
+      "id": "subcomponent-2",
+      "name": "Subcomponent 2",
+      "type": "subcomponent",
+      "description": "Description of the second subcomponent."
+    }
+  ],
+  
+  "cross_connections": [
+    {
+      "source_id": "component-id",
+      "target_id": "other-component-id",
+      "type": "interacts_with",
+      "description": "How this component interacts with another component."
+    },
+    {
+      "source_id": "subcomponent-1",
+      "target_id": "other-subcomponent-id",
+      "type": "depends_on",
+      "description": "How a subcomponent of this component depends on a subcomponent from elsewhere."
+    }
+  ],
+  
+  "metadata": {
+    "considerations": [
+      {
+        "name": "Implementation Approach",
+        "description": "Strategic approach to implementing this component.",
+        "options": ["Centralized", "Federated", "Hybrid"],
+        "implications": "Different implementation approaches affect system architecture and performance."
+      },
+      {
+        "name": "Scalability Considerations",
+        "description": "How this component scales with increasing AI system complexity.",
+        "requirements": "Must scale linearly with model size and handle distributed systems.",
+        "challenges": "Maintaining efficiency at scale while preserving alignment guarantees."
+      }
+    ],
+    
+    "development_status": {
+      "current_stage": "Conceptual", // Conceptual, Research, Prototype, Deployed
+      "maturity_level": "Low", // Low, Medium, High
+      "research_gaps": [
+        "Gap in theoretical understanding of component limitations",
+        "Lack of empirical evaluation in real-world settings"
+      ],
+      "implementation_timeline": "2-5 years for initial implementation"
+    },
+    
+    "integration_points": [
+      {
+        "system": "Training Pipeline",
+        "interface": "Pre-training data filtering API",
+        "requirements": "Must process input data at training speed with minimal latency"
+      },
+      {
+        "system": "Inference Service",
+        "interface": "Real-time monitoring hook",
+        "requirements": "Must operate with <10ms overhead per inference request"
+      }
+    ]
+  },
+  
+  "literature": {
+    "references": [
+      "AuthorYear1",
+      "AuthorYear2",
+      "AuthorYear3"
+    ]
+  },
+  
+  "literature_connections": [
+    {
+      "reference_id": "AuthorYear1",
+      "capability": "example-component.capability-1",
+      "function": "example-component.function-1",
+      "relevant_aspects": "Brief description of how this reference informs the design"
+    },
+    {
+      "reference_id": "AuthorYear2",
+      "capability": "example-component.capability-1",
+      "function": "example-component.function-2",
+      "relevant_aspects": "Brief description of how this reference informs the design"
+    },
+    {
+      "reference_id": "AuthorYear3",
+      "capability": "example-component.capability-2",
+      "relevant_aspects": "Brief description of how this reference informs the design"
+    }
+  ]
+} 

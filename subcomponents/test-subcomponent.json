@@ -1,0 +1,120 @@
+{
+  "_documentation": "This is a test subcomponent for verifying the hierarchy analyzer functionality.",
+  "id": "test-subcomponent",
+  "name": "Test Subcomponent",
+  "type": "subcomponent",
+  "parent": "test-component",
+  "description": "A properly formatted test subcomponent for verifying the analyzer's ability to detect correct structures and relationships.",
+  
+  "capabilities": [
+    {
+      "id": "test-subcomponent.test-capability",
+      "name": "Test Capability",
+      "type": "capability",
+      "description": "A test capability for the analyzer",
+      "parent": "test-subcomponent",
+      "implements_component_capabilities": [
+        "test-component.test-capability"
+      ],
+      "functions": [
+        {
+          "id": "test-subcomponent.test-capability.test-function",
+          "name": "Test Function",
+          "type": "function",
+          "description": "A test function implementing the capability",
+          "parent": "test-subcomponent.test-capability",
+          "implements_component_functions": [
+            "test-component.test-function"
+          ],
+          "specifications": [
+            {
+              "id": "test-subcomponent.test-capability.test-function.test-specification",
+              "name": "Test Specification",
+              "type": "specification",
+              "description": "Technical details for implementing the function",
+              "parent": "test-subcomponent.test-capability.test-function",
+              "requirements": [
+                "Test requirement 1",
+                "Test requirement 2"
+              ],
+              "integration": {
+                "id": "test-subcomponent.test-capability.test-function.test-specification.test-integration",
+                "name": "Test Integration",
+                "type": "integration",
+                "description": "Integration approach for implementing the specification",
+                "parent": "test-subcomponent.test-capability.test-function.test-specification",
+                "techniques": [
+                  {
+                    "id": "test-subcomponent.test-technique",
+                    "name": "Test Technique",
+                    "type": "technique",
+                    "description": "A technique for implementing the integration",
+                    "parent": "test-subcomponent.test-capability.test-function.test-specification.test-integration",
+                    "implements_integration_approaches": [
+                      "test-component.test-integration"
+                    ],
+                    "applications": [
+                      {
+                        "id": "test-subcomponent.test-technique.test-application",
+                        "name": "Test Application",
+                        "type": "application",
+                        "description": "A concrete application of the technique",
+                        "parent": "test-subcomponent.test-technique",
+                        "inputs": [
+                          {
+                            "name": "Test Input",
+                            "description": "Example input for the application",
+                            "data_type": "string",
+                            "constraints": "Must be valid UTF-8"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Test Output",
+                            "description": "Example output from the application",
+                            "data_type": "string",
+                            "interpretation": "Success if non-empty"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  
+  "cross_connections": [
+    {
+      "source_id": "test-subcomponent",
+      "target_id": "test-component",
+      "type": "belongs_to",
+      "description": "This subcomponent belongs to the test component"
+    }
+  ],
+  
+  "metadata": {
+    "considerations": [
+      {
+        "name": "Test Consideration",
+        "description": "A test consideration for the analyzer",
+        "rating": "Medium",
+        "explanation": "This is just a test"
+      }
+    ],
+    
+    "development_status": {
+      "current_stage": "Research",
+      "maturity_level": "Low",
+      "open_challenges": [
+        "Test challenge 1",
+        "Test challenge 2"
+      ],
+      "implementation_timeline": "N/A - this is just a test"
+    }
+  }
+} 

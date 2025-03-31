@@ -1,0 +1,134 @@
+{
+  "_documentation": "This is a test component with deliberate errors for verifying the hierarchy analyzer's error detection.",
+  "id": "test-component-errors",
+  "name": "Test Component With Errors",
+  "type": "component",
+  "description": "A deliberately malformed test component with various errors for testing the analyzer.",
+  
+  "overview": {
+    "purpose": "To test the hierarchy analyzer's capability to detect and report errors in component structure",
+    "key_capabilities": [
+      {
+        "id": "test-component-errors.test-capability",
+        "name": "Test Capability",
+        "description": "A test capability for the analyzer"
+      }
+    ],
+    "primary_functions": [
+      {
+        "name": "Test Function",
+        "description": "A test function missing its ID field"
+      }
+    ]
+  },
+  
+  "capabilities": [
+    {
+      "id": "test-component-errors.test-capability",
+      "name": "Test Capability",
+      "description": "Error: This should be in capabilities.items array, not directly in capabilities"
+    }
+  ],
+  
+  "capabilities_objects": {
+    "_documentation": "Error: Wrong field name (should be capabilities)",
+    "items": [
+      {
+        "id": "test-component-errors.broken-capability",
+        "name": "Broken Capability",
+        "type": "capability",
+        "description": "A capability in the wrong field name",
+        "implemented_by_subcomponents": "Error: This should be an array, not a string"
+      }
+    ]
+  },
+  
+  "functions": {
+    "_documentation": "Test functions section",
+    "items": [
+      {
+        "id": "test-component-errors.test-function",
+        "name": "Test Function",
+        "description": "A test function missing its type field",
+        "implemented_by_subcomponents": [
+          "nonexistent-subcomponent"
+        ]
+      },
+      {
+        "id": "test-function-wrong-id",
+        "name": "Function With Wrong ID Format",
+        "type": "function",
+        "description": "This function has an incorrect ID format (missing component prefix)"
+      },
+      {
+        "id": "test-component-errors.broken-connection-function",
+        "name": "Function With Broken Connection",
+        "type": "function",
+        "description": "A function with implements_subcomponent_functions referencing non-existent functions",
+        "implements_subcomponent_functions": [
+          "test-subcomponent.nonexistent-function",
+          "nonexistent-subcomponent.nonexistent-function"
+        ]
+      }
+    ]
+  },
+  
+  "integration_approaches": [
+    {
+      "name": "Test Integration",
+      "description": "A test integration approach missing its ID"
+    },
+    {
+      "id": "test-component-errors.broken-integration",
+      "name": "Broken Integration",
+      "description": "An integration approach with malformed implemented_by_techniques field",
+      "implemented_by_techniques": {
+        "id": "Error: This should be an array, not an object"
+      }
+    },
+    {
+      "id": "test-component-errors.nonexistent-reference-integration",
+      "name": "Integration With Nonexistent References",
+      "description": "An integration approach referencing nonexistent techniques",
+      "implemented_by_techniques": [
+        "nonexistent-subcomponent.nonexistent-technique",
+        "test-subcomponent.nonexistent-technique"
+      ]
+    }
+  ],
+  
+  "subcomponents": [
+    {
+      "id": "test-subcomponent-wrong-parent",
+      "name": "Test Subcomponent With Wrong Parent",
+      "type": "subcomponent",
+      "parent": "nonexistent-component",
+      "description": "A test subcomponent with a reference to a nonexistent parent."
+    },
+    {
+      "name": "Subcomponent Missing ID",
+      "type": "subcomponent",
+      "description": "A subcomponent missing its ID field"
+    },
+    {
+      "id": "test-component-errors.wrong-format-subcomponent",
+      "name": "Subcomponent With Wrong Format",
+      "type": "subcomponent",
+      "description": "A subcomponent with the wrong ID format (should not include component prefix)",
+      "capabilities": "Error: This should be an array, not a string"
+    }
+  ],
+  
+  "cross_connections": {
+    "error": "This should be an array, not an object"
+  },
+  
+  "metadata": {
+    "considerations": "Error: This should be an array, not a string",
+    "development_status": {
+      "current_stage": 123,
+      "maturity_level": true,
+      "open_challenges": "Error: This should be an array, not a string"
+    }
+  }
+} 

@@ -1,0 +1,149 @@
+{
+  "_documentation": "This is a test subcomponent with deliberate errors for verifying the hierarchy analyzer's error detection.",
+  "id": "test-subcomponent-errors",
+  "name": "Test Subcomponent With Errors",
+  "type": "subcomponent",
+  "description": "A deliberately malformed test subcomponent with various errors for testing the analyzer.",
+  
+  "capabilities": {
+    "_documentation": "Error: Using component-style capabilities structure in a subcomponent",
+    "items": [
+      {
+        "id": "wrong-id-format",
+        "name": "Capability With Wrong ID",
+        "description": "This capability is missing the subcomponent prefix in its ID"
+      }
+    ]
+  },
+  
+  "other_capabilities": [
+    {
+      "id": "test-subcomponent-errors.test-capability",
+      "name": "Test Capability",
+      "description": "Error: This is in the wrong field name (other_capabilities instead of capabilities)",
+      "implements_component_capabilities": [
+        "nonexistent-component.nonexistent-capability"
+      ],
+      "functions": [
+        {
+          "id": "test-subcomponent-errors.test-capability.test-function",
+          "name": "Test Function",
+          "description": "A function with missing type field",
+          "implements_component_functions": [
+            "nonexistent-component.nonexistent-function"
+          ],
+          "specifications": "Error: This should be an array, not a string"
+        },
+        {
+          "id": "test-subcomponent-errors.test-capability.broken-function",
+          "name": "Function With Array Errors",
+          "type": "function",
+          "description": "A function with an array that contains a wrong type",
+          "specifications": [
+            {
+              "id": "test-subcomponent-errors.test-capability.broken-function.test-specification",
+              "name": "Test Specification",
+              "type": "specifications",
+              "description": "A specification with missing parent field",
+              "requirements": 123,
+              "integration": {
+                "id": "test-subcomponent-errors.test-capability.broken-function.test-specification.wrong-integration",
+                "name": "Wrong Integration",
+                "type": "integration",
+                "description": "An integration with malformed techniques array",
+                "techniques": "Error: This should be an array, not a string"
+              }
+            },
+            {
+              "id": "test-subcomponent-errors.test-capability.broken-function.broken-specification",
+              "name": "Broken Specification",
+              "type": "specifications",
+              "description": "A specification with malformed integration object",
+              "integration": {
+                "name": "Missing ID Integration",
+                "type": "integration",
+                "description": "An integration missing its ID field",
+                "techniques": [
+                  {
+                    "id": "test-subcomponent-errors.test-technique-wrong-parent",
+                    "name": "Technique With Wrong Parent",
+                    "type": "technique",
+                    "description": "A technique with wrong parent reference",
+                    "parent": "nonexistent.parent.path",
+                    "applications": [
+                      {
+                        "id": "test-subcomponent-errors.test-technique-wrong-parent.broken-application",
+                        "name": "Broken Application",
+                        "type": "application",
+                        "description": "An application with malformed inputs and outputs",
+                        "inputs": "Error: This should be an array, not a string",
+                        "outputs": [
+                          "Error: This should be an object, not a string"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "test-subcomponent-errors.test-capability.incomplete-function",
+          "name": "Incomplete Function",
+          "type": "function",
+          "description": "A function with specifications that have no integration",
+          "specifications": [
+            {
+              "id": "test-subcomponent-errors.test-capability.incomplete-function.specification-no-integration",
+              "name": "Specification Without Integration",
+              "type": "specifications",
+              "description": "A specification that's missing the integration field entirely"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "test-subcomponent-errors.empty-capability",
+      "name": "Empty Capability",
+      "type": "capability",
+      "description": "A capability with no functions"
+    },
+    {
+      "id": "test-subcomponent-errors.double.prefixed.capability",
+      "name": "Double-Prefixed Capability",
+      "type": "capability",
+      "description": "A capability with a double-prefixed ID",
+      "functions": [
+        {
+          "id": "test-subcomponent-errors.double.prefixed.capability.function",
+          "name": "Function With Double-Prefixed Parent",
+          "type": "function",
+          "description": "A function under a double-prefixed capability"
+        }
+      ]
+    }
+  ],
+  
+  "cross_connections": [
+    {
+      "source_id": "test-subcomponent-errors",
+      "target_id": "nonexistent-component",
+      "type": "belongs_to",
+      "description": "Error: References a nonexistent component"
+    }
+  ],
+  
+  "metadata": {
+    "considerations": [
+      {
+        "name": "Test Consideration",
+        "description": "A test consideration for the analyzer",
+        "explanation": "This consideration is missing its rating field"
+      }
+    ],
+    
+    "development_status": "Error: This should be an object, not a string"
+  }
+} 

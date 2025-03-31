@@ -1,0 +1,2574 @@
+{
+  "_documentation": "This subcomponent implements systems and processes that develop the knowledge, skills, and infrastructure necessary for diverse communities to effectively participate in democratic alignment of AI systems, ensuring that democratic control of AI is accessible to all affected stakeholders.",
+  "id": "deliberative-capacity-building",
+  "name": "Deliberative Capacity Building",
+  "description": "Systems and processes that develop the knowledge, skills, and infrastructure necessary for diverse communities to effectively participate in democratic alignment of AI systems, ensuring that democratic control of AI is accessible to all affected stakeholders.",
+  "type": "subcomponent",
+  "parent": "democratic-alignment",
+  
+  "capabilities": [
+    {
+      "id": "deliberative-capacity-building.ai-literacy",
+      "name": "AI Literacy Development",
+      "description": "Development of AI literacy for diverse stakeholders across knowledge levels",
+      "implements_component_capabilities": ["democratic-alignment.participatory-governance-capability", "democratic-alignment.deliberative-capacity-capability"],
+      "type": "capability",
+      "parent": "deliberative-capacity-building",
+      "functions": [
+        {
+          "id": "deliberative-capacity-building.ai-literacy.knowledge-building",
+          "name": "Knowledge Building",
+          "description": "Build knowledge and understanding of AI systems among diverse stakeholders",
+          "implements_component_functions": ["democratic-alignment.participation-facilitation", "democratic-alignment.value-elicitation"],
+          "type": "function",
+          "parent": "deliberative-capacity-building.ai-literacy",
+          "specifications": [
+            {
+              "id": "deliberative-capacity-building.ai-literacy.knowledge-building.educational-curriculum",
+              "name": "Educational Curriculum Specifications",
+              "description": "Technical specifications for AI literacy curriculum development and implementation",
+              "type": "specifications",
+              "parent": "deliberative-capacity-building.ai-literacy.knowledge-building",
+              "requirements": [
+                "Modular learning materials for different knowledge levels",
+                "Multilingual and accessible content formats",
+                "Interactive learning components for complex AI concepts",
+                "Assessment mechanisms to evaluate knowledge acquisition"
+              ],
+              "integration": {
+                "id": "deliberative-capacity-building.ai-literacy.knowledge-building.educational-curriculum.implementation",
+                "name": "Educational Curriculum Implementation",
+                "description": "Integration approach for implementing AI literacy programs",
+                "type": "integration",
+                "parent": "deliberative-capacity-building.ai-literacy.knowledge-building.educational-curriculum",
+                "techniques": [
+                  {
+                    "id": "deliberative-capacity-building.ai-literacy.knowledge-building.educational-curriculum.implementation.learning-frameworks",
+                    "name": "Adaptive Learning Frameworks",
+                    "description": "Techniques for creating adaptable learning frameworks for diverse stakeholders",
+                    "type": "technique",
+                    "parent": "deliberative-capacity-building.ai-literacy.knowledge-building.educational-curriculum.implementation",
+                    "applications": [
+                      {
+                        "id": "deliberative-capacity-building.ai-literacy.knowledge-building.educational-curriculum.implementation.learning-frameworks.online-course",
+                        "name": "Adaptive AI Literacy Platform",
+                        "description": "Online platform that provides customized AI literacy education based on stakeholder background and needs",
+                        "type": "application",
+                        "parent": "deliberative-capacity-building.ai-literacy.knowledge-building.educational-curriculum.implementation.learning-frameworks",
+                        "inputs": [
+                          {
+                            "name": "Learner Profile",
+                            "description": "Information about the learner's background, expertise, and learning goals",
+                            "data_type": "learner_profile",
+                            "constraints": "Must include knowledge level, learning preferences, and areas of interest"
+                          },
+                          {
+                            "name": "Content Modules",
+                            "description": "Library of educational modules on AI topics",
+                            "data_type": "educational_content",
+                            "constraints": "Must cover technical, ethical, and governance aspects of AI"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Personalized Learning Path",
+                            "description": "Customized sequence of educational materials",
+                            "data_type": "learning_path",
+                            "interpretation": "Provides structured knowledge acquisition path tailored to learner"
+                          },
+                          {
+                            "name": "Progress Assessment",
+                            "description": "Evaluation of learner's progress and comprehension",
+                            "data_type": "assessment_report",
+                            "interpretation": "Measures effectiveness of knowledge building and identifies areas for improvement"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "deliberative-capacity-building.ai-literacy.skill-development",
+          "name": "Skill Development",
+          "description": "Develop technical and conceptual skills needed for understanding AI systems",
+          "implements_component_functions": ["democratic-alignment.participation-facilitation", "democratic-alignment.democratic-expertise"],
+          "type": "function",
+          "parent": "deliberative-capacity-building.ai-literacy",
+          "specifications": [
+            {
+              "id": "deliberative-capacity-building.ai-literacy.skill-development.practical-skills",
+              "name": "Practical Skills Development Specifications",
+              "description": "Technical specifications for developing practical AI skills among diverse stakeholders",
+              "type": "specifications",
+              "parent": "deliberative-capacity-building.ai-literacy.skill-development",
+              "requirements": [
+                "Hands-on workshops and practical exercises",
+                "Progressive skill-building from basic to advanced levels",
+                "Domain-specific practical applications",
+                "Collaborative problem-solving approaches"
+              ],
+              "integration": {
+                "id": "deliberative-capacity-building.ai-literacy.skill-development.practical-skills.implementation",
+                "name": "Skills Development Implementation",
+                "description": "Integration approach for implementing AI skill development programs",
+                "type": "integration",
+                "parent": "deliberative-capacity-building.ai-literacy.skill-development.practical-skills",
+                "techniques": [
+                  {
+                    "id": "deliberative-capacity-building.ai-literacy.skill-development.practical-skills.implementation.workshop-approach",
+                    "name": "Workshop-based Skill Building",
+                    "description": "Techniques for developing practical AI skills through interactive workshops",
+                    "type": "technique",
+                    "parent": "deliberative-capacity-building.ai-literacy.skill-development.practical-skills.implementation",
+                    "applications": [
+                      {
+                        "id": "deliberative-capacity-building.ai-literacy.skill-development.practical-skills.implementation.workshop-approach.community-workshops",
+                        "name": "Community AI Skill Workshops",
+                        "description": "Local workshops that build practical AI literacy skills in community settings",
+                        "type": "application",
+                        "parent": "deliberative-capacity-building.ai-literacy.skill-development.practical-skills.implementation.workshop-approach",
+                        "inputs": [
+                          {
+                            "name": "Community Needs Assessment",
+                            "description": "Assessment of the community's specific needs and interests related to AI",
+                            "data_type": "needs_assessment",
+                            "constraints": "Must identify skill gaps and practical applications relevant to the community"
+                          },
+                          {
+                            "name": "Workshop Curriculum",
+                            "description": "Structured curriculum for skill development workshops",
+                            "data_type": "workshop_materials",
+                            "constraints": "Must include hands-on exercises and real-world applications"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Practical Skills Acquisition",
+                            "description": "Measurable increase in practical AI skills among participants",
+                            "data_type": "skills_assessment",
+                            "interpretation": "Demonstrates improved ability to engage with and evaluate AI systems"
+                          },
+                          {
+                            "name": "Community Project Outcomes",
+                            "description": "Collaborative projects applying newly acquired skills to community issues",
+                            "data_type": "project_outcomes",
+                            "interpretation": "Shows practical application of skills in addressing real community needs"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "supported_by_literature": ["Christian2020", "Yang2023"]
+    },
+    {
+      "id": "deliberative-capacity-building.education-techniques",
+      "name": "Education Techniques",
+      "description": "Specialized techniques for educating stakeholders about AI systems and governance",
+      "implements_component_capabilities": ["democratic-alignment.deliberative-capacity-capability"],
+      "type": "capability",
+      "parent": "deliberative-capacity-building",
+      "functions": [
+        {
+          "id": "deliberative-capacity-building.education-techniques.knowledge-building",
+          "name": "Knowledge Building",
+          "description": "Build knowledge and understanding of AI systems among diverse stakeholders",
+          "implements_component_functions": ["democratic-alignment.participation-facilitation", "democratic-alignment.value-elicitation"],
+          "type": "function",
+          "parent": "deliberative-capacity-building.education-techniques",
+          "specifications": [
+            {
+              "id": "deliberative-capacity-building.education-techniques.knowledge-building.pedagogical-approaches",
+              "name": "Pedagogical Approaches Specifications",
+              "description": "Technical specifications for pedagogical approaches to AI knowledge building",
+              "type": "specifications",
+              "parent": "deliberative-capacity-building.education-techniques.knowledge-building",
+              "requirements": [
+                "Diverse teaching methods for different learning styles",
+                "Knowledge scaffolding from basic to complex AI concepts",
+                "Integration of ethical and technical aspects of AI",
+                "Context-appropriate examples and case studies"
+              ],
+              "integration": {
+                "id": "deliberative-capacity-building.education-techniques.knowledge-building.pedagogical-approaches.implementation",
+                "name": "Pedagogical Implementation",
+                "description": "Integration approach for implementing effective AI education techniques",
+                "type": "integration",
+                "parent": "deliberative-capacity-building.education-techniques.knowledge-building.pedagogical-approaches",
+                "techniques": [
+                  {
+                    "id": "deliberative-capacity-building.education-techniques.knowledge-building.pedagogical-approaches.implementation.case-based-learning",
+                    "name": "Case-based Learning Technique",
+                    "description": "Using real-world cases to build knowledge about AI systems and their impacts",
+                    "type": "technique",
+                    "parent": "deliberative-capacity-building.education-techniques.knowledge-building.pedagogical-approaches.implementation",
+                    "applications": [
+                      {
+                        "id": "deliberative-capacity-building.education-techniques.knowledge-building.pedagogical-approaches.implementation.case-based-learning.case-library",
+                        "name": "AI Case Study Library",
+                        "description": "Comprehensive library of AI case studies for educational purposes",
+                        "type": "application",
+                        "parent": "deliberative-capacity-building.education-techniques.knowledge-building.pedagogical-approaches.implementation.case-based-learning",
+                        "inputs": [
+                          {
+                            "name": "AI Impact Cases",
+                            "description": "Documented cases of AI deployment and impacts",
+                            "data_type": "case_studies",
+                            "constraints": "Must cover diverse domains, stakeholders, and outcomes"
+                          },
+                          {
+                            "name": "Learning Objectives",
+                            "description": "Educational objectives for different knowledge levels",
+                            "data_type": "learning_objectives",
+                            "constraints": "Must align with broader AI literacy goals"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Structured Case Materials",
+                            "description": "Teaching materials based on real AI cases",
+                            "data_type": "educational_materials",
+                            "interpretation": "Facilitates knowledge building through concrete examples"
+                          },
+                          {
+                            "name": "Discussion Guides",
+                            "description": "Facilitator guides for case-based discussions",
+                            "data_type": "facilitation_materials",
+                            "interpretation": "Supports guided learning and critical analysis of AI cases"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "deliberative-capacity-building.education-techniques.participation-enhancement",
+          "name": "Participation Enhancement",
+          "description": "Enhance stakeholders' ability to effectively participate in AI governance processes",
+          "implements_component_functions": ["democratic-alignment.participation-facilitation"],
+          "type": "function",
+          "parent": "deliberative-capacity-building.education-techniques",
+          "specifications": [
+            {
+              "id": "deliberative-capacity-building.education-techniques.participation-enhancement.participatory-methodologies",
+              "name": "Participatory Methodologies Specifications",
+              "description": "Technical specifications for enhancing stakeholder participation in AI governance",
+              "type": "specifications",
+              "parent": "deliberative-capacity-building.education-techniques.participation-enhancement",
+              "requirements": [
+                "Techniques for inclusive facilitation across diverse stakeholders",
+                "Tools for reducing power imbalances in participatory processes",
+                "Methods for structuring complex discussions about AI",
+                "Feedback mechanisms to continuously improve participation"
+              ],
+              "integration": {
+                "id": "deliberative-capacity-building.education-techniques.participation-enhancement.participatory-methodologies.implementation",
+                "name": "Participatory Methodologies Implementation",
+                "description": "Integration approach for implementing participation enhancement methodologies",
+                "type": "integration",
+                "parent": "deliberative-capacity-building.education-techniques.participation-enhancement.participatory-methodologies",
+                "techniques": [
+                  {
+                    "id": "deliberative-capacity-building.education-techniques.participation-enhancement.participatory-methodologies.implementation.deliberative-forums",
+                    "name": "Deliberative Forums Technique",
+                    "description": "Structured approaches to deliberative forums on AI governance",
+                    "type": "technique",
+                    "parent": "deliberative-capacity-building.education-techniques.participation-enhancement.participatory-methodologies.implementation",
+                    "applications": [
+                      {
+                        "id": "deliberative-capacity-building.education-techniques.participation-enhancement.participatory-methodologies.implementation.deliberative-forums.citizens-assembly",
+                        "name": "AI Citizens Assembly Framework",
+                        "description": "Framework for organizing citizens assemblies focused on AI governance issues",
+                        "type": "application",
+                        "parent": "deliberative-capacity-building.education-techniques.participation-enhancement.participatory-methodologies.implementation.deliberative-forums",
+                        "inputs": [
+                          {
+                            "name": "Participant Selection Criteria",
+                            "description": "Criteria for selecting a representative group of participants",
+                            "data_type": "selection_criteria",
+                            "constraints": "Must ensure demographic diversity and inclusion of marginalized perspectives"
+                          },
+                          {
+                            "name": "Deliberation Materials",
+                            "description": "Balanced information about AI governance topics for deliberation",
+                            "data_type": "deliberation_materials",
+                            "constraints": "Must present diverse viewpoints and be accessible to non-experts"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Collective Recommendations",
+                            "description": "Recommendations developed through deliberative process",
+                            "data_type": "recommendations",
+                            "interpretation": "Represents informed public judgment on AI governance issues"
+                          },
+                          {
+                            "name": "Participation Impact Assessment",
+                            "description": "Evaluation of how participation enhanced stakeholder capacity",
+                            "data_type": "impact_assessment",
+                            "interpretation": "Measures effectiveness of participation enhancement methods"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "supported_by_literature": ["Christian2020", "Yang2023", "Bai2022"]
+    },
+    {
+      "id": "deliberative-capacity-building.participatory-methods",
+      "name": "Participatory Methods",
+      "description": "Methods enabling diverse participation in AI governance deliberation",
+      "implements_component_capabilities": ["democratic-alignment.deliberative-capacity-capability"],
+      "type": "capability",
+      "parent": "deliberative-capacity-building",
+      "functions": [
+        {
+          "id": "deliberative-capacity-building.participatory-methods.participation-enhancement",
+          "name": "Participation Enhancement",
+          "description": "Enhance stakeholders' ability to effectively participate in AI governance processes",
+          "implements_component_functions": ["democratic-alignment.participation-facilitation"],
+          "type": "function",
+          "parent": "deliberative-capacity-building.participatory-methods",
+          "specifications": [
+            {
+              "id": "deliberative-capacity-building.participatory-methods.participation-enhancement.engagement-protocols",
+              "name": "Engagement Protocol Specifications",
+              "description": "Technical specifications for enabling effective stakeholder participation in AI governance",
+              "type": "specifications",
+              "parent": "deliberative-capacity-building.participatory-methods.participation-enhancement",
+              "requirements": [
+                "Accessible participation channels for diverse stakeholders",
+                "Structured engagement processes for different levels of technical expertise",
+                "Support mechanisms to overcome participation barriers",
+                "Feedback systems to ensure stakeholder input is incorporated"
+              ],
+              "integration": {
+                "id": "deliberative-capacity-building.participatory-methods.participation-enhancement.engagement-protocols.implementation",
+                "name": "Engagement Protocol Implementation",
+                "description": "Integration approach for implementing participation enhancement protocols",
+                "type": "integration",
+                "parent": "deliberative-capacity-building.participatory-methods.participation-enhancement.engagement-protocols",
+                "techniques": [
+                  {
+                    "id": "deliberative-capacity-building.participatory-methods.participation-enhancement.engagement-protocols.implementation.inclusive-design",
+                    "name": "Inclusive Participation Design",
+                    "description": "Techniques for designing inclusively accessible participation mechanisms",
+                    "type": "technique",
+                    "parent": "deliberative-capacity-building.participatory-methods.participation-enhancement.engagement-protocols.implementation",
+                    "applications": [
+                      {
+                        "id": "deliberative-capacity-building.participatory-methods.participation-enhancement.engagement-protocols.implementation.inclusive-design.multi-channel-platform",
+                        "name": "Multi-channel Participation Platform",
+                        "description": "Platform offering multiple channels for participation in AI governance",
+                        "type": "application",
+                        "parent": "deliberative-capacity-building.participatory-methods.participation-enhancement.engagement-protocols.implementation.inclusive-design",
+                        "inputs": [
+                          {
+                            "name": "Stakeholder Access Needs",
+                            "description": "Information about stakeholders' accessibility requirements and preferences",
+                            "data_type": "accessibility_profile",
+                            "constraints": "Must account for digital literacy, language, disability, and time constraints"
+                          },
+                          {
+                            "name": "Governance Topics",
+                            "description": "AI governance topics requiring stakeholder input",
+                            "data_type": "topic_list",
+                            "constraints": "Must be presented in accessible language with relevant background information"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Participation Options",
+                            "description": "Tailored participation channels for diverse stakeholders",
+                            "data_type": "participation_channels",
+                            "interpretation": "Provides accessible means of participation based on stakeholder needs"
+                          },
+                          {
+                            "name": "Participation Analytics",
+                            "description": "Analysis of participation patterns and inclusivity metrics",
+                            "data_type": "participation_metrics",
+                            "interpretation": "Measures effectiveness of enhancement efforts and identifies improvement areas"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "deliberative-capacity-building.participatory-methods.facilitation-support",
+          "name": "Facilitation Support",
+          "description": "Build facilitation capacity for inclusive deliberative processes",
+          "implements_component_functions": ["democratic-alignment.participation-facilitation", "democratic-alignment.oversight-implementation"],
+          "type": "function",
+          "parent": "deliberative-capacity-building.participatory-methods",
+          "specifications": [
+            {
+              "id": "deliberative-capacity-building.participatory-methods.facilitation-support.facilitation-resources",
+              "name": "Facilitation Resources Specifications",
+              "description": "Technical specifications for facilitation support resources and training",
+              "type": "specifications",
+              "parent": "deliberative-capacity-building.participatory-methods.facilitation-support",
+              "requirements": [
+                "Facilitation training programs for diverse contexts",
+                "Resources for managing power dynamics in deliberative settings",
+                "Tools for structuring complex AI governance conversations",
+                "Evaluation frameworks for facilitation effectiveness"
+              ],
+              "integration": {
+                "id": "deliberative-capacity-building.participatory-methods.facilitation-support.facilitation-resources.implementation",
+                "name": "Facilitation Resources Implementation",
+                "description": "Integration approach for implementing facilitation support systems",
+                "type": "integration",
+                "parent": "deliberative-capacity-building.participatory-methods.facilitation-support.facilitation-resources",
+                "techniques": [
+                  {
+                    "id": "deliberative-capacity-building.participatory-methods.facilitation-support.facilitation-resources.implementation.facilitation-training",
+                    "name": "Facilitation Training Systems",
+                    "description": "Techniques for developing facilitation capacity for AI governance deliberation",
+                    "type": "technique",
+                    "parent": "deliberative-capacity-building.participatory-methods.facilitation-support.facilitation-resources.implementation",
+                    "applications": [
+                      {
+                        "id": "deliberative-capacity-building.participatory-methods.facilitation-support.facilitation-resources.implementation.facilitation-training.facilitator-development",
+                        "name": "AI Governance Facilitator Development Program",
+                        "description": "Comprehensive program to develop skilled facilitators for AI governance deliberation",
+                        "type": "application",
+                        "parent": "deliberative-capacity-building.participatory-methods.facilitation-support.facilitation-resources.implementation.facilitation-training",
+                        "inputs": [
+                          {
+                            "name": "Facilitation Competency Framework",
+                            "description": "Framework of skills and competencies needed for effective AI governance facilitation",
+                            "data_type": "competency_framework",
+                            "constraints": "Must address technical understanding, power balancing, and inclusive facilitation techniques"
+                          },
+                          {
+                            "name": "Deliberation Challenges",
+                            "description": "Common challenges in AI governance deliberation processes",
+                            "data_type": "challenge_scenarios",
+                            "constraints": "Must include technical complexity, stakeholder diversity, and value conflicts"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Trained Facilitators",
+                            "description": "Facilitators equipped with skills for AI governance deliberation",
+                            "data_type": "facilitator_cohort",
+                            "interpretation": "Provides necessary human capacity for effective deliberative processes"
+                          },
+                          {
+                            "name": "Facilitation Resource Library",
+                            "description": "Repository of tools, guides and methods for AI governance facilitation",
+                            "data_type": "resource_library",
+                            "interpretation": "Offers ongoing support for facilitators across different deliberative contexts"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "supported_by_literature": ["Vaina2020", "Irving2018", "Askell2019"]
+    },
+    {
+      "id": "deliberative-capacity-building.deliberative-infrastructure",
+      "name": "Deliberative Infrastructure",
+      "description": "Creation and maintenance of infrastructure for democratic participation",
+      "implements_component_capabilities": ["democratic-alignment.participatory-governance-capability", "democratic-alignment.democratic-implementation-capability"],
+      "type": "capability",
+      "parent": "deliberative-capacity-building",
+      "functions": [
+        {
+          "id": "deliberative-capacity-building.deliberative-infrastructure.infrastructure-development",
+          "name": "Infrastructure Development",
+          "description": "Create and maintain technical infrastructure for democratic participation",
+          "implements_component_functions": ["democratic-alignment.democratic-governance", "democratic-alignment.oversight-implementation"],
+          "type": "function",
+          "parent": "deliberative-capacity-building.deliberative-infrastructure",
+          "specifications": [
+            {
+              "id": "deliberative-capacity-building.deliberative-infrastructure.infrastructure-development.infrastructure-requirements",
+              "name": "Infrastructure Requirements Specifications",
+              "description": "Technical specifications for democratic participation infrastructure",
+              "type": "specifications",
+              "parent": "deliberative-capacity-building.deliberative-infrastructure.infrastructure-development",
+              "requirements": [
+                "Accessible digital platforms for diverse participation",
+                "Secure communication channels for sensitive discussions",
+                "Integration with existing democratic processes",
+                "Scalable architecture to accommodate different participation levels"
+              ],
+              "integration": {
+                "id": "deliberative-capacity-building.deliberative-infrastructure.infrastructure-development.infrastructure-requirements.implementation",
+                "name": "Infrastructure Requirements Implementation",
+                "description": "Integration approach for implementing democratic participation infrastructure",
+                "type": "integration",
+                "parent": "deliberative-capacity-building.deliberative-infrastructure.infrastructure-development.infrastructure-requirements",
+                "techniques": [
+                  {
+                    "id": "deliberative-capacity-building.deliberative-infrastructure.infrastructure-development.infrastructure-requirements.implementation.platform-architecture",
+                    "name": "Democratic Platform Architecture",
+                    "description": "Techniques for creating accessible and secure platforms for democratic participation",
+                    "type": "technique",
+                    "parent": "deliberative-capacity-building.deliberative-infrastructure.infrastructure-development.infrastructure-requirements.implementation",
+                    "applications": [
+                      {
+                        "id": "deliberative-capacity-building.deliberative-infrastructure.infrastructure-development.infrastructure-requirements.implementation.platform-architecture.participatory-platform",
+                        "name": "AI Governance Participatory Platform",
+                        "description": "Digital platform enabling diverse stakeholder participation in AI governance",
+                        "type": "application",
+                        "parent": "deliberative-capacity-building.deliberative-infrastructure.infrastructure-development.infrastructure-requirements.implementation.platform-architecture",
+                        "inputs": [
+                          {
+                            "name": "Accessibility Requirements",
+                            "description": "Technical accessibility standards and user needs",
+                            "data_type": "accessibility_standards",
+                            "constraints": "Must meet international accessibility standards and accommodate diverse user abilities"
+                          },
+                          {
+                            "name": "Governance Process Requirements",
+                            "description": "Specifications for governance processes to be supported",
+                            "data_type": "process_requirements",
+                            "constraints": "Must support deliberation, voting, consensus-building, and accountability mechanisms"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Deployed Platform",
+                            "description": "Operational platform for democratic participation",
+                            "data_type": "digital_platform",
+                            "interpretation": "Provides the technical foundation for inclusive governance processes"
+                          },
+                          {
+                            "name": "Platform Analytics",
+                            "description": "Usage metrics and participation patterns",
+                            "data_type": "analytics_dashboard",
+                            "interpretation": "Enables ongoing refinement of infrastructure to improve democratic participation"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "deliberative-capacity-building.deliberative-infrastructure.facilitation-support",
+          "name": "Facilitation Support",
+          "description": "Build facilitation capacity for inclusive deliberative processes",
+          "implements_component_functions": ["democratic-alignment.participation-facilitation", "democratic-alignment.oversight-implementation"],
+          "type": "function",
+          "parent": "deliberative-capacity-building.deliberative-infrastructure",
+          "specifications": [
+            {
+              "id": "deliberative-capacity-building.deliberative-infrastructure.facilitation-support.facilitation-tools",
+              "name": "Facilitation Tools Specifications",
+              "description": "Technical specifications for facilitation support tools and systems",
+              "type": "specifications",
+              "parent": "deliberative-capacity-building.deliberative-infrastructure.facilitation-support",
+              "requirements": [
+                "Digital tools for managing complex deliberative processes",
+                "Systems to ensure balanced participation and representation",
+                "Integration with democratic decision-making platforms",
+                "Analytics to monitor and improve facilitation effectiveness"
+              ],
+              "integration": {
+                "id": "deliberative-capacity-building.deliberative-infrastructure.facilitation-support.facilitation-tools.implementation",
+                "name": "Facilitation Tools Implementation",
+                "description": "Integration approach for implementing facilitation support tools",
+                "type": "integration",
+                "parent": "deliberative-capacity-building.deliberative-infrastructure.facilitation-support.facilitation-tools",
+                "techniques": [
+                  {
+                    "id": "deliberative-capacity-building.deliberative-infrastructure.facilitation-support.facilitation-tools.implementation.digital-facilitation",
+                    "name": "Digital Facilitation Systems",
+                    "description": "Techniques for supporting facilitation through digital tools and platforms",
+                    "type": "technique",
+                    "parent": "deliberative-capacity-building.deliberative-infrastructure.facilitation-support.facilitation-tools.implementation",
+                    "applications": [
+                      {
+                        "id": "deliberative-capacity-building.deliberative-infrastructure.facilitation-support.facilitation-tools.implementation.digital-facilitation.facilitation-dashboard",
+                        "name": "AI Governance Facilitation Dashboard",
+                        "description": "Dashboard system providing tools and analytics for effective facilitation of AI governance deliberation",
+                        "type": "application",
+                        "parent": "deliberative-capacity-building.deliberative-infrastructure.facilitation-support.facilitation-tools.implementation.digital-facilitation",
+                        "inputs": [
+                          {
+                            "name": "Deliberation Process Design",
+                            "description": "Structured design of the deliberative process to be facilitated",
+                            "data_type": "process_design",
+                            "constraints": "Must include goals, stages, and methodologies for the deliberative process"
+                          },
+                          {
+                            "name": "Participant Information",
+                            "description": "Information about participants and stakeholder groups",
+                            "data_type": "participant_profiles",
+                            "constraints": "Must include relevant expertise, perspectives, and accessibility needs"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Facilitation Interface",
+                            "description": "Interactive tools for facilitators to manage deliberation",
+                            "data_type": "facilitator_interface",
+                            "interpretation": "Enables effective management of complex deliberative processes"
+                          },
+                          {
+                            "name": "Participation Metrics",
+                            "description": "Real-time analytics on participation patterns",
+                            "data_type": "participation_analytics",
+                            "interpretation": "Helps facilitators ensure balanced and inclusive participation"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "supported_by_literature": ["Vaina2020", "Brundage2020"]
+    },
+    {
+      "id": "deliberative-capacity-building.technical-capacity",
+      "name": "Technical Capacity Building",
+      "description": "Building technical capacity for effective participation in AI governance",
+      "implements_component_capabilities": ["democratic-alignment.democratic-implementation-capability", "democratic-alignment.participatory-oversight-capability"],
+      "type": "capability",
+      "parent": "deliberative-capacity-building",
+      "functions": [
+        {
+          "id": "deliberative-capacity-building.technical-capacity.knowledge-building",
+          "name": "Knowledge Building",
+          "description": "Build knowledge and understanding of AI systems among diverse stakeholders",
+          "implements_component_functions": ["democratic-alignment.participation-facilitation", "democratic-alignment.value-elicitation"],
+          "type": "function",
+          "parent": "deliberative-capacity-building.technical-capacity",
+          "specifications": [
+            {
+              "id": "deliberative-capacity-building.technical-capacity.knowledge-building.technical-education",
+              "name": "Technical Education Specifications",
+              "description": "Technical specifications for building AI technical knowledge among stakeholders",
+              "type": "specifications",
+              "parent": "deliberative-capacity-building.technical-capacity.knowledge-building",
+              "requirements": [
+                "Technical education materials accessible to diverse knowledge levels",
+                "Hands-on learning approaches for technical concepts",
+                "Domain-specific technical knowledge relevant to stakeholder contexts",
+                "Progressive learning paths from basic to advanced technical understanding"
+              ],
+              "integration": {
+                "id": "deliberative-capacity-building.technical-capacity.knowledge-building.technical-education.implementation",
+                "name": "Technical Education Implementation",
+                "description": "Integration approach for implementing technical knowledge building",
+                "type": "integration",
+                "parent": "deliberative-capacity-building.technical-capacity.knowledge-building.technical-education",
+                "techniques": [
+                  {
+                    "id": "deliberative-capacity-building.technical-capacity.knowledge-building.technical-education.implementation.scaffolded-learning",
+                    "name": "Scaffolded Technical Learning",
+                    "description": "Techniques for building technical knowledge through progressive scaffolding",
+                    "type": "technique",
+                    "parent": "deliberative-capacity-building.technical-capacity.knowledge-building.technical-education.implementation",
+                    "applications": [
+                      {
+                        "id": "deliberative-capacity-building.technical-capacity.knowledge-building.technical-education.implementation.scaffolded-learning.technical-literacy-program",
+                        "name": "AI Technical Literacy Program",
+                        "description": "Program that builds technical understanding of AI systems among diverse stakeholders",
+                        "type": "application",
+                        "parent": "deliberative-capacity-building.technical-capacity.knowledge-building.technical-education.implementation.scaffolded-learning",
+                        "inputs": [
+                          {
+                            "name": "Stakeholder Technical Baseline",
+                            "description": "Assessment of stakeholders' existing technical knowledge",
+                            "data_type": "knowledge_assessment",
+                            "constraints": "Must accurately measure technical understanding without creating barriers"
+                          },
+                          {
+                            "name": "Technical Content Library",
+                            "description": "Library of technical educational content at various levels",
+                            "data_type": "technical_content",
+                            "constraints": "Must include both conceptual explanations and applied examples"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Technical Knowledge Acquisition",
+                            "description": "Measurable increases in technical understanding",
+                            "data_type": "knowledge_metrics",
+                            "interpretation": "Demonstrates improved technical capacity for AI governance participation"
+                          },
+                          {
+                            "name": "Applied Technical Understanding",
+                            "description": "Ability to apply technical knowledge to governance contexts",
+                            "data_type": "application_assessment",
+                            "interpretation": "Shows practical capability to engage with technical aspects of AI governance"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "deliberative-capacity-building.technical-capacity.infrastructure-development",
+          "name": "Infrastructure Development",
+          "description": "Create and maintain technical infrastructure for democratic participation",
+          "implements_component_functions": ["democratic-alignment.democratic-governance", "democratic-alignment.oversight-implementation"],
+          "type": "function",
+          "parent": "deliberative-capacity-building.technical-capacity",
+          "specifications": [
+            {
+              "id": "deliberative-capacity-building.technical-capacity.infrastructure-development.technical-systems",
+              "name": "Technical Systems Specifications",
+              "description": "Technical specifications for democratic participation infrastructure development",
+              "type": "specifications",
+              "parent": "deliberative-capacity-building.technical-capacity.infrastructure-development",
+              "requirements": [
+                "Technical expertise for building accessible democratic platforms",
+                "Integration of security and privacy protections",
+                "Scalable technical architecture for diverse participation levels",
+                "Interoperability with existing democratic systems"
+              ],
+              "integration": {
+                "id": "deliberative-capacity-building.technical-capacity.infrastructure-development.technical-systems.implementation",
+                "name": "Technical Systems Implementation",
+                "description": "Integration approach for implementing technical infrastructure",
+                "type": "integration",
+                "parent": "deliberative-capacity-building.technical-capacity.infrastructure-development.technical-systems",
+                "techniques": [
+                  {
+                    "id": "deliberative-capacity-building.technical-capacity.infrastructure-development.technical-systems.implementation.capacity-development",
+                    "name": "Technical Capacity Development",
+                    "description": "Techniques for developing technical capacity for infrastructure creation",
+                    "type": "technique",
+                    "parent": "deliberative-capacity-building.technical-capacity.infrastructure-development.technical-systems.implementation",
+                    "applications": [
+                      {
+                        "id": "deliberative-capacity-building.technical-capacity.infrastructure-development.technical-systems.implementation.capacity-development.technical-training",
+                        "name": "Democratic Infrastructure Technical Training",
+                        "description": "Program to build technical skills for creating and maintaining democratic infrastructure",
+                        "type": "application",
+                        "parent": "deliberative-capacity-building.technical-capacity.infrastructure-development.technical-systems.implementation.capacity-development",
+                        "inputs": [
+                          {
+                            "name": "Technical Requirements",
+                            "description": "Specifications for democratic participation platforms",
+                            "data_type": "technical_requirements",
+                            "constraints": "Must include accessibility, security, and scalability requirements"
+                          },
+                          {
+                            "name": "Technical Skill Gaps",
+                            "description": "Assessment of current technical capacity and needed skills",
+                            "data_type": "skills_assessment",
+                            "constraints": "Must identify critical skill areas for infrastructure development"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Technical Development Team",
+                            "description": "Trained team capable of building democratic infrastructure",
+                            "data_type": "technical_team",
+                            "interpretation": "Provides human capacity for technical implementation"
+                          },
+                          {
+                            "name": "Infrastructure Development Roadmap",
+                            "description": "Strategic plan for infrastructure creation and maintenance",
+                            "data_type": "development_roadmap",
+                            "interpretation": "Guides systematic development of democratic infrastructure"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "supported_by_literature": ["Bai2022", "Price2022"]
+    },
+    {
+      "id": "deliberative-capacity-building.knowledge-translation",
+      "name": "Knowledge Translation",
+      "description": "Translation of knowledge across expertise levels and domains",
+      "implements_component_capabilities": ["democratic-alignment.deliberative-capacity-capability", "democratic-alignment.participatory-oversight-capability"],
+      "type": "capability",
+      "parent": "deliberative-capacity-building",
+      "functions": [
+        {
+          "id": "deliberative-capacity-building.knowledge-translation.knowledge-building",
+          "name": "Knowledge Building",
+          "description": "Build knowledge and understanding of AI systems among diverse stakeholders",
+          "implements_component_functions": ["democratic-alignment.participation-facilitation", "democratic-alignment.value-elicitation"],
+          "type": "function",
+          "parent": "deliberative-capacity-building.knowledge-translation",
+          "specifications": [
+            {
+              "id": "deliberative-capacity-building.knowledge-translation.knowledge-building.translation-methods",
+              "name": "Knowledge Translation Methods",
+              "description": "Technical specifications for translating complex AI knowledge across expertise levels",
+              "type": "specifications",
+              "parent": "deliberative-capacity-building.knowledge-translation.knowledge-building",
+              "requirements": [
+                "Cross-disciplinary translation methodologies",
+                "Multiple communication formats for different audiences",
+                "Technical-to-layperson translation frameworks",
+                "Domain-specific knowledge adaptation approaches"
+              ],
+              "integration": {
+                "id": "deliberative-capacity-building.knowledge-translation.knowledge-building.translation-methods.implementation",
+                "name": "Knowledge Translation Implementation",
+                "description": "Integration approach for implementing knowledge translation",
+                "type": "integration",
+                "parent": "deliberative-capacity-building.knowledge-translation.knowledge-building.translation-methods",
+                "techniques": [
+                  {
+                    "id": "deliberative-capacity-building.knowledge-translation.knowledge-building.translation-methods.implementation.multi-level-communication",
+                    "name": "Multi-level Communication Systems",
+                    "description": "Techniques for communicating AI concepts at multiple levels of complexity",
+                    "type": "technique",
+                    "parent": "deliberative-capacity-building.knowledge-translation.knowledge-building.translation-methods.implementation",
+                    "applications": [
+                      {
+                        "id": "deliberative-capacity-building.knowledge-translation.knowledge-building.translation-methods.implementation.multi-level-communication.layered-content",
+                        "name": "Layered AI Knowledge Platform",
+                        "description": "Platform providing AI knowledge at adjustable complexity levels for different audiences",
+                        "type": "application",
+                        "parent": "deliberative-capacity-building.knowledge-translation.knowledge-building.translation-methods.implementation.multi-level-communication",
+                        "inputs": [
+                          {
+                            "name": "Technical Source Materials",
+                            "description": "Complex technical AI knowledge to be translated",
+                            "data_type": "technical_content",
+                            "constraints": "Must include core technical concepts necessary for informed governance"
+                          },
+                          {
+                            "name": "Audience Profiles",
+                            "description": "Information about target audiences and their knowledge needs",
+                            "data_type": "audience_profiles",
+                            "constraints": "Must include expertise levels, domain knowledge, and learning preferences"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Translated Knowledge Resources",
+                            "description": "Multi-level explanations of AI concepts",
+                            "data_type": "layered_content",
+                            "interpretation": "Enables access to AI knowledge across expertise levels"
+                          },
+                          {
+                            "name": "Cross-disciplinary Frameworks",
+                            "description": "Frameworks connecting AI concepts to diverse domains",
+                            "data_type": "translation_frameworks",
+                            "interpretation": "Facilitates understanding of AI in relation to stakeholders' domains"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "deliberative-capacity-building.knowledge-translation.facilitation-support",
+          "name": "Facilitation Support",
+          "description": "Build facilitation capacity for inclusive deliberative processes",
+          "implements_component_functions": ["democratic-alignment.participation-facilitation", "democratic-alignment.oversight-implementation"],
+          "type": "function",
+          "parent": "deliberative-capacity-building.knowledge-translation",
+          "specifications": [
+            {
+              "id": "deliberative-capacity-building.knowledge-translation.facilitation-support.translation-facilitation",
+              "name": "Translation Facilitation Specifications",
+              "description": "Technical specifications for facilitation approaches that bridge knowledge gaps",
+              "type": "specifications",
+              "parent": "deliberative-capacity-building.knowledge-translation.facilitation-support",
+              "requirements": [
+                "Knowledge mediation methodologies for diverse participants",
+                "Facilitation tools that navigate technical and non-technical language",
+                "Cross-expertise communication protocols",
+                "Dynamic knowledge translation during deliberative processes"
+              ],
+              "integration": {
+                "id": "deliberative-capacity-building.knowledge-translation.facilitation-support.translation-facilitation.implementation",
+                "name": "Translation Facilitation Implementation",
+                "description": "Integration approach for implementing knowledge translation in facilitation",
+                "type": "integration",
+                "parent": "deliberative-capacity-building.knowledge-translation.facilitation-support.translation-facilitation",
+                "techniques": [
+                  {
+                    "id": "deliberative-capacity-building.knowledge-translation.facilitation-support.translation-facilitation.implementation.knowledge-bridging",
+                    "name": "Knowledge Bridging Techniques",
+                    "description": "Techniques for bridging knowledge gaps during facilitated discussions",
+                    "type": "technique",
+                    "parent": "deliberative-capacity-building.knowledge-translation.facilitation-support.translation-facilitation.implementation",
+                    "applications": [
+                      {
+                        "id": "deliberative-capacity-building.knowledge-translation.facilitation-support.translation-facilitation.implementation.knowledge-bridging.translator-role",
+                        "name": "AI Knowledge Translation Facilitator",
+                        "description": "Facilitation approach that actively translates between technical and non-technical understandings",
+                        "type": "application",
+                        "parent": "deliberative-capacity-building.knowledge-translation.facilitation-support.translation-facilitation.implementation.knowledge-bridging",
+                        "inputs": [
+                          {
+                            "name": "Group Composition Data",
+                            "description": "Information about the expertise diversity in the facilitated group",
+                            "data_type": "group_profile",
+                            "constraints": "Must include technical knowledge levels and domain backgrounds"
+                          },
+                          {
+                            "name": "Discussion Topics",
+                            "description": "AI governance topics requiring cross-expertise discussion",
+                            "data_type": "topic_framework",
+                            "constraints": "Must identify technical concepts requiring translation"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Translation Protocols",
+                            "description": "Facilitation protocols for bridging knowledge gaps",
+                            "data_type": "facilitation_protocols",
+                            "interpretation": "Guides facilitators in translating between expertise levels"
+                          },
+                          {
+                            "name": "Real-time Translation Resources",
+                            "description": "Resources for explaining technical concepts during deliberation",
+                            "data_type": "translation_resources",
+                            "interpretation": "Supports dynamic knowledge translation in deliberative settings"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "supported_by_literature": ["Christian2020", "Lundberg2017", "Yang2023"]
+    },
+    {
+      "id": "deliberative-capacity-building.inclusive-methodologies",
+      "name": "Inclusive Deliberation Methodologies",
+      "description": "Development of methodologies and tools for inclusive deliberation",
+      "implements_component_capabilities": ["democratic-alignment.participatory-governance-capability", "democratic-alignment.deliberative-capacity-capability"],
+      "type": "capability",
+      "parent": "deliberative-capacity-building",
+      "functions": [
+        {
+          "id": "deliberative-capacity-building.inclusive-methodologies.skill-development",
+          "name": "Deliberative Skill Development",
+          "description": "Develop deliberative skills for complex alignment discussions",
+          "implements_component_functions": ["democratic-alignment.participation-facilitation", "democratic-alignment.value-elicitation"],
+          "type": "function",
+          "parent": "deliberative-capacity-building.inclusive-methodologies",
+          "specifications": [
+            {
+              "id": "deliberative-capacity-building.inclusive-methodologies.skill-development.inclusive-skill-building",
+              "name": "Inclusive Skill Building Specifications",
+              "description": "Technical specifications for inclusive deliberative skill development",
+              "type": "specifications",
+              "parent": "deliberative-capacity-building.inclusive-methodologies.skill-development",
+              "requirements": [
+                "Inclusive educational approaches for diverse learning needs",
+                "Skill development methodologies addressing power imbalances",
+                "Accessible training materials for varying abilities",
+                "Progressive skill-building approaches for different participation levels"
+              ],
+              "integration": {
+                "id": "deliberative-capacity-building.inclusive-methodologies.skill-development.inclusive-skill-building.implementation",
+                "name": "Inclusive Skill Building Implementation",
+                "description": "Integration approach for implementing inclusive deliberative skill development",
+                "type": "integration",
+                "parent": "deliberative-capacity-building.inclusive-methodologies.skill-development.inclusive-skill-building",
+                "techniques": [
+                  {
+                    "id": "deliberative-capacity-building.inclusive-methodologies.skill-development.inclusive-skill-building.implementation.accessibility-focused",
+                    "name": "Accessibility-Focused Training",
+                    "description": "Techniques for making deliberative skill development accessible to diverse participants",
+                    "type": "technique",
+                    "parent": "deliberative-capacity-building.inclusive-methodologies.skill-development.inclusive-skill-building.implementation",
+                    "applications": [
+                      {
+                        "id": "deliberative-capacity-building.inclusive-methodologies.skill-development.inclusive-skill-building.implementation.accessibility-focused.universal-design",
+                        "name": "Universal Design Deliberation Training",
+                        "description": "Training program using universal design principles to develop inclusive deliberative skills",
+                        "type": "application",
+                        "parent": "deliberative-capacity-building.inclusive-methodologies.skill-development.inclusive-skill-building.implementation.accessibility-focused",
+                        "inputs": [
+                          {
+                            "name": "Accessibility Requirements",
+                            "description": "Information about participants' accessibility needs",
+                            "data_type": "accessibility_profile",
+                            "constraints": "Must address sensory, cognitive, linguistic and technological accessibility"
+                          },
+                          {
+                            "name": "Deliberative Skill Framework",
+                            "description": "Framework of essential deliberative skills for AI governance",
+                            "data_type": "skill_framework",
+                            "constraints": "Must include argumentation, active listening, perspective-taking, and consensus-building"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Accessible Training Materials",
+                            "description": "Multi-format training materials designed with universal access principles",
+                            "data_type": "training_materials",
+                            "interpretation": "Enables skill development regardless of ability, background or learning style"
+                          },
+                          {
+                            "name": "Skill Development Metrics",
+                            "description": "Metrics for tracking inclusive skill development progress",
+                            "data_type": "assessment_metrics",
+                            "interpretation": "Measures deliberative skill acquisition across diverse participants"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "deliberative-capacity-building.inclusive-methodologies.facilitation-support",
+          "name": "Facilitation Support",
+          "description": "Build facilitation capacity for inclusive deliberative processes",
+          "implements_component_functions": ["democratic-alignment.participation-facilitation", "democratic-alignment.oversight-implementation"],
+          "type": "function",
+          "parent": "deliberative-capacity-building.inclusive-methodologies",
+          "specifications": [
+            {
+              "id": "deliberative-capacity-building.inclusive-methodologies.facilitation-support.inclusive-facilitation",
+              "name": "Inclusive Facilitation Specifications",
+              "description": "Technical specifications for inclusive facilitation approaches in AI governance",
+              "type": "specifications",
+              "parent": "deliberative-capacity-building.inclusive-methodologies.facilitation-support",
+              "requirements": [
+                "Inclusive facilitation methods for diverse stakeholder groups",
+                "Power-balancing approaches for deliberative processes",
+                "Accommodation frameworks for different participation needs",
+                "Cultural sensitivity guidelines for cross-cultural facilitation"
+              ],
+              "integration": {
+                "id": "deliberative-capacity-building.inclusive-methodologies.facilitation-support.inclusive-facilitation.implementation",
+                "name": "Inclusive Facilitation Implementation",
+                "description": "Integration approach for implementing inclusive facilitation methods",
+                "type": "integration",
+                "parent": "deliberative-capacity-building.inclusive-methodologies.facilitation-support.inclusive-facilitation",
+                "techniques": [
+                  {
+                    "id": "deliberative-capacity-building.inclusive-methodologies.facilitation-support.inclusive-facilitation.implementation.power-balanced-facilitation",
+                    "name": "Power-balanced Facilitation Techniques",
+                    "description": "Techniques for facilitating deliberation while addressing power imbalances",
+                    "type": "technique",
+                    "parent": "deliberative-capacity-building.inclusive-methodologies.facilitation-support.inclusive-facilitation.implementation",
+                    "applications": [
+                      {
+                        "id": "deliberative-capacity-building.inclusive-methodologies.facilitation-support.inclusive-facilitation.implementation.power-balanced-facilitation.equity-centered-process",
+                        "name": "Equity-centered Facilitation Process",
+                        "description": "Facilitation process that centers equity in AI governance deliberations",
+                        "type": "application",
+                        "parent": "deliberative-capacity-building.inclusive-methodologies.facilitation-support.inclusive-facilitation.implementation.power-balanced-facilitation",
+                        "inputs": [
+                          {
+                            "name": "Power Analysis",
+                            "description": "Analysis of power dynamics among stakeholder groups",
+                            "data_type": "power_mapping",
+                            "constraints": "Must identify structural, cultural, and interpersonal power dynamics"
+                          },
+                          {
+                            "name": "Stakeholder Diversity",
+                            "description": "Information about the diversity of stakeholders in the deliberation",
+                            "data_type": "stakeholder_composition",
+                            "constraints": "Must include representation across demographic, knowledge, and power dimensions"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Facilitation Protocol",
+                            "description": "Protocol for power-balanced facilitation of deliberative processes",
+                            "data_type": "facilitation_protocol",
+                            "interpretation": "Guides facilitators in managing power dynamics and ensuring inclusive participation"
+                          },
+                          {
+                            "name": "Participation Metrics",
+                            "description": "Metrics tracking equity in participation and influence",
+                            "data_type": "equity_metrics",
+                            "interpretation": "Measures effectiveness of power-balancing approaches and identifies areas for improvement"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "supported_by_literature": ["Vaina2020", "Askell2019", "Irving2018"]
+    }
+  ],
+  
+  "overview": {
+    "_documentation": "This section provides a concise overview of the deliberative capacity building subcomponent, its purpose, capabilities, and functions for enabling democratic participation in AI alignment.",
+    "purpose": "To develop and sustain the cognitive, social, and technical capacities required for meaningful democratic participation in AI alignment processes, enabling diverse communities to effectively participate in alignment governance.",
+    "key_capabilities": [
+      {
+        "id": "deliberative-capacity-building.ai-literacy",
+        "name": "AI Literacy Development",
+        "description": "Development of AI literacy for diverse stakeholders across knowledge levels",
+        "implements_component_capabilities": ["democratic-alignment.participatory-governance-capability", "democratic-alignment.deliberative-capacity-capability"],
+        "enables_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.skill-development"],
+        "supported_by_literature": ["Christian2020", "Yang2023"]
+      },
+      {
+        "id": "deliberative-capacity-building.education-techniques",
+        "name": "Education Techniques",
+        "description": "Specialized techniques for educating stakeholders about AI systems and governance",
+        "implements_component_capabilities": ["democratic-alignment.deliberative-capacity-capability"],
+        "enables_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.participation-enhancement"],
+        "supported_by_literature": ["Christian2020", "Yang2023", "Bai2022"]
+      },
+      {
+        "id": "deliberative-capacity-building.participatory-methods",
+        "name": "Participatory Methods",
+        "description": "Methods enabling diverse participation in AI governance deliberation",
+        "implements_component_capabilities": ["democratic-alignment.deliberative-capacity-capability"],
+        "enables_functions": ["deliberative-capacity-building.participation-enhancement", "deliberative-capacity-building.facilitation-support"],
+        "supported_by_literature": ["Vaina2020", "Irving2018", "Askell2019"]
+      },
+      {
+        "id": "deliberative-capacity-building.deliberative-infrastructure",
+        "name": "Deliberative Infrastructure",
+        "description": "Creation and maintenance of infrastructure for democratic participation",
+        "implements_component_capabilities": ["democratic-alignment.participatory-governance-capability", "democratic-alignment.democratic-implementation-capability"],
+        "enables_functions": ["deliberative-capacity-building.infrastructure-development", "deliberative-capacity-building.facilitation-support"],
+        "supported_by_literature": ["Vaina2020", "Brundage2020"]
+      },
+      {
+        "id": "deliberative-capacity-building.technical-capacity",
+        "name": "Technical Capacity Building",
+        "description": "Building technical capacity for effective participation in AI governance",
+        "implements_component_capabilities": ["democratic-alignment.democratic-implementation-capability", "democratic-alignment.participatory-oversight-capability"],
+        "enables_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.infrastructure-development"],
+        "supported_by_literature": ["Bai2022", "Price2022"]
+      },
+      {
+        "id": "deliberative-capacity-building.knowledge-translation",
+        "name": "Knowledge Translation",
+        "description": "Translation of knowledge across expertise levels and domains",
+        "implements_component_capabilities": ["democratic-alignment.deliberative-capacity-capability", "democratic-alignment.participatory-oversight-capability"],
+        "enables_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.facilitation-support"],
+        "supported_by_literature": ["Christian2020", "Lundberg2017", "Yang2023"]
+      },
+      {
+        "id": "deliberative-capacity-building.inclusive-methodologies",
+        "name": "Inclusive Deliberation Methodologies",
+        "description": "Development of methodologies and tools for inclusive deliberation",
+        "implements_component_capabilities": ["democratic-alignment.participatory-governance-capability", "democratic-alignment.deliberative-capacity-capability"],
+        "enables_functions": ["deliberative-capacity-building.skill-development", "deliberative-capacity-building.facilitation-support"],
+        "supported_by_literature": ["Vaina2020", "Askell2019", "Irving2018"]
+      }
+    ],
+    "primary_functions": [
+      {
+        "id": "deliberative-capacity-building.educational-support",
+        "name": "Educational Support",
+        "description": "Provide educational resources to enhance democratic participation in AI alignment",
+        "implements_component_functions": ["democratic-alignment.educational-resource-provision"],
+        "enabled_by_capabilities": [
+          "deliberative-capacity-building.ai-literacy", 
+          "deliberative-capacity-building.knowledge-translation",
+          "participatory-value-definition.diverse-inclusion",
+          "participatory-value-definition.value-articulation",
+          "democratic-governance.inclusive-participation",
+          "democratic-governance.governance-transparency",
+          "participatory-alignment-verification.verification-interfaces",
+          "explanation-systems.natural-language-explanation",
+          "explanation-systems.pedagogy-adaptation",
+          "governance-structures.stakeholder-engagement-systems",
+          "interpretability-tools.interpretability-capability"
+        ],
+        "implemented_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.knowledge-translation-methods"],
+        "implemented_by_applications": ["deliberative-capacity-building.ai-education-programs", "deliberative-capacity-building.technical-concept-translation"],
+        "supported_by_literature": ["Christian2020", "Price2022", "Yang2023"]
+      },
+      {
+        "id": "deliberative-capacity-building.expertise-development",
+        "name": "Democratic Expertise Development",
+        "description": "Develop democratic expertise in AI governance and alignment",
+        "implements_component_functions": ["democratic-alignment.democratic-expertise"],
+        "enabled_by_capabilities": [
+          "deliberative-capacity-building.ai-literacy", 
+          "deliberative-capacity-building.technical-capacity",
+          "participatory-value-definition.diverse-inclusion",
+          "participatory-value-definition.value-articulation",
+          "democratic-governance.inclusive-participation",
+          "democratic-governance.governance-transparency",
+          "participatory-alignment-verification.verification-competence",
+          "explanation-systems.natural-language-explanation",
+          "explanation-systems.pedagogy-adaptation",
+          "governance-structures.stakeholder-engagement-systems",
+          "interpretability-tools.interpretability-capability"
+        ],
+        "implemented_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.knowledge-translation-methods"],
+        "implemented_by_applications": ["deliberative-capacity-building.deliberative-skill-training", "deliberative-capacity-building.cross-domain-translation"],
+        "supported_by_literature": ["Price2022", "Kortz2021", "Yang2023"]
+      },
+      {
+        "id": "deliberative-capacity-building.democratic-capacity-development",
+        "name": "Democratic Capacity Development",
+        "description": "Build capacity for democratic deliberation on complex AI alignment issues",
+        "implements_component_functions": ["democratic-alignment.deliberative-capacity-building"],
+        "enabled_by_capabilities": [
+          "deliberative-capacity-building.ai-literacy", 
+          "deliberative-capacity-building.inclusive-methodologies",
+          "participatory-value-definition.diverse-inclusion",
+          "participatory-value-definition.value-articulation",
+          "participatory-value-definition.democratic-consultation",
+          "democratic-governance.inclusive-participation",
+          "democratic-governance.multi-stakeholder-oversight",
+          "participatory-alignment-verification.verification-interfaces",
+          "participatory-alignment-verification.inclusive-verification",
+          "explanation-systems.natural-language-explanation",
+          "governance-structures.stakeholder-engagement-systems"
+        ],
+        "implemented_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.inclusion-methods"],
+        "implemented_by_applications": ["deliberative-capacity-building.deliberative-skill-training", "deliberative-capacity-building.accessibility-infrastructure"],
+        "supported_by_literature": ["Price2022", "Vaina2020", "Yang2023"]
+      },
+      {
+        "id": "deliberative-capacity-building.knowledge-building",
+        "name": "Knowledge Building",
+        "description": "Build knowledge and understanding of AI systems among diverse stakeholders",
+        "implements_component_functions": ["democratic-alignment.participation-facilitation", "democratic-alignment.value-elicitation"],
+        "enabled_by_capabilities": [
+          "deliberative-capacity-building.ai-literacy", 
+          "deliberative-capacity-building.knowledge-translation", 
+          "deliberative-capacity-building.technical-capacity",
+          "participatory-value-definition.diverse-inclusion",
+          "participatory-value-definition.value-articulation",
+          "democratic-governance.governance-transparency",
+          "democratic-governance.inclusive-participation",
+          "participatory-alignment-verification.verification-interfaces",
+          "explanation-systems.natural-language-explanation",
+          "explanation-systems.pedagogy-adaptation",
+          "interpretability-tools.interpretability-capability"
+        ],
+        "implemented_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.knowledge-translation-methods"],
+        "implemented_by_applications": ["deliberative-capacity-building.ai-education-programs", "deliberative-capacity-building.technical-concept-translation"],
+        "supported_by_literature": ["Christian2020", "Yang2023", "Lundberg2017"]
+      },
+      {
+        "id": "deliberative-capacity-building.participation-enhancement",
+        "name": "Participation Enhancement",
+        "description": "Enhance stakeholders' ability to effectively participate in AI governance processes",
+        "implements_component_functions": ["democratic-alignment.participation-facilitation"],
+        "enabled_by_capabilities": [
+          "deliberative-capacity-building.participatory-methods", 
+          "deliberative-capacity-building.education-techniques",
+          "participatory-value-definition.diverse-inclusion",
+          "participatory-value-definition.democratic-consultation",
+          "democratic-governance.inclusive-participation",
+          "democratic-governance.balanced-power",
+          "participatory-alignment-verification.inclusive-verification",
+          "participatory-alignment-verification.verification-interfaces",
+          "governance-structures.stakeholder-engagement-systems",
+          "governance-structures.process-design"
+        ],
+        "implemented_by_techniques": ["deliberative-capacity-building.deliberative-infrastructure", "deliberative-capacity-building.inclusion-methods"],
+        "implemented_by_applications": ["deliberative-capacity-building.participation-support-systems", "deliberative-capacity-building.deliberation-platforms"],
+        "supported_by_literature": ["Vaina2020", "Irving2018", "Askell2019"]
+      },
+      {
+        "id": "deliberative-capacity-building.skill-development",
+        "name": "Deliberative Skill Development",
+        "description": "Develop deliberative skills for complex alignment discussions",
+        "implements_component_functions": ["democratic-alignment.participation-facilitation", "democratic-alignment.value-elicitation"],
+        "enabled_by_capabilities": [
+          "deliberative-capacity-building.ai-literacy", 
+          "deliberative-capacity-building.inclusive-methodologies",
+          "participatory-value-definition.diverse-inclusion",
+          "participatory-value-definition.value-articulation",
+          "democratic-governance.inclusive-participation",
+          "democratic-governance.democratic-structures",
+          "participatory-alignment-verification.verification-competence",
+          "participatory-alignment-verification.inclusive-verification",
+          "explanation-systems.natural-language-explanation",
+          "governance-structures.stakeholder-engagement-systems"
+        ],
+        "implemented_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.inclusion-methods"],
+        "implemented_by_applications": ["deliberative-capacity-building.deliberative-skill-training", "deliberative-capacity-building.facilitation-capacity-development"],
+        "supported_by_literature": ["Irving2018", "Askell2019", "Vaina2020"]
+      },
+      {
+        "id": "deliberative-capacity-building.infrastructure-development",
+        "name": "Infrastructure Development",
+        "description": "Create and maintain technical infrastructure for democratic participation",
+        "implements_component_functions": ["democratic-alignment.democratic-governance", "democratic-alignment.oversight-implementation"],
+        "enabled_by_capabilities": [
+          "deliberative-capacity-building.deliberative-infrastructure", 
+          "deliberative-capacity-building.technical-capacity",
+          "participatory-value-definition.diverse-inclusion",
+          "participatory-value-definition.democratic-consultation",
+          "democratic-governance.democratic-structures",
+          "democratic-governance.governance-transparency",
+          "participatory-alignment-verification.verification-interfaces",
+          "participatory-alignment-verification.transparency-mechanisms",
+          "governance-structures.process-design",
+          "governance-structures.stakeholder-engagement-systems"
+        ],
+        "implemented_by_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building", "deliberative-capacity-building.inclusion-methods"],
+        "implemented_by_applications": ["deliberative-capacity-building.deliberation-platforms", "deliberative-capacity-building.accessibility-infrastructure"],
+        "supported_by_literature": ["Vaina2020", "Brundage2020", "Yang2023"]
+      },
+      {
+        "id": "deliberative-capacity-building.facilitation-support",
+        "name": "Facilitation Support",
+        "description": "Build facilitation capacity for inclusive deliberative processes",
+        "implements_component_functions": ["democratic-alignment.participation-facilitation", "democratic-alignment.oversight-implementation"],
+        "enabled_by_capabilities": [
+          "deliberative-capacity-building.deliberative-infrastructure", 
+          "deliberative-capacity-building.knowledge-translation", 
+          "deliberative-capacity-building.inclusive-methodologies",
+          "participatory-value-definition.diverse-inclusion",
+          "participatory-value-definition.democratic-consultation",
+          "democratic-governance.inclusive-participation",
+          "democratic-governance.governance-transparency",
+          "participatory-alignment-verification.inclusive-verification",
+          "participatory-alignment-verification.verification-interfaces",
+          "governance-structures.stakeholder-engagement-systems",
+          "governance-structures.process-design"
+        ],
+        "implemented_by_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building", "deliberative-capacity-building.inclusion-methods"],
+        "implemented_by_applications": ["deliberative-capacity-building.facilitation-capacity-development", "deliberative-capacity-building.process-documentation-systems"],
+        "supported_by_literature": ["Vaina2020", "Askell2019", "Irving2018"]
+      },
+      {
+        "id": "deliberative-capacity-building.adaptive-learning",
+        "name": "Adaptive Learning",
+        "description": "Support ongoing learning and adaptation of democratic alignment processes",
+        "implements_component_functions": ["democratic-alignment.democratic-governance", "democratic-alignment.value-elicitation"],
+        "enabled_by_capabilities": [
+          "deliberative-capacity-building.ai-literacy", 
+          "deliberative-capacity-building.technical-capacity",
+          "participatory-value-definition.value-articulation",
+          "participatory-value-definition.diverse-inclusion",
+          "democratic-governance.governance-transparency",
+          "democratic-governance.multi-stakeholder-oversight",
+          "participatory-alignment-verification.verification-competence",
+          "participatory-alignment-verification.verification-interfaces",
+          "monitoring-systems.behavioral-pattern-analysis",
+          "monitoring-systems.trend-analysis",
+          "adaptive-value-learning.dynamic-value-refinement"
+        ],
+        "implemented_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.knowledge-translation-methods", "deliberative-capacity-building.adaptive-capacity-building"],
+        "implemented_by_applications": ["deliberative-capacity-building.continuous-learning-systems", "deliberative-capacity-building.capacity-assessment-frameworks"]
+      }
+    ]
+  },
+  
+  "implementation": {
+    "_documentation": "This section details the techniques and their applications used to implement deliberative capacity building for democratic AI alignment.",
+    "techniques": [
+      {
+        "id": "deliberative-capacity-building.ai-literacy-development",
+        "name": "AI Literacy Development",
+        "description": "Approaches for building understanding of AI technologies and implications among diverse stakeholders",
+        "implements_integration_approaches": ["democratic-alignment.participatory-definition-integration", "democratic-alignment.capacity-building-integration"],
+        "implements_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.skill-development", "deliberative-capacity-building.adaptive-learning"],
+        "addresses_considerations": ["deliberative-capacity-building.knowledge-accessibility", "deliberative-capacity-building.expertise-diversity", "deliberative-capacity-building.technical-complexity"],
+        "supported_by_literature": ["Christian2020", "Bai2022", "Yang2023"],
+        "uses_inputs": ["deliberative-capacity-building.ai-system-information", "deliberative-capacity-building.community-needs", "deliberative-capacity-building.educational-resources", "deliberative-capacity-building.knowledge-gaps", "deliberative-capacity-building.learning-needs", "deliberative-capacity-building.skill-gaps", "deliberative-capacity-building.deliberation-challenges"],
+        "produces_outputs": ["deliberative-capacity-building.literacy-programs", "deliberative-capacity-building.educational-materials", "deliberative-capacity-building.knowledge-frameworks", "deliberative-capacity-building.educational-curricula", "deliberative-capacity-building.learning-outcomes", "deliberative-capacity-building.accessible-explanations", "deliberative-capacity-building.concept-visualizations", "deliberative-capacity-building.skill-development-programs", "deliberative-capacity-building.deliberation-capabilities"],
+        "applications": [
+          {
+            "id": "deliberative-capacity-building.ai-education-programs",
+            "name": "AI Education Programs",
+            "description": "Structured programs designed to build AI literacy across knowledge levels",
+            "fulfills_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.adaptive-learning"],
+            "uses_inputs": ["deliberative-capacity-building.knowledge-gaps", "deliberative-capacity-building.learning-needs", "deliberative-capacity-building.ai-system-information", "deliberative-capacity-building.educational-resources"],
+            "produces_outputs": ["deliberative-capacity-building.educational-curricula", "deliberative-capacity-building.learning-outcomes", "deliberative-capacity-building.literacy-programs", "deliberative-capacity-building.educational-materials", "deliberative-capacity-building.knowledge-frameworks"],
+            "examples": [
+              "Tiered AI literacy programs for different expertise levels",
+              "Community-based AI education with local context integration",
+              "Multi-language AI literacy materials with cultural adaptation"
+            ],
+            "supported_by_literature": ["Christian2020", "Yang2023"]
+          },
+          {
+            "id": "deliberative-capacity-building.technical-concept-translation",
+            "name": "Technical Concept Translation",
+            "description": "Translation of complex AI concepts into accessible language and frameworks",
+            "fulfills_functions": ["deliberative-capacity-building.knowledge-building"],
+            "uses_inputs": ["deliberative-capacity-building.technical-documentation", "deliberative-capacity-building.audience-profiles"],
+            "produces_outputs": ["deliberative-capacity-building.accessible-explanations", "deliberative-capacity-building.concept-visualizations"],
+            "examples": [
+              "Visual explanations of neural network operations",
+              "Metaphor-based explanations of machine learning concepts",
+              "Multilevel explanations from simplified to detailed technical descriptions"
+            ],
+            "supported_by_literature": ["Christian2020", "Lundberg2017"]
+          },
+          {
+            "id": "deliberative-capacity-building.deliberative-skill-training",
+            "name": "Deliberative Skill Training",
+            "description": "Training programs for developing skills needed in AI governance deliberation",
+            "fulfills_functions": ["deliberative-capacity-building.skill-development"],
+            "uses_inputs": ["deliberative-capacity-building.skill-gaps", "deliberative-capacity-building.deliberation-challenges"],
+            "produces_outputs": ["deliberative-capacity-building.skill-development-programs", "deliberative-capacity-building.deliberation-capabilities"],
+            "examples": [
+              "Critical thinking workshops focused on AI ethical reasoning",
+              "Structured dialogues on complex AI governance scenarios",
+              "Role-playing exercises for multi-stakeholder AI deliberation"
+            ],
+            "supported_by_literature": ["Irving2018", "Askell2019"]
+          }
+        ]
+      },
+      {
+        "id": "deliberative-capacity-building.knowledge-translation-methods",
+        "name": "Knowledge Translation Methods",
+        "description": "Methods for translating knowledge across domains, cultures, and expertise levels to enable inclusive participation",
+        "implements_integration_approaches": ["democratic-alignment.participatory-definition-integration", "democratic-alignment.verification-integration"],
+        "implements_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.facilitation-support", "deliberative-capacity-building.adaptive-learning"],
+        "addresses_considerations": ["deliberative-capacity-building.knowledge-accessibility", "deliberative-capacity-building.contextualization-needs", "deliberative-capacity-building.two-way-translation"],
+        "supported_by_literature": ["Christian2020", "Vaina2020", "Lundberg2017", "Yang2023"],
+        "uses_inputs": ["deliberative-capacity-building.domain-expertise", "deliberative-capacity-building.cultural-contexts", "deliberative-capacity-building.technical-information", "deliberative-capacity-building.technical-documentation", "deliberative-capacity-building.public-knowledge-levels", "deliberative-capacity-building.community-expertise", "deliberative-capacity-building.local-knowledge", "deliberative-capacity-building.cross-discipline-needs", "deliberative-capacity-building.audience-profiles"],
+        "produces_outputs": ["deliberative-capacity-building.translated-knowledge", "deliberative-capacity-building.bi-directional-frameworks", "deliberative-capacity-building.cultural-adaptations", "deliberative-capacity-building.public-explanations", "deliberative-capacity-building.accessible-concepts", "deliberative-capacity-building.integrated-frameworks", "deliberative-capacity-building.contextual-understanding", "deliberative-capacity-building.interdisciplinary-frameworks", "deliberative-capacity-building.shared-concepts"],
+        "applications": [
+          {
+            "id": "deliberative-capacity-building.technical-to-public-translation",
+            "name": "Technical to Public Translation",
+            "description": "Translation of technical AI concepts for public understanding",
+            "fulfills_functions": ["deliberative-capacity-building.knowledge-building"],
+            "uses_inputs": ["deliberative-capacity-building.technical-documentation", "deliberative-capacity-building.public-knowledge-levels"],
+            "produces_outputs": ["deliberative-capacity-building.public-explanations", "deliberative-capacity-building.accessible-concepts"],
+            "examples": [
+              "Technical concept translation using everyday analogies",
+              "Visual storytelling of complex AI processes",
+              "Interactive demonstrations of AI concepts for non-experts"
+            ],
+            "supported_by_literature": ["Christian2020", "Lundberg2017"]
+          },
+          {
+            "id": "deliberative-capacity-building.community-knowledge-integration",
+            "name": "Community Knowledge Integration",
+            "description": "Methods for integrating community knowledge into technical understanding",
+            "fulfills_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.adaptive-learning"],
+            "uses_inputs": ["deliberative-capacity-building.community-expertise", "deliberative-capacity-building.local-knowledge"],
+            "produces_outputs": ["deliberative-capacity-building.integrated-frameworks", "deliberative-capacity-building.contextual-understanding"],
+            "examples": [
+              "Community-expert collaborative knowledge mapping",
+              "Two-way knowledge exchange between technical and community experts",
+              "Integration of traditional knowledge with AI governance concepts"
+            ],
+            "supported_by_literature": ["Vaina2020", "Yang2023"]
+          },
+          {
+            "id": "deliberative-capacity-building.cross-domain-translation",
+            "name": "Cross-domain Translation",
+            "description": "Translation of AI governance concepts across disciplinary domains",
+            "fulfills_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.facilitation-support"],
+            "uses_inputs": ["deliberative-capacity-building.domain-expertise", "deliberative-capacity-building.cross-discipline-needs", "deliberative-capacity-building.cultural-contexts", "deliberative-capacity-building.technical-information"],
+            "produces_outputs": ["deliberative-capacity-building.interdisciplinary-frameworks", "deliberative-capacity-building.shared-concepts", "deliberative-capacity-building.translated-knowledge", "deliberative-capacity-building.bi-directional-frameworks", "deliberative-capacity-building.cultural-adaptations"],
+            "examples": [
+              "Translation frameworks between technical and legal AI governance concepts",
+              "Cross-disciplinary glossaries and concept maps",
+              "Domain-specific explanations of common AI governance challenges"
+            ],
+            "supported_by_literature": ["Lundberg2017", "Yang2023"]
+          }
+        ]
+      },
+      {
+        "id": "deliberative-capacity-building.deliberative-infrastructure-building",
+        "name": "Deliberative Infrastructure Building",
+        "description": "Creation and maintenance of technical, social, and institutional infrastructure for deliberative participation",
+        "implements_integration_approaches": ["democratic-alignment.governance-structure-integration", "democratic-alignment.capacity-building-integration"],
+        "implements_functions": ["deliberative-capacity-building.infrastructure-development", "deliberative-capacity-building.facilitation-support"],
+        "addresses_considerations": ["deliberative-capacity-building.technical-access", "deliberative-capacity-building.institutional-support", "deliberative-capacity-building.sustainability"],
+        "supported_by_literature": ["Vaina2020", "Bai2022", "Brundage2020", "Yang2023"],
+        "uses_inputs": ["deliberative-capacity-building.community-needs", "deliberative-capacity-building.participation-barriers", "deliberative-capacity-building.technical-requirements", "deliberative-capacity-building.access-needs", "deliberative-capacity-building.deliberation-requirements", "deliberative-capacity-building.accessibility-barriers", "deliberative-capacity-building.accommodation-needs", "deliberative-capacity-building.deliberation-processes", "deliberative-capacity-building.documentation-needs"],
+        "produces_outputs": ["deliberative-capacity-building.participation-platforms", "deliberative-capacity-building.resource-frameworks", "deliberative-capacity-building.support-systems", "deliberative-capacity-building.deliberative-spaces", "deliberative-capacity-building.participation-tools", "deliberative-capacity-building.accommodations", "deliberative-capacity-building.barrier-reductions", "deliberative-capacity-building.process-records", "deliberative-capacity-building.knowledge-repositories"],
+        "applications": [
+          {
+            "id": "deliberative-capacity-building.deliberation-platforms",
+            "name": "Deliberation Platforms",
+            "description": "Digital and physical platforms enabling democratic deliberation on AI governance",
+            "fulfills_functions": ["deliberative-capacity-building.infrastructure-development"],
+            "uses_inputs": ["deliberative-capacity-building.access-needs", "deliberative-capacity-building.deliberation-requirements"],
+            "produces_outputs": ["deliberative-capacity-building.deliberative-spaces", "deliberative-capacity-building.participation-tools"],
+            "examples": [
+              "Multi-access-point digital deliberation platforms",
+              "Hybrid online-offline deliberation systems",
+              "Accessible deliberation interfaces for diverse stakeholders"
+            ],
+            "supported_by_literature": ["Vaina2020", "Yang2023"]
+          },
+          {
+            "id": "deliberative-capacity-building.accessibility-infrastructure",
+            "name": "Accessibility Infrastructure",
+            "description": "Infrastructure specifically designed to overcome participation barriers",
+            "fulfills_functions": ["deliberative-capacity-building.infrastructure-development"],
+            "uses_inputs": ["deliberative-capacity-building.accessibility-barriers", "deliberative-capacity-building.accommodation-needs", "deliberative-capacity-building.participation-barriers", "deliberative-capacity-building.technical-requirements"],
+            "produces_outputs": ["deliberative-capacity-building.accommodations", "deliberative-capacity-building.barrier-reductions", "deliberative-capacity-building.participation-platforms", "deliberative-capacity-building.resource-frameworks", "deliberative-capacity-building.support-systems", "deliberative-capacity-building.participation-supports"],
+            "examples": [
+              "Technology access programs for underserved communities",
+              "Multi-format deliberation support for different abilities",
+              "Transportation and childcare support for in-person participation"
+            ],
+            "supported_by_literature": ["Vaina2020", "Yang2023"]
+          },
+          {
+            "id": "deliberative-capacity-building.process-documentation-systems",
+            "name": "Process Documentation Systems",
+            "description": "Systems for documenting and sharing deliberative processes and outcomes",
+            "fulfills_functions": ["deliberative-capacity-building.facilitation-support", "deliberative-capacity-building.infrastructure-development"],
+            "uses_inputs": ["deliberative-capacity-building.deliberation-processes", "deliberative-capacity-building.documentation-needs"],
+            "produces_outputs": ["deliberative-capacity-building.process-records", "deliberative-capacity-building.knowledge-repositories"],
+            "examples": [
+              "Accessible archives of deliberation processes and decisions",
+              "Multi-format documentation systems with translation",
+              "Structured deliberation records with search and analysis capabilities"
+            ],
+            "supported_by_literature": ["Brundage2020", "Yang2023"]
+          }
+        ]
+      },
+      {
+        "id": "deliberative-capacity-building.inclusion-methods",
+        "name": "Inclusion Methods",
+        "description": "Methods specifically designed to ensure inclusion of marginalized and underrepresented groups in AI governance",
+        "implements_integration_approaches": ["democratic-alignment.capacity-building-integration", "democratic-alignment.participatory-definition-integration"],
+        "implements_functions": ["deliberative-capacity-building.skill-development", "deliberative-capacity-building.infrastructure-development", "deliberative-capacity-building.facilitation-support"],
+        "addresses_considerations": ["deliberative-capacity-building.power-imbalances", "deliberative-capacity-building.participation-barriers", "deliberative-capacity-building.representation-quality"],
+        "supported_by_literature": ["Vaina2020", "Askell2019", "Yang2023"],
+        "uses_inputs": ["deliberative-capacity-building.equity-analysis", "deliberative-capacity-building.exclusion-patterns", "deliberative-capacity-building.community-expertise", "deliberative-capacity-building.facilitation-challenges", "deliberative-capacity-building.community-needs", "deliberative-capacity-building.equity-analysis", "deliberative-capacity-building.design-requirements", "deliberative-capacity-building.power-analyses", "deliberative-capacity-building.transformation-goals"],
+        "produces_outputs": ["deliberative-capacity-building.inclusion-strategies", "deliberative-capacity-building.equity-frameworks", "deliberative-capacity-building.participation-supports", "deliberative-capacity-building.facilitation-skills", "deliberative-capacity-building.inclusion-strategies", "deliberative-capacity-building.equity-centered-tools", "deliberative-capacity-building.inclusive-processes", "deliberative-capacity-building.power-shifting-processes", "deliberative-capacity-building.capability-development"],
+        "applications": [
+          {
+            "id": "deliberative-capacity-building.facilitation-capacity-development",
+            "name": "Facilitation Capacity Development",
+            "description": "Building capacity for inclusive facilitation of AI governance deliberations",
+            "fulfills_functions": ["deliberative-capacity-building.skill-development", "deliberative-capacity-building.facilitation-support"],
+            "uses_inputs": ["deliberative-capacity-building.facilitation-challenges", "deliberative-capacity-building.community-needs"],
+            "produces_outputs": ["deliberative-capacity-building.facilitation-skills", "deliberative-capacity-building.inclusion-strategies"],
+            "examples": [
+              "Inclusive facilitation training for community facilitators",
+              "Power-balancing facilitation techniques for AI governance discussions",
+              "Cultural competence development for cross-community facilitation"
+            ],
+            "supported_by_literature": ["Vaina2020", "Askell2019"]
+          },
+          {
+            "id": "deliberative-capacity-building.equity-centered-design",
+            "name": "Equity-centered Design",
+            "description": "Design approaches that center equity in deliberative processes and tools",
+            "fulfills_functions": ["deliberative-capacity-building.infrastructure-development"],
+            "uses_inputs": ["deliberative-capacity-building.equity-analysis", "deliberative-capacity-building.design-requirements"],
+            "produces_outputs": ["deliberative-capacity-building.equity-centered-tools", "deliberative-capacity-building.inclusive-processes"],
+            "examples": [
+              "Participatory design of deliberation processes with marginalized communities",
+              "Equity impact assessment frameworks for deliberative methods",
+              "Design principles that prioritize historically excluded voices"
+            ],
+            "supported_by_literature": ["Vaina2020", "Yang2023"]
+          },
+          {
+            "id": "deliberative-capacity-building.transformative-participation",
+            "name": "Transformative Participation Approaches",
+            "description": "Approaches that transform power relations through participation design",
+            "fulfills_functions": ["deliberative-capacity-building.facilitation-support", "deliberative-capacity-building.skill-development"],
+            "uses_inputs": ["deliberative-capacity-building.power-analyses", "deliberative-capacity-building.transformation-goals"],
+            "produces_outputs": ["deliberative-capacity-building.power-shifting-processes", "deliberative-capacity-building.capability-development"],
+            "examples": [
+              "Community leadership development in AI governance",
+              "Structural approaches to shifting decision authority to affected communities",
+              "Knowledge co-creation between technical experts and community experts"
+            ],
+            "supported_by_literature": ["Vaina2020", "Askell2019"]
+          }
+        ]
+      },
+      {
+        "id": "deliberative-capacity-building.adaptive-capacity-building",
+        "name": "Adaptive Capacity Building",
+        "description": "Approaches for building capacity that adapts to changing AI technologies and governance needs",
+        "implements_integration_approaches": ["democratic-alignment.capacity-building-integration", "democratic-alignment.verification-integration"],
+        "implements_functions": ["deliberative-capacity-building.adaptive-learning", "deliberative-capacity-building.knowledge-building"],
+        "addresses_considerations": ["deliberative-capacity-building.technological-change", "deliberative-capacity-building.evolving-needs", "deliberative-capacity-building.sustained-engagement"],
+        "supported_by_literature": ["Christian2020", "Leike2018", "Yang2023"],
+        "uses_inputs": ["deliberative-capacity-building.technology-trends", "deliberative-capacity-building.governance-evolution", "deliberative-capacity-building.learning-outcomes", "deliberative-capacity-building.technology-developments", "deliberative-capacity-building.learning-needs", "deliberative-capacity-building.capacity-gaps", "deliberative-capacity-building.evolving-requirements", "deliberative-capacity-building.stakeholder-needs"],
+        "produces_outputs": ["deliberative-capacity-building.adaptive-frameworks", "deliberative-capacity-building.continuous-learning", "deliberative-capacity-building.resilient-capacity", "deliberative-capacity-building.learning-pathways", "deliberative-capacity-building.knowledge-updates", "deliberative-capacity-building.capacity-development-plans", "deliberative-capacity-building.assessment-tools", "deliberative-capacity-building.support-resources", "deliberative-capacity-building.participation-mechanisms"],
+        "applications": [
+          {
+            "id": "deliberative-capacity-building.continuous-learning-systems",
+            "name": "Continuous Learning Systems",
+            "description": "Systems supporting ongoing learning about evolving AI technologies and governance",
+            "fulfills_functions": ["deliberative-capacity-building.adaptive-learning"],
+            "uses_inputs": ["deliberative-capacity-building.technology-developments", "deliberative-capacity-building.learning-needs", "deliberative-capacity-building.technology-trends", "deliberative-capacity-building.governance-evolution"],
+            "produces_outputs": ["deliberative-capacity-building.learning-pathways", "deliberative-capacity-building.knowledge-updates", "deliberative-capacity-building.continuous-learning", "deliberative-capacity-building.adaptive-frameworks"],
+            "examples": [
+              "Evolving AI governance curriculum that tracks technological change",
+              "Update systems for community knowledge about AI developments",
+              "Continuous learning communities focused on AI governance"
+            ],
+            "supported_by_literature": ["Leike2018", "Yang2023"]
+          },
+          {
+            "id": "deliberative-capacity-building.capacity-assessment-frameworks",
+            "name": "Capacity Assessment Frameworks",
+            "description": "Frameworks for assessing and developing needed capacities as AI evolves",
+            "fulfills_functions": ["deliberative-capacity-building.adaptive-learning", "deliberative-capacity-building.knowledge-building"],
+            "uses_inputs": ["deliberative-capacity-building.capacity-gaps", "deliberative-capacity-building.evolving-requirements", "deliberative-capacity-building.learning-outcomes", "deliberative-capacity-building.exclusion-patterns"],
+            "produces_outputs": ["deliberative-capacity-building.capacity-development-plans", "deliberative-capacity-building.assessment-tools", "deliberative-capacity-building.resilient-capacity"],
+            "examples": [
+              "Adaptive capacity metrics that evolve with technology",
+              "Community self-assessment tools for governance readiness",
+              "Dynamic capacity gap analysis frameworks"
+            ],
+            "supported_by_literature": ["Leike2018", "Christian2020"]
+          },
+          {
+            "id": "deliberative-capacity-building.equity-centered-design",
+            "name": "Equity-centered Design",
+            "description": "Design approaches that center equity in deliberative processes and tools",
+            "fulfills_functions": ["deliberative-capacity-building.infrastructure-development"],
+            "uses_inputs": ["deliberative-capacity-building.equity-analysis", "deliberative-capacity-building.design-requirements", "deliberative-capacity-building.learning-outcomes"],
+            "produces_outputs": ["deliberative-capacity-building.equity-centered-tools", "deliberative-capacity-building.inclusive-processes", "deliberative-capacity-building.equity-frameworks"],
+            "examples": [
+              "Participatory design of deliberation processes with marginalized communities",
+              "Equity impact assessment frameworks for deliberative methods",
+              "Design principles that prioritize historically excluded voices"
+            ],
+            "supported_by_literature": ["Vaina2020", "Yang2023"]
+          },
+          {
+            "id": "deliberative-capacity-building.participation-support-systems",
+            "name": "Participation Support Systems",
+            "description": "Systems that support evolving participation needs across communities",
+            "fulfills_functions": ["deliberative-capacity-building.facilitation-support", "deliberative-capacity-building.adaptive-learning"],
+            "uses_inputs": ["deliberative-capacity-building.stakeholder-needs", "deliberative-capacity-building.evolving-requirements"],
+            "produces_outputs": ["deliberative-capacity-building.support-resources", "deliberative-capacity-building.participation-mechanisms"],
+            "examples": [
+              "Adaptable participation frameworks for diverse communities",
+              "Evolving support systems for emerging participation needs",
+              "Flexible participation infrastructure that responds to feedback"
+            ],
+            "supported_by_literature": ["Yang2023", "Vaina2020"]
+          }
+        ]
+      }
+    ],
+    
+    "implementation_considerations": [
+      {
+        "id": "deliberative-capacity-building.knowledge-accessibility",
+        "name": "Knowledge Accessibility",
+        "aspect": "Knowledge Accessibility",
+        "considerations": [
+          "Adapting technical knowledge for different levels of expertise",
+          "Creating accessible explanations across linguistic and cultural contexts",
+          "Addressing barriers to knowledge access for marginalized communities",
+          "Balancing simplification with meaningful technical understanding"
+        ],
+        "derives_from_integration_considerations": ["democratic-alignment.knowledge-translation", "democratic-alignment.equity"],
+        "addressed_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.knowledge-translation-methods"],
+        "supported_by_literature": ["Christian2020", "Lundberg2017"]
+      },
+      {
+        "id": "deliberative-capacity-building.expertise-diversity",
+        "name": "Expertise Diversity",
+        "aspect": "Expertise Diversity",
+        "considerations": [
+          "Valuing diverse forms of expertise beyond technical knowledge",
+          "Integrating community expertise with technical understanding",
+          "Preventing technical expertise from dominating deliberation",
+          "Building capacity that respects diverse knowledge systems"
+        ],
+        "derives_from_integration_considerations": ["democratic-alignment.representativeness", "democratic-alignment.expertise-integration"],
+        "addressed_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.knowledge-translation-methods"],
+        "supported_by_literature": ["Vaina2020", "Askell2019"]
+      },
+      {
+        "id": "deliberative-capacity-building.technical-complexity",
+        "name": "Technical Complexity",
+        "aspect": "Technical Complexity",
+        "considerations": [
+          "Addressing increasing complexity of AI systems in capacity building",
+          "Creating tiered approaches for different levels of technical detail",
+          "Focusing on governance-relevant technical knowledge",
+          "Providing pathways to deeper technical understanding"
+        ],
+        "derives_from_integration_considerations": ["democratic-alignment.technological-evolution", "democratic-alignment.verification-complexity"],
+        "addressed_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.adaptive-capacity-building"],
+        "supported_by_literature": ["Christian2020", "Bai2022"]
+      },
+      {
+        "id": "deliberative-capacity-building.contextualization-needs",
+        "name": "Contextualization Needs",
+        "aspect": "Contextualization Needs",
+        "considerations": [
+          "Contextualizing capacity building for different communities and cultures",
+          "Adapting approaches to specific governance contexts",
+          "Integrating local knowledge into capacity building",
+          "Avoiding one-size-fits-all capacity building approaches"
+        ],
+        "derives_from_integration_considerations": ["democratic-alignment.adaptability", "democratic-alignment.cultural-appropriateness"],
+        "addressed_by_techniques": ["deliberative-capacity-building.knowledge-translation-methods", "deliberative-capacity-building.inclusion-methods"],
+        "supported_by_literature": ["Vaina2020", "Yang2023"]
+      },
+      {
+        "id": "deliberative-capacity-building.two-way-translation",
+        "name": "Two-way Translation",
+        "aspect": "Two-way Translation",
+        "considerations": [
+          "Ensuring bi-directional knowledge flow between experts and communities",
+          "Translating community concerns into technical requirements",
+          "Creating shared vocabularies across expertise types",
+          "Developing feedback loops between technical and non-technical stakeholders"
+        ],
+        "derives_from_integration_considerations": ["democratic-alignment.feedback-integration", "democratic-alignment.knowledge-translation"],
+        "addressed_by_techniques": ["deliberative-capacity-building.knowledge-translation-methods"],
+        "supported_by_literature": ["Vaina2020", "Yang2023"]
+      },
+      {
+        "id": "deliberative-capacity-building.technical-access",
+        "name": "Technical Access",
+        "aspect": "Technical Access",
+        "considerations": [
+          "Addressing technical barriers to participation in AI governance",
+          "Creating accessible interfaces for diverse stakeholders",
+          "Overcoming digital divides across communities",
+          "Providing technological support for effective participation"
+        ],
+        "derives_from_integration_considerations": ["democratic-alignment.equity", "democratic-alignment.accessibility"],
+        "addressed_by_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building"],
+        "supported_by_literature": ["Vaina2020", "Brundage2020"]
+      },
+      {
+        "id": "deliberative-capacity-building.institutional-support",
+        "name": "Institutional Support",
+        "aspect": "Institutional Support",
+        "considerations": [
+          "Developing institutional capacity to support inclusive deliberation",
+          "Creating governance structures that enable capacity building",
+          "Integrating capacity building into organizational processes",
+          "Securing resources for sustained capacity development"
+        ],
+        "derives_from_integration_considerations": ["democratic-alignment.institutionalization", "democratic-alignment.sustainability"],
+        "addressed_by_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building"],
+        "supported_by_literature": ["Brundage2020", "Yang2023"]
+      },
+      {
+        "id": "deliberative-capacity-building.sustainability",
+        "name": "Sustainability",
+        "aspect": "Sustainability",
+        "considerations": [
+          "Designing capacity building for long-term sustainability",
+          "Developing self-sustaining community capacity",
+          "Creating renewable resource streams for capacity maintenance",
+          "Building infrastructures that persist beyond initial investment"
+        ],
+        "derives_from_integration_considerations": ["democratic-alignment.long-term-viability", "democratic-alignment.sustainability"],
+        "addressed_by_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building"],
+        "supported_by_literature": ["Vaina2020", "Yang2023"]
+      },
+      {
+        "id": "deliberative-capacity-building.power-imbalances",
+        "name": "Power Imbalances",
+        "aspect": "Power Imbalances",
+        "considerations": [
+          "Addressing power imbalances in capacity building processes",
+          "Preventing capacity building from reinforcing existing inequities",
+          "Creating transformative approaches to power in deliberation",
+          "Centering marginalized communities in capacity development"
+        ],
+        "derives_from_integration_considerations": ["democratic-alignment.power-balancing", "democratic-alignment.equity"],
+        "addressed_by_techniques": ["deliberative-capacity-building.inclusion-methods"],
+        "supported_by_literature": ["Vaina2020", "Askell2019"]
+      },
+      {
+        "id": "deliberative-capacity-building.participation-barriers",
+        "name": "Participation Barriers",
+        "aspect": "Participation Barriers",
+        "considerations": [
+          "Identifying and addressing barriers to participation",
+          "Creating accommodations for diverse participation needs",
+          "Removing economic barriers to participation",
+          "Addressing time constraints for community participants"
+        ],
+        "derives_from_integration_considerations": ["democratic-alignment.equity", "democratic-alignment.accessibility"],
+        "addressed_by_techniques": ["deliberative-capacity-building.inclusion-methods", "deliberative-capacity-building.deliberative-infrastructure-building"],
+        "supported_by_literature": ["Vaina2020", "Askell2019"]
+      },
+      {
+        "id": "deliberative-capacity-building.representation-quality",
+        "name": "Representation Quality",
+        "aspect": "Representation Quality",
+        "considerations": [
+          "Ensuring quality of representation in capacity building",
+          "Moving beyond tokenistic inclusion to meaningful participation",
+          "Building capacity across diverse demographic groups",
+          "Creating appropriate sampling and selection methodologies"
+        ],
+        "derives_from_integration_considerations": ["democratic-alignment.representativeness", "democratic-alignment.equity"],
+        "addressed_by_techniques": ["deliberative-capacity-building.inclusion-methods"],
+        "supported_by_literature": ["Vaina2020", "Askell2019"]
+      },
+      {
+        "id": "deliberative-capacity-building.technological-change",
+        "name": "Technological Change",
+        "aspect": "Technological Change",
+        "considerations": [
+          "Adapting capacity building to evolving AI technologies",
+          "Developing frameworks that remain relevant through technological change",
+          "Creating update mechanisms for knowledge and skills as AI advances",
+          "Teaching fundamental concepts that transcend specific implementations"
+        ],
+        "derives_from_integration_considerations": ["democratic-alignment.technological-evolution", "democratic-alignment.anticipation"],
+        "addressed_by_techniques": ["deliberative-capacity-building.adaptive-capacity-building"],
+        "supported_by_literature": ["Christian2020", "Leike2018"]
+      },
+      {
+        "id": "deliberative-capacity-building.evolving-needs",
+        "name": "Evolving Needs",
+        "aspect": "Evolving Needs",
+        "considerations": [
+          "Adapting capacity building to evolving community and stakeholder needs",
+          "Creating feedback systems to identify emerging capacity requirements",
+          "Developing flexible approaches that can shift focus as needed",
+          "Building self-assessment capabilities into capacity development"
+        ],
+        "derives_from_integration_considerations": ["democratic-alignment.adaptability", "democratic-alignment.feedback-integration"],
+        "addressed_by_techniques": ["deliberative-capacity-building.adaptive-capacity-building"],
+        "supported_by_literature": ["Leike2018", "Yang2023"]
+      },
+      {
+        "id": "deliberative-capacity-building.sustained-engagement",
+        "name": "Sustained Engagement",
+        "aspect": "Sustained Engagement",
+        "considerations": [
+          "Maintaining stakeholder engagement over long timeframes",
+          "Preventing participation fatigue through appropriate design",
+          "Creating intrinsically motivating participation experiences",
+          "Developing community ownership of ongoing governance processes"
+        ],
+        "derives_from_integration_considerations": ["democratic-alignment.sustainability", "democratic-alignment.long-term-viability"],
+        "addressed_by_techniques": ["deliberative-capacity-building.adaptive-capacity-building", "deliberative-capacity-building.inclusion-methods"],
+        "supported_by_literature": ["Yang2023", "Vaina2020"]
+      }
+    ]
+  },
+  
+  "technical_specifications": {
+    "_documentation": "This section provides technical details about the deliberative capacity building subcomponent, including inputs, outputs, and performance characteristics.",
+    "input_requirements": [
+      {
+        "id": "deliberative-capacity-building.community-needs",
+        "name": "Community Capacity Needs",
+        "description": "Identified capacity needs of communities for AI governance participation",
+        "format": "Needs assessments, capability analyses, participation barriers",
+        "constraints": "Must reflect diverse community perspectives and needs",
+        "related_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.inclusion-methods", "deliberative-capacity-building.deliberative-infrastructure-building"],
+        "used_by_applications": ["deliberative-capacity-building.ai-education-programs", "deliberative-capacity-building.facilitation-capacity-development", "deliberative-capacity-building.equity-centered-design"],
+        "supports_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.facilitation-support", "deliberative-capacity-building.infrastructure-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.access-needs",
+        "name": "Access Needs",
+        "description": "Specific access requirements for diverse participation",
+        "format": "Accessibility assessments, accommodation requirements, barrier analyses",
+        "constraints": "Must address diverse physical, cognitive, and technological needs",
+        "related_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building", "deliberative-capacity-building.inclusion-methods"],
+        "used_by_applications": ["deliberative-capacity-building.deliberation-platforms", "deliberative-capacity-building.accessibility-infrastructure"],
+        "supports_functions": ["deliberative-capacity-building.infrastructure-development", "deliberative-capacity-building.facilitation-support"]
+      },
+      {
+        "id": "deliberative-capacity-building.learning-needs",
+        "name": "Learning Needs",
+        "description": "Identified educational and learning requirements for AI governance participation",
+        "format": "Learning assessments, knowledge gap analyses, learning style evaluations",
+        "constraints": "Must account for diverse learning styles and backgrounds",
+        "related_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.adaptive-capacity-building"],
+        "used_by_applications": ["deliberative-capacity-building.continuous-learning-systems", "deliberative-capacity-building.ai-education-programs"],
+        "supports_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.adaptive-learning"]
+      },
+      {
+        "id": "deliberative-capacity-building.deliberation-requirements",
+        "name": "Deliberation Requirements",
+        "description": "Specific requirements for effective deliberation processes",
+        "format": "Process specifications, deliberation design parameters, procedural needs",
+        "constraints": "Must support inclusive and effective deliberative processes",
+        "related_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building", "deliberative-capacity-building.inclusion-methods"],
+        "used_by_applications": ["deliberative-capacity-building.deliberation-platforms", "deliberative-capacity-building.process-documentation-systems"],
+        "supports_functions": ["deliberative-capacity-building.infrastructure-development", "deliberative-capacity-building.facilitation-support"]
+      },
+      {
+        "id": "deliberative-capacity-building.local-knowledge",
+        "name": "Local Knowledge",
+        "description": "Community-specific knowledge relevant to AI governance",
+        "format": "Local expertise, contextual knowledge, community wisdom",
+        "constraints": "Must be respected and integrated with technical knowledge",
+        "related_techniques": ["deliberative-capacity-building.knowledge-translation-methods", "deliberative-capacity-building.inclusion-methods"],
+        "used_by_applications": ["deliberative-capacity-building.community-knowledge-integration"],
+        "supports_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.adaptive-learning"]
+      },
+      {
+        "id": "deliberative-capacity-building.knowledge-gaps",
+        "name": "Knowledge Gaps",
+        "description": "Identified gaps in knowledge needed for effective participation",
+        "format": "Gap analyses, knowledge assessments, literacy evaluations",
+        "constraints": "Must identify both technical and contextual knowledge needs",
+        "related_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.knowledge-translation-methods"],
+        "used_by_applications": ["deliberative-capacity-building.ai-education-programs", "deliberative-capacity-building.technical-concept-translation"],
+        "supports_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.expertise-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.ai-governance-requirements",
+        "name": "AI Governance Requirements",
+        "description": "Knowledge and capability requirements for effective AI governance",
+        "format": "Capability frameworks, knowledge maps, skill taxonomies",
+        "constraints": "Must be relevant to democratic participation needs",
+        "related_techniques": ["deliberative-capacity-building.knowledge-translation-methods", "deliberative-capacity-building.adaptive-capacity-building"],
+        "used_by_applications": ["deliberative-capacity-building.technical-concept-translation", "deliberative-capacity-building.continuous-learning-systems"],
+        "supports_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.adaptive-learning"]
+      },
+      {
+        "id": "deliberative-capacity-building.facilitation-challenges",
+        "name": "Facilitation Challenges",
+        "description": "Identified challenges in facilitating inclusive AI governance deliberations",
+        "format": "Challenge assessments, facilitation barrier analyses, process difficulties",
+        "constraints": "Must address power dynamics and participation barriers",
+        "related_techniques": ["deliberative-capacity-building.inclusion-methods", "deliberative-capacity-building.deliberative-infrastructure-building"],
+        "used_by_applications": ["deliberative-capacity-building.facilitation-capacity-development"],
+        "supports_functions": ["deliberative-capacity-building.facilitation-support", "deliberative-capacity-building.skill-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.capacity-gaps",
+        "name": "Capacity Gaps",
+        "description": "Identified gaps in community capacity for AI governance participation",
+        "format": "Capacity assessment reports, gap analyses, needs evaluations",
+        "constraints": "Must consider diverse dimensions of capacity across communities",
+        "related_techniques": ["deliberative-capacity-building.adaptive-capacity-building", "deliberative-capacity-building.ai-literacy-development"],
+        "used_by_applications": ["deliberative-capacity-building.capacity-assessment-frameworks"],
+        "supports_functions": ["deliberative-capacity-building.adaptive-learning", "deliberative-capacity-building.knowledge-building"]
+      },
+      {
+        "id": "deliberative-capacity-building.stakeholder-needs",
+        "name": "Stakeholder Needs",
+        "description": "Needs of diverse stakeholders in AI governance processes",
+        "format": "Stakeholder needs assessments, participation requirements, support needs",
+        "constraints": "Must reflect diverse stakeholder groups and their contexts",
+        "related_techniques": ["deliberative-capacity-building.adaptive-capacity-building", "deliberative-capacity-building.inclusion-methods"],
+        "used_by_applications": ["deliberative-capacity-building.participation-support-systems"],
+        "supports_functions": ["deliberative-capacity-building.facilitation-support", "deliberative-capacity-building.adaptive-learning"]
+      },
+      {
+        "id": "deliberative-capacity-building.skill-gaps",
+        "name": "Skill Gaps",
+        "description": "Identified gaps in skills needed for effective AI governance participation",
+        "format": "Skill assessments, capability gaps, development needs",
+        "constraints": "Must address both technical and deliberative skills",
+        "related_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.inclusion-methods"],
+        "used_by_applications": ["deliberative-capacity-building.deliberative-skill-training"],
+        "supports_functions": ["deliberative-capacity-building.skill-development", "deliberative-capacity-building.knowledge-building"]
+      },
+      {
+        "id": "deliberative-capacity-building.design-requirements",
+        "name": "Design Requirements",
+        "description": "Requirements for designing inclusive participation processes and tools",
+        "format": "Design specifications, user requirements, accessibility standards",
+        "constraints": "Must center equity and inclusion in design approach",
+        "related_techniques": ["deliberative-capacity-building.inclusion-methods", "deliberative-capacity-building.deliberative-infrastructure-building"],
+        "used_by_applications": ["deliberative-capacity-building.equity-centered-design"],
+        "supports_functions": ["deliberative-capacity-building.infrastructure-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.technical-ai-knowledge",
+        "name": "Technical AI Knowledge",
+        "description": "Technical information about AI systems requiring translation",
+        "format": "Technical documentation, system specifications, algorithm descriptions",
+        "constraints": "Must include relevant technical details for meaningful participation",
+        "related_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.knowledge-translation-methods"],
+        "used_by_applications": ["deliberative-capacity-building.technical-concept-translation", "deliberative-capacity-building.technical-to-public-translation"],
+        "supports_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.expertise-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.cultural-context-information",
+        "name": "Cultural Context Information",
+        "description": "Information about cultural contexts for capacity adaptation",
+        "format": "Cultural context analyses, community input, adaptation requirements",
+        "constraints": "Must reflect diverse cultural perspectives and knowledge systems",
+        "related_techniques": ["deliberative-capacity-building.knowledge-translation-methods", "deliberative-capacity-building.inclusion-methods"],
+        "used_by_applications": ["deliberative-capacity-building.community-knowledge-integration", "deliberative-capacity-building.equity-centered-design"],
+        "supports_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.facilitation-support"]
+      },
+      {
+        "id": "deliberative-capacity-building.audience-profiles",
+        "name": "Audience Profiles",
+        "description": "Profiles of target audiences for capacity building initiatives",
+        "format": "Demographic data, knowledge baselines, cultural contexts",
+        "constraints": "Must reflect diverse stakeholder groups accurately",
+        "related_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.knowledge-translation-methods"],
+        "used_by_applications": ["deliberative-capacity-building.technical-concept-translation"],
+        "supports_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.expertise-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.deliberation-processes",
+        "name": "Deliberation Processes",
+        "description": "Existing and planned deliberation processes requiring documentation",
+        "format": "Process descriptions, procedural frameworks, participation structures",
+        "constraints": "Must capture both formal and informal aspects of deliberation",
+        "related_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building"],
+        "used_by_applications": ["deliberative-capacity-building.process-documentation-systems"],
+        "supports_functions": ["deliberative-capacity-building.facilitation-support", "deliberative-capacity-building.infrastructure-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.transformation-goals",
+        "name": "Transformation Goals",
+        "description": "Goals for transforming power relations in AI governance",
+        "format": "Transformation frameworks, equity goals, power-shifting objectives",
+        "constraints": "Must address structural power imbalances",
+        "related_techniques": ["deliberative-capacity-building.inclusion-methods"],
+        "used_by_applications": ["deliberative-capacity-building.transformative-participation"],
+        "supports_functions": ["deliberative-capacity-building.facilitation-support", "deliberative-capacity-building.skill-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.evolving-requirements",
+        "name": "Evolving Requirements",
+        "description": "Changing requirements for capacity as AI governance evolves",
+        "format": "Trend analyses, future scenarios, emerging capability needs",
+        "constraints": "Must be forward-looking while remaining practical",
+        "related_techniques": ["deliberative-capacity-building.adaptive-capacity-building"],
+        "used_by_applications": ["deliberative-capacity-building.capacity-assessment-frameworks", "deliberative-capacity-building.participation-support-systems"],
+        "supports_functions": ["deliberative-capacity-building.adaptive-learning"]
+      },
+      {
+        "id": "deliberative-capacity-building.power-analyses",
+        "name": "Power Analyses",
+        "description": "Analyses of power dynamics in AI governance contexts",
+        "format": "Power mappings, structural analyses, influence assessments",
+        "constraints": "Must address both visible and invisible forms of power",
+        "related_techniques": ["deliberative-capacity-building.inclusion-methods"],
+        "used_by_applications": ["deliberative-capacity-building.transformative-participation"],
+        "supports_functions": ["deliberative-capacity-building.facilitation-support", "deliberative-capacity-building.skill-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.technology-developments",
+        "name": "Technology Developments",
+        "description": "Emerging developments in AI requiring capacity adaptations",
+        "format": "Technology trend analyses, capability assessments, emerging applications",
+        "constraints": "Must be accessible to non-technical stakeholders",
+        "related_techniques": ["deliberative-capacity-building.adaptive-capacity-building"],
+        "used_by_applications": ["deliberative-capacity-building.continuous-learning-systems"],
+        "supports_functions": ["deliberative-capacity-building.adaptive-learning", "deliberative-capacity-building.knowledge-building"]
+      },
+      {
+        "id": "deliberative-capacity-building.documentation-needs",
+        "name": "Documentation Needs",
+        "description": "Requirements for documenting deliberative processes",
+        "format": "Documentation specifications, transparency requirements, archival needs",
+        "constraints": "Must support accountability and knowledge sharing",
+        "related_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building"],
+        "used_by_applications": ["deliberative-capacity-building.process-documentation-systems"],
+        "supports_functions": ["deliberative-capacity-building.facilitation-support", "deliberative-capacity-building.infrastructure-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.accessibility-barriers",
+        "name": "Accessibility Barriers",
+        "description": "Barriers limiting accessibility of AI governance participation",
+        "format": "Barrier assessments, accessibility audits, participation obstacles",
+        "constraints": "Must address physical, cognitive, technical, and social barriers",
+        "related_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building", "deliberative-capacity-building.inclusion-methods"],
+        "used_by_applications": ["deliberative-capacity-building.accessibility-infrastructure"],
+        "supports_functions": ["deliberative-capacity-building.infrastructure-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.deliberation-challenges",
+        "name": "Deliberation Challenges",
+        "description": "Challenges in effective deliberation on AI governance",
+        "format": "Challenge assessments, deliberation barriers, process difficulties",
+        "constraints": "Must address cognitive, social, and procedural challenges",
+        "related_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.inclusion-methods"],
+        "used_by_applications": ["deliberative-capacity-building.deliberative-skill-training"],
+        "supports_functions": ["deliberative-capacity-building.skill-development", "deliberative-capacity-building.facilitation-support"]
+      },
+      {
+        "id": "deliberative-capacity-building.cross-discipline-needs",
+        "name": "Cross-discipline Needs",
+        "description": "Requirements for translation across disciplinary boundaries",
+        "format": "Interdisciplinary translation needs, domain knowledge gaps, conceptual barriers",
+        "constraints": "Must address diverse disciplinary perspectives",
+        "related_techniques": ["deliberative-capacity-building.knowledge-translation-methods"],
+        "used_by_applications": ["deliberative-capacity-building.cross-domain-translation"],
+        "supports_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.facilitation-support"]
+      },
+      {
+        "id": "deliberative-capacity-building.technical-documentation",
+        "name": "Technical Documentation",
+        "description": "Technical documentation about AI systems requiring translation",
+        "format": "Technical specifications, research papers, system architectures",
+        "constraints": "Must include accurate technical details while being translatable",
+        "related_techniques": ["deliberative-capacity-building.knowledge-translation-methods", "deliberative-capacity-building.ai-literacy-development"],
+        "used_by_applications": ["deliberative-capacity-building.technical-concept-translation", "deliberative-capacity-building.technical-to-public-translation"],
+        "supports_functions": ["deliberative-capacity-building.knowledge-building"]
+      },
+      {
+        "id": "deliberative-capacity-building.accommodation-needs",
+        "name": "Accommodation Needs",
+        "description": "Specific accommodations needed for diverse participation",
+        "format": "Accommodation requirements, support needs, participation enablers",
+        "constraints": "Must address diverse physical, cognitive, and situational needs",
+        "related_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building", "deliberative-capacity-building.inclusion-methods"],
+        "used_by_applications": ["deliberative-capacity-building.accessibility-infrastructure"],
+        "supports_functions": ["deliberative-capacity-building.infrastructure-development", "deliberative-capacity-building.facilitation-support"]
+      },
+      {
+        "id": "deliberative-capacity-building.public-knowledge-levels",
+        "name": "Public Knowledge Levels",
+        "description": "Baseline knowledge levels in public audiences about AI",
+        "format": "Knowledge assessments, literacy surveys, understanding metrics",
+        "constraints": "Must address diverse public audiences across demographics",
+        "related_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.knowledge-translation-methods"],
+        "used_by_applications": ["deliberative-capacity-building.technical-to-public-translation"],
+        "supports_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.expertise-development"]
+      }
+    ],
+    
+    "output_specifications": [
+      {
+        "id": "deliberative-capacity-building.capacity-building-programs",
+        "name": "Capacity Building Programs",
+        "description": "Programs and frameworks for building deliberative capacity",
+        "format": "Educational programs, skill development frameworks, resources",
+        "usage": "Developing community capacity for AI governance",
+        "produced_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.adaptive-capacity-building"],
+        "produced_by_applications": ["deliberative-capacity-building.ai-education-programs", "deliberative-capacity-building.deliberative-skill-training"],
+        "fulfills_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.skill-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.integrated-frameworks",
+        "name": "Integrated Knowledge Frameworks",
+        "description": "Frameworks integrating technical and community knowledge",
+        "format": "Knowledge integration models, conceptual frameworks, bridging methodologies",
+        "usage": "Supporting holistic understanding of AI governance issues",
+        "produced_by_techniques": ["deliberative-capacity-building.knowledge-translation-methods"],
+        "produced_by_applications": ["deliberative-capacity-building.community-knowledge-integration"],
+        "fulfills_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.adaptive-learning"]
+      },
+      {
+        "id": "deliberative-capacity-building.contextual-understanding",
+        "name": "Contextual Understanding",
+        "description": "Context-specific understanding of AI governance implications",
+        "format": "Contextual analyses, localized knowledge frameworks, situational interpretations",
+        "usage": "Enabling locally relevant AI governance approaches",
+        "produced_by_techniques": ["deliberative-capacity-building.knowledge-translation-methods"],
+        "produced_by_applications": ["deliberative-capacity-building.community-knowledge-integration"],
+        "fulfills_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.adaptive-learning"]
+      },
+      {
+        "id": "deliberative-capacity-building.deliberation-capabilities",
+        "name": "Deliberation Capabilities",
+        "description": "Enhanced capabilities for effective deliberation on AI governance",
+        "format": "Deliberative skill sets, reasoning capabilities, dialogic competencies",
+        "usage": "Enabling effective participation in complex governance discussions",
+        "produced_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.inclusion-methods"],
+        "produced_by_applications": ["deliberative-capacity-building.deliberative-skill-training"],
+        "fulfills_functions": ["deliberative-capacity-building.skill-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.barrier-reductions",
+        "name": "Barrier Reductions",
+        "description": "Reductions in barriers to participation in AI governance",
+        "format": "Accessibility improvements, participation enablers, barrier mitigation strategies",
+        "usage": "Enabling more inclusive participation in AI governance",
+        "produced_by_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building", "deliberative-capacity-building.inclusion-methods"],
+        "produced_by_applications": ["deliberative-capacity-building.accessibility-infrastructure"],
+        "fulfills_functions": ["deliberative-capacity-building.infrastructure-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.support-resources",
+        "name": "Support Resources",
+        "description": "Resources supporting participation in AI governance",
+        "format": "Support materials, participation aids, enabling resources",
+        "usage": "Facilitating diverse stakeholder engagement",
+        "produced_by_techniques": ["deliberative-capacity-building.adaptive-capacity-building", "deliberative-capacity-building.inclusion-methods"],
+        "produced_by_applications": ["deliberative-capacity-building.participation-support-systems"],
+        "fulfills_functions": ["deliberative-capacity-building.facilitation-support", "deliberative-capacity-building.adaptive-learning"]
+      },
+      {
+        "id": "deliberative-capacity-building.concept-visualizations",
+        "name": "Concept Visualizations",
+        "description": "Visual representations of complex AI concepts",
+        "format": "Visual explanations, conceptual diagrams, interactive visualizations",
+        "usage": "Supporting understanding of technical concepts",
+        "produced_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.knowledge-translation-methods"],
+        "produced_by_applications": ["deliberative-capacity-building.technical-concept-translation"],
+        "fulfills_functions": ["deliberative-capacity-building.knowledge-building"]
+      },
+      {
+        "id": "deliberative-capacity-building.accessible-explanations",
+        "name": "Accessible Explanations",
+        "description": "Explanations of AI concepts accessible to diverse audiences",
+        "format": "Multi-level explanations, plain language descriptions, accessible formats",
+        "usage": "Building understanding across diverse knowledge levels",
+        "produced_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.knowledge-translation-methods"],
+        "produced_by_applications": ["deliberative-capacity-building.technical-concept-translation"],
+        "fulfills_functions": ["deliberative-capacity-building.knowledge-building"]
+      },
+      {
+        "id": "deliberative-capacity-building.participation-mechanisms",
+        "name": "Participation Mechanisms",
+        "description": "Mechanisms enabling diverse participation in AI governance",
+        "format": "Participation structures, engagement tools, inclusive methodologies",
+        "usage": "Supporting diverse stakeholder involvement",
+        "produced_by_techniques": ["deliberative-capacity-building.adaptive-capacity-building", "deliberative-capacity-building.inclusion-methods"],
+        "produced_by_applications": ["deliberative-capacity-building.participation-support-systems"],
+        "fulfills_functions": ["deliberative-capacity-building.facilitation-support", "deliberative-capacity-building.infrastructure-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.deliberative-spaces",
+        "name": "Deliberative Spaces",
+        "description": "Physical and digital spaces for deliberation on AI governance",
+        "format": "Deliberation platforms, meeting spaces, dialogue environments",
+        "usage": "Hosting inclusive deliberative processes",
+        "produced_by_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building"],
+        "produced_by_applications": ["deliberative-capacity-building.deliberation-platforms"],
+        "fulfills_functions": ["deliberative-capacity-building.infrastructure-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.knowledge-updates",
+        "name": "Knowledge Updates",
+        "description": "Updated knowledge about evolving AI technologies and governance",
+        "format": "Knowledge updates, continuing education materials, trend briefings",
+        "usage": "Maintaining current understanding of AI developments",
+        "produced_by_techniques": ["deliberative-capacity-building.adaptive-capacity-building"],
+        "produced_by_applications": ["deliberative-capacity-building.continuous-learning-systems"],
+        "fulfills_functions": ["deliberative-capacity-building.adaptive-learning", "deliberative-capacity-building.knowledge-building"]
+      },
+      {
+        "id": "deliberative-capacity-building.skill-development-programs",
+        "name": "Skill Development Programs",
+        "description": "Programs for developing skills needed in AI governance",
+        "format": "Training programs, skill development frameworks, learning pathways",
+        "usage": "Building necessary skills for effective participation",
+        "produced_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.inclusion-methods"],
+        "produced_by_applications": ["deliberative-capacity-building.deliberative-skill-training"],
+        "fulfills_functions": ["deliberative-capacity-building.skill-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.interdisciplinary-frameworks",
+        "name": "Interdisciplinary Frameworks",
+        "description": "Frameworks bridging different disciplinary perspectives on AI",
+        "format": "Cross-domain translations, interdisciplinary models, bridging concepts",
+        "usage": "Supporting interdisciplinary communication",
+        "produced_by_techniques": ["deliberative-capacity-building.knowledge-translation-methods"],
+        "produced_by_applications": ["deliberative-capacity-building.cross-domain-translation"],
+        "fulfills_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.facilitation-support"]
+      },
+      {
+        "id": "deliberative-capacity-building.participation-tools",
+        "name": "Participation Tools",
+        "description": "Tools enabling participation in deliberative processes",
+        "format": "Digital tools, facilitation aids, engagement technologies",
+        "usage": "Supporting effective participation",
+        "produced_by_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building"],
+        "produced_by_applications": ["deliberative-capacity-building.deliberation-platforms"],
+        "fulfills_functions": ["deliberative-capacity-building.infrastructure-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.accommodations",
+        "name": "Accommodations",
+        "description": "Specific accommodations for diverse participation needs",
+        "format": "Accessibility accommodations, participation supports, inclusion enablers",
+        "usage": "Enabling participation by diverse stakeholders",
+        "produced_by_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building", "deliberative-capacity-building.inclusion-methods"],
+        "produced_by_applications": ["deliberative-capacity-building.accessibility-infrastructure"],
+        "fulfills_functions": ["deliberative-capacity-building.infrastructure-development"]
+      },
+      {
+        "id": "deliberative-capacity-building.accessible-concepts",
+        "name": "Accessible Concepts",
+        "description": "AI concepts made accessible to diverse audiences",
+        "format": "Simplified explanations, accessible concept models, knowledge translations",
+        "usage": "Building understanding across knowledge levels",
+        "produced_by_techniques": ["deliberative-capacity-building.knowledge-translation-methods"],
+        "produced_by_applications": ["deliberative-capacity-building.technical-to-public-translation"],
+        "fulfills_functions": ["deliberative-capacity-building.knowledge-building"]
+      },
+      {
+        "id": "deliberative-capacity-building.knowledge-resources",
+        "name": "Knowledge Resources",
+        "description": "Accessible knowledge resources about AI governance",
+        "format": "Educational materials, concept translations, knowledge repositories",
+        "usage": "Building knowledge for effective participation",
+        "produced_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.knowledge-translation-methods"],
+        "produced_by_applications": ["deliberative-capacity-building.technical-concept-translation", "deliberative-capacity-building.technical-to-public-translation"],
+        "fulfills_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.expertise-development"]
+      }
+    ],
+    
+    "performance_characteristics": {
+      "throughput": "Capacity building programs should reach at least 100 participants per community per year",
+      "latency": "Knowledge resources should be updated within 2 weeks of relevant AI advancements",
+      "scalability": "Deliberative infrastructure should scale to support communities of various sizes (10-100,000+)",
+      "resource_utilization": "Programs should operate within resource constraints of target communities",
+      "related_considerations": ["deliberative-capacity-building.power-imbalances", "deliberative-capacity-building.participation-barriers", "deliberative-capacity-building.technological-change"]
+    }
+  },
+  
+  "relationships": {
+    "_documentation": "This section details how this subcomponent relates to other components and subcomponents in the architecture.",
+    "items": [
+      {
+        "target_id": "participatory-value-definition",
+        "relationship_type": "bidirectional_exchange",
+        "description": "Deliberative capacity building enables effective participation in value definition processes, while value definition provides requirements for needed capacities",
+        "related_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.skill-development"],
+        "related_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.knowledge-translation-methods"],
+        "related_inputs": ["deliberative-capacity-building.community-needs", "deliberative-capacity-building.ai-governance-requirements"],
+        "related_outputs": ["deliberative-capacity-building.capacity-building-programs", "deliberative-capacity-building.knowledge-resources"]
+      },
+      {
+        "target_id": "democratic-governance",
+        "relationship_type": "bidirectional_exchange",
+        "description": "Deliberative capacity building enables effective participation in governance structures, while governance provides contexts for applying deliberative capacities",
+        "related_functions": ["deliberative-capacity-building.infrastructure-development", "deliberative-capacity-building.facilitation-support"],
+        "related_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building", "deliberative-capacity-building.inclusion-methods"],
+        "related_inputs": ["deliberative-capacity-building.community-needs", "deliberative-capacity-building.cultural-context-information"],
+        "related_outputs": ["deliberative-capacity-building.governance-infrastructure", "deliberative-capacity-building.facilitation-resources"]
+      },
+      {
+        "target_id": "participatory-alignment-verification",
+        "relationship_type": "bidirectional_exchange",
+        "description": "Deliberative capacity building enables effective participation in verification processes, while verification identifies specific capacity needs",
+        "related_functions": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.adaptive-learning"],
+        "related_techniques": ["deliberative-capacity-building.knowledge-translation-methods", "deliberative-capacity-building.adaptive-capacity-building"],
+        "related_inputs": ["deliberative-capacity-building.technical-ai-knowledge", "deliberative-capacity-building.ai-governance-requirements"],
+        "related_outputs": ["deliberative-capacity-building.knowledge-resources", "deliberative-capacity-building.capacity-building-programs"]
+      }
+    ]
+  },
+  
+  "integration": {
+    "internal_integrations": [
+      {
+        "target_subcomponent": "participatory-value-definition",
+        "integration_type": "data_exchange",
+        "description": "Exchanges capacity requirements and participation support",
+        "data_flow": "Participatory value definition identifies capacity needs for effective participation, while capacity building provides knowledge and skills to enable participation",
+        "related_function": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.skill-development"],
+        "related_architectural_pattern": ["democratic-alignment.participatory-definition-integration"],
+        "enabled_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.knowledge-translation-methods"],
+        "related_inputs": ["deliberative-capacity-building.community-needs", "deliberative-capacity-building.ai-governance-requirements"],
+        "related_outputs": ["deliberative-capacity-building.capacity-building-programs", "deliberative-capacity-building.knowledge-resources"]
+      },
+      {
+        "target_subcomponent": "democratic-governance",
+        "integration_type": "data_exchange",
+        "description": "Exchanges governance capacity and participation contexts",
+        "data_flow": "Democratic governance provides contexts requiring specific capacities, while capacity building enables effective community participation in governance",
+        "related_function": ["deliberative-capacity-building.infrastructure-development", "deliberative-capacity-building.facilitation-support"],
+        "related_architectural_pattern": ["democratic-alignment.governance-structure-integration"],
+        "enabled_by_techniques": ["deliberative-capacity-building.deliberative-infrastructure-building", "deliberative-capacity-building.inclusion-methods"],
+        "related_inputs": ["deliberative-capacity-building.community-needs", "deliberative-capacity-building.cultural-context-information"],
+        "related_outputs": ["deliberative-capacity-building.governance-infrastructure", "deliberative-capacity-building.facilitation-resources"]
+      },
+      {
+        "target_subcomponent": "participatory-alignment-verification",
+        "integration_type": "data_exchange",
+        "description": "Exchanges verification capacity and knowledge needs",
+        "data_flow": "Participatory verification identifies knowledge and skill needs for effective verification, while capacity building provides those capabilities to diverse stakeholders",
+        "related_function": ["deliberative-capacity-building.knowledge-building", "deliberative-capacity-building.adaptive-learning"],
+        "related_architectural_pattern": ["democratic-alignment.verification-integration"],
+        "enabled_by_techniques": ["deliberative-capacity-building.knowledge-translation-methods", "deliberative-capacity-building.adaptive-capacity-building"],
+        "related_inputs": ["deliberative-capacity-building.technical-ai-knowledge", "deliberative-capacity-building.ai-governance-requirements"],
+        "related_outputs": ["deliberative-capacity-building.knowledge-resources", "deliberative-capacity-building.capacity-building-programs"]
+      }
+    ],
+    "external_integrations": [
+      {
+        "system": "interpretability-tools",
+        "component": "interpretability-tools/explanation-systems",
+        "integration_type": "api",
+        "description": "Receives explanation frameworks for capacity building",
+        "endpoint": "/api/interpretability/explanations-for-learning",
+        "data_format": "Accessible explanations and visualization frameworks",
+        "related_function": ["deliberative-capacity-building.knowledge-building"],
+        "related_architectural_pattern": ["democratic-alignment.interpretability-integration"],
+        "enabled_by_techniques": ["deliberative-capacity-building.knowledge-translation-methods", "deliberative-capacity-building.ai-literacy-development"],
+        "related_inputs": ["deliberative-capacity-building.technical-ai-knowledge"],
+        "related_outputs": ["deliberative-capacity-building.knowledge-resources"]
+      },
+      {
+        "system": "oversight-mechanisms",
+        "component": "oversight-mechanisms/evaluation-frameworks",
+        "integration_type": "api",
+        "description": "Builds capacity for participation in oversight processes",
+        "endpoint": "/api/oversight/capacity-building",
+        "data_format": "Oversight participation frameworks and knowledge requirements",
+        "related_function": ["deliberative-capacity-building.skill-development", "deliberative-capacity-building.adaptive-learning"],
+        "related_architectural_pattern": ["democratic-alignment.oversight-integration"],
+        "enabled_by_techniques": ["deliberative-capacity-building.inclusion-methods", "deliberative-capacity-building.ai-literacy-development"],
+        "related_inputs": ["deliberative-capacity-building.ai-governance-requirements"],
+        "related_outputs": ["deliberative-capacity-building.capacity-building-programs"]
+      },
+      {
+        "system": "value-learning",
+        "component": "value-learning/participatory-value-development",
+        "integration_type": "api",
+        "description": "Builds capacity for participation in value learning processes",
+        "endpoint": "/api/value-learning/participation-capacity",
+        "data_format": "Value learning participation knowledge and frameworks",
+        "related_function": ["deliberative-capacity-building.skill-development", "deliberative-capacity-building.knowledge-building"],
+        "related_architectural_pattern": ["democratic-alignment.value-integration"],
+        "enabled_by_techniques": ["deliberative-capacity-building.ai-literacy-development", "deliberative-capacity-building.inclusion-methods"],
+        "related_inputs": ["deliberative-capacity-building.community-needs"],
+        "related_outputs": ["deliberative-capacity-building.capacity-building-programs", "deliberative-capacity-building.knowledge-resources"]
+      },
+      {
+        "system": "technical-safeguards",
+        "component": "technical-safeguards/safety-layer-architecture",
+        "integration_type": "api",
+        "description": "Translates technical safeguard knowledge for stakeholder understanding",
+        "endpoint": "/api/technical-safeguards/knowledge-translation",
+        "data_format": "Accessible explanations of technical safeguard frameworks",
+        "related_function": ["deliberative-capacity-building.knowledge-building"],
+        "related_architectural_pattern": ["democratic-alignment.technical-integration"],
+        "enabled_by_techniques": ["deliberative-capacity-building.knowledge-translation-methods"],
+        "related_inputs": ["deliberative-capacity-building.technical-ai-knowledge"],
+        "related_outputs": ["deliberative-capacity-building.knowledge-resources"]
+      }
+    ]
+  },
+  
+  "literature": {
+    "references": ["Christian2020", "Vaina2020", "Askell2019", "Irving2018", "Brundage2020", "Lundberg2017", "Bai2022", "Leike2018", "Price2022", "Kortz2021", "Yang2023"]
+  },
+  
+  "literature_connections": [
+    {
+      "reference_id": "Christian2020",
+      "technique": "deliberative-capacity-building.ai-literacy-development",
+      "relevant_aspects": "Provides frameworks for understanding AI alignment concepts that can be adapted for public education, examining how technical AI concepts can be made accessible to broader audiences while maintaining substantive understanding"
+    },
+    {
+      "reference_id": "Christian2020",
+      "technique": "deliberative-capacity-building.knowledge-translation-methods",
+      "relevant_aspects": "Offers approaches for translating complex alignment concepts across different knowledge domains, exploring how technical alignment concepts can be communicated effectively to diverse stakeholders with varying levels of technical expertise"
+    },
+    {
+      "reference_id": "Christian2020",
+      "technique": "deliberative-capacity-building.adaptive-capacity-building",
+      "relevant_aspects": "Discusses the evolving nature of alignment problems requiring continuous learning and adaptation, examining how alignment challenges evolve with technological progress"
+    },
+    {
+      "reference_id": "Bai2022",
+      "technique": "deliberative-capacity-building.ai-literacy-development",
+      "relevant_aspects": "Presents constitutional AI frameworks that can be translated for public understanding and engagement, providing concrete models that can be explained to diverse stakeholders"
+    },
+    {
+      "reference_id": "Bai2022",
+      "technique": "deliberative-capacity-building.deliberative-infrastructure-building",
+      "relevant_aspects": "Offers feedback processes that can be adapted for democratic deliberation infrastructure, providing structured feedback mechanisms applicable to deliberative capacity development"
+    },
+    {
+      "reference_id": "Vaina2020",
+      "technique": "deliberative-capacity-building.deliberative-infrastructure-building",
+      "relevant_aspects": "Provides frameworks for democratic enhancement of AI through participatory infrastructure, examining how to build infrastructure that enables democratic participation in AI governance"
+    },
+    {
+      "reference_id": "Vaina2020",
+      "technique": "deliberative-capacity-building.knowledge-translation-methods",
+      "relevant_aspects": "Offers approaches for translating technical AI concepts for democratic participation, exploring how technical knowledge can be made accessible for meaningful democratic participation"
+    },
+    {
+      "reference_id": "Vaina2020",
+      "technique": "deliberative-capacity-building.inclusion-methods",
+      "relevant_aspects": "Presents participatory design approaches that center equity in AI governance processes, focusing on methods that ensure marginalized communities can effectively participate"
+    },
+    {
+      "reference_id": "Askell2019",
+      "technique": "deliberative-capacity-building.inclusion-methods",
+      "relevant_aspects": "Provides frameworks for ensuring diverse stakeholder inclusion in AI oversight, examining how oversight systems can be designed to include diverse perspectives"
+    },
+    {
+      "reference_id": "Askell2019",
+      "technique": "deliberative-capacity-building.deliberative-infrastructure-building",
+      "relevant_aspects": "Outlines infrastructure requirements for effective oversight that can be applied to deliberative capacity building, describing oversight frameworks adaptable to capacity building"
+    },
+    {
+      "reference_id": "Yang2023",
+      "technique": "deliberative-capacity-building.ai-literacy-development",
+      "relevant_aspects": "Provides a comprehensive survey of alignment approaches that can inform AI literacy programs, offering a knowledge base that can be translated for diverse audiences"
+    },
+    {
+      "reference_id": "Yang2023",
+      "technique": "deliberative-capacity-building.knowledge-translation-methods",
+      "relevant_aspects": "Synthesizes complex alignment research in ways that can be used for knowledge translation, organizing technical alignment approaches in a structure that facilitates translation across expertise levels"
+    },
+    {
+      "reference_id": "Yang2023",
+      "technique": "deliberative-capacity-building.adaptive-capacity-building",
+      "relevant_aspects": "Examines the evolving landscape of alignment research that requires adaptive capacity building approaches, highlighting how alignment approaches evolve and inform adaptive capacity development"
+    },
+    {
+      "reference_id": "Leike2018",
+      "technique": "deliberative-capacity-building.adaptive-capacity-building",
+      "relevant_aspects": "Outlines reward modeling approaches that require ongoing adaptation as systems evolve, discussing how capacity building must adapt to increasingly capable systems"
+    },
+    {
+      "reference_id": "Lundberg2017",
+      "technique": "deliberative-capacity-building.knowledge-translation-methods",
+      "relevant_aspects": "Provides interpretability methods that can make AI systems understandable to diverse stakeholders, offering tools that can be used in capacity building to explain model decisions"
+    },
+    {
+      "reference_id": "Brundage2020",
+      "technique": "deliberative-capacity-building.deliberative-infrastructure-building",
+      "relevant_aspects": "Proposes mechanisms for verifiable claims about AI that can be used in deliberative infrastructure, providing infrastructure elements for democratic deliberation"
+    }
+  ]
+}

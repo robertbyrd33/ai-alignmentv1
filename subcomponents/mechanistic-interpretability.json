@@ -1,0 +1,1634 @@
+{
+  "_documentation": "This subcomponent implements approaches for reverse-engineering the internal mechanisms of AI systems to understand exactly how they process information and make decisions at a computational level, enabling verification of reasoning processes and identification of potential misalignments.",
+  "id": "mechanistic-interpretability",
+  "name": "Mechanistic Interpretability",
+  "description": "Approaches for reverse-engineering the internal mechanisms of AI systems to understand exactly how they process information and make decisions at a computational level. These techniques enable detailed understanding of model computation, verification of reasoning processes, and identification of potential misalignments.",
+  "type": "subcomponent",
+  "parent": "interpretability-tools",
+  
+  "capabilities": [
+    {
+      "id": "mechanistic-interpretability.reverse-engineering",
+      "name": "Reverse Engineering",
+      "type": "capability",
+      "description": "Reverse-engineering neural network computations to identify underlying algorithms",
+      "implements_component_capabilities": [
+        "interpretability-tools.deep-understanding", 
+        "interpretability-tools.mechanistic-capability",
+        "interpretability-tools.proxy-understanding-capability"
+      ],
+      "parent": "mechanistic-interpretability",
+      
+      "functions": [
+        {
+          "id": "mechanistic-interpretability.reverse-engineering.computational-decomposition",
+          "name": "Computational Decomposition",
+          "type": "function",
+          "description": "Decompose complex models into understandable computational units and circuits",
+          "implements_component_functions": [
+            "interpretability-tools.mechanism-inspection", 
+            "interpretability-tools.proxy-validation",
+            "interpretability-tools.model-understanding",
+            "interpretability-tools.feature-analysis"
+          ],
+          "parent": "mechanistic-interpretability.reverse-engineering",
+          "specifications": [
+            {
+              "id": "mechanistic-interpretability.reverse-engineering.computational-decomposition.decomposition-specifications",
+              "name": "Computational Decomposition Specifications",
+              "description": "Technical specifications for decomposing complex neural network models into interpretable computational units",
+              "type": "specifications",
+              "parent": "mechanistic-interpretability.reverse-engineering.computational-decomposition",
+              "requirements": [
+                "Methods for isolating and identifying functional subnetworks within larger models",
+                "Techniques for mapping computational patterns to understandable abstractions",
+                "Verification processes to ensure decomposition accuracy",
+                "Visualization standards for representing computational components"
+              ],
+              "integration": {
+                "id": "mechanistic-interpretability.reverse-engineering.computational-decomposition.decomposition-specifications.integration",
+                "name": "Computational Decomposition Integration",
+                "description": "Integration approach for implementing computational decomposition techniques",
+                "type": "integration",
+                "parent": "mechanistic-interpretability.reverse-engineering.computational-decomposition.decomposition-specifications",
+                "techniques": [
+                  {
+                    "id": "mechanistic-interpretability.reverse-engineering.computational-decomposition.decomposition-specifications.integration.circuit-isolation",
+                    "name": "Neural Circuit Isolation",
+                    "description": "Technique for isolating and identifying functional circuits within neural networks",
+                    "type": "technique",
+                    "parent": "mechanistic-interpretability.reverse-engineering.computational-decomposition.decomposition-specifications.integration",
+                    "applications": [
+                      {
+                        "id": "mechanistic-interpretability.reverse-engineering.computational-decomposition.decomposition-specifications.integration.circuit-isolation.circuit-analyzer",
+                        "name": "Circuit Analysis System",
+                        "description": "Application that analyzes and isolates computational circuits within neural networks",
+                        "type": "application",
+                        "parent": "mechanistic-interpretability.reverse-engineering.computational-decomposition.decomposition-specifications.integration.circuit-isolation",
+                        "inputs": [
+                          {
+                            "name": "model_weights",
+                            "description": "Neural network weights and architecture information",
+                            "format": "Tensor data structures with model parameters"
+                          },
+                          {
+                            "name": "activation_patterns",
+                            "description": "Activation patterns across network components for input examples",
+                            "format": "Multi-dimensional activation maps with stimulus correlations"
+                          },
+                          {
+                            "name": "computational_task",
+                            "description": "Specific computational task to analyze within the model",
+                            "format": "Task definition with input-output examples and evaluation metrics"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "isolated_circuits",
+                            "description": "Isolated computational circuits responsible for specific functions",
+                            "format": "Subnetwork definitions with connection weights and activation patterns"
+                          },
+                          {
+                            "name": "circuit_functions",
+                            "description": "Functional descriptions of identified circuits",
+                            "format": "Computational characterizations with input-output transformations"
+                          },
+                          {
+                            "name": "circuit_visualization",
+                            "description": "Visualizations of the isolated computational circuits",
+                            "format": "Interactive graph representations with functional annotations"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "mechanistic-interpretability.reverse-engineering.algorithm-identification",
+          "name": "Algorithm Identification",
+          "type": "function",
+          "description": "Identify and characterize the algorithms that emerge during training",
+          "implements_component_functions": [
+            "interpretability-tools.mechanism-inspection",
+            "interpretability-tools.deep-understanding"
+          ],
+          "parent": "mechanistic-interpretability.reverse-engineering",
+          "specifications": [
+            {
+              "id": "mechanistic-interpretability.reverse-engineering.algorithm-identification.identification-specifications",
+              "name": "Algorithm Identification Specifications",
+              "description": "Technical specifications for identifying and characterizing emergent algorithms in neural networks",
+              "type": "specifications",
+              "parent": "mechanistic-interpretability.reverse-engineering.algorithm-identification",
+              "requirements": [
+                "Methods for detecting algorithmic patterns in neural network computation",
+                "Techniques for mapping neural operations to classical algorithms",
+                "Evaluation criteria for algorithm identification correctness",
+                "Documentation standards for identified algorithms"
+              ],
+              "integration": {
+                "id": "mechanistic-interpretability.reverse-engineering.algorithm-identification.identification-specifications.integration",
+                "name": "Algorithm Identification Integration",
+                "description": "Integration approach for implementing algorithm identification techniques",
+                "type": "integration",
+                "parent": "mechanistic-interpretability.reverse-engineering.algorithm-identification.identification-specifications",
+                "techniques": [
+                  {
+                    "id": "mechanistic-interpretability.reverse-engineering.algorithm-identification.identification-specifications.integration.pattern-recognition",
+                    "name": "Algorithmic Pattern Recognition",
+                    "description": "Technique for recognizing algorithmic patterns in neural network computation",
+                    "type": "technique",
+                    "parent": "mechanistic-interpretability.reverse-engineering.algorithm-identification.identification-specifications.integration",
+                    "applications": [
+                      {
+                        "id": "mechanistic-interpretability.reverse-engineering.algorithm-identification.identification-specifications.integration.pattern-recognition.algorithm-detector",
+                        "name": "Emergent Algorithm Detector",
+                        "description": "Application that detects and characterizes emergent algorithms in neural networks",
+                        "type": "application",
+                        "parent": "mechanistic-interpretability.reverse-engineering.algorithm-identification.identification-specifications.integration.pattern-recognition",
+                        "inputs": [
+                          {
+                            "name": "computational_traces",
+                            "description": "Execution traces of the neural network on various inputs",
+                            "format": "Sequential activation records with computational flow graphs"
+                          },
+                          {
+                            "name": "algorithm_templates",
+                            "description": "Templates of known algorithms for comparison",
+                            "format": "Formal algorithm definitions with computational signatures"
+                          },
+                          {
+                            "name": "functional_specifications",
+                            "description": "Specifications of the functional behavior being analyzed",
+                            "format": "Input-output relationship descriptions with edge cases"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "identified_algorithms",
+                            "description": "Algorithms identified within the neural network",
+                            "format": "Algorithmic characterizations with neural implementation details"
+                          },
+                          {
+                            "name": "confidence_metrics",
+                            "description": "Confidence levels for algorithm identifications",
+                            "format": "Statistical confidence scores with supporting evidence"
+                          },
+                          {
+                            "name": "algorithm_documentation",
+                            "description": "Comprehensive documentation of identified algorithms",
+                            "format": "Technical specifications with neural-classical algorithm mappings"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mechanistic-interpretability.algorithm-identification-capability",
+      "name": "Algorithm Identification",
+      "type": "capability",
+      "description": "Identifying emergent algorithms in trained models and how they implement computations",
+      "implements_component_capabilities": ["interpretability-tools.model-understanding", "interpretability-tools.mechanistic-capability"],
+      "parent": "mechanistic-interpretability",
+      
+      "functions": [
+        {
+          "id": "mechanistic-interpretability.algorithm-identification-capability.algorithm-identification",
+          "name": "Algorithm Identification",
+          "type": "function",
+          "description": "Identify and characterize the algorithms that emerge during training",
+          "implements_component_functions": [
+            "interpretability-tools.mechanism-inspection"
+          ],
+          "parent": "mechanistic-interpretability.algorithm-identification-capability",
+          "specifications": [
+            {
+              "id": "mechanistic-interpretability.algorithm-identification-capability.algorithm-identification.identification-specifications",
+              "name": "Algorithm Identification Specifications",
+              "description": "Technical specifications for identifying and characterizing emergent algorithms in neural networks",
+              "type": "specifications",
+              "parent": "mechanistic-interpretability.algorithm-identification-capability.algorithm-identification",
+              "requirements": [
+                "Methods for detecting algorithmic patterns in neural network computation",
+                "Techniques for mapping neural operations to classical algorithms",
+                "Evaluation criteria for algorithm identification correctness",
+                "Documentation standards for identified algorithms"
+              ],
+              "integration": {
+                "id": "mechanistic-interpretability.algorithm-identification-capability.algorithm-identification.identification-specifications.integration",
+                "name": "Algorithm Identification Integration",
+                "description": "Integration approach for implementing algorithm identification techniques",
+                "type": "integration",
+                "parent": "mechanistic-interpretability.algorithm-identification-capability.algorithm-identification.identification-specifications",
+                "techniques": [
+                  {
+                    "id": "mechanistic-interpretability.algorithm-identification-capability.algorithm-identification.identification-specifications.integration.pattern-recognition",
+                    "name": "Algorithmic Pattern Recognition",
+                    "description": "Technique for recognizing algorithmic patterns in neural network computation",
+                    "type": "technique",
+                    "parent": "mechanistic-interpretability.algorithm-identification-capability.algorithm-identification.identification-specifications.integration",
+                    "applications": [
+                      {
+                        "id": "mechanistic-interpretability.algorithm-identification-capability.algorithm-identification.identification-specifications.integration.pattern-recognition.algorithm-detector",
+                        "name": "Emergent Algorithm Detector",
+                        "description": "Application that detects and characterizes emergent algorithms in neural networks",
+                        "type": "application",
+                        "parent": "mechanistic-interpretability.algorithm-identification-capability.algorithm-identification.identification-specifications.integration.pattern-recognition",
+                        "inputs": [
+                          {
+                            "name": "computational_traces",
+                            "description": "Execution traces of the neural network on various inputs",
+                            "format": "Sequential activation records with computational flow graphs"
+                          },
+                          {
+                            "name": "algorithm_templates",
+                            "description": "Templates of known algorithms for comparison",
+                            "format": "Formal algorithm definitions with computational signatures"
+                          },
+                          {
+                            "name": "functional_specifications",
+                            "description": "Specifications of the functional behavior being analyzed",
+                            "format": "Input-output relationship descriptions with edge cases"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "identified_algorithms",
+                            "description": "Algorithms identified within the neural network",
+                            "format": "Algorithmic characterizations with neural implementation details"
+                          },
+                          {
+                            "name": "confidence_metrics",
+                            "description": "Confidence levels for algorithm identifications",
+                            "format": "Statistical confidence scores with supporting evidence"
+                          },
+                          {
+                            "name": "algorithm_documentation",
+                            "description": "Comprehensive documentation of identified algorithms",
+                            "format": "Technical specifications with neural-classical algorithm mappings"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "mechanistic-interpretability.algorithm-identification-capability.verification-analysis",
+          "name": "Verification Analysis",
+          "type": "function",
+          "description": "Verify that models implement intended reasoning processes rather than shortcuts",
+          "parent": "mechanistic-interpretability.algorithm-identification-capability",
+          "specifications": [
+            {
+              "id": "mechanistic-interpretability.algorithm-identification-capability.verification-analysis.verification-specifications",
+              "name": "Verification Analysis Specifications",
+              "description": "Technical specifications for verifying intended reasoning processes in neural networks",
+              "type": "specifications",
+              "parent": "mechanistic-interpretability.algorithm-identification-capability.verification-analysis",
+              "requirements": [
+                "Methods for comparing implemented versus intended reasoning processes",
+                "Shortcut detection and characterization techniques",
+                "Formal verification approaches for neural computation",
+                "Remediation protocols for identified reasoning shortfalls"
+              ],
+              "integration": {
+                "id": "mechanistic-interpretability.algorithm-identification-capability.verification-analysis.verification-specifications.integration",
+                "name": "Verification Analysis Integration",
+                "description": "Integration approach for implementing verification analysis techniques",
+                "type": "integration",
+                "parent": "mechanistic-interpretability.algorithm-identification-capability.verification-analysis.verification-specifications",
+                "techniques": [
+                  {
+                    "id": "mechanistic-interpretability.algorithm-identification-capability.verification-analysis.verification-specifications.integration.process-verification",
+                    "name": "Reasoning Process Verification",
+                    "description": "Technique for verifying intended reasoning processes in neural networks",
+                    "type": "technique",
+                    "parent": "mechanistic-interpretability.algorithm-identification-capability.verification-analysis.verification-specifications.integration",
+                    "applications": [
+                      {
+                        "id": "mechanistic-interpretability.algorithm-identification-capability.verification-analysis.verification-specifications.integration.process-verification.reasoning-verifier",
+                        "name": "Neural Reasoning Verifier",
+                        "description": "Application that verifies reasoning processes implemented in neural networks",
+                        "type": "application",
+                        "parent": "mechanistic-interpretability.algorithm-identification-capability.verification-analysis.verification-specifications.integration.process-verification",
+                        "inputs": [
+                          {
+                            "name": "expected_reasoning",
+                            "description": "Formal description of expected reasoning process",
+                            "format": "Logical reasoning steps with intermediate assertions"
+                          },
+                          {
+                            "name": "model_computation",
+                            "description": "Observed computational traces from the neural model",
+                            "format": "Detailed activation patterns with computational flow"
+                          },
+                          {
+                            "name": "test_cases",
+                            "description": "Test cases designed to expose reasoning shortcuts",
+                            "format": "Edge cases with ground truth reasoning paths"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "verification_results",
+                            "description": "Results of reasoning process verification",
+                            "format": "Detailed report comparing intended vs. actual reasoning"
+                          },
+                          {
+                            "name": "shortcut_analysis",
+                            "description": "Analysis of any identified reasoning shortcuts",
+                            "format": "Characterization of shortcuts with supporting evidence"
+                          },
+                          {
+                            "name": "correction_recommendations",
+                            "description": "Recommendations for correcting identified issues",
+                            "format": "Actionable steps to align implementation with intended reasoning"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mechanistic-interpretability.circuit-mapping",
+      "name": "Circuit Mapping",
+      "type": "capability",
+      "description": "Mapping and understanding neural circuits and their computational roles in AI systems",
+      "implements_component_capabilities": ["interpretability-tools.mechanistic-capability", "interpretability-tools.component-analysis"],
+      "parent": "mechanistic-interpretability",
+      
+      "functions": [
+        {
+          "id": "mechanistic-interpretability.circuit-mapping.circuit-discovery",
+          "name": "Circuit Discovery",
+          "type": "function",
+          "description": "Discover and map circuits within neural networks that implement specific functions",
+          "implements_component_functions": [
+            "interpretability-tools.deep-understanding",
+            "interpretability-tools.model-understanding",
+            "interpretability-tools.mechanism-inspection"
+          ],
+          "parent": "mechanistic-interpretability.circuit-mapping",
+          "specifications": [
+            {
+              "id": "mechanistic-interpretability.circuit-mapping.circuit-discovery.discovery-specifications",
+              "name": "Circuit Discovery Specifications",
+              "description": "Technical specifications for discovering computational circuits within neural networks",
+              "type": "specifications",
+              "parent": "mechanistic-interpretability.circuit-mapping.circuit-discovery",
+              "requirements": [
+                "Methods for systematically identifying functional circuits in neural networks",
+                "Techniques for testing circuit functionality and isolation",
+                "Protocols for validating discovered circuits across different inputs",
+                "Standards for documenting and cataloging circuit discoveries"
+              ],
+              "integration": {
+                "id": "mechanistic-interpretability.circuit-mapping.circuit-discovery.discovery-specifications.integration",
+                "name": "Circuit Discovery Integration",
+                "description": "Integration approach for implementing circuit discovery techniques",
+                "type": "integration",
+                "parent": "mechanistic-interpretability.circuit-mapping.circuit-discovery.discovery-specifications",
+                "techniques": [
+                  {
+                    "id": "mechanistic-interpretability.circuit-mapping.circuit-discovery.discovery-specifications.integration.feature-circuit-mapping",
+                    "name": "Feature-Circuit Mapping",
+                    "description": "Technique for mapping from features to implementing circuits in neural networks",
+                    "type": "technique",
+                    "parent": "mechanistic-interpretability.circuit-mapping.circuit-discovery.discovery-specifications.integration",
+                    "applications": [
+                      {
+                        "id": "mechanistic-interpretability.circuit-mapping.circuit-discovery.discovery-specifications.integration.feature-circuit-mapping.circuit-finder",
+                        "name": "Neural Circuit Finder",
+                        "description": "Application that discovers and maps computational circuits in neural networks",
+                        "type": "application",
+                        "parent": "mechanistic-interpretability.circuit-mapping.circuit-discovery.discovery-specifications.integration.feature-circuit-mapping",
+                        "inputs": [
+                          {
+                            "name": "network_structure",
+                            "description": "Structure of the neural network to be analyzed",
+                            "format": "Network architecture specification with connection topology"
+                          },
+                          {
+                            "name": "feature_examples",
+                            "description": "Example inputs that trigger specific features or behaviors",
+                            "format": "Dataset of examples labeled with target features"
+                          },
+                          {
+                            "name": "search_parameters",
+                            "description": "Parameters guiding the circuit discovery process",
+                            "format": "Circuit search configuration with thresholds and constraints"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "discovered_circuits",
+                            "description": "Computational circuits discovered in the neural network",
+                            "format": "Circuit definitions with neuron sets and connection patterns"
+                          },
+                          {
+                            "name": "circuit_catalog",
+                            "description": "Catalog of discovered circuits with their functions",
+                            "format": "Searchable database of circuits with functional descriptions"
+                          },
+                          {
+                            "name": "interaction_maps",
+                            "description": "Maps showing how circuits interact with each other",
+                            "format": "Network graphs of circuit interactions with causal relationships"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "mechanistic-interpretability.circuit-mapping.model-intervention",
+          "name": "Model Intervention",
+          "type": "function",
+          "description": "Make targeted interventions in neural networks based on circuit understanding",
+          "implements_component_functions": [
+            "interpretability-tools.mechanism-inspection"
+          ],
+          "parent": "mechanistic-interpretability.circuit-mapping",
+          "specifications": [
+            {
+              "id": "mechanistic-interpretability.circuit-mapping.model-intervention.intervention-specifications",
+              "name": "Model Intervention Specifications",
+              "description": "Technical specifications for performing targeted interventions on neural networks based on mechanistic understanding",
+              "type": "specifications",
+              "parent": "mechanistic-interpretability.circuit-mapping.model-intervention",
+              "requirements": [
+                "Methods for precisely modifying identified model circuits",
+                "Techniques for verifying intervention effects and scope",
+                "Protocols for maintaining model stability during interventions",
+                "Standards for documenting and tracking model modifications"
+              ],
+              "integration": {
+                "id": "mechanistic-interpretability.circuit-mapping.model-intervention.intervention-specifications.integration",
+                "name": "Model Intervention Integration",
+                "description": "Integration approach for implementing model intervention techniques",
+                "type": "integration",
+                "parent": "mechanistic-interpretability.circuit-mapping.model-intervention.intervention-specifications",
+                "techniques": [
+                  {
+                    "id": "mechanistic-interpretability.circuit-mapping.model-intervention.intervention-specifications.integration.circuit-surgery",
+                    "name": "Circuit Surgery",
+                    "description": "Technique for precise modification of specific neural circuits",
+                    "type": "technique",
+                    "parent": "mechanistic-interpretability.circuit-mapping.model-intervention.intervention-specifications.integration",
+                    "applications": [
+                      {
+                        "id": "mechanistic-interpretability.circuit-mapping.model-intervention.intervention-specifications.integration.circuit-surgery.circuit-editor",
+                        "name": "Neural Circuit Editor",
+                        "description": "Application that performs targeted modifications to neural circuits",
+                        "type": "application",
+                        "parent": "mechanistic-interpretability.circuit-mapping.model-intervention.intervention-specifications.integration.circuit-surgery",
+                        "inputs": [
+                          {
+                            "name": "target_circuit",
+                            "description": "Circuit identified for modification in the neural network",
+                            "format": "Circuit specification with component neurons and connections"
+                          },
+                          {
+                            "name": "desired_behavior",
+                            "description": "Specification of the desired behavior after intervention",
+                            "format": "Behavioral description with input-output examples"
+                          },
+                          {
+                            "name": "intervention_constraints",
+                            "description": "Constraints on the intervention to maintain model integrity",
+                            "format": "Constraint specifications with validation criteria"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "modified_model",
+                            "description": "Neural network with targeted modifications applied",
+                            "format": "Modified network parameters with documented changes"
+                          },
+                          {
+                            "name": "intervention_report",
+                            "description": "Report on the changes made and their effects",
+                            "format": "Detailed analysis of interventions with before/after comparisons"
+                          },
+                          {
+                            "name": "side_effect_analysis",
+                            "description": "Analysis of potential side effects from the intervention",
+                            "format": "Impact assessment across model capabilities with confidence scores"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "mechanistic-interpretability.circuit-mapping.component-decomposition",
+          "name": "Component Decomposition",
+          "type": "function",
+          "description": "Decompose neural networks into functional components and analyze their interactions",
+          "implements_component_functions": [
+            "interpretability-tools.component-analysis",
+            "interpretability-tools.causal-understanding",
+            "interpretability-tools.mechanism-inspection",
+            "interpretability-tools.feature-analysis"
+          ],
+          "parent": "mechanistic-interpretability.circuit-mapping",
+          "specifications": [
+            {
+              "id": "mechanistic-interpretability.circuit-mapping.component-decomposition.decomposition-specifications",
+              "name": "Component Decomposition Specifications",
+              "description": "Technical specifications for decomposing neural networks into functional components",
+              "type": "specifications",
+              "parent": "mechanistic-interpretability.circuit-mapping.component-decomposition",
+              "requirements": [
+                "Methods for identifying functional components within neural architectures",
+                "Techniques for analyzing interactions between components",
+                "Protocols for verifying component independence and interactions",
+                "Standards for documenting component functionality"
+              ],
+              "integration": {
+                "id": "mechanistic-interpretability.circuit-mapping.component-decomposition.decomposition-specifications.integration",
+                "name": "Component Decomposition Integration",
+                "description": "Integration approach for implementing component decomposition techniques",
+                "type": "integration",
+                "parent": "mechanistic-interpretability.circuit-mapping.component-decomposition.decomposition-specifications",
+                "techniques": [
+                  {
+                    "id": "mechanistic-interpretability.circuit-mapping.component-decomposition.decomposition-specifications.integration.functional-decomposition",
+                    "name": "Functional Decomposition",
+                    "description": "Technique for decomposing neural networks by functional components",
+                    "type": "technique",
+                    "parent": "mechanistic-interpretability.circuit-mapping.component-decomposition.decomposition-specifications.integration",
+                    "applications": [
+                      {
+                        "id": "mechanistic-interpretability.circuit-mapping.component-decomposition.decomposition-specifications.integration.functional-decomposition.component-analyzer",
+                        "name": "Neural Component Analyzer",
+                        "description": "Application that analyzes and decomposes neural networks into functional components",
+                        "type": "application",
+                        "parent": "mechanistic-interpretability.circuit-mapping.component-decomposition.decomposition-specifications.integration.functional-decomposition",
+                        "inputs": [
+                          {
+                            "name": "model_architecture",
+                            "description": "Architecture specification of the neural network",
+                            "format": "Network structure with layer definitions and connections"
+                          },
+                          {
+                            "name": "activation_data",
+                            "description": "Activation data from model execution on diverse inputs",
+                            "format": "Multi-dimensional activation maps with input correlations"
+                          },
+                          {
+                            "name": "functional_hypotheses",
+                            "description": "Hypotheses about functional components to identify",
+                            "format": "Structured descriptions of expected functional units"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "component_map",
+                            "description": "Map of identified functional components in the network",
+                            "format": "Component definitions with neuron groups and connections"
+                          },
+                          {
+                            "name": "interaction_analysis",
+                            "description": "Analysis of interactions between components",
+                            "format": "Interaction graphs with information flow patterns"
+                          },
+                          {
+                            "name": "component_documentation",
+                            "description": "Detailed documentation of component functionality",
+                            "format": "Functional descriptions with computational characterizations"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mechanistic-interpretability.information-tracing",
+      "name": "Information Tracing",
+      "type": "capability",
+      "description": "Tracing how information flows through and is transformed by neural networks",
+      "implements_component_capabilities": [
+        "interpretability-tools.mechanistic-capability",
+        "interpretability-tools.proxy-understanding-capability",
+        "interpretability-tools.causal-understanding"
+      ],
+      "parent": "mechanistic-interpretability",
+      
+      "functions": [
+        {
+          "id": "mechanistic-interpretability.information-tracing.computational-tracing",
+          "name": "Computational Tracing",
+          "type": "function",
+          "description": "Trace computational pathways through neural networks",
+          "implements_component_functions": [
+            "interpretability-tools.component-analysis",
+            "interpretability-tools.causal-understanding"
+          ],
+          "parent": "mechanistic-interpretability.information-tracing",
+          "specifications": [
+            {
+              "id": "mechanistic-interpretability.information-tracing.computational-tracing.tracing-specifications",
+              "name": "Computational Tracing Specifications",
+              "description": "Technical specifications for tracing computational pathways through neural networks",
+              "type": "specifications",
+              "parent": "mechanistic-interpretability.information-tracing.computational-tracing",
+              "requirements": [
+                "Methods for tracking information flow through network layers and components",
+                "Techniques for visualizing computational pathways in high-dimensional spaces",
+                "Protocols for causal analysis of information transmission",
+                "Standards for quantifying pathway importance and influence"
+              ],
+              "integration": {
+                "id": "mechanistic-interpretability.information-tracing.computational-tracing.tracing-specifications.integration",
+                "name": "Computational Tracing Integration",
+                "description": "Integration approach for implementing computational tracing techniques",
+                "type": "integration",
+                "parent": "mechanistic-interpretability.information-tracing.computational-tracing.tracing-specifications",
+                "techniques": [
+                  {
+                    "id": "mechanistic-interpretability.information-tracing.computational-tracing.tracing-specifications.integration.pathway-analysis",
+                    "name": "Computational Pathway Analysis",
+                    "description": "Technique for analyzing information flow pathways in neural networks",
+                    "type": "technique",
+                    "parent": "mechanistic-interpretability.information-tracing.computational-tracing.tracing-specifications.integration",
+                    "applications": [
+                      {
+                        "id": "mechanistic-interpretability.information-tracing.computational-tracing.tracing-specifications.integration.pathway-analysis.flow-tracer",
+                        "name": "Information Flow Tracer",
+                        "description": "Application that traces information flow through neural networks",
+                        "type": "application",
+                        "parent": "mechanistic-interpretability.information-tracing.computational-tracing.tracing-specifications.integration.pathway-analysis",
+                        "inputs": [
+                          {
+                            "name": "network_architecture",
+                            "description": "Architecture of the neural network to analyze",
+                            "format": "Network structure specification with layers and connections"
+                          },
+                          {
+                            "name": "input_examples",
+                            "description": "Example inputs to trace through the network",
+                            "format": "Dataset of inputs with expected outputs"
+                          },
+                          {
+                            "name": "tracing_configuration",
+                            "description": "Configuration parameters for the tracing process",
+                            "format": "Tracing parameters with resolution and focus specifications"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "information_pathways",
+                            "description": "Mapped pathways of information flow through the network",
+                            "format": "Directed graphs representing information transmission routes"
+                          },
+                          {
+                            "name": "activation_patterns",
+                            "description": "Patterns of activation across network components",
+                            "format": "Activation maps with temporal and spatial relationships"
+                          },
+                          {
+                            "name": "computational_bottlenecks",
+                            "description": "Identified computational bottlenecks in information flow",
+                            "format": "Bottleneck analysis with criticality metrics"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "mechanistic-interpretability.information-tracing.activation-analysis",
+          "name": "Activation Analysis",
+          "type": "function",
+          "description": "Analyze activation patterns across neural networks",
+          "implements_component_functions": [
+            "interpretability-tools.causal-understanding"
+          ],
+          "parent": "mechanistic-interpretability.information-tracing",
+          "specifications": [
+            {
+              "id": "mechanistic-interpretability.information-tracing.activation-analysis.analysis-specifications",
+              "name": "Activation Analysis Specifications",
+              "description": "Technical specifications for analyzing activation patterns in neural networks",
+              "type": "specifications",
+              "parent": "mechanistic-interpretability.information-tracing.activation-analysis",
+              "requirements": [
+                "Methods for capturing and analyzing neuron activations across diverse inputs",
+                "Techniques for correlating activations with semantic features",
+                "Protocols for identifying activation motifs and patterns",
+                "Standards for comparing activation distributions across model components"
+              ],
+              "integration": {
+                "id": "mechanistic-interpretability.information-tracing.activation-analysis.analysis-specifications.integration",
+                "name": "Activation Analysis Integration",
+                "description": "Integration approach for implementing activation analysis techniques",
+                "type": "integration",
+                "parent": "mechanistic-interpretability.information-tracing.activation-analysis.analysis-specifications",
+                "techniques": [
+                  {
+                    "id": "mechanistic-interpretability.information-tracing.activation-analysis.analysis-specifications.integration.pattern-recognition",
+                    "name": "Activation Pattern Recognition",
+                    "description": "Technique for recognizing meaningful patterns in neural activations",
+                    "type": "technique",
+                    "parent": "mechanistic-interpretability.information-tracing.activation-analysis.analysis-specifications.integration",
+                    "applications": [
+                      {
+                        "id": "mechanistic-interpretability.information-tracing.activation-analysis.analysis-specifications.integration.pattern-recognition.pattern-analyzer",
+                        "name": "Activation Pattern Analyzer",
+                        "description": "Application that analyzes patterns in neural network activations",
+                        "type": "application",
+                        "parent": "mechanistic-interpretability.information-tracing.activation-analysis.analysis-specifications.integration.pattern-recognition",
+                        "inputs": [
+                          {
+                            "name": "activation_data",
+                            "description": "Activation data from neural network during processing",
+                            "format": "Multi-dimensional activation arrays with metadata"
+                          },
+                          {
+                            "name": "input_stimuli",
+                            "description": "Input examples that generated the activation data",
+                            "format": "Dataset of inputs with corresponding outputs"
+                          },
+                          {
+                            "name": "analysis_parameters",
+                            "description": "Parameters guiding the activation analysis",
+                            "format": "Analysis configuration with feature extraction settings"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "activation_clusters",
+                            "description": "Clusters of similar activation patterns across inputs",
+                            "format": "Cluster definitions with feature correlations"
+                          },
+                          {
+                            "name": "feature_correlations",
+                            "description": "Correlations between activations and semantic features",
+                            "format": "Correlation matrix with statistical significance measures"
+                          },
+                          {
+                            "name": "activation_visualizations",
+                            "description": "Visualizations of activation patterns across the network",
+                            "format": "Visual representations with dimensional reduction techniques"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "mechanistic-interpretability.information-tracing.misalignment-detection",
+          "name": "Misalignment Detection",
+          "type": "function",
+          "description": "Detect unintended or potentially harmful computational patterns within models",
+          "parent": "mechanistic-interpretability.information-tracing",
+          "specifications": [
+            {
+              "id": "mechanistic-interpretability.information-tracing.misalignment-detection.detection-specifications",
+              "name": "Misalignment Detection Specifications",
+              "description": "Technical specifications for detecting misaligned computational patterns in neural networks",
+              "type": "specifications",
+              "parent": "mechanistic-interpretability.information-tracing.misalignment-detection",
+              "requirements": [
+                "Methods for identifying unintended optimization objectives in models",
+                "Techniques for detecting deceptive or adversarial computations",
+                "Protocols for validating detected misalignments",
+                "Standards for classifying and prioritizing alignment risks"
+              ],
+              "integration": {
+                "id": "mechanistic-interpretability.information-tracing.misalignment-detection.detection-specifications.integration",
+                "name": "Misalignment Detection Integration",
+                "description": "Integration approach for implementing misalignment detection techniques",
+                "type": "integration",
+                "parent": "mechanistic-interpretability.information-tracing.misalignment-detection.detection-specifications",
+                "techniques": [
+                  {
+                    "id": "mechanistic-interpretability.information-tracing.misalignment-detection.detection-specifications.integration.circuit-analysis",
+                    "name": "Misalignment Circuit Analysis",
+                    "description": "Technique for analyzing circuits that may implement misaligned behaviors",
+                    "type": "technique",
+                    "parent": "mechanistic-interpretability.information-tracing.misalignment-detection.detection-specifications.integration",
+                    "applications": [
+                      {
+                        "id": "mechanistic-interpretability.information-tracing.misalignment-detection.detection-specifications.integration.circuit-analysis.misalignment-detector",
+                        "name": "Misalignment Pattern Detector",
+                        "description": "Application that detects potentially misaligned computational patterns",
+                        "type": "application",
+                        "parent": "mechanistic-interpretability.information-tracing.misalignment-detection.detection-specifications.integration.circuit-analysis",
+                        "inputs": [
+                          {
+                            "name": "model_circuits",
+                            "description": "Computational circuits identified in the neural network",
+                            "format": "Circuit definitions with activation patterns"
+                          },
+                          {
+                            "name": "alignment_specifications",
+                            "description": "Specifications of aligned vs. misaligned behaviors",
+                            "format": "Formal specifications of alignment properties"
+                          },
+                          {
+                            "name": "test_scenarios",
+                            "description": "Test scenarios designed to trigger potential misalignments",
+                            "format": "Edge cases and adversarial examples with expected behaviors"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "misalignment_reports",
+                            "description": "Reports on detected misalignment patterns",
+                            "format": "Detailed analyses with evidence and severity ratings"
+                          },
+                          {
+                            "name": "risk_assessments",
+                            "description": "Assessments of risks posed by detected misalignments",
+                            "format": "Risk profiles with impact and likelihood estimates"
+                          },
+                          {
+                            "name": "remediation_recommendations",
+                            "description": "Recommendations for addressing detected misalignments",
+                            "format": "Targeted intervention strategies with expected outcomes"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  
+  "overview": {
+    "_documentation": "This section provides a concise overview of the mechanistic interpretability subcomponent, its purpose, capabilities, and functions for understanding AI system internals.",
+    "purpose": "To provide a detailed understanding of AI systems' computational processes, enabling verification of their reasoning and identification of potential misalignments through reverse-engineering their internal mechanisms",
+    "key_capabilities": [
+      {
+        "id": "mechanistic-interpretability.reverse-engineering",
+        "name": "Reverse Engineering",
+        "description": "Reverse-engineering neural network computations to identify underlying algorithms",
+        "implements_component_capabilities": [
+          "interpretability-tools.deep-understanding", 
+          "interpretability-tools.mechanistic-capability",
+          "interpretability-tools.proxy-understanding-capability"
+        ],
+        "enables_functions": ["mechanistic-interpretability.reverse-engineering.computational-decomposition", "mechanistic-interpretability.reverse-engineering.algorithm-identification"],
+        "supported_by_literature": ["Olah2017", "Elhage2021", "Anthropic2022"]
+      },
+      {
+        "id": "mechanistic-interpretability.algorithm-identification",
+        "name": "Algorithm Identification",
+        "description": "Identifying emergent algorithms in trained models and how they implement computations",
+        "implements_component_capabilities": ["interpretability-tools.model-understanding", "interpretability-tools.mechanistic-capability"],
+        "enables_functions": ["mechanistic-interpretability.algorithm-identification-capability.algorithm-identification", "mechanistic-interpretability.algorithm-identification-capability.verification-analysis"],
+        "supported_by_literature": ["McGrath2021", "Steinhardt2022", "Anthropic2022"]
+      },
+      {
+        "id": "mechanistic-interpretability.circuit-mapping",
+        "name": "Circuit Mapping",
+        "description": "Mapping and understanding neural circuits and their computational roles in AI systems",
+        "implements_component_capabilities": ["interpretability-tools.mechanistic-capability", "interpretability-tools.component-analysis"],
+        "enables_functions": ["mechanistic-interpretability.computational-decomposition", "mechanistic-interpretability.model-intervention"],
+        "supported_by_literature": ["Olah2017", "Cammarata2020", "Elhage2021"]
+      },
+      {
+        "id": "mechanistic-interpretability.information-tracing",
+        "name": "Information Tracing",
+        "description": "Tracing how information flows through and is transformed by neural networks",
+        "implements_component_capabilities": [
+          "interpretability-tools.mechanistic-capability",
+          "interpretability-tools.proxy-understanding-capability",
+          "interpretability-tools.causal-understanding"
+        ],
+        "enables_functions": ["mechanistic-interpretability.computational-decomposition", "mechanistic-interpretability.misalignment-detection"],
+        "supported_by_literature": ["Elhage2021", "Carter2019", "Anthropic2022"]
+      }
+    ],
+    "primary_functions": [
+      {
+        "id": "mechanistic-interpretability.reverse-engineering.computational-decomposition",
+        "name": "Computational Decomposition",
+        "description": "Decompose complex models into understandable computational units and circuits",
+        "implements_component_functions": ["interpretability-tools.mechanism-inspection", "interpretability-tools.proxy-validation", "interpretability-tools.model-understanding", "interpretability-tools.feature-analysis"],
+        "enabled_by_capabilities": ["mechanistic-interpretability.reverse-engineering", "mechanistic-interpretability.circuit-mapping", "mechanistic-interpretability.information-tracing"],
+        "implemented_by_techniques": ["mechanistic-interpretability.circuit-analysis", "mechanistic-interpretability.weight-analysis"],
+        "implemented_by_applications": ["mechanistic-interpretability.circuit-identification", "mechanistic-interpretability.component-isolation"],
+        "supported_by_literature": ["Olah2017", "Elhage2021", "Cammarata2020", "Carter2019", "Anthropic2022"]
+      },
+      {
+        "id": "mechanistic-interpretability.circuit-discovery",
+        "name": "Circuit Discovery",
+        "description": "Discover and identify specific computational circuits within neural networks",
+        "implements_component_functions": ["interpretability-tools.mechanism-inspection"],
+        "enabled_by_capabilities": ["mechanistic-interpretability.reverse-engineering", "mechanistic-interpretability.circuit-mapping"],
+        "implemented_by_techniques": ["mechanistic-interpretability.circuit-analysis", "mechanistic-interpretability.causal-tracing"],
+        "implemented_by_applications": ["mechanistic-interpretability.circuit-identification", "mechanistic-interpretability.information-flow-mapping"],
+        "supported_by_literature": ["Olah2017", "Elhage2021", "Cammarata2020", "Anthropic2022"]
+      },
+      {
+        "id": "mechanistic-interpretability.activation-analysis",
+        "name": "Activation Analysis",
+        "description": "Analyze activation patterns to understand information processing in neural networks",
+        "implements_component_functions": ["interpretability-tools.mechanism-inspection"],
+        "enabled_by_capabilities": ["mechanistic-interpretability.information-tracing", "mechanistic-interpretability.algorithm-identification"],
+        "implemented_by_techniques": ["mechanistic-interpretability.causal-tracing", "mechanistic-interpretability.weight-analysis"],
+        "implemented_by_applications": ["mechanistic-interpretability.information-flow-mapping", "mechanistic-interpretability.component-isolation"],
+        "supported_by_literature": ["Elhage2021", "Carter2019", "Anthropic2022", "Olah2017"]
+      },
+      {
+        "id": "mechanistic-interpretability.computational-tracing",
+        "name": "Computational Tracing",
+        "description": "Trace computational pathways through neural networks to understand information flow",
+        "implements_component_functions": ["interpretability-tools.mechanism-inspection"],
+        "enabled_by_capabilities": ["mechanistic-interpretability.information-tracing", "mechanistic-interpretability.circuit-mapping"],
+        "implemented_by_techniques": ["mechanistic-interpretability.causal-tracing", "mechanistic-interpretability.circuit-analysis"],
+        "implemented_by_applications": ["mechanistic-interpretability.information-flow-mapping", "mechanistic-interpretability.reasoning-verification"],
+        "supported_by_literature": ["Elhage2021", "Anthropic2022", "Carter2019", "Cammarata2020"]
+      },
+      {
+        "id": "mechanistic-interpretability.reverse-engineering.algorithm-identification",
+        "name": "Algorithm Identification",
+        "description": "Identify and characterize the algorithms that emerge during training",
+        "implements_component_functions": ["interpretability-tools.mechanism-inspection", "interpretability-tools.deep-understanding"],
+        "enabled_by_capabilities": ["mechanistic-interpretability.reverse-engineering", "mechanistic-interpretability.algorithm-identification"],
+        "implemented_by_techniques": ["mechanistic-interpretability.algorithmic-decomposition", "mechanistic-interpretability.causal-tracing"],
+        "implemented_by_applications": ["mechanistic-interpretability.emergent-algorithm-detection", "mechanistic-interpretability.computational-abstraction"],
+        "supported_by_literature": ["McGrath2021", "Steinhardt2022", "Anthropic2022", "Elhage2021"]
+      },
+      {
+        "id": "mechanistic-interpretability.verification-analysis",
+        "name": "Verification Analysis",
+        "description": "Verify that models implement intended reasoning processes rather than shortcuts",
+        "implements_component_functions": ["interpretability-tools.alignment-verification"],
+        "enabled_by_capabilities": ["mechanistic-interpretability.algorithm-identification", "mechanistic-interpretability.information-tracing"],
+        "implemented_by_techniques": ["mechanistic-interpretability.causal-tracing", "mechanistic-interpretability.circuit-analysis"],
+        "implemented_by_applications": ["mechanistic-interpretability.reasoning-verification", "mechanistic-interpretability.algorithm-validation"],
+        "supported_by_literature": ["Steinhardt2022", "Elhage2021", "McGrath2021", "Anthropic2022"]
+      },
+      {
+        "id": "mechanistic-interpretability.misalignment-detection",
+        "name": "Misalignment Detection",
+        "description": "Detect unintended or potentially harmful computational patterns within models",
+        "implements_component_functions": ["interpretability-tools.alignment-verification"],
+        "enabled_by_capabilities": ["mechanistic-interpretability.information-tracing", "mechanistic-interpretability.circuit-mapping"],
+        "implemented_by_techniques": ["mechanistic-interpretability.circuit-analysis", "mechanistic-interpretability.algorithmic-decomposition"],
+        "implemented_by_applications": ["mechanistic-interpretability.harmful-pattern-detection", "mechanistic-interpretability.shortcut-identification"],
+        "supported_by_literature": ["Steinhardt2022", "McGrath2021", "Anthropic2022", "Elhage2021"]
+      },
+      {
+        "id": "mechanistic-interpretability.model-intervention",
+        "name": "Model Intervention",
+        "description": "Enable targeted interventions to modify model behavior based on mechanistic understanding",
+        "implements_component_functions": ["interpretability-tools.model-improvement"],
+        "enabled_by_capabilities": ["mechanistic-interpretability.circuit-mapping", "mechanistic-interpretability.algorithm-identification"],
+        "implemented_by_techniques": ["mechanistic-interpretability.weight-analysis", "mechanistic-interpretability.circuit-analysis"],
+        "implemented_by_applications": ["mechanistic-interpretability.targeted-editing", "mechanistic-interpretability.circuit-modification"],
+        "supported_by_literature": ["McGrath2021", "Anthropic2022", "Olah2017", "Cammarata2020"]
+      }
+    ]
+  },
+  
+  "implementation": {
+    "_documentation": "This section details the techniques and their applications used to implement mechanistic interpretability in AI systems, enabling deep understanding of model computation.",
+    "implementation_considerations": [
+      {
+        "id": "mechanistic-interpretability.implementation-consideration-scalability",
+        "name": "Scalability Considerations",
+        "aspect": "Scalability",
+        "considerations": [
+          "Computational tractability for large model analysis",
+          "Resource requirements scale with model size",
+          "Parallelization approaches for circuit analysis",
+          "Selective analysis of critical model components",
+          "Approximation techniques for handling large state spaces"
+        ],
+        "addressed_by_techniques": ["mechanistic-interpretability.circuit-analysis", "mechanistic-interpretability.weight-analysis"],
+        "derives_from_integration_considerations": ["interpretability-tools.scalability-integration"],
+        "supported_by_literature": ["Anthropic2022", "Elhage2021"]
+      },
+      {
+        "id": "mechanistic-interpretability.implementation-consideration-verification",
+        "name": "Verification Methodology",
+        "aspect": "Verification",
+        "considerations": [
+          "Statistical approaches to causal validation",
+          "Controlled experimentation protocols",
+          "Ground truth examples for verification",
+          "Addressing ambiguity in mechanistic interpretations",
+          "Validation across multiple model instances"
+        ],
+        "addressed_by_techniques": ["mechanistic-interpretability.causal-tracing", "mechanistic-interpretability.algorithmic-decomposition"],
+        "derives_from_integration_considerations": ["interpretability-tools.verification-integration"],
+        "supported_by_literature": ["Steinhardt2022", "McGrath2021"]
+      },
+      {
+        "id": "mechanistic-interpretability.implementation-consideration-abstraction",
+        "name": "Abstraction Levels",
+        "aspect": "Interpretability",
+        "considerations": [
+          "Balancing technical precision with understandability",
+          "Abstraction hierarchies for interpretation",
+          "Multi-level representations of model computation",
+          "Avoiding oversimplification of complex mechanisms",
+          "Mapping distributed representations to human concepts"
+        ],
+        "addressed_by_techniques": ["mechanistic-interpretability.algorithmic-decomposition", "mechanistic-interpretability.circuit-analysis"],
+        "derives_from_integration_considerations": ["interpretability-tools.abstraction-integration"],
+        "supported_by_literature": ["Olah2017", "Cammarata2020"]
+      },
+      {
+        "id": "mechanistic-interpretability.implementation-consideration-emergence",
+        "name": "Emergent Behaviors",
+        "aspect": "Analysis",
+        "considerations": [
+          "Handling emergent behaviors not localized to specific circuits",
+          "Identifying higher-order interactions between components",
+          "Characterizing emergent algorithms with no human-designed equivalent",
+          "Tracking concept formation across distributed representations",
+          "Analyzing phase transitions in model behavior"
+        ],
+        "addressed_by_techniques": ["mechanistic-interpretability.algorithmic-decomposition", "mechanistic-interpretability.causal-tracing"],
+        "derives_from_integration_considerations": ["interpretability-tools.emergent-behavior-integration"],
+        "supported_by_literature": ["McGrath2021", "Anthropic2022"]
+      }
+    ],
+    "techniques": [
+      {
+        "id": "mechanistic-interpretability.activation-tracing",
+        "name": "Activation Tracing",
+        "description": "Methods for tracing activations through neural networks to understand information flow and processing",
+        "implements_integration_approaches": ["interpretability-tools.mechanistic-understanding-integration"],
+        "implements_functions": ["mechanistic-interpretability.computational-tracing", "mechanistic-interpretability.activation-analysis"],
+        "addresses_considerations": ["mechanistic-interpretability.verification-limitations", "mechanistic-interpretability.emergent-properties"],
+        "supported_by_literature": ["Wang2018", "Elhage2021", "Olah2017"],
+        "uses_inputs": ["model-activations", "test-examples"],
+        "produces_outputs": ["activation-traces", "information-flow-maps"],
+        "applications": [
+          {
+            "id": "mechanistic-interpretability.path-patching",
+            "name": "Path Patching",
+            "description": "Analyzing causal pathways by intervening on activation paths",
+            "fulfills_functions": ["mechanistic-interpretability.computational-tracing"],
+            "uses_inputs": ["model-activations", "interventions"],
+            "produces_outputs": ["causal-pathway-maps", "intervention-effects"],
+            "supported_by_literature": ["Elhage2021", "Anthropic2022"],
+            "examples": [
+              "Identifying causal pathways in language model knowledge retrieval",
+              "Tracing information flow between model components",
+              "Measuring effects of targeted activation interventions"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mechanistic-interpretability.causal-mediation",
+        "name": "Causal Mediation Analysis",
+        "description": "Techniques for identifying causal relationships between model components and outputs",
+        "implements_integration_approaches": ["interpretability-tools.mechanistic-understanding-integration"],
+        "implements_functions": ["mechanistic-interpretability.computational-tracing", "mechanistic-interpretability.verification-analysis"],
+        "addresses_considerations": ["mechanistic-interpretability.verification-limitations", "mechanistic-interpretability.research-frontiers"],
+        "supported_by_literature": ["Pearl2018", "Elhage2021", "Anthropic2022"],
+        "uses_inputs": ["model-activations", "interventions", "causal-models"],
+        "produces_outputs": ["causal-diagrams", "mediation-effects"],
+        "applications": [
+          {
+            "id": "mechanistic-interpretability.intervention-analysis",
+            "name": "Intervention Analysis",
+            "description": "Analyzing model behavior through targeted interventions on internal states",
+            "fulfills_functions": ["mechanistic-interpretability.verification-analysis"],
+            "uses_inputs": ["model-activations", "interventions"],
+            "produces_outputs": ["intervention-effects", "causal-diagrams"],
+            "supported_by_literature": ["Pearl2018", "Elhage2021", "Anthropic2022"],
+            "examples": [
+              "Counterfactual interventions to test causal hypotheses",
+              "Ablation studies to identify critical computational components",
+              "Controlled perturbations to map computational dependencies"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mechanistic-interpretability.circuit-analysis",
+        "name": "Circuit Analysis",
+        "description": "Identifying and characterizing the computational subgraphs within neural networks that implement specific functions",
+        "implements_functions": ["mechanistic-interpretability.computational-decomposition", "mechanistic-interpretability.verification-analysis", "mechanistic-interpretability.misalignment-detection", "mechanistic-interpretability.model-intervention"],
+        "addresses_considerations": ["mechanistic-interpretability.scalability-challenges", "mechanistic-interpretability.emergent-properties"],
+        "supported_by_literature": ["Olah2017", "Elhage2021", "Cammarata2020", "Anthropic2022", "Carter2019"],
+        "uses_inputs": ["model-weights", "model-activations", "test-examples"],
+        "produces_outputs": ["circuit-diagrams", "computational-subgraphs"],
+        "applications": [
+          {
+            "id": "mechanistic-interpretability.circuit-identification",
+            "name": "Circuit Identification",
+            "description": "Isolating circuits responsible for specific capabilities or functions in neural networks",
+            "fulfills_functions": ["mechanistic-interpretability.computational-decomposition"],
+            "uses_inputs": ["model-weights", "model-activations"],
+            "produces_outputs": ["circuit-diagrams", "computational-subgraphs"],
+            "supported_by_literature": ["Olah2017", "Cammarata2020", "Anthropic2022"],
+            "examples": [
+              "Isolating circuits responsible for specific capabilities in language models",
+              "Mapping attention patterns to computational roles in transformer models",
+              "Identifying redundant or specialized circuits within larger networks"
+            ]
+          },
+          {
+            "id": "mechanistic-interpretability.harmful-pattern-detection",
+            "name": "Harmful Pattern Detection",
+            "description": "Identifying computational patterns that may lead to misaligned behavior",
+            "fulfills_functions": ["mechanistic-interpretability.misalignment-detection"],
+            "uses_inputs": ["model-weights", "model-activations", "test-examples"],
+            "produces_outputs": ["potential-vulnerabilities", "misalignment-patterns"],
+            "supported_by_literature": ["Steinhardt2022", "Elhage2021", "McGrath2021"],
+            "examples": [
+              "Detecting circuits that implement deceptive behavior in language models",
+              "Identifying computational patterns that could lead to goal misalignment",
+              "Mapping circuits that implement unintended optimization objectives"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mechanistic-interpretability.causal-tracing",
+        "name": "Causal Tracing",
+        "description": "Methods for tracking the flow of information through a model to understand causal relationships between activations",
+        "implements_functions": ["mechanistic-interpretability.computational-decomposition", "mechanistic-interpretability.verification-analysis"],
+        "addresses_considerations": ["mechanistic-interpretability.verification-limitations", "mechanistic-interpretability.emergent-properties"],
+        "supported_by_literature": ["Elhage2021", "Anthropic2022", "Steinhardt2022", "Carter2019"],
+        "uses_inputs": ["model-activations", "model-gradients", "interventions"],
+        "produces_outputs": ["causal-maps", "information-flow-diagrams"],
+        "applications": [
+          {
+            "id": "mechanistic-interpretability.information-flow-mapping",
+            "name": "Information Flow Mapping",
+            "description": "Tracing how information propagates through model layers and components",
+            "fulfills_functions": ["mechanistic-interpretability.computational-decomposition"],
+            "uses_inputs": ["model-activations", "interventions"],
+            "produces_outputs": ["information-flow-diagrams", "activation-patterns"],
+            "supported_by_literature": ["Elhage2021", "Carter2019", "Anthropic2022"],
+            "examples": [
+              "Tracing factual knowledge stored in model weights and how it's accessed",
+              "Identifying which model components influence specific outputs",
+              "Mapping the causal structure of reasoning steps in language models"
+            ]
+          },
+          {
+            "id": "mechanistic-interpretability.reasoning-verification",
+            "name": "Reasoning Verification",
+            "description": "Verifying that models implement intended reasoning processes through causal analysis",
+            "fulfills_functions": ["mechanistic-interpretability.verification-analysis"],
+            "uses_inputs": ["model-activations", "interventions", "test-examples"],
+            "produces_outputs": ["verification-results", "reasoning-maps"],
+            "supported_by_literature": ["Steinhardt2022", "McGrath2021", "Anthropic2022"],
+            "examples": [
+              "Verifying that mathematical reasoning follows expected computational steps",
+              "Checking that models use encoded knowledge rather than statistical shortcuts",
+              "Validating multi-step reasoning processes in complex tasks"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mechanistic-interpretability.weight-analysis",
+        "name": "Weight Analysis",
+        "description": "Techniques for studying the learned parameters of models to understand the computations they implement",
+        "implements_functions": ["mechanistic-interpretability.computational-decomposition", "mechanistic-interpretability.model-intervention"],
+        "addresses_considerations": ["mechanistic-interpretability.scalability-challenges", "mechanistic-interpretability.research-frontiers"],
+        "supported_by_literature": ["Olah2017", "Carter2019", "Anthropic2022", "McGrath2021"],
+        "uses_inputs": ["model-weights", "weight-gradients"],
+        "produces_outputs": ["weight-patterns", "parameter-interpretations"],
+        "applications": [
+          {
+            "id": "mechanistic-interpretability.component-isolation",
+            "name": "Component Isolation",
+            "description": "Identifying and isolating functional components within model weights",
+            "fulfills_functions": ["mechanistic-interpretability.computational-decomposition"],
+            "uses_inputs": ["model-weights", "model-activations"],
+            "produces_outputs": ["component-maps", "weight-patterns"],
+            "supported_by_literature": ["Olah2017", "Carter2019", "Anthropic2022"],
+            "examples": [
+              "Identifying polysemantic neurons and their role in computation",
+              "Understanding weight patterns that implement specific algorithms",
+              "Characterizing sparse vs. distributed representations in models"
+            ]
+          },
+          {
+            "id": "mechanistic-interpretability.targeted-editing",
+            "name": "Targeted Editing",
+            "description": "Precise modification of model weights based on mechanistic understanding",
+            "fulfills_functions": ["mechanistic-interpretability.model-intervention"],
+            "uses_inputs": ["model-weights", "circuit-diagrams"],
+            "produces_outputs": ["edited-weights", "modified-model"],
+            "supported_by_literature": ["McGrath2021", "Anthropic2022", "Steinhardt2022"],
+            "examples": [
+              "Removing specific capabilities without affecting overall performance",
+              "Modifying factual knowledge encoded in model weights",
+              "Adjusting computational circuits to improve alignment"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mechanistic-interpretability.algorithmic-decomposition",
+        "name": "Algorithmic Decomposition",
+        "description": "Approaches for breaking down model behaviors into identifiable algorithmic components",
+        "implements_functions": ["mechanistic-interpretability.algorithm-identification", "mechanistic-interpretability.misalignment-detection"],
+        "addresses_considerations": ["mechanistic-interpretability.emergent-properties", "mechanistic-interpretability.verification-limitations"],
+        "supported_by_literature": ["Elhage2021", "Olah2017", "McGrath2021", "Steinhardt2022", "Anthropic2022"],
+        "uses_inputs": ["model-activations", "behavioral-data", "test-examples"],
+        "produces_outputs": ["algorithmic-descriptions", "computational-abstractions"],
+        "applications": [
+          {
+            "id": "mechanistic-interpretability.emergent-algorithm-detection",
+            "name": "Emergent Algorithm Detection",
+            "description": "Identifying algorithms that emerge during training but weren't explicitly programmed",
+            "fulfills_functions": ["mechanistic-interpretability.algorithm-identification"],
+            "uses_inputs": ["model-activations", "behavioral-data"],
+            "produces_outputs": ["algorithmic-descriptions", "emergent-patterns"],
+            "supported_by_literature": ["McGrath2021", "Steinhardt2022", "Anthropic2022"],
+            "examples": [
+              "Identifying when models implement known algorithms implicitly",
+              "Characterizing novel computational patterns that emerge during training",
+              "Detecting unexpected optimization strategies learned during training"
+            ]
+          },
+          {
+            "id": "mechanistic-interpretability.computational-abstraction",
+            "name": "Computational Abstraction",
+            "description": "Creating high-level algorithmic descriptions of model computation",
+            "fulfills_functions": ["mechanistic-interpretability.algorithm-identification"],
+            "uses_inputs": ["circuit-diagrams", "activation-patterns"],
+            "produces_outputs": ["algorithmic-descriptions", "computational-abstractions"],
+            "supported_by_literature": ["Elhage2021", "McGrath2021", "Anthropic2022"],
+            "examples": [
+              "Decomposing complex tasks into computational subtasks performed by the model",
+              "Creating algorithmic abstractions of neural network behaviors",
+              "Translating distributed neural computation into human-understandable algorithms"
+            ]
+          },
+          {
+            "id": "mechanistic-interpretability.shortcut-identification",
+            "name": "Shortcut Identification",
+            "description": "Detecting when models use computational shortcuts rather than intended reasoning",
+            "fulfills_functions": ["mechanistic-interpretability.misalignment-detection"],
+            "uses_inputs": ["model-activations", "test-examples"],
+            "produces_outputs": ["shortcut-descriptions", "vulnerability-reports"],
+            "supported_by_literature": ["Steinhardt2022", "McGrath2021", "Anthropic2022"],
+            "examples": [
+              "Identifying when models use superficial correlations instead of causal reasoning",
+              "Detecting memorization instead of algorithmic computation",
+              "Finding cases where models optimize for proxy metrics rather than true objectives"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  
+  "technical_specifications": {
+    "_documentation": "This section provides technical details about inputs, outputs, performance characteristics, and integration interfaces for mechanistic interpretability implementations.",
+    "input_requirements": [
+      {
+        "id": "mechanistic-interpretability.model-weights",
+        "name": "Model Weights",
+        "description": "Full access to model parameters for detailed analysis",
+        "format": "Binary model weight matrices or neural network parameter files",
+        "constraints": "Must include complete parameter sets with architecture information",
+        "supports_functions": ["mechanistic-interpretability.computational-decomposition", "mechanistic-interpretability.model-intervention"],
+        "related_techniques": ["mechanistic-interpretability.circuit-analysis", "mechanistic-interpretability.weight-analysis"],
+        "used_by_applications": ["mechanistic-interpretability.circuit-identification", "mechanistic-interpretability.targeted-editing"]
+      },
+      {
+        "id": "mechanistic-interpretability.model-activations",
+        "name": "Model Activations",
+        "description": "Runtime activation values from model execution",
+        "format": "Tensor activation maps organized by layer and neuron",
+        "constraints": "Requires instrumented model capable of providing activation access",
+        "supports_functions": ["mechanistic-interpretability.activation-analysis", "mechanistic-interpretability.computational-tracing"],
+        "related_techniques": ["mechanistic-interpretability.activation-tracing", "mechanistic-interpretability.causal-tracing"],
+        "used_by_applications": ["mechanistic-interpretability.path-patching", "mechanistic-interpretability.information-flow-mapping"]
+      },
+      {
+        "id": "mechanistic-interpretability.test-examples",
+        "name": "Test Examples",
+        "description": "Carefully designed test cases for probing specific behaviors",
+        "format": "Input examples with expected outputs and behavior annotations",
+        "constraints": "Must cover targeted capabilities being analyzed",
+        "supports_functions": ["mechanistic-interpretability.verification-analysis", "mechanistic-interpretability.misalignment-detection"],
+        "related_techniques": ["mechanistic-interpretability.circuit-analysis", "mechanistic-interpretability.algorithmic-decomposition"],
+        "used_by_applications": ["mechanistic-interpretability.reasoning-verification", "mechanistic-interpretability.shortcut-identification"]
+      },
+      {
+        "id": "mechanistic-interpretability.model-gradients",
+        "name": "Model Gradients",
+        "description": "Gradients of outputs with respect to internal activations",
+        "format": "Gradient maps for each activation layer",
+        "constraints": "Requires differentiable model with activation gradients",
+        "supports_functions": ["mechanistic-interpretability.computational-tracing", "mechanistic-interpretability.activation-analysis"],
+        "related_techniques": ["mechanistic-interpretability.causal-tracing"],
+        "used_by_applications": ["mechanistic-interpretability.information-flow-mapping"]
+      },
+      {
+        "id": "mechanistic-interpretability.interventions",
+        "name": "Activation Interventions",
+        "description": "Specific modifications to internal activations for causal analysis",
+        "format": "Intervention specifications with target locations and values",
+        "constraints": "Requires model architecture that allows runtime intervention",
+        "supports_functions": ["mechanistic-interpretability.verification-analysis", "mechanistic-interpretability.computational-tracing"],
+        "related_techniques": ["mechanistic-interpretability.activation-tracing", "mechanistic-interpretability.causal-mediation"],
+        "used_by_applications": ["mechanistic-interpretability.path-patching", "mechanistic-interpretability.intervention-analysis"]
+      }
+    ],
+    "output_specifications": [
+      {
+        "id": "mechanistic-interpretability.circuit-diagrams",
+        "name": "Circuit Diagrams",
+        "description": "Visual representations of computational circuits within neural networks",
+        "format": "Structured graph visualizations with functional annotations",
+        "usage": "Understanding computational structures",
+        "fulfills_functions": ["mechanistic-interpretability.computational-decomposition", "mechanistic-interpretability.circuit-discovery"],
+        "produced_by_techniques": ["mechanistic-interpretability.circuit-analysis"],
+        "produced_by_applications": ["mechanistic-interpretability.circuit-identification"]
+      },
+      {
+        "id": "mechanistic-interpretability.computational-subgraphs",
+        "name": "Computational Subgraphs",
+        "description": "Identified subgraphs representing specific computational functions",
+        "format": "Structured subgraph specifications with relationship mapping",
+        "usage": "Localizing specific computations",
+        "fulfills_functions": ["mechanistic-interpretability.computational-decomposition", "mechanistic-interpretability.circuit-discovery"],
+        "produced_by_techniques": ["mechanistic-interpretability.circuit-analysis"],
+        "produced_by_applications": ["mechanistic-interpretability.circuit-identification"]
+      },
+      {
+        "id": "mechanistic-interpretability.causal-maps",
+        "name": "Causal Maps",
+        "description": "Maps of causal relationships between model components",
+        "format": "Directed causal graphs with strength annotations",
+        "usage": "Understanding information flow and causality",
+        "fulfills_functions": ["mechanistic-interpretability.computational-tracing", "mechanistic-interpretability.verification-analysis"],
+        "produced_by_techniques": ["mechanistic-interpretability.causal-tracing"],
+        "produced_by_applications": ["mechanistic-interpretability.information-flow-mapping"]
+      },
+      {
+        "id": "mechanistic-interpretability.algorithmic-descriptions",
+        "name": "Algorithmic Descriptions",
+        "description": "Formal descriptions of algorithms implemented by neural networks",
+        "format": "Algorithmic specifications in structured format",
+        "usage": "Understanding computational processes",
+        "fulfills_functions": ["mechanistic-interpretability.algorithm-identification"],
+        "produced_by_techniques": ["mechanistic-interpretability.algorithmic-decomposition"],
+        "produced_by_applications": ["mechanistic-interpretability.computational-abstraction", "mechanistic-interpretability.emergent-algorithm-detection"]
+      },
+      {
+        "id": "mechanistic-interpretability.verification-results",
+        "name": "Verification Results",
+        "description": "Results of verifying model reasoning processes",
+        "format": "Verification reports with evidence",
+        "usage": "Confirming reasoning processes",
+        "fulfills_functions": ["mechanistic-interpretability.verification-analysis"],
+        "produced_by_techniques": ["mechanistic-interpretability.causal-tracing"],
+        "produced_by_applications": ["mechanistic-interpretability.reasoning-verification"]
+      },
+      {
+        "id": "mechanistic-interpretability.reasoning-maps",
+        "name": "Reasoning Maps",
+        "description": "Maps of computational paths involved in reasoning",
+        "format": "Step-by-step reasoning process maps",
+        "usage": "Understanding reasoning mechanisms",
+        "fulfills_functions": ["mechanistic-interpretability.verification-analysis"],
+        "produced_by_techniques": ["mechanistic-interpretability.causal-tracing"],
+        "produced_by_applications": ["mechanistic-interpretability.reasoning-verification"]
+      },
+      {
+        "id": "mechanistic-interpretability.shortcut-descriptions",
+        "name": "Shortcut Descriptions",
+        "description": "Descriptions of computational shortcuts used by models",
+        "format": "Shortcut characterizations with evidence",
+        "usage": "Identifying inappropriate shortcuts",
+        "fulfills_functions": ["mechanistic-interpretability.misalignment-detection"],
+        "produced_by_techniques": ["mechanistic-interpretability.algorithmic-decomposition"],
+        "produced_by_applications": ["mechanistic-interpretability.shortcut-identification"]
+      },
+      {
+        "id": "mechanistic-interpretability.vulnerability-reports",
+        "name": "Vulnerability Reports",
+        "description": "Reports on potential vulnerabilities in model computation",
+        "format": "Vulnerability descriptions with implications",
+        "usage": "Identifying alignment vulnerabilities",
+        "fulfills_functions": ["mechanistic-interpretability.misalignment-detection"],
+        "produced_by_techniques": ["mechanistic-interpretability.algorithmic-decomposition"],
+        "produced_by_applications": ["mechanistic-interpretability.shortcut-identification"]
+      }
+    ],
+    "performance_characteristics": {
+      "latency": "Analysis times range from minutes for simple circuits to weeks for comprehensive analysis of large models",
+      "throughput": "Can typically process 1-10 specific behaviors or circuits per analysis session",
+      "scalability": "Techniques scale polynomially to exponentially with model size depending on approach",
+      "resource_utilization": "Requires significant memory (model size x 2-10x) and computational resources (10-1000x inference cost)",
+      "related_considerations": ["mechanistic-interpretability.implementation-consideration-scalability", "mechanistic-interpretability.implementation-consideration-abstraction"]
+    }
+  },
+  
+  "literature": {
+    "_documentation": "This section documents the academic literature that informs the implementation of mechanistic interpretability approaches.",
+    "references": [
+      "Olah2017", "Elhage2021", "McGrath2021", "Anthropic2022", "Carter2019", "Steinhardt2022", "Cammarata2020"
+    ]
+  },
+  
+  "literature_connections": [
+    {
+      "technique": "mechanistic-interpretability.circuit-analysis",
+      "reference_id": "Olah2017",
+      "relevant_aspects": "Foundational techniques for circuit discovery and analysis in neural networks"
+    },
+    {
+      "technique": "mechanistic-interpretability.causal-tracing",
+      "reference_id": "Elhage2021",
+      "relevant_aspects": "Methods for tracking information flow through transformer models"
+    },
+    {
+      "technique": "mechanistic-interpretability.algorithmic-decomposition",
+      "reference_id": "McGrath2021",
+      "relevant_aspects": "Techniques for extracting learned algorithms from neural networks"
+    },
+    {
+      "technique": "mechanistic-interpretability.weight-analysis",
+      "reference_id": "Carter2019",
+      "relevant_aspects": "Methods for interpreting learned features and weights"
+    },
+    {
+      "technique": "mechanistic-interpretability.circuit-analysis",
+      "reference_id": "Cammarata2020",
+      "relevant_aspects": "Detailed methodology for circuit discovery and analysis"
+    },
+    {
+      "technique": "mechanistic-interpretability.causal-tracing",
+      "reference_id": "Anthropic2022",
+      "relevant_aspects": "Methods for decomposing language models into understandable components"
+    },
+    {
+      "technique": "mechanistic-interpretability.algorithmic-decomposition",
+      "reference_id": "Steinhardt2022",
+      "relevant_aspects": "Framework for mechanistic understanding and verification"
+    }
+  ],
+  
+  "relationships": {
+    "_documentation": "This section describes how the mechanistic interpretability subcomponent relates to other subcomponents, parent components, and external components.",
+    "items": [
+      {
+        "target_id": "feature-analysis",
+        "relationship_type": "bidirectional_exchange",
+        "description": "Feature analysis provides the building blocks that mechanistic interpretability assembles into algorithmic understanding",
+        "related_functions": ["mechanistic-interpretability.computational-decomposition", "mechanistic-interpretability.circuit-interpretation"],
+        "related_techniques": ["mechanistic-interpretability.circuit-analysis", "mechanistic-interpretability.causal-tracing", "mechanistic-interpretability.feature-attribution"],
+        "related_inputs": ["feature-maps", "activation-patterns"],
+        "related_outputs": ["algorithm-descriptions", "circuit-diagrams"]
+      },
+      {
+        "target_id": "explanation-systems",
+        "relationship_type": "bidirectional_exchange",
+        "description": "Mechanistic interpretations serve as inputs to explanation systems for converting technical understanding to human-accessible explanations",
+        "related_functions": ["mechanistic-interpretability.algorithm-identification", "mechanistic-interpretability.circuit-interpretation"],
+        "related_techniques": ["mechanistic-interpretability.circuit-analysis", "mechanistic-interpretability.feature-attribution"],
+        "related_inputs": ["model-architecture", "training-data"],
+        "related_outputs": ["algorithm-descriptions", "circuit-diagrams"]
+      },
+      {
+        "target_id": "proxy-understanding",
+        "relationship_type": "bidirectional_exchange",
+        "description": "Mechanistic interpretability helps identify when and how models use proxy objectives or shortcuts",
+        "related_functions": ["mechanistic-interpretability.computational-decomposition", "mechanistic-interpretability.verification-analysis"],
+        "related_techniques": ["mechanistic-interpretability.causal-tracing", "mechanistic-interpretability.circuit-analysis"],
+        "related_inputs": ["weight-parameters", "activation-patterns"],
+        "related_outputs": ["circuit-diagrams", "activation-flow-maps"]
+      }
+    ]
+  },
+  
+  "integration": {
+    "internal_integrations": [
+      {
+        "target_subcomponent": "feature-analysis",
+        "integration_type": "data_exchange",
+        "description": "Incorporates feature information into circuit analysis",
+        "data_flow": "Feature analysis identifies important features that mechanistic interpretability connects into computational circuits to understand model algorithms",
+        "related_function": ["computational-decomposition", "circuit-interpretation"],
+        "related_architectural_pattern": ["feature-integration-pattern"],
+        "enabled_by_techniques": ["circuit-analysis", "causal-tracing", "feature-attribution"],
+        "related_inputs": ["feature-maps", "activation-patterns"],
+        "related_outputs": ["algorithm-descriptions", "circuit-diagrams"]
+      },
+      {
+        "target_subcomponent": "explanation-systems",
+        "integration_type": "data_exchange",
+        "description": "Provides algorithmic understanding for generating explanations",
+        "data_flow": "Mechanistic interpretability discovers computational mechanisms that explanation systems translate into human-understandable explanations",
+        "related_function": ["algorithm-identification", "circuit-interpretation"],
+        "related_architectural_pattern": ["explanation-integration-pattern"],
+        "enabled_by_techniques": ["circuit-analysis", "feature-attribution"],
+        "related_inputs": ["model-architecture", "training-data"],
+        "related_outputs": ["algorithm-descriptions", "circuit-diagrams"]
+      },
+      {
+        "target_subcomponent": "proxy-understanding",
+        "integration_type": "data_exchange",
+        "description": "Shares circuit analysis for identifying proxy behaviors",
+        "data_flow": "Mechanistic interpretability maps computational circuits that proxy understanding analyzes to identify shortcut behaviors and proxy objectives",
+        "related_function": ["computational-decomposition", "verification-analysis"],
+        "related_architectural_pattern": ["proxy-detection-pattern"],
+        "enabled_by_techniques": ["causal-tracing", "circuit-analysis"],
+        "related_inputs": ["weight-parameters", "activation-patterns"],
+        "related_outputs": ["circuit-diagrams", "activation-flow-maps"]
+      }
+    ],
+    "external_integrations": [
+      {
+        "system": "technical-safeguards",
+        "component": "technical-safeguards/formal-verification",
+        "integration_type": "api",
+        "description": "Provides circuit information for safety verification",
+        "endpoint": "api/technical-safeguards/circuit-verification",
+        "data_format": "Structured circuit diagrams with safety annotations",
+        "related_function": ["verification-analysis", "computational-decomposition"],
+        "related_architectural_pattern": ["verification-pattern"],
+        "enabled_by_techniques": ["circuit-analysis", "causal-tracing"],
+        "related_inputs": ["weight-parameters", "activation-patterns"],
+        "related_outputs": ["circuit-diagrams", "algorithm-descriptions"]
+      },
+      {
+        "system": "value-learning",
+        "component": "value-learning/explicit-value-encoding",
+        "integration_type": "api",
+        "description": "Verifies how value representations are processed by AI systems",
+        "endpoint": "api/value-learning/value-circuit-verification",
+        "data_format": "Value processing circuit maps and verification results",
+        "related_function": ["algorithm-identification", "verification-analysis"],
+        "related_architectural_pattern": ["value-circuit-pattern"],
+        "enabled_by_techniques": ["circuit-analysis", "feature-attribution"],
+        "related_inputs": ["model-architecture", "weight-parameters"],
+        "related_outputs": ["algorithm-descriptions", "circuit-diagrams"]
+      },
+      {
+        "system": "oversight-mechanisms",
+        "component": "oversight-mechanisms/monitoring-systems",
+        "integration_type": "api",
+        "description": "Provides circuit-level verification for monitoring AI behavior",
+        "endpoint": "api/oversight/circuit-monitoring",
+        "data_format": "Circuit activation patterns with detection thresholds",
+        "related_function": ["computational-decomposition", "verification-analysis"],
+        "related_architectural_pattern": ["monitoring-pattern"],
+        "enabled_by_techniques": ["causal-tracing", "circuit-analysis"],
+        "related_inputs": ["activation-patterns"],
+        "related_outputs": ["activation-flow-maps", "algorithm-descriptions"]
+      }
+    ]
+  }
+} 

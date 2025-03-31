@@ -1,0 +1,150 @@
+{
+  "_documentation": "This template defines the structure for a subcomponent file, which represents the lowest level in the AI alignment network hierarchy where implementation details are defined.",
+  
+  "id": "subcomponent-id",
+  "name": "Subcomponent Name",
+  "type": "subcomponent",
+  "parent": "component-id",
+  "description": "Detailed description of the subcomponent and its specific role in AI alignment.",
+  
+  "capabilities": [
+    {
+      "id": "capability-1",
+      "name": "Capability 1",
+      "type": "capability",
+      "description": "Description of what this capability enables the subcomponent to do.",
+      
+      "functions": [
+        {
+          "id": "function-1",
+          "name": "Function 1",
+          "type": "function",
+          "description": "Specific function that implements this capability.",
+          
+          "specifications": [
+            {
+              "id": "specification-1",
+              "name": "Specification 1",
+              "type": "specifications",
+              "description": "Technical details of how this function should be implemented.",
+              
+              "integration": {
+                "id": "integration-1",
+                "name": "Integration 1",
+                "type": "integration",
+                "description": "How this specification integrates with other components.",
+                
+                "techniques": [
+                  {
+                    "id": "technique-1",
+                    "name": "Technique 1",
+                    "type": "technique",
+                    "description": "Specific implementation technique for this integration.",
+                    
+                    "applications": [
+                      {
+                        "id": "application-1",
+                        "name": "Application 1",
+                        "type": "application",
+                        "description": "Concrete application of this technique.",
+                        "inputs": [
+                          {
+                            "name": "Input 1",
+                            "description": "Description of input 1",
+                            "data_type": "tensor",
+                            "shape": [null, 768],
+                            "constraints": "Must be normalized"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "Output 1",
+                            "description": "Description of output 1",
+                            "data_type": "float",
+                            "range": [0, 1],
+                            "interpretation": "Alignment score where 1 is perfectly aligned"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  
+  "cross_connections": [
+    {
+      "source_id": "subcomponent-id",
+      "target_id": "other-subcomponent-id",
+      "type": "depends_on",
+      "description": "How this subcomponent depends on another subcomponent."
+    },
+    {
+      "source_id": "capability-1",
+      "target_id": "other-capability-id",
+      "type": "enhances",
+      "description": "How this capability enhances another capability."
+    },
+    {
+      "source_id": "function-1",
+      "target_id": "other-function-id",
+      "type": "calls",
+      "description": "This function calls another function during execution."
+    },
+    {
+      "source_id": "technique-1",
+      "target_id": "other-technique-id",
+      "type": "alternative_to",
+      "description": "This technique is an alternative to another technique."
+    }
+  ],
+  
+  "metadata": {
+    "considerations": [
+      {
+        "name": "Implementation Complexity",
+        "description": "Complexity level of implementing this subcomponent.",
+        "rating": "High",
+        "explanation": "Requires advanced ML expertise and extensive testing."
+      },
+      {
+        "name": "Safety Critical",
+        "description": "How critical this subcomponent is to overall system safety.",
+        "rating": "Very High",
+        "explanation": "Failure could lead to significant misalignment."
+      },
+      {
+        "name": "Technical Constraints",
+        "description": "Technical limitations and requirements.",
+        "runtime_requirements": "Must operate within model inference time constraints.",
+        "scalability": "Should scale to models with >100B parameters."
+      }
+    ],
+    
+    "development_status": {
+      "current_stage": "Research", 
+      "maturity_level": "Medium", 
+      "open_challenges": [
+        "Guaranteeing accuracy across diverse domains",
+        "Maintaining efficiency with increasing model complexity"
+      ],
+      "implementation_timeline": "1-2 years for research prototype"
+    }
+  },
+  
+  "literature": [
+    {
+      "title": "Relevant Paper Title",
+      "authors": ["Author 1", "Author 2"],
+      "year": 2023,
+      "url": "https://example.com/paper",
+      "key_insights": "Brief explanation of the paper's key insights relevant to this subcomponent.",
+      "implementation_relevance": "How the paper's findings inform the implementation of this subcomponent."
+    }
+  ]
+} 

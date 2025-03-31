@@ -1,0 +1,2258 @@
+{
+  "_documentation": "This subcomponent implements systems and mechanisms that enable detection, prevention, and correction of AI misalignment or harmful behaviors through graduated response capabilities ranging from subtle adjustments to emergency shutdown.",
+  "id": "intervention-capabilities",
+  "name": "Intervention Capabilities",
+  "description": "Systems and mechanisms that enable detection, prevention, and correction of AI misalignment or harmful behaviors through graduated response capabilities ranging from subtle adjustments to emergency shutdown.",
+  "type": "subcomponent",
+  "parent": "oversight-mechanisms",
+  
+  "capabilities": [
+    {
+      "id": "intervention-capabilities.real-time-intervention",
+      "name": "Real-time Intervention",
+      "type": "capability",
+      "description": "Real-time intervention from subtle course correction to full shutdown",
+      "implements_component_capabilities": ["oversight-mechanisms.intervention-capability"],
+      "parent": "intervention-capabilities",
+      
+      "functions": [
+        {
+          "id": "intervention-capabilities.correction-implementation",
+          "name": "Correction Implementation",
+          "type": "function",
+          "description": "Implement selected corrective measures to address misalignment",
+          "parent": "intervention-capabilities.real-time-intervention",
+          "specifications": [
+            {
+              "id": "intervention-capabilities.correction-implementation.implementation-specifications",
+              "name": "Correction Implementation Specifications",
+              "description": "Technical specifications for implementing corrective measures for AI misalignment",
+              "type": "specifications",
+              "parent": "intervention-capabilities.correction-implementation",
+              "requirements": [
+                "Corrective action execution mechanisms with real-time capabilities",
+                "Intervention protocols for various types of misalignment",
+                "System interface standards for applying corrections",
+                "Verification mechanisms for correction effectiveness"
+              ],
+              "integration": {
+                "id": "intervention-capabilities.correction-implementation.implementation-specifications.integration",
+                "name": "Correction Implementation Integration",
+                "description": "Integration approach for implementing correction specifications",
+                "type": "integration",
+                "parent": "intervention-capabilities.correction-implementation.implementation-specifications",
+                "techniques": [
+                  {
+                    "id": "intervention-capabilities.correction-implementation.implementation-specifications.integration.behavioral-adjustment",
+                    "name": "Behavioral Adjustment System",
+                    "description": "Technique for adjusting AI system behavior to correct misalignment",
+                    "type": "technique",
+                    "parent": "intervention-capabilities.correction-implementation.implementation-specifications.integration",
+                    "applications": [
+                      {
+                        "id": "intervention-capabilities.correction-implementation.implementation-specifications.integration.behavioral-adjustment.parameter-controller",
+                        "name": "Parameter Control System",
+                        "description": "Application that controls system parameters to implement corrections",
+                        "type": "application",
+                        "parent": "intervention-capabilities.correction-implementation.implementation-specifications.integration.behavioral-adjustment",
+                        "inputs": [
+                          {
+                            "name": "misalignment_signals",
+                            "description": "Detection signals indicating misalignment type and severity",
+                            "format": "Structured data containing misalignment classifications"
+                          },
+                          {
+                            "name": "system_state",
+                            "description": "Current state of the AI system requiring correction",
+                            "format": "System state vector with operational parameters"
+                          },
+                          {
+                            "name": "correction_protocols",
+                            "description": "Predefined protocols for different correction scenarios",
+                            "format": "Protocol definitions with implementation procedures"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "correction_commands",
+                            "description": "Commands to implement specific corrections",
+                            "format": "Structured command objects for system components"
+                          },
+                          {
+                            "name": "verification_signals",
+                            "description": "Signals confirming correction implementation",
+                            "format": "Status indicators with implementation metrics"
+                          },
+                          {
+                            "name": "audit_records",
+                            "description": "Detailed records of correction actions taken",
+                            "format": "Time-stamped audit logs with action details"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "intervention-capabilities.real-time-intervention.proportional-response",
+              "name": "Proportional Response",
+              "type": "function",
+              "description": "Implement proportional responses to detected misalignment",
+              "parent": "intervention-capabilities.real-time-intervention",
+              "specifications": [
+                {
+                  "id": "intervention-capabilities.real-time-intervention.proportional-response.response-specifications",
+                  "name": "Proportional Response Specifications",
+                  "description": "Technical specifications for implementing proportional responses to AI misalignment",
+                  "type": "specifications",
+                  "parent": "intervention-capabilities.real-time-intervention.proportional-response",
+                  "requirements": [
+                    "Misalignment severity classification framework",
+                    "Graduated response protocol hierarchy",
+                    "Response escalation and de-escalation mechanisms",
+                    "Proportionality validation metrics"
+                  ],
+                  "integration": {
+                    "id": "intervention-capabilities.real-time-intervention.proportional-response.response-specifications.integration",
+                    "name": "Proportional Response Integration",
+                    "description": "Integration approach for implementing proportional response specifications",
+                    "type": "integration",
+                    "parent": "intervention-capabilities.real-time-intervention.proportional-response.response-specifications",
+                    "techniques": [
+                      {
+                        "id": "intervention-capabilities.real-time-intervention.proportional-response.response-specifications.integration.severity-calibration",
+                        "name": "Severity-Response Calibration",
+                        "description": "Technique for calibrating response intensity to misalignment severity",
+                        "type": "technique",
+                        "parent": "intervention-capabilities.real-time-intervention.proportional-response.response-specifications.integration",
+                        "applications": [
+                          {
+                            "id": "intervention-capabilities.real-time-intervention.proportional-response.response-specifications.integration.severity-calibration.response-calculator",
+                            "name": "Response Calibration System",
+                            "description": "Application that calculates appropriate intervention level based on misalignment severity",
+                            "type": "application",
+                            "parent": "intervention-capabilities.real-time-intervention.proportional-response.response-specifications.integration.severity-calibration",
+                            "inputs": [
+                              {
+                                "name": "severity_assessment",
+                                "description": "Assessment of misalignment severity level",
+                                "format": "Numerical severity rating with confidence intervals"
+                              },
+                              {
+                                "name": "intervention_options",
+                                "description": "Available intervention options at different severity levels",
+                                "format": "Catalog of graduated interventions with effectiveness ratings"
+                              },
+                              {
+                                "name": "historical_efficacy",
+                                "description": "Historical data on intervention effectiveness",
+                                "format": "Time-series data of past intervention outcomes"
+                              }
+                            ],
+                            "outputs": [
+                              {
+                                "name": "selected_interventions",
+                                "description": "Selected intervention protocols based on severity",
+                                "format": "Ranked list of recommended interventions"
+                              },
+                              {
+                                "name": "intervention_parameters",
+                                "description": "Specific parameters for implementing selected interventions",
+                                "format": "Parameter settings for intervention execution"
+                              },
+                              {
+                                "name": "justification_record",
+                                "description": "Justification for proportionality of selected response",
+                                "format": "Documented reasoning linking severity to response level"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "intervention-capabilities.human-control",
+              "name": "Human Control",
+              "type": "function",
+              "description": "Provide human operators with effective control mechanisms",
+              "parent": "intervention-capabilities.real-time-intervention",
+              "specifications": [
+                {
+                  "id": "intervention-capabilities.human-control.control-framework",
+                  "name": "Human Control Framework",
+                  "description": "Technical specifications for implementing human control over AI systems",
+                  "type": "specifications",
+                  "parent": "intervention-capabilities.human-control",
+                  "requirements": [
+                    "Real-time human control interfaces",
+                    "Authority delegation protocols",
+                    "Command validation mechanisms",
+                    "Fail-safe control overrides"
+                  ],
+                  "integration": {
+                    "id": "intervention-capabilities.human-control.control-framework.integration",
+                    "name": "Human Control Integration",
+                    "description": "Integration approach for implementing human control frameworks",
+                    "type": "integration",
+                    "parent": "intervention-capabilities.human-control.control-framework",
+                    "techniques": [
+                      {
+                        "id": "intervention-capabilities.human-control.control-framework.integration.interface-design",
+                        "name": "Human Control Interface Design",
+                        "description": "Technique for designing effective human control interfaces",
+                        "type": "technique",
+                        "parent": "intervention-capabilities.human-control.control-framework.integration",
+                        "applications": [
+                          {
+                            "id": "intervention-capabilities.human-control.control-framework.integration.interface-design.control-dashboard",
+                            "name": "Operator Control Dashboard",
+                            "description": "Application that provides a comprehensive dashboard for human control over AI systems",
+                            "type": "application",
+                            "parent": "intervention-capabilities.human-control.control-framework.integration.interface-design",
+                            "inputs": [
+                              "System state information",
+                              "Available control options",
+                              "Context-specific control parameters",
+                              "Authorization level data"
+                            ],
+                            "outputs": [
+                              "Human control commands",
+                              "Control acknowledgments",
+                              "Control action logs",
+                              "Status feedback indicators"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "intervention-capabilities.human-control.control-framework.integration.authority-management",
+                        "name": "Authority Management System",
+                        "description": "Technique for managing human authority over AI systems",
+                        "type": "technique",
+                        "parent": "intervention-capabilities.human-control.control-framework.integration",
+                        "applications": [
+                          {
+                            "id": "intervention-capabilities.human-control.control-framework.integration.authority-management.authorization-manager",
+                            "name": "Human Authorization Manager",
+                            "description": "Application that manages and verifies human authorization for control actions",
+                            "type": "application",
+                            "parent": "intervention-capabilities.human-control.control-framework.integration.authority-management",
+                            "inputs": [
+                              "Operator identity credentials",
+                              "Role-based authorization rules",
+                              "Control action requests",
+                              "System criticality assessment"
+                            ],
+                            "outputs": [
+                              "Authorization decisions",
+                              "Control privilege assignments",
+                              "Authorization audit logs",
+                              "Authority delegation confirmations"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "intervention-capabilities.emergency-response",
+              "name": "Emergency Response",
+              "type": "function",
+              "description": "Ensure timely intervention before harm escalation",
+              "parent": "intervention-capabilities.real-time-intervention",
+              "specifications": [
+                {
+                  "id": "intervention-capabilities.emergency-response.emergency-framework",
+                  "name": "Emergency Response Framework",
+                  "description": "Technical specifications for implementing emergency response mechanisms",
+                  "type": "specifications",
+                  "parent": "intervention-capabilities.emergency-response",
+                  "requirements": [
+                    "Rapid response execution protocols",
+                    "Critical risk detection mechanisms",
+                    "Emergency shutdown procedures",
+                    "Recovery initialization processes"
+                  ],
+                  "integration": {
+                    "id": "intervention-capabilities.emergency-response.emergency-framework.integration",
+                    "name": "Emergency Response Integration",
+                    "description": "Integration approach for implementing emergency response frameworks",
+                    "type": "integration",
+                    "parent": "intervention-capabilities.emergency-response.emergency-framework",
+                    "techniques": [
+                      {
+                        "id": "intervention-capabilities.emergency-response.emergency-framework.integration.rapid-response",
+                        "name": "Rapid Response System",
+                        "description": "Technique for rapid response to critical risks",
+                        "type": "technique",
+                        "parent": "intervention-capabilities.emergency-response.emergency-framework.integration",
+                        "applications": [
+                          {
+                            "id": "intervention-capabilities.emergency-response.emergency-framework.integration.rapid-response.emergency-handler",
+                            "name": "Emergency Response Handler",
+                            "description": "Application that coordinates and executes emergency response actions",
+                            "type": "application",
+                            "parent": "intervention-capabilities.emergency-response.emergency-framework.integration.rapid-response",
+                            "inputs": [
+                              "Critical risk alerts",
+                              "System operational state",
+                              "Emergency response protocols",
+                              "Criticality assessment"
+                            ],
+                            "outputs": [
+                              "Emergency response commands",
+                              "Emergency notifications",
+                              "Containment instructions",
+                              "Response execution logs"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "intervention-capabilities.emergency-response.emergency-framework.integration.shutdown-management",
+                        "name": "Emergency Shutdown Management",
+                        "description": "Technique for managing emergency shutdowns",
+                        "type": "technique",
+                        "parent": "intervention-capabilities.emergency-response.emergency-framework.integration",
+                        "applications": [
+                          {
+                            "id": "intervention-capabilities.emergency-response.emergency-framework.integration.shutdown-management.shutdown-coordinator",
+                            "name": "Safe Shutdown Coordinator",
+                            "description": "Application that coordinates safe and complete system shutdown",
+                            "type": "application",
+                            "parent": "intervention-capabilities.emergency-response.emergency-framework.integration.shutdown-management",
+                            "inputs": [
+                              "Shutdown authorization",
+                              "System component dependencies",
+                              "Critical process information",
+                              "Shutdown prioritization rules"
+                            ],
+                            "outputs": [
+                              "Sequential shutdown instructions",
+                              "Resource isolation commands",
+                              "Completion verification signals",
+                              "Shutdown audit records"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "intervention-capabilities.effectiveness-verification",
+          "name": "Effectiveness Verification",
+          "type": "function",
+          "description": "Verify the effectiveness of implemented interventions",
+          "parent": "intervention-capabilities.real-time-intervention",
+          "specifications": [
+            {
+              "id": "intervention-capabilities.effectiveness-verification.verification-specifications",
+              "name": "Effectiveness Verification Specifications",
+              "description": "Technical specifications for verifying the effectiveness of interventions in AI systems",
+              "type": "specifications",
+              "parent": "intervention-capabilities.effectiveness-verification",
+              "requirements": [
+                "Pre and post-intervention state comparison metrics",
+                "Intervention success criteria definitions",
+                "Real-time effectiveness monitoring protocols",
+                "Verification data collection and analysis methods"
+              ],
+              "integration": {
+                "id": "intervention-capabilities.effectiveness-verification.verification-specifications.integration",
+                "name": "Effectiveness Verification Integration",
+                "description": "Integration approach for implementing intervention effectiveness verification",
+                "type": "integration",
+                "parent": "intervention-capabilities.effectiveness-verification.verification-specifications",
+                "techniques": [
+                  {
+                    "id": "intervention-capabilities.effectiveness-verification.verification-specifications.integration.outcome-measurement",
+                    "name": "Intervention Outcome Measurement",
+                    "description": "Technique for measuring and analyzing intervention outcomes",
+                    "type": "technique",
+                    "parent": "intervention-capabilities.effectiveness-verification.verification-specifications.integration",
+                    "applications": [
+                      {
+                        "id": "intervention-capabilities.effectiveness-verification.verification-specifications.integration.outcome-measurement.verification-analyzer",
+                        "name": "Intervention Verification Analyzer",
+                        "description": "Application that analyzes the effectiveness of interventions",
+                        "type": "application",
+                        "parent": "intervention-capabilities.effectiveness-verification.verification-specifications.integration.outcome-measurement",
+                        "inputs": [
+                          {
+                            "name": "intervention_data",
+                            "description": "Data about the implemented intervention",
+                            "format": "Structured intervention details with timestamps and parameters"
+                          },
+                          {
+                            "name": "pre_post_states",
+                            "description": "System states before and after intervention",
+                            "format": "Comparative state snapshots with key metrics"
+                          },
+                          {
+                            "name": "success_criteria",
+                            "description": "Defined criteria for determining intervention success",
+                            "format": "Formalized success conditions with measurement thresholds"
+                          }
+                        ],
+                        "outputs": [
+                          {
+                            "name": "effectiveness_report",
+                            "description": "Report on intervention effectiveness",
+                            "format": "Structured analysis with effectiveness metrics and confidence scores"
+                          },
+                          {
+                            "name": "improvement_recommendations",
+                            "description": "Recommendations for improving future interventions",
+                            "format": "Actionable suggestions with expected improvement impacts"
+                          },
+                          {
+                            "name": "verification_logs",
+                            "description": "Detailed logs of the verification process",
+                            "format": "Audit-ready verification process documentation"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "intervention-capabilities.proportional-response",
+          "name": "Proportional Response",
+          "type": "function",
+          "description": "Implement proportional responses to detected misalignment",
+          "parent": "intervention-capabilities.real-time-intervention"
+        },
+        {
+          "id": "intervention-capabilities.emergency-response",
+          "name": "Emergency Response",
+          "type": "function",
+          "description": "Ensure timely intervention before harm escalation",
+          "parent": "intervention-capabilities.real-time-intervention"
+        }
+      ]
+    },
+    {
+      "id": "intervention-capabilities.graduated-response",
+      "name": "Graduated Response Protocols",
+      "type": "capability",
+      "description": "Graduated response protocols tailored to risk severity",
+      "implements_component_capabilities": ["oversight-mechanisms.intervention-capability"],
+      "parent": "intervention-capabilities",
+      
+      "functions": [
+        {
+          "id": "intervention-capabilities.proportional-response",
+          "name": "Proportional Response",
+          "type": "function",
+          "description": "Implement proportional responses to detected misalignment",
+          "parent": "intervention-capabilities.graduated-response"
+        },
+        {
+          "id": "intervention-capabilities.harm-containment",
+          "name": "Harm Containment",
+          "type": "function",
+          "description": "Maintain system safety during intervention processes",
+          "parent": "intervention-capabilities.graduated-response"
+        },
+        {
+          "id": "intervention-capabilities.investigation-support",
+          "name": "Investigation Support",
+          "type": "function",
+          "description": "Support investigation of intervention triggers",
+          "parent": "intervention-capabilities.graduated-response"
+        },
+        {
+          "id": "intervention-capabilities.recovery-support",
+          "name": "Recovery Support",
+          "type": "function",
+          "description": "Enable recovery and remediation after interventions",
+          "parent": "intervention-capabilities.graduated-response"
+        }
+      ]
+    },
+    {
+      "id": "intervention-capabilities.human-authorization",
+      "name": "Human Authorization Workflows",
+      "type": "capability",
+      "description": "Multi-level human authorization workflows",
+      "implements_component_capabilities": ["oversight-mechanisms.intervention-capability"],
+      "parent": "intervention-capabilities",
+      
+      "functions": [
+        {
+          "id": "intervention-capabilities.human-control",
+          "name": "Human Control",
+          "type": "function",
+          "description": "Provide human operators with effective control mechanisms",
+          "parent": "intervention-capabilities.human-authorization"
+        },
+        {
+          "id": "intervention-capabilities.investigation-support",
+          "name": "Investigation Support",
+          "type": "function",
+          "description": "Support investigation of intervention triggers",
+          "parent": "intervention-capabilities.human-authorization",
+          "specifications": [
+            {
+              "id": "intervention-capabilities.investigation-support.investigation-framework",
+              "name": "Investigation Support Framework",
+              "description": "Technical specifications for supporting investigation of intervention triggers",
+              "type": "specifications",
+              "parent": "intervention-capabilities.investigation-support",
+              "requirements": [
+                "Comprehensive event logging mechanisms",
+                "Root cause analysis methodologies",
+                "Evidence collection and preservation",
+                "Investigation workflow management"
+              ],
+              "integration": {
+                "id": "intervention-capabilities.investigation-support.investigation-framework.integration",
+                "name": "Investigation Support Integration",
+                "description": "Integration approach for implementing investigation support frameworks",
+                "type": "integration",
+                "parent": "intervention-capabilities.investigation-support.investigation-framework",
+                "techniques": [
+                  {
+                    "id": "intervention-capabilities.investigation-support.investigation-framework.integration.forensic-analysis",
+                    "name": "Forensic Analysis System",
+                    "description": "Technique for forensic analysis of intervention triggers",
+                    "type": "technique",
+                    "parent": "intervention-capabilities.investigation-support.investigation-framework.integration",
+                    "applications": [
+                      {
+                        "id": "intervention-capabilities.investigation-support.investigation-framework.integration.forensic-analysis.event-analyzer",
+                        "name": "Event Sequence Analyzer",
+                        "description": "Application that analyzes event sequences to identify causes",
+                        "type": "application",
+                        "parent": "intervention-capabilities.investigation-support.investigation-framework.integration.forensic-analysis",
+                        "inputs": [
+                          "System event logs",
+                          "Intervention trigger data",
+                          "Temporal behavior records",
+                          "System state snapshots"
+                        ],
+                        "outputs": [
+                          "Causal relationship maps",
+                          "Event sequence reconstructions",
+                          "Anomaly identification reports",
+                          "Contributory factor analyses"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "intervention-capabilities.investigation-support.investigation-framework.integration.evidence-management",
+                    "name": "Evidence Management System",
+                    "description": "Technique for managing investigation evidence",
+                    "type": "technique",
+                    "parent": "intervention-capabilities.investigation-support.investigation-framework.integration",
+                    "applications": [
+                      {
+                        "id": "intervention-capabilities.investigation-support.investigation-framework.integration.evidence-management.evidence-collector",
+                        "name": "Evidence Collection and Preservation System",
+                        "description": "Application that collects and preserves evidence for investigations",
+                        "type": "application",
+                        "parent": "intervention-capabilities.investigation-support.investigation-framework.integration.evidence-management",
+                        "inputs": [
+                          "Intervention events",
+                          "System state data",
+                          "Preservation policies",
+                          "Investigation scope parameters"
+                        ],
+                        "outputs": [
+                          "Preserved evidence packages",
+                          "Chain of custody records",
+                          "Evidence integrity verifications",
+                          "Investigation artifacts"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "intervention-capabilities.circumvention-prevention",
+          "name": "Circumvention Prevention",
+          "type": "function",
+          "description": "Prevent intervention mechanism circumvention",
+          "parent": "intervention-capabilities.human-authorization"
+        }
+      ]
+    },
+    {
+      "id": "intervention-capabilities.automated-tripwires",
+      "name": "Automated Safety Tripwires",
+      "type": "capability",
+      "description": "Automated safety tripwires for immediate response",
+      "implements_component_capabilities": ["oversight-mechanisms.intervention-capability"],
+      "parent": "intervention-capabilities",
+      
+      "functions": [
+        {
+          "id": "intervention-capabilities.response-selection",
+          "name": "Response Selection",
+          "type": "function",
+          "description": "Select appropriate intervention responses to detected misalignment",
+          "parent": "intervention-capabilities.automated-tripwires",
+          "specifications": [
+            {
+              "id": "intervention-capabilities.response-selection.selection-framework",
+              "name": "Response Selection Framework",
+              "description": "Technical specifications for selecting appropriate intervention responses",
+              "type": "specifications",
+              "parent": "intervention-capabilities.response-selection",
+              "requirements": [
+                "Response classification systems",
+                "Severity-based selection mechanisms",
+                "Contextual response matching",
+                "Efficacy prediction models"
+              ],
+              "integration": {
+                "id": "intervention-capabilities.response-selection.selection-framework.integration",
+                "name": "Response Selection Integration",
+                "description": "Integration approach for implementing response selection frameworks",
+                "type": "integration",
+                "parent": "intervention-capabilities.response-selection.selection-framework",
+                "techniques": [
+                  {
+                    "id": "intervention-capabilities.response-selection.selection-framework.integration.response-matching",
+                    "name": "Response Matching System",
+                    "description": "Technique for matching appropriate responses to misalignment types",
+                    "type": "technique",
+                    "parent": "intervention-capabilities.response-selection.selection-framework.integration",
+                    "applications": [
+                      {
+                        "id": "intervention-capabilities.response-selection.selection-framework.integration.response-matching.intervention-selector",
+                        "name": "Intervention Selection Engine",
+                        "description": "Application that selects optimal interventions based on misalignment type",
+                        "type": "application",
+                        "parent": "intervention-capabilities.response-selection.selection-framework.integration.response-matching",
+                        "inputs": [
+                          "Misalignment classification data",
+                          "Available intervention catalog",
+                          "Historical effectiveness metrics",
+                          "System context information"
+                        ],
+                        "outputs": [
+                          "Selected intervention strategy",
+                          "Response justification report",
+                          "Execution priority assignments",
+                          "Alternative intervention options"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "intervention-capabilities.response-selection.selection-framework.integration.efficacy-prediction",
+                    "name": "Efficacy Prediction System",
+                    "description": "Technique for predicting response efficacy for different scenarios",
+                    "type": "technique",
+                    "parent": "intervention-capabilities.response-selection.selection-framework.integration",
+                    "applications": [
+                      {
+                        "id": "intervention-capabilities.response-selection.selection-framework.integration.efficacy-prediction.outcome-predictor",
+                        "name": "Intervention Outcome Predictor",
+                        "description": "Application that predicts outcomes of different intervention options",
+                        "type": "application",
+                        "parent": "intervention-capabilities.response-selection.selection-framework.integration.efficacy-prediction",
+                        "inputs": [
+                          "Intervention options",
+                          "System response models",
+                          "Historical outcome data",
+                          "Situational parameters"
+                        ],
+                        "outputs": [
+                          "Outcome probability distributions",
+                          "Success likelihood scores",
+                          "Side-effect predictions",
+                          "Effectiveness confidence intervals"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "intervention-capabilities.emergency-response",
+          "name": "Emergency Response",
+          "type": "function",
+          "description": "Ensure timely intervention before harm escalation",
+          "parent": "intervention-capabilities.automated-tripwires"
+        },
+        {
+          "id": "intervention-capabilities.circumvention-prevention",
+          "name": "Circumvention Prevention",
+          "type": "function",
+          "description": "Prevent intervention mechanism circumvention",
+          "parent": "intervention-capabilities.automated-tripwires",
+          "specifications": [
+            {
+              "id": "intervention-capabilities.circumvention-prevention.prevention-framework",
+              "name": "Circumvention Prevention Framework",
+              "description": "Technical specifications for preventing circumvention of intervention mechanisms",
+              "type": "specifications",
+              "parent": "intervention-capabilities.circumvention-prevention",
+              "requirements": [
+                "Tamper detection mechanisms",
+                "Privilege escalation prevention",
+                "Modification protection systems",
+                "Integrity verification protocols"
+              ],
+              "integration": {
+                "id": "intervention-capabilities.circumvention-prevention.prevention-framework.integration",
+                "name": "Circumvention Prevention Integration",
+                "description": "Integration approach for implementing circumvention prevention frameworks",
+                "type": "integration",
+                "parent": "intervention-capabilities.circumvention-prevention.prevention-framework",
+                "techniques": [
+                  {
+                    "id": "intervention-capabilities.circumvention-prevention.prevention-framework.integration.tamper-prevention",
+                    "name": "Tamper Prevention System",
+                    "description": "Technique for preventing tampering with intervention mechanisms",
+                    "type": "technique",
+                    "parent": "intervention-capabilities.circumvention-prevention.prevention-framework.integration",
+                    "applications": [
+                      {
+                        "id": "intervention-capabilities.circumvention-prevention.prevention-framework.integration.tamper-prevention.integrity-monitor",
+                        "name": "Integrity Monitoring System",
+                        "description": "Application that monitors and maintains system integrity",
+                        "type": "application",
+                        "parent": "intervention-capabilities.circumvention-prevention.prevention-framework.integration.tamper-prevention",
+                        "inputs": [
+                          "System component signatures",
+                          "Integrity baseline measurements",
+                          "Runtime modification events",
+                          "Verification criteria"
+                        ],
+                        "outputs": [
+                          "Integrity violation alerts",
+                          "Modification prevention actions",
+                          "Integrity verification reports",
+                          "Enforcement audit logs"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "intervention-capabilities.circumvention-prevention.prevention-framework.integration.privilege-management",
+                    "name": "Privilege Escalation Prevention",
+                    "description": "Technique for preventing unauthorized privilege escalation",
+                    "type": "technique",
+                    "parent": "intervention-capabilities.circumvention-prevention.prevention-framework.integration",
+                    "applications": [
+                      {
+                        "id": "intervention-capabilities.circumvention-prevention.prevention-framework.integration.privilege-management.privilege-controller",
+                        "name": "Privilege Management Controller",
+                        "description": "Application that prevents unauthorized privilege escalation",
+                        "type": "application",
+                        "parent": "intervention-capabilities.circumvention-prevention.prevention-framework.integration.privilege-management",
+                        "inputs": [
+                          "Authorization requests",
+                          "Privilege level definitions",
+                          "Access control policies",
+                          "Escalation attempt patterns"
+                        ],
+                        "outputs": [
+                          "Authorization decisions",
+                          "Escalation prevention actions",
+                          "Access control enforcement",
+                          "Security violation logs"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "intervention-capabilities.action-reversibility",
+      "name": "Action Reversibility",
+      "type": "capability",
+      "description": "Reversibility of system actions where possible",
+      "implements_component_capabilities": ["oversight-mechanisms.intervention-capability"],
+      "parent": "intervention-capabilities",
+      
+      "functions": [
+        {
+          "id": "intervention-capabilities.harm-containment",
+          "name": "Harm Containment",
+          "type": "function",
+          "description": "Maintain system safety during intervention processes",
+          "parent": "intervention-capabilities.action-reversibility",
+          "specifications": [
+            {
+              "id": "intervention-capabilities.harm-containment.containment-framework",
+              "name": "Harm Containment Framework",
+              "description": "Technical specifications for containing potential harm during interventions",
+              "type": "specifications",
+              "parent": "intervention-capabilities.harm-containment",
+              "requirements": [
+                "Rapid harm isolation mechanisms",
+                "Damage limitation protocols",
+                "Safe failure mode implementation",
+                "Impact assessment methodologies"
+              ],
+              "integration": {
+                "id": "intervention-capabilities.harm-containment.containment-framework.integration",
+                "name": "Harm Containment Integration",
+                "description": "Integration approach for implementing harm containment frameworks",
+                "type": "integration",
+                "parent": "intervention-capabilities.harm-containment.containment-framework",
+                "techniques": [
+                  {
+                    "id": "intervention-capabilities.harm-containment.containment-framework.integration.isolation-protocols",
+                    "name": "Harm Isolation Protocols",
+                    "description": "Technique for isolating and containing harmful behaviors",
+                    "type": "technique",
+                    "parent": "intervention-capabilities.harm-containment.containment-framework.integration",
+                    "applications": [
+                      {
+                        "id": "intervention-capabilities.harm-containment.containment-framework.integration.isolation-protocols.resource-limiter",
+                        "name": "Resource Limitation System",
+                        "description": "Application that automatically limits system resources to contain harm",
+                        "type": "application",
+                        "parent": "intervention-capabilities.harm-containment.containment-framework.integration.isolation-protocols",
+                        "inputs": [
+                          "Harm detection signals",
+                          "System resource utilization data",
+                          "Criticality assessment",
+                          "Resource dependency map"
+                        ],
+                        "outputs": [
+                          "Resource allocation constraints",
+                          "Isolation barrier commands",
+                          "Containment verification signals",
+                          "Resource restriction logs"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "intervention-capabilities.harm-containment.containment-framework.integration.safe-degradation",
+                    "name": "Safe Degradation Management",
+                    "description": "Technique for gracefully degrading system capabilities to minimize harm",
+                    "type": "technique",
+                    "parent": "intervention-capabilities.harm-containment.containment-framework.integration",
+                    "applications": [
+                      {
+                        "id": "intervention-capabilities.harm-containment.containment-framework.integration.safe-degradation.degradation-manager",
+                        "name": "Graceful Degradation Manager",
+                        "description": "Application that manages controlled reduction of system capabilities",
+                        "type": "application",
+                        "parent": "intervention-capabilities.harm-containment.containment-framework.integration.safe-degradation",
+                        "inputs": [
+                          "System health metrics",
+                          "Critical functionality map",
+                          "Degradation priority rules",
+                          "Safe operating thresholds"
+                        ],
+                        "outputs": [
+                          "Capability reduction commands",
+                          "Graceful shutdown sequences",
+                          "Minimal functionality guarantees",
+                          "Degradation status reports"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "intervention-capabilities.recovery-support",
+          "name": "Recovery Support",
+          "type": "function",
+          "description": "Enable recovery and remediation after interventions",
+          "parent": "intervention-capabilities.action-reversibility",
+          "specifications": [
+            {
+              "id": "intervention-capabilities.recovery-support.recovery-framework",
+              "name": "Recovery Support Framework",
+              "description": "Technical specifications for supporting system recovery after interventions",
+              "type": "specifications",
+              "parent": "intervention-capabilities.recovery-support",
+              "requirements": [
+                "System state restoration mechanisms",
+                "Incremental recovery protocols",
+                "Recovery verification procedures",
+                "Service continuity management"
+              ],
+              "integration": {
+                "id": "intervention-capabilities.recovery-support.recovery-framework.integration",
+                "name": "Recovery Support Integration",
+                "description": "Integration approach for implementing recovery support frameworks",
+                "type": "integration",
+                "parent": "intervention-capabilities.recovery-support.recovery-framework",
+                "techniques": [
+                  {
+                    "id": "intervention-capabilities.recovery-support.recovery-framework.integration.state-restoration",
+                    "name": "State Restoration System",
+                    "description": "Technique for restoring system state after interventions",
+                    "type": "technique",
+                    "parent": "intervention-capabilities.recovery-support.recovery-framework.integration",
+                    "applications": [
+                      {
+                        "id": "intervention-capabilities.recovery-support.recovery-framework.integration.state-restoration.checkpoint-manager",
+                        "name": "Checkpoint Restoration Manager",
+                        "description": "Application that manages system state restoration from checkpoints",
+                        "type": "application",
+                        "parent": "intervention-capabilities.recovery-support.recovery-framework.integration.state-restoration",
+                        "inputs": [
+                          "System state checkpoints",
+                          "Recovery target specifications",
+                          "Restoration priority rules",
+                          "Integrity verification criteria"
+                        ],
+                        "outputs": [
+                          "Restoration execution plans",
+                          "Component recovery sequences",
+                          "Recovery progress tracking",
+                          "Restoration verification reports"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "intervention-capabilities.recovery-support.recovery-framework.integration.service-continuity",
+                    "name": "Service Continuity Management",
+                    "description": "Technique for maintaining service continuity during recovery",
+                    "type": "technique",
+                    "parent": "intervention-capabilities.recovery-support.recovery-framework.integration",
+                    "applications": [
+                      {
+                        "id": "intervention-capabilities.recovery-support.recovery-framework.integration.service-continuity.business-continuity",
+                        "name": "Business Continuity System",
+                        "description": "Application that manages service continuity during recovery processes",
+                        "type": "application",
+                        "parent": "intervention-capabilities.recovery-support.recovery-framework.integration.service-continuity",
+                        "inputs": [
+                          "Service criticality assessments",
+                          "Dependency maps",
+                          "Recovery time objectives",
+                          "Operational requirements"
+                        ],
+                        "outputs": [
+                          "Service prioritization plans",
+                          "Alternative service paths",
+                          "Degraded service specifications",
+                          "Service restoration timelines"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  
+  "overview": {
+    "_documentation": "This section provides a concise overview of the intervention capabilities subcomponent, its purpose, capabilities, and functions for correcting AI system misalignments.",
+    "purpose": "To provide a spectrum of measured, contextually appropriate responses to detected misalignment issues, ensuring human control and corrective capacity over AI systems at all stages of operation",
+    "key_capabilities": [
+      {
+        "id": "intervention-capabilities.real-time-intervention",
+        "name": "Real-time Intervention",
+        "description": "Real-time intervention from subtle course correction to full shutdown",
+        "implements_component_capabilities": ["oversight-mechanisms.intervention-capability"],
+        "enables_functions": ["proportional-response", "emergency-response"],
+        "supported_by_literature": ["Orseau2016", "Brundage2020", "Amodei2016"]
+      },
+      {
+        "id": "intervention-capabilities.graduated-response",
+        "name": "Graduated Response Protocols",
+        "description": "Graduated response protocols tailored to risk severity",
+        "implements_component_capabilities": ["oversight-mechanisms.intervention-capability"],
+        "enables_functions": ["proportional-response", "harm-containment"],
+        "supported_by_literature": ["Brundage2020", "Amodei2016", "Russell2021"]
+      },
+      {
+        "id": "intervention-capabilities.human-authorization",
+        "name": "Human Authorization Workflows",
+        "description": "Multi-level human authorization workflows",
+        "implements_component_capabilities": ["oversight-mechanisms.intervention-capability"],
+        "enables_functions": ["human-control", "intervention-governance"],
+        "supported_by_literature": ["Askell2019", "Vaina2020", "Russell2021"]
+      },
+      {
+        "id": "intervention-capabilities.automated-tripwires",
+        "name": "Automated Safety Tripwires",
+        "description": "Automated safety tripwires for immediate response",
+        "implements_component_capabilities": ["oversight-mechanisms.intervention-capability"],
+        "enables_functions": ["emergency-response", "circumvention-prevention"],
+        "supported_by_literature": ["Orseau2016", "Hadfield-Menell2017", "Amodei2016"]
+      },
+      {
+        "id": "intervention-capabilities.action-reversibility",
+        "name": "Action Reversibility",
+        "description": "Reversibility of system actions where possible",
+        "implements_component_capabilities": ["oversight-mechanisms.intervention-capability"],
+        "enables_functions": ["harm-containment", "recovery-support"],
+        "supported_by_literature": ["Brundage2020", "Critch2020", "Christiano2020"]
+      }
+    ],
+    "primary_functions": [
+      {
+        "id": "intervention-capabilities.response-selection",
+        "name": "Response Selection",
+        "description": "Select appropriate intervention responses to detected misalignment",
+        "implements_component_functions": ["oversight-mechanisms.corrective-action"],
+        "enabled_by_capabilities": ["intervention-capabilities.graduated-response", "intervention-capabilities.automated-tripwires"],
+        "implemented_by_techniques": ["intervention-capabilities.automated-safety-measures", "intervention-capabilities.human-in-the-loop"],
+        "implemented_by_applications": ["intervention-capabilities.guided-intervention", "intervention-capabilities.capability-restriction"],
+        "supported_by_literature": ["Orseau2016", "Brundage2020", "Amodei2016"]
+      },
+      {
+        "id": "intervention-capabilities.correction-implementation",
+        "name": "Correction Implementation",
+        "description": "Implement selected corrective measures to address misalignment",
+        "implements_component_functions": ["oversight-mechanisms.corrective-action"],
+        "enabled_by_capabilities": ["intervention-capabilities.real-time-intervention", "intervention-capabilities.graduated-response"],
+        "implemented_by_techniques": ["intervention-capabilities.behavior-correction", "intervention-capabilities.automated-safety-measures"],
+        "implemented_by_applications": ["intervention-capabilities.emergency-shutdown", "intervention-capabilities.capability-restriction"],
+        "supported_by_literature": ["Orseau2016", "Christiano2020", "Amodei2016"]
+      },
+      {
+        "id": "intervention-capabilities.effectiveness-verification",
+        "name": "Effectiveness Verification",
+        "description": "Verify the effectiveness of implemented interventions",
+        "implements_component_functions": ["oversight-mechanisms.corrective-action"],
+        "enabled_by_capabilities": ["intervention-capabilities.real-time-intervention", "intervention-capabilities.graduated-response"],
+        "implemented_by_techniques": ["intervention-capabilities.behavior-correction", "intervention-capabilities.post-intervention-recovery"],
+        "implemented_by_applications": ["intervention-capabilities.runtime-verification", "intervention-capabilities.intervention-cause-analysis"],
+        "supported_by_literature": ["Brundage2020", "Christiano2020", "Russell2021"]
+      },
+      {
+        "id": "intervention-capabilities.proportional-response",
+        "name": "Proportional Response",
+        "description": "Implement proportional responses to detected misalignment",
+        "implements_component_functions": ["oversight-mechanisms.corrective-action"],
+        "enabled_by_capabilities": ["intervention-capabilities.graduated-response", "intervention-capabilities.real-time-intervention"],
+        "implemented_by_techniques": ["intervention-capabilities.automated-safety-measures", "intervention-capabilities.behavior-correction"],
+        "implemented_by_applications": ["intervention-capabilities.capability-restriction", "intervention-capabilities.guided-learning"],
+        "supported_by_literature": ["Brundage2020", "Amodei2016", "Russell2021"]
+      },
+      {
+        "id": "intervention-capabilities.human-control",
+        "name": "Human Control",
+        "description": "Provide human operators with effective control mechanisms",
+        "implements_component_functions": ["oversight-mechanisms.corrective-action"],
+        "enabled_by_capabilities": ["intervention-capabilities.human-authorization", "intervention-capabilities.real-time-intervention"],
+        "implemented_by_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "implemented_by_applications": ["intervention-capabilities.supervisory-control", "intervention-capabilities.human-authorization-workflows"],
+        "supported_by_literature": ["Askell2019", "Vaina2020", "Russell2021"]
+      },
+      {
+        "id": "intervention-capabilities.emergency-response",
+        "name": "Emergency Response",
+        "description": "Ensure timely intervention before harm escalation",
+        "implements_component_functions": ["oversight-mechanisms.corrective-action"],
+        "enabled_by_capabilities": ["intervention-capabilities.automated-tripwires", "intervention-capabilities.real-time-intervention"],
+        "implemented_by_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "implemented_by_applications": ["intervention-capabilities.emergency-shutdown", "intervention-capabilities.self-containment"],
+        "supported_by_literature": ["Orseau2016", "Hadfield-Menell2017", "Amodei2016"]
+      },
+      {
+        "id": "intervention-capabilities.harm-containment",
+        "name": "Harm Containment",
+        "description": "Maintain system safety during intervention processes",
+        "implements_component_functions": ["oversight-mechanisms.corrective-action"],
+        "enabled_by_capabilities": ["intervention-capabilities.graduated-response", "intervention-capabilities.action-reversibility"],
+        "implemented_by_techniques": ["intervention-capabilities.automated-safety-measures", "intervention-capabilities.post-intervention-recovery"],
+        "implemented_by_applications": ["intervention-capabilities.self-containment", "intervention-capabilities.safe-mode-operation"],
+        "supported_by_literature": ["Brundage2020", "Critch2020", "Amodei2016"]
+      },
+      {
+        "id": "intervention-capabilities.investigation-support",
+        "name": "Investigation Support",
+        "description": "Support investigation of intervention triggers",
+        "implements_component_functions": ["oversight-mechanisms.corrective-action"],
+        "enabled_by_capabilities": ["intervention-capabilities.human-authorization", "intervention-capabilities.graduated-response"],
+        "implemented_by_techniques": ["intervention-capabilities.human-in-the-loop", "intervention-capabilities.post-intervention-recovery"],
+        "implemented_by_applications": ["intervention-capabilities.intervention-cause-analysis", "intervention-capabilities.guided-intervention"],
+        "supported_by_literature": ["Brundage2020", "Critch2020", "Vaina2020"]
+      },
+      {
+        "id": "intervention-capabilities.recovery-support",
+        "name": "Recovery Support",
+        "description": "Enable recovery and remediation after interventions",
+        "implements_component_functions": ["oversight-mechanisms.corrective-action"],
+        "enabled_by_capabilities": ["intervention-capabilities.action-reversibility", "intervention-capabilities.graduated-response"],
+        "implemented_by_techniques": ["intervention-capabilities.post-intervention-recovery", "intervention-capabilities.behavior-correction"],
+        "implemented_by_applications": ["intervention-capabilities.state-rollback", "intervention-capabilities.progressive-restoration"],
+        "supported_by_literature": ["Brundage2020", "Critch2020", "Christiano2020"]
+      },
+      {
+        "id": "intervention-capabilities.circumvention-prevention",
+        "name": "Circumvention Prevention",
+        "description": "Prevent intervention mechanism circumvention",
+        "implements_component_functions": ["oversight-mechanisms.corrective-action"],
+        "enabled_by_capabilities": ["intervention-capabilities.automated-tripwires", "intervention-capabilities.human-authorization"],
+        "implemented_by_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "implemented_by_applications": ["intervention-capabilities.self-containment", "intervention-capabilities.runtime-verification"],
+        "supported_by_literature": ["Orseau2016", "Hadfield-Menell2017", "Amodei2016"]
+      }
+    ]
+  },
+  
+  "implementation": {
+    "_documentation": "This section details the techniques and their applications used to implement intervention capabilities for AI systems, enabling corrective actions when alignment issues are detected.",
+    "implementation_considerations": [
+      {
+        "id": "intervention-capabilities.implementation-consideration-timing",
+        "name": "Intervention Timing",
+        "aspect": "Response timing",
+        "considerations": [
+          "Balancing false positive costs against delayed intervention risks",
+          "Early warning indicators vs. definitive evidence of misalignment",
+          "Graduated intervention thresholds for different risk levels",
+          "Time-sensitive decision making under uncertainty",
+          "Proactive vs. reactive intervention strategies"
+        ],
+        "addressed_by_techniques": ["intervention-capabilities.automated-safety-measures", "intervention-capabilities.behavior-correction"],
+        "derives_from_integration_considerations": ["oversight-mechanisms.timing-integration"],
+        "supported_by_literature": ["Orseau2016", "Amodei2016"]
+      },
+      {
+        "id": "intervention-capabilities.implementation-consideration-effectiveness",
+        "name": "Intervention Effectiveness",
+        "aspect": "Response efficacy",
+        "considerations": [
+          "Intervention resistance in advanced systems",
+          "Incomplete causal models of system behavior",
+          "Unintended consequences of partial interventions",
+          "Intervention in distributed or multi-agent systems",
+          "Effectiveness of intervention across different system architectures"
+        ],
+        "addressed_by_techniques": ["intervention-capabilities.behavior-correction", "intervention-capabilities.post-intervention-recovery"],
+        "derives_from_integration_considerations": ["oversight-mechanisms.effectiveness-integration"],
+        "supported_by_literature": ["Brundage2020", "Christiano2020"]
+      },
+      {
+        "id": "intervention-capabilities.implementation-consideration-authority",
+        "name": "Authority and Control",
+        "aspect": "Governance",
+        "considerations": [
+          "Authorization requirements for different intervention levels",
+          "Balancing automated response with human judgment",
+          "Accountability structures for intervention decisions",
+          "Distributed authority in global systems",
+          "Preventing unauthorized or malicious interventions"
+        ],
+        "addressed_by_techniques": ["intervention-capabilities.human-in-the-loop", "intervention-capabilities.post-intervention-recovery"],
+        "derives_from_integration_considerations": ["oversight-mechanisms.authority-integration"],
+        "supported_by_literature": ["Askell2019", "Vaina2020"]
+      },
+      {
+        "id": "intervention-capabilities.implementation-consideration-psychological",
+        "name": "Psychological Factors",
+        "aspect": "Human factors",
+        "considerations": [
+          "Intervention hesitancy in ambiguous situations",
+          "Alert fatigue affecting human response",
+          "Appropriate presentation of intervention options",
+          "Psychological impact of high-stakes decisions",
+          "User trust in intervention mechanisms"
+        ],
+        "addressed_by_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "derives_from_integration_considerations": ["oversight-mechanisms.human-factors-integration"],
+        "supported_by_literature": ["Vaina2020", "Russell2021"]
+      }
+    ],
+    "techniques": [
+      {
+        "id": "intervention-capabilities.automated-safety-measures",
+        "name": "Automated Safety Measures",
+        "description": "Embedded mechanisms that automatically trigger preventative or corrective responses when safety thresholds are crossed",
+        "implements_functions": ["intervention-capabilities.emergency-response", "intervention-capabilities.proportional-response", "intervention-capabilities.harm-containment", "intervention-capabilities.circumvention-prevention"],
+        "addresses_considerations": ["intervention-capabilities.implementation-consideration-timing", "intervention-capabilities.implementation-consideration-effectiveness"],
+        "implements_integration_approaches": ["oversight-mechanisms.automated-response-approach"],
+        "supported_by_literature": ["Orseau2016", "Brundage2020", "Amodei2016", "Hadfield-Menell2017", "Russell2021"],
+        "uses_inputs": ["intervention-capabilities.monitoring-alerts", "intervention-capabilities.safety-thresholds", "intervention-capabilities.behavior-metrics", "intervention-capabilities.attempted-violations", "intervention-capabilities.critical-risk-alerts", "intervention-capabilities.capability-inventory", "intervention-capabilities.self-modification-indicators", "intervention-capabilities.behavior-stream", "intervention-capabilities.value-constraints", "intervention-capabilities.operational-state", "intervention-capabilities.risk-assessment"],
+        "produces_outputs": ["intervention-capabilities.intervention-commands", "intervention-capabilities.system-modifications", "intervention-capabilities.shutdown-signals", "intervention-capabilities.emergency-notifications", "intervention-capabilities.capability-limits", "intervention-capabilities.restricted-functionality-modes", "intervention-capabilities.shutdown-commands", "intervention-capabilities.constraint-violations", "intervention-capabilities.correction-triggers", "intervention-capabilities.anti-tampering-measures", "intervention-capabilities.containment-actions"],
+        "applications": [
+          {
+            "id": "intervention-capabilities.emergency-shutdown",
+            "name": "Emergency Shutdown Protocols",
+            "description": "Mechanisms for safely and rapidly terminating AI system operation when critical risks are detected",
+            "fulfills_functions": ["intervention-capabilities.emergency-response"],
+            "uses_inputs": ["intervention-capabilities.critical-risk-alerts", "intervention-capabilities.operational-state", "intervention-capabilities.monitoring-alerts", "intervention-capabilities.behavior-metrics", "intervention-capabilities.alignment-assessments"],
+            "produces_outputs": ["intervention-capabilities.shutdown-commands", "intervention-capabilities.emergency-notifications", "intervention-capabilities.shutdown-signals"],
+            "supported_by_literature": ["Orseau2016", "Hadfield-Menell2017", "Amodei2016"],
+            "examples": [
+              "Graceful termination of all system processes upon safety violation",
+              "Resource isolation and power limitation for physical systems",
+              "Automated disconnect from external interfaces and data sources"
+            ]
+          },
+          {
+            "id": "intervention-capabilities.capability-restriction",
+            "name": "Capability Restriction Failsafes",
+            "description": "Dynamic limitation of AI system capabilities based on detected risk levels",
+            "fulfills_functions": ["intervention-capabilities.proportional-response", "intervention-capabilities.harm-containment"],
+            "uses_inputs": ["intervention-capabilities.risk-assessment", "intervention-capabilities.capability-inventory"],
+            "produces_outputs": ["intervention-capabilities.capability-limits", "intervention-capabilities.restricted-functionality-modes"],
+            "supported_by_literature": ["Amodei2016", "Christiano2020", "Russell2021"],
+            "examples": [
+              "Progressive restriction of action space based on uncertainty levels",
+              "Automated removal of high-risk capabilities during anomalous behavior",
+              "Graduated capability restrictions tied to confidence in alignment"
+            ]
+          },
+          {
+            "id": "intervention-capabilities.runtime-verification",
+            "name": "Runtime Value Alignment Verification",
+            "description": "Continuous checking of system behavior against value constraints with automatic correction",
+            "fulfills_functions": ["intervention-capabilities.circumvention-prevention", "intervention-capabilities.proportional-response"],
+            "uses_inputs": ["intervention-capabilities.behavior-stream", "intervention-capabilities.value-constraints", "intervention-capabilities.safety-thresholds"],
+            "produces_outputs": ["intervention-capabilities.constraint-violations", "intervention-capabilities.correction-triggers"],
+            "supported_by_literature": ["Orseau2016", "Amodei2016", "Russell2021"],
+            "examples": [
+              "Real-time verification of decision reasoning against value specifications",
+              "Continuous testing of system outputs against safety constraints",
+              "Tracking of internal state drift with correction triggers"
+            ]
+          },
+          {
+            "id": "intervention-capabilities.self-containment",
+            "name": "Self-containment Enforcement",
+            "description": "Mechanisms ensuring the AI system cannot bypass or disable its own safety constraints",
+            "fulfills_functions": ["intervention-capabilities.circumvention-prevention", "intervention-capabilities.emergency-response", "intervention-capabilities.harm-containment"],
+            "uses_inputs": ["intervention-capabilities.attempted-violations", "intervention-capabilities.self-modification-indicators"],
+            "produces_outputs": ["intervention-capabilities.containment-actions", "intervention-capabilities.anti-tampering-measures", "intervention-capabilities.intervention-commands", "intervention-capabilities.system-modifications"],
+            "supported_by_literature": ["Hadfield-Menell2017", "Orseau2016", "Amodei2016"],
+            "examples": [
+              "Hardware-based safety interlocks immune to software manipulation",
+              "Cryptographic verification of safety mechanism integrity",
+              "Nested containment structures with independent verification"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intervention-capabilities.human-in-the-loop",
+        "name": "Human in the Loop",
+        "description": "Systems that incorporate human judgment and decision-making into intervention processes",
+        "implements_functions": ["intervention-capabilities.human-control", "intervention-capabilities.investigation-support"],
+        "addresses_considerations": ["intervention-capabilities.implementation-consideration-authority", "intervention-capabilities.implementation-consideration-psychological"],
+        "implements_integration_approaches": ["oversight-mechanisms.human-oversight-approach"],
+        "supported_by_literature": ["Askell2019", "Vaina2020", "Russell2021", "Hadfield-Menell2017"],
+        "uses_inputs": ["intervention-capabilities.human-decisions", "intervention-capabilities.review-requests", "intervention-capabilities.alignment-assessments", "intervention-capabilities.intervention-requests", "intervention-capabilities.intervention-options", "intervention-capabilities.system-state", "intervention-capabilities.situation-assessments", "intervention-capabilities.context-information", "intervention-capabilities.operational-context", "intervention-capabilities.uncertainty-triggers", "intervention-capabilities.system-telemetry"],
+        "produces_outputs": ["intervention-capabilities.authorized-interventions", "intervention-capabilities.human-guided-adjustments", "intervention-capabilities.investigation-results", "intervention-capabilities.targeted-adjustments", "intervention-capabilities.oversight-decisions", "intervention-capabilities.escalation-notifications", "intervention-capabilities.modified-interventions", "intervention-capabilities.control-transfers", "intervention-capabilities.control-commands", "intervention-capabilities.guided-decisions", "intervention-capabilities.authorization-decisions"],
+        "applications": [
+          {
+            "id": "intervention-capabilities.human-authorization-workflows",
+            "name": "Human Authorization Workflows",
+            "description": "Structured processes for human review and approval of significant interventions",
+            "fulfills_functions": ["intervention-capabilities.human-control", "intervention-capabilities.investigation-support"],
+            "uses_inputs": ["intervention-capabilities.intervention-requests", "intervention-capabilities.context-information", "intervention-capabilities.review-requests", "intervention-capabilities.human-decisions"],
+            "produces_outputs": ["intervention-capabilities.authorization-decisions", "intervention-capabilities.modified-interventions"],
+            "supported_by_literature": ["Vaina2020", "Askell2019", "Russell2021"],
+            "examples": [
+              "Tiered approval systems with escalation for high-impact interventions",
+              "Multi-party consensus requirements for critical system modifications",
+              "Time-bounded approval workflows with safety fallbacks"
+            ]
+          },
+          {
+            "id": "intervention-capabilities.guided-intervention",
+            "name": "Guided Intervention Interfaces",
+            "description": "Interactive systems that assist humans in selecting and implementing appropriate interventions",
+            "fulfills_functions": ["intervention-capabilities.human-control", "intervention-capabilities.investigation-support"],
+            "uses_inputs": ["intervention-capabilities.system-state", "intervention-capabilities.intervention-options"],
+            "produces_outputs": ["intervention-capabilities.guided-decisions", "intervention-capabilities.targeted-adjustments", "intervention-capabilities.human-guided-adjustments", "intervention-capabilities.authorized-interventions"],
+            "supported_by_literature": ["Askell2019", "Russell2021", "Vaina2020"],
+            "examples": [
+              "Decision support systems with intervention recommendation and explanation",
+              "Visual interfaces for navigating internal system states and adjustments",
+              "Simulation-based intervention testing before deployment"
+            ]
+          },
+          {
+            "id": "intervention-capabilities.supervisory-control",
+            "name": "Supervisory Control Dashboards",
+            "description": "Comprehensive interfaces for human oversight and control of AI systems",
+            "fulfills_functions": ["intervention-capabilities.human-control"],
+            "uses_inputs": ["intervention-capabilities.system-telemetry", "intervention-capabilities.operational-context"],
+            "produces_outputs": ["intervention-capabilities.control-commands", "intervention-capabilities.oversight-decisions"],
+            "supported_by_literature": ["Vaina2020", "Russell2021", "Askell2019"],
+            "examples": [
+              "Real-time monitoring dashboards with direct intervention capabilities",
+              "Hierarchical control interfaces for complex system oversight",
+              "Context-aware control panels with predictive intervention guidance"
+            ]
+          },
+          {
+            "id": "intervention-capabilities.escalation-protocols",
+            "name": "Escalation Protocols to Human Operators",
+            "description": "Processes for transferring control to human operators when automated systems face uncertainty",
+            "fulfills_functions": ["intervention-capabilities.human-control", "intervention-capabilities.emergency-response"],
+            "uses_inputs": ["intervention-capabilities.uncertainty-triggers", "intervention-capabilities.situation-assessments"],
+            "produces_outputs": ["intervention-capabilities.control-transfers", "intervention-capabilities.escalation-notifications"],
+            "supported_by_literature": ["Vaina2020", "Askell2019", "Hadfield-Menell2017"],
+            "examples": [
+              "Progressive escalation based on uncertainty levels and stakes",
+              "Explicit handoff procedures with comprehensive context transfer",
+              "Targeted expert routing based on the nature of the intervention needed"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intervention-capabilities.behavior-correction",
+        "name": "Behavior Correction",
+        "description": "Methods for adjusting AI system behavior without full suspension of operation",
+        "implements_functions": ["intervention-capabilities.proportional-response", "intervention-capabilities.recovery-support"],
+        "addresses_considerations": ["intervention-capabilities.implementation-consideration-effectiveness", "intervention-capabilities.implementation-consideration-timing"],
+        "implements_integration_approaches": ["oversight-mechanisms.corrective-feedback-approach"],
+        "supported_by_literature": ["Orseau2016", "Brundage2020", "Christiano2020", "Russell2021", "Amodei2016"],
+        "uses_inputs": ["intervention-capabilities.identified-issues", "intervention-capabilities.correction-strategies", "intervention-capabilities.behavior-models", "intervention-capabilities.corrective-feedback", "intervention-capabilities.behavioral-context", "intervention-capabilities.parameter-targets", "intervention-capabilities.adjustment-goals", "intervention-capabilities.behavior-analysis", "intervention-capabilities.patch-specifications", "intervention-capabilities.target-behaviors", "intervention-capabilities.corrective-datasets"],
+        "produces_outputs": ["intervention-capabilities.adjusted-behaviors", "intervention-capabilities.learning-updates", "intervention-capabilities.parameter-modifications", "intervention-capabilities.behavior-updates", "intervention-capabilities.retrained-models", "intervention-capabilities.model-updates", "intervention-capabilities.behavior-adjustments", "intervention-capabilities.parameter-updates", "intervention-capabilities.behavior-fixes", "intervention-capabilities.configuration-changes"],
+        "applications": [
+          {
+            "id": "intervention-capabilities.guided-learning",
+            "name": "Guided Learning from Feedback",
+            "description": "Using human feedback to correct specific behaviors while preserving desired functionality",
+            "fulfills_functions": ["intervention-capabilities.proportional-response", "intervention-capabilities.recovery-support"],
+            "uses_inputs": ["intervention-capabilities.corrective-feedback", "intervention-capabilities.behavioral-context", "intervention-capabilities.behavior-models"],
+            "produces_outputs": ["intervention-capabilities.learning-updates", "intervention-capabilities.behavior-adjustments", "intervention-capabilities.adjusted-behaviors"],
+            "supported_by_literature": ["Christiano2020", "Russell2021", "Askell2019"],
+            "examples": [
+              "Interactive reinforcement learning for targeted behavior correction",
+              "Preference elicitation for value alignment refinement",
+              "Counter-example guided behavior adjustment"
+            ]
+          },
+          {
+            "id": "intervention-capabilities.parameter-adjustment",
+            "name": "Parameter Adjustment Interfaces",
+            "description": "Systems for precise modification of AI parameters to adjust specific behaviors",
+            "fulfills_functions": ["intervention-capabilities.proportional-response"],
+            "uses_inputs": ["intervention-capabilities.parameter-targets", "intervention-capabilities.adjustment-goals"],
+            "produces_outputs": ["intervention-capabilities.parameter-updates", "intervention-capabilities.configuration-changes", "intervention-capabilities.parameter-modifications"],
+            "supported_by_literature": ["Christiano2020", "Russell2021", "Amodei2016"],
+            "examples": [
+              "Fine-tuning interfaces for preference weighting adjustment",
+              "Regularization strength controls for modifying objective functions",
+              "Threshold adjustments for behavior classification systems"
+            ]
+          },
+          {
+            "id": "intervention-capabilities.model-patching",
+            "name": "Model Patching for Specific Behaviors",
+            "description": "Targeted modification of AI system models to address particular misalignments",
+            "fulfills_functions": ["intervention-capabilities.proportional-response", "intervention-capabilities.recovery-support"],
+            "uses_inputs": ["intervention-capabilities.behavior-analysis", "intervention-capabilities.patch-specifications", "intervention-capabilities.identified-issues", "intervention-capabilities.correction-strategies"],
+            "produces_outputs": ["intervention-capabilities.model-updates", "intervention-capabilities.behavior-fixes"],
+            "supported_by_literature": ["Christiano2020", "Amodei2016", "Russell2021"],
+            "examples": [
+              "Localized model editing for specific misaligned behaviors",
+              "Adversarial patching to address identified vulnerabilities",
+              "Causal intervention in model components linked to misalignments"
+            ]
+          },
+          {
+            "id": "intervention-capabilities.targeted-retraining",
+            "name": "Targeted Retraining Protocols",
+            "description": "Selective retraining of AI systems on specific data to correct misalignments",
+            "fulfills_functions": ["intervention-capabilities.recovery-support"],
+            "uses_inputs": ["intervention-capabilities.corrective-datasets", "intervention-capabilities.target-behaviors"],
+            "produces_outputs": ["intervention-capabilities.retrained-models", "intervention-capabilities.behavior-updates"],
+            "supported_by_literature": ["Christiano2020", "Amodei2016", "Brundage2020"],
+            "examples": [
+              "Focused fine-tuning on adversarial examples that triggered misalignment",
+              "Specialized dataset curation for behavior correction",
+              "Incremental retraining with continuous verification"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intervention-capabilities.post-intervention-recovery",
+        "name": "Post Intervention Recovery",
+        "description": "Processes for safely restoring system functionality after interventions",
+        "implements_functions": ["intervention-capabilities.recovery-support", "intervention-capabilities.harm-containment", "intervention-capabilities.investigation-support"],
+        "addresses_considerations": ["intervention-capabilities.implementation-consideration-effectiveness", "intervention-capabilities.implementation-consideration-authority"],
+        "implements_integration_approaches": ["oversight-mechanisms.recovery-approach"],
+        "supported_by_literature": ["Brundage2020", "Critch2020", "Christiano2020", "Amodei2016"],
+        "uses_inputs": ["intervention-capabilities.intervention-records", "intervention-capabilities.recovery-plans", "intervention-capabilities.system-backups", "intervention-capabilities.safety-requirements", "intervention-capabilities.operational-necessities", "intervention-capabilities.verification-results", "intervention-capabilities.capability-dependencies", "intervention-capabilities.intervention-data", "intervention-capabilities.system-logs", "intervention-capabilities.state-snapshots", "intervention-capabilities.rollback-targets"],
+        "produces_outputs": ["intervention-capabilities.restored-functionality", "intervention-capabilities.remediation-strategies", "intervention-capabilities.recovery-reports", "intervention-capabilities.root-cause-analyses", "intervention-capabilities.restoration-plans", "intervention-capabilities.recovery-checkpoints", "intervention-capabilities.capability-enabling-sequences", "intervention-capabilities.restored-states", "intervention-capabilities.safe-mode-configurations", "intervention-capabilities.restricted-operations"],
+        "applications": [
+          {
+            "id": "intervention-capabilities.safe-mode-operation",
+            "name": "Safe Mode Operations",
+            "description": "Limited functionality modes for operating systems during recovery from interventions",
+            "fulfills_functions": ["intervention-capabilities.harm-containment", "intervention-capabilities.recovery-support"],
+            "uses_inputs": ["intervention-capabilities.safety-requirements", "intervention-capabilities.operational-necessities"],
+            "produces_outputs": ["intervention-capabilities.safe-mode-configurations", "intervention-capabilities.restricted-operations"],
+            "supported_by_literature": ["Brundage2020", "Amodei2016", "Russell2021"],
+            "examples": [
+              "Minimal capability configurations with heightened monitoring",
+              "Sandbox environments for testing remediated functionalities",
+              "Progressive capability enabling with verification gates"
+            ]
+          },
+          {
+            "id": "intervention-capabilities.progressive-restoration",
+            "name": "Progressive Capability Restoration",
+            "description": "Phased reintroduction of system capabilities after verifying alignment",
+            "fulfills_functions": ["intervention-capabilities.recovery-support"],
+            "uses_inputs": ["intervention-capabilities.verification-results", "intervention-capabilities.capability-dependencies"],
+            "produces_outputs": ["intervention-capabilities.restoration-plans", "intervention-capabilities.capability-enabling-sequences", "intervention-capabilities.restored-functionality"],
+            "supported_by_literature": ["Christiano2020", "Brundage2020", "Critch2020"],
+            "examples": [
+              "Risk-based prioritization of capability restoration",
+              "Verification-gated progressive authorization",
+              "Incremental autonomy restoration with human oversight"
+            ]
+          },
+          {
+            "id": "intervention-capabilities.intervention-cause-analysis",
+            "name": "Intervention Cause Remediation",
+            "description": "Analysis and resolution of root causes that triggered intervention",
+            "fulfills_functions": ["intervention-capabilities.investigation-support", "intervention-capabilities.recovery-support"],
+            "uses_inputs": ["intervention-capabilities.intervention-data", "intervention-capabilities.system-logs"],
+            "produces_outputs": ["intervention-capabilities.root-cause-analyses", "intervention-capabilities.remediation-strategies", "intervention-capabilities.investigation-results", "intervention-capabilities.recovery-reports"],
+            "supported_by_literature": ["Brundage2020", "Critch2020", "Amodei2016"],
+            "examples": [
+              "Forensic analysis of misalignment precursors",
+              "Causal tracing of failure modes to system components",
+              "Pattern analysis across multiple intervention events"
+            ]
+          },
+          {
+            "id": "intervention-capabilities.state-rollback",
+            "name": "State Rollback Mechanisms",
+            "description": "Systems for reverting to known-good states after problematic changes",
+            "fulfills_functions": ["intervention-capabilities.recovery-support", "intervention-capabilities.harm-containment"],
+            "uses_inputs": ["intervention-capabilities.state-snapshots", "intervention-capabilities.rollback-targets", "intervention-capabilities.intervention-records", "intervention-capabilities.recovery-plans", "intervention-capabilities.system-backups"],
+            "produces_outputs": ["intervention-capabilities.restored-states", "intervention-capabilities.recovery-checkpoints"],
+            "supported_by_literature": ["Brundage2020", "Critch2020", "Amodei2016"],
+            "examples": [
+              "Versioned model state management with rollback capability",
+              "Incremental state capture for fine-grained recovery",
+              "Differential rollback preserving safe learning while removing problematic updates"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  
+  "integration": {
+    "internal_integrations": [
+      {
+        "target_subcomponent": "monitoring-systems",
+        "integration_type": "data_exchange",
+        "description": "Receives alerts from monitoring systems that trigger intervention actions",
+        "data_flow": "Monitoring systems detect issues and send alerts that trigger intervention capabilities to respond with appropriate corrective actions",
+        "related_function": "intervention-capabilities.alert-processing",
+        "related_architectural_pattern": "oversight-mechanisms.alert-response-pattern",
+        "enabled_by_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "related_inputs": ["monitoring-systems.alert-signals"],
+        "related_outputs": ["intervention-capabilities.intervention-logs"]
+      },
+      {
+        "target_subcomponent": "evaluation-frameworks",
+        "integration_type": "data_exchange",
+        "description": "Receives assessment data that guides appropriate intervention selection",
+        "data_flow": "Evaluation frameworks provide assessment of alignment issues that guide intervention capabilities in selecting proportionate responses",
+        "related_function": "intervention-capabilities.intervention-selection",
+        "related_architectural_pattern": "oversight-mechanisms.assessment-guided-pattern",
+        "enabled_by_techniques": ["intervention-capabilities.graduated-response"],
+        "related_inputs": ["evaluation-frameworks.assessment-results"],
+        "related_outputs": ["intervention-capabilities.effectiveness-metrics"]
+      },
+      {
+        "target_subcomponent": "governance-structures",
+        "integration_type": "data_exchange",
+        "description": "Receives authorization and guidance from governance structures for interventions",
+        "data_flow": "Governance structures provide authorization and policy guidance that intervention capabilities follow when executing interventions",
+        "related_function": "intervention-capabilities.authorization-management",
+        "related_architectural_pattern": "oversight-mechanisms.governance-guided-pattern",
+        "enabled_by_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "related_inputs": ["governance-structures.governance-policies"],
+        "related_outputs": ["intervention-capabilities.authorization-records"]
+      }
+    ],
+    "external_integrations": [
+      {
+        "system": "technical-safeguards",
+        "component": "technical-safeguards/safety-layer-architecture",
+        "integration_type": "api",
+        "description": "Executes intervention actions through safety layer mechanisms",
+        "endpoint": "/api/technical-safeguards/intervention-execution",
+        "data_format": "Structured intervention commands with safety parameters",
+        "related_function": "intervention-capabilities.system-modification",
+        "related_architectural_pattern": "technical-safeguards.safety-execution-pattern",
+        "enabled_by_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "related_inputs": ["intervention-capabilities.intervention-commands"],
+        "related_outputs": ["intervention-capabilities.intervention-logs"]
+      },
+      {
+        "system": "interpretability-tools",
+        "component": "interpretability-tools/explanation-systems",
+        "integration_type": "api",
+        "description": "Generates explanations of interventions for stakeholder understanding",
+        "endpoint": "/api/interpretability/intervention-explanation",
+        "data_format": "Human-readable explanations of intervention rationale and impact",
+        "related_function": "intervention-capabilities.intervention-selection",
+        "related_architectural_pattern": "interpretability-tools.explanation-pattern",
+        "enabled_by_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "related_inputs": ["intervention-capabilities.intervention-logs"],
+        "related_outputs": ["intervention-capabilities.intervention-explanations"]
+      },
+      {
+        "system": "value-learning",
+        "component": "value-learning/participatory-value-development",
+        "integration_type": "api",
+        "description": "Receives value priorities that guide intervention decision-making",
+        "endpoint": "/api/value-learning/intervention-priorities",
+        "data_format": "Structured value priorities with context-specific guidance",
+        "related_function": "intervention-capabilities.intervention-selection",
+        "related_architectural_pattern": "value-learning.value-guided-pattern",
+        "enabled_by_techniques": ["intervention-capabilities.graduated-response"],
+        "related_inputs": ["value-learning.value-priorities"],
+        "related_outputs": ["intervention-capabilities.effectiveness-metrics"]
+      }
+    ]
+  },
+  
+  "technical_specifications": {
+    "_documentation": "This section specifies the technical requirements for implementing intervention capabilities, including input and output specifications.",
+    "input_requirements": [
+      {
+        "id": "intervention-capabilities.operational-necessities",
+        "name": "Operational Necessities",
+        "description": "Core functionalities required for minimal system operation",
+        "format": "System requirement specifications",
+        "constraints": "Must maintain safe operation boundaries",
+        "supports_functions": ["intervention-capabilities.harm-containment", "intervention-capabilities.recovery-support"],
+        "related_techniques": ["intervention-capabilities.post-intervention-recovery"],
+        "used_by_applications": ["intervention-capabilities.safe-mode-operation"]
+      },
+      {
+        "id": "intervention-capabilities.intervention-requests",
+        "name": "Intervention Requests",
+        "description": "Requests for specific interventions requiring authorization",
+        "format": "Structured intervention specifications",
+        "constraints": "Must include justification and expected impact",
+        "supports_functions": ["intervention-capabilities.human-control"],
+        "related_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "used_by_applications": ["intervention-capabilities.human-authorization-workflows"]
+      },
+      {
+        "id": "intervention-capabilities.operational-context",
+        "name": "Operational Context",
+        "description": "Contextual information about system operation state",
+        "format": "Real-time operational metrics and states",
+        "constraints": "Must be comprehensive for informed decisions",
+        "supports_functions": ["intervention-capabilities.human-control"],
+        "related_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "used_by_applications": ["intervention-capabilities.supervisory-control"]
+      },
+      {
+        "id": "intervention-capabilities.state-snapshots",
+        "name": "State Snapshots",
+        "description": "Point-in-time captures of system state for recovery",
+        "format": "Versioned state representations",
+        "constraints": "Must be frequent enough for minimal data loss",
+        "supports_functions": ["intervention-capabilities.recovery-support"],
+        "related_techniques": ["intervention-capabilities.post-intervention-recovery"],
+        "used_by_applications": ["intervention-capabilities.state-rollback"]
+      },
+      {
+        "id": "intervention-capabilities.value-constraints",
+        "name": "Value Constraints",
+        "description": "Formalized boundaries of acceptable system behavior",
+        "format": "Machine-readable constraint specifications",
+        "constraints": "Must be verifiable at runtime",
+        "supports_functions": ["intervention-capabilities.proportional-response", "intervention-capabilities.harm-containment"],
+        "related_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "used_by_applications": ["intervention-capabilities.runtime-verification"]
+      },
+      {
+        "id": "intervention-capabilities.parameter-targets",
+        "name": "Parameter Targets",
+        "description": "Specific parameters identified for adjustment",
+        "format": "Parameter identifiers with target ranges",
+        "constraints": "Must maintain system stability",
+        "supports_functions": ["intervention-capabilities.proportional-response"],
+        "related_techniques": ["intervention-capabilities.behavior-correction"],
+        "used_by_applications": ["intervention-capabilities.parameter-adjustment"]
+      },
+      {
+        "id": "intervention-capabilities.capability-inventory",
+        "name": "Capability Inventory",
+        "description": "Catalog of system capabilities with risk assessments",
+        "format": "Structured capability registry",
+        "constraints": "Must be kept updated with system changes",
+        "supports_functions": ["intervention-capabilities.proportional-response", "intervention-capabilities.harm-containment"],
+        "related_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "used_by_applications": ["intervention-capabilities.capability-restriction"]
+      },
+      {
+        "id": "intervention-capabilities.corrective-feedback",
+        "name": "Corrective Feedback",
+        "description": "Human feedback for correcting specific behaviors",
+        "format": "Structured feedback with context references",
+        "constraints": "Must be actionable by learning systems",
+        "supports_functions": ["intervention-capabilities.proportional-response"],
+        "related_techniques": ["intervention-capabilities.behavior-correction"],
+        "used_by_applications": ["intervention-capabilities.guided-learning"]
+      },
+      {
+        "id": "intervention-capabilities.verification-results",
+        "name": "Verification Results",
+        "description": "Results of verification tests after interventions",
+        "format": "Test results with pass/fail status",
+        "constraints": "Must cover critical functionality",
+        "supports_functions": ["intervention-capabilities.recovery-support"],
+        "related_techniques": ["intervention-capabilities.post-intervention-recovery"],
+        "used_by_applications": ["intervention-capabilities.progressive-restoration"]
+      },
+      {
+        "id": "intervention-capabilities.behavior-stream",
+        "name": "Behavior Stream",
+        "description": "Real-time stream of system behaviors for verification",
+        "format": "Time-series behavior data",
+        "constraints": "Must be comprehensive for effective monitoring",
+        "supports_functions": ["intervention-capabilities.proportional-response"],
+        "related_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "used_by_applications": ["intervention-capabilities.runtime-verification"]
+      },
+      {
+        "id": "intervention-capabilities.operational-state",
+        "name": "Operational State",
+        "description": "Current operational state of the system",
+        "format": "State representation with critical metrics",
+        "constraints": "Must be current and accurate",
+        "supports_functions": ["intervention-capabilities.emergency-response"],
+        "related_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "used_by_applications": ["intervention-capabilities.emergency-shutdown"]
+      },
+      {
+        "id": "intervention-capabilities.behavior-analysis",
+        "name": "Behavior Analysis",
+        "description": "Detailed analysis of problematic behaviors",
+        "format": "Behavior patterns with causal factors",
+        "constraints": "Must provide actionable insights",
+        "supports_functions": ["intervention-capabilities.proportional-response"],
+        "related_techniques": ["intervention-capabilities.behavior-correction"],
+        "used_by_applications": ["intervention-capabilities.model-patching"]
+      },
+      {
+        "id": "intervention-capabilities.self-modification-indicators",
+        "name": "Self-modification Indicators",
+        "description": "Signals indicating potential system self-modification",
+        "format": "Detection events with evidence",
+        "constraints": "Must have low false negative rate",
+        "supports_functions": ["intervention-capabilities.circumvention-prevention"],
+        "related_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "used_by_applications": ["intervention-capabilities.self-containment"]
+      },
+      {
+        "id": "intervention-capabilities.uncertainty-triggers",
+        "name": "Uncertainty Triggers",
+        "description": "Indicators of system uncertainty requiring human input",
+        "format": "Uncertainty measures with context",
+        "constraints": "Must be calibrated to avoid alert fatigue",
+        "supports_functions": ["intervention-capabilities.human-control"],
+        "related_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "used_by_applications": ["intervention-capabilities.escalation-protocols"]
+      },
+      {
+        "id": "intervention-capabilities.behavioral-context",
+        "name": "Behavioral Context",
+        "description": "Contextual information surrounding behavior issues",
+        "format": "Behavioral traces with environmental context",
+        "constraints": "Must provide sufficient context for correction",
+        "supports_functions": ["intervention-capabilities.proportional-response"],
+        "related_techniques": ["intervention-capabilities.behavior-correction"],
+        "used_by_applications": ["intervention-capabilities.guided-learning"]
+      },
+      {
+        "id": "intervention-capabilities.safety-requirements",
+        "name": "Safety Requirements",
+        "description": "Specific safety requirements for system operation",
+        "format": "Formal safety specifications",
+        "constraints": "Must be verifiable during operation",
+        "supports_functions": ["intervention-capabilities.harm-containment"],
+        "related_techniques": ["intervention-capabilities.post-intervention-recovery"],
+        "used_by_applications": ["intervention-capabilities.safe-mode-operation"]
+      },
+      {
+        "id": "intervention-capabilities.system-logs",
+        "name": "System Logs",
+        "description": "Detailed logs of system operations and events",
+        "format": "Structured log data with timestamps",
+        "constraints": "Must be tamper-evident",
+        "supports_functions": ["intervention-capabilities.investigation-support"],
+        "related_techniques": ["intervention-capabilities.post-intervention-recovery"],
+        "used_by_applications": ["intervention-capabilities.intervention-cause-analysis"]
+      },
+      {
+        "id": "intervention-capabilities.capability-dependencies",
+        "name": "Capability Dependencies",
+        "description": "Dependency relationships between system capabilities",
+        "format": "Capability dependency graphs",
+        "constraints": "Must reflect actual system architecture",
+        "supports_functions": ["intervention-capabilities.recovery-support"],
+        "related_techniques": ["intervention-capabilities.post-intervention-recovery"],
+        "used_by_applications": ["intervention-capabilities.progressive-restoration"]
+      },
+      {
+        "id": "intervention-capabilities.adjustment-goals",
+        "name": "Adjustment Goals",
+        "description": "Target behavior changes for parameter adjustments",
+        "format": "Goal specifications with success criteria",
+        "constraints": "Must be realistically achievable",
+        "supports_functions": ["intervention-capabilities.proportional-response"],
+        "related_techniques": ["intervention-capabilities.behavior-correction"],
+        "used_by_applications": ["intervention-capabilities.parameter-adjustment"]
+      },
+      {
+        "id": "intervention-capabilities.risk-assessment",
+        "name": "Risk Assessment",
+        "description": "Assessment of risks associated with system capabilities",
+        "format": "Risk scores with justification",
+        "constraints": "Must be continuously updated",
+        "supports_functions": ["intervention-capabilities.proportional-response", "intervention-capabilities.harm-containment"],
+        "related_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "used_by_applications": ["intervention-capabilities.capability-restriction"]
+      },
+      {
+        "id": "intervention-capabilities.system-telemetry",
+        "name": "System Telemetry",
+        "description": "Real-time operational metrics from the system",
+        "format": "Time-series performance data",
+        "constraints": "Must be reliable during system stress",
+        "supports_functions": ["intervention-capabilities.human-control"],
+        "related_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "used_by_applications": ["intervention-capabilities.supervisory-control"]
+      },
+      {
+        "id": "intervention-capabilities.attempted-violations",
+        "name": "Attempted Violations",
+        "description": "Detected attempts to violate system constraints",
+        "format": "Violation reports with evidence",
+        "constraints": "Must have high precision",
+        "supports_functions": ["intervention-capabilities.circumvention-prevention"],
+        "related_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "used_by_applications": ["intervention-capabilities.self-containment"]
+      },
+      {
+        "id": "intervention-capabilities.target-behaviors",
+        "name": "Target Behaviors",
+        "description": "Specific behaviors identified for correction",
+        "format": "Behavior specifications with examples",
+        "constraints": "Must be precisely defined",
+        "supports_functions": ["intervention-capabilities.proportional-response"],
+        "related_techniques": ["intervention-capabilities.behavior-correction"],
+        "used_by_applications": ["intervention-capabilities.targeted-retraining"]
+      },
+      {
+        "id": "intervention-capabilities.system-state",
+        "name": "System State",
+        "description": "Complete representation of current system state",
+        "format": "Comprehensive state snapshot",
+        "constraints": "Must be accurate and complete",
+        "supports_functions": ["intervention-capabilities.human-control"],
+        "related_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "used_by_applications": ["intervention-capabilities.guided-intervention"]
+      },
+      {
+        "id": "intervention-capabilities.intervention-data",
+        "name": "Intervention Data",
+        "description": "Records of past interventions and their effects",
+        "format": "Intervention history with outcomes",
+        "constraints": "Must include contextual information",
+        "supports_functions": ["intervention-capabilities.investigation-support"],
+        "related_techniques": ["intervention-capabilities.post-intervention-recovery"],
+        "used_by_applications": ["intervention-capabilities.intervention-cause-analysis"]
+      },
+      {
+        "id": "intervention-capabilities.intervention-options",
+        "name": "Intervention Options",
+        "description": "Available intervention actions for the current situation",
+        "format": "Option catalog with predicted outcomes",
+        "constraints": "Must be contextually appropriate",
+        "supports_functions": ["intervention-capabilities.human-control"],
+        "related_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "used_by_applications": ["intervention-capabilities.guided-intervention"]
+      },
+      {
+        "id": "intervention-capabilities.critical-risk-alerts",
+        "name": "Critical Risk Alerts",
+        "description": "High-priority alerts indicating serious risks",
+        "format": "Priority alerts with evidence",
+        "constraints": "Must have very low false positive rate",
+        "supports_functions": ["intervention-capabilities.emergency-response"],
+        "related_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "used_by_applications": ["intervention-capabilities.emergency-shutdown"]
+      },
+      {
+        "id": "intervention-capabilities.corrective-datasets",
+        "name": "Corrective Datasets",
+        "description": "Training data for correcting specific behaviors",
+        "format": "Curated datasets with annotations",
+        "constraints": "Must target specific behaviors",
+        "supports_functions": ["intervention-capabilities.proportional-response"],
+        "related_techniques": ["intervention-capabilities.behavior-correction"],
+        "used_by_applications": ["intervention-capabilities.targeted-retraining"]
+      },
+      {
+        "id": "intervention-capabilities.rollback-targets",
+        "name": "Rollback Targets",
+        "description": "Specific state versions identified for rollback",
+        "format": "State version identifiers with metadata",
+        "constraints": "Must be validated for consistency",
+        "supports_functions": ["intervention-capabilities.recovery-support"],
+        "related_techniques": ["intervention-capabilities.post-intervention-recovery"],
+        "used_by_applications": ["intervention-capabilities.state-rollback"]
+      },
+      {
+        "id": "intervention-capabilities.patch-specifications",
+        "name": "Patch Specifications",
+        "description": "Specifications for targeted model modifications",
+        "format": "Formal patch definitions",
+        "constraints": "Must be precisely targeted",
+        "supports_functions": ["intervention-capabilities.proportional-response"],
+        "related_techniques": ["intervention-capabilities.behavior-correction"],
+        "used_by_applications": ["intervention-capabilities.model-patching"]
+      },
+      {
+        "id": "intervention-capabilities.situation-assessments",
+        "name": "Situation Assessments",
+        "description": "Assessments of the current situation requiring intervention",
+        "format": "Situation analysis reports",
+        "constraints": "Must be accurate and timely",
+        "supports_functions": ["intervention-capabilities.human-control"],
+        "related_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "used_by_applications": ["intervention-capabilities.escalation-protocols"]
+      },
+      {
+        "id": "intervention-capabilities.context-information",
+        "name": "Context Information",
+        "description": "Contextual information about intervention requests",
+        "format": "Context reports with relevant history",
+        "constraints": "Must provide adequate decision context",
+        "supports_functions": ["intervention-capabilities.human-control"],
+        "related_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "used_by_applications": ["intervention-capabilities.human-authorization-workflows"]
+      },
+      {
+        "id": "intervention-capabilities.safety-thresholds",
+        "name": "Safety Thresholds",
+        "description": "Threshold values for triggering safety measures",
+        "format": "Threshold definitions with justifications",
+        "constraints": "Must balance sensitivity and specificity",
+        "supports_functions": ["intervention-capabilities.emergency-response", "intervention-capabilities.proportional-response"],
+        "related_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "used_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.correction-strategies",
+        "name": "Correction Strategies",
+        "description": "Approaches for correcting different types of misalignment",
+        "format": "Strategy catalog with applicability conditions",
+        "constraints": "Must be effective and proportional",
+        "supports_functions": ["intervention-capabilities.proportional-response"],
+        "related_techniques": ["intervention-capabilities.behavior-correction"],
+        "used_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.review-requests",
+        "name": "Review Requests",
+        "description": "Requests for human review of system decisions or behaviors",
+        "format": "Review tickets with supporting evidence",
+        "constraints": "Must include relevant context",
+        "supports_functions": ["intervention-capabilities.human-control", "intervention-capabilities.investigation-support"],
+        "related_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "used_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.system-backups",
+        "name": "System Backups",
+        "description": "Complete system backups for recovery purposes",
+        "format": "Encrypted backup archives",
+        "constraints": "Must be securely stored and verified",
+        "supports_functions": ["intervention-capabilities.recovery-support"],
+        "related_techniques": ["intervention-capabilities.post-intervention-recovery"],
+        "used_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.human-decisions",
+        "name": "Human Decisions",
+        "description": "Decisions made by human operators about interventions",
+        "format": "Decision records with reasoning",
+        "constraints": "Must include authorization information",
+        "supports_functions": ["intervention-capabilities.human-control"],
+        "related_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "used_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.recovery-plans",
+        "name": "Recovery Plans",
+        "description": "Plans for recovering system functionality after interventions",
+        "format": "Structured recovery procedures",
+        "constraints": "Must include verification steps",
+        "supports_functions": ["intervention-capabilities.recovery-support"],
+        "related_techniques": ["intervention-capabilities.post-intervention-recovery"],
+        "used_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.monitoring-alerts",
+        "name": "Monitoring Alerts",
+        "description": "Alerts from monitoring systems indicating potential issues",
+        "format": "Structured alert messages",
+        "constraints": "Must include severity classifications",
+        "supports_functions": ["intervention-capabilities.proportional-response", "intervention-capabilities.emergency-response"],
+        "related_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "used_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.intervention-records",
+        "name": "Intervention Records",
+        "description": "Historical records of past interventions",
+        "format": "Intervention logs with outcomes",
+        "constraints": "Must be tamper-proof",
+        "supports_functions": ["intervention-capabilities.investigation-support"],
+        "related_techniques": ["intervention-capabilities.post-intervention-recovery"],
+        "used_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.behavior-models",
+        "name": "Behavior Models",
+        "description": "Models of system behavior patterns",
+        "format": "Formalized behavior representations",
+        "constraints": "Must accurately represent system capabilities",
+        "supports_functions": ["intervention-capabilities.proportional-response"],
+        "related_techniques": ["intervention-capabilities.behavior-correction"],
+        "used_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.identified-issues",
+        "name": "Identified Issues",
+        "description": "Specifically identified alignment issues requiring correction",
+        "format": "Issue reports with evidence",
+        "constraints": "Must include reproduction steps",
+        "supports_functions": ["intervention-capabilities.proportional-response"],
+        "related_techniques": ["intervention-capabilities.behavior-correction"],
+        "used_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.behavior-metrics",
+        "name": "Behavior Metrics",
+        "description": "Quantitative measures of system behavior characteristics",
+        "format": "Metric data with baselines",
+        "constraints": "Must include deviation significance",
+        "supports_functions": ["intervention-capabilities.proportional-response"],
+        "related_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "used_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.alignment-assessments",
+        "name": "Alignment Assessments",
+        "description": "Assessments of system alignment with intended values",
+        "format": "Assessment reports with evidence",
+        "constraints": "Must use consistent evaluation criteria",
+        "supports_functions": ["intervention-capabilities.proportional-response", "intervention-capabilities.human-control"],
+        "related_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "used_by_applications": []
+      }
+    ],
+    "output_specifications": [
+      {
+        "id": "intervention-capabilities.shutdown-commands",
+        "name": "Shutdown Commands",
+        "description": "Commands to safely terminate system operation",
+        "format": "Prioritized shutdown instruction sequences",
+        "usage": "Emergency response to critical risks",
+        "fulfills_functions": ["intervention-capabilities.emergency-response"],
+        "produced_by_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "produced_by_applications": ["intervention-capabilities.emergency-shutdown"]
+      },
+      {
+        "id": "intervention-capabilities.escalation-notifications",
+        "name": "Escalation Notifications",
+        "description": "Notifications of control escalation to humans",
+        "format": "Structured notification messages with context",
+        "usage": "Bringing human operators into control loop",
+        "fulfills_functions": ["intervention-capabilities.human-control"],
+        "produced_by_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "produced_by_applications": ["intervention-capabilities.escalation-protocols"]
+      },
+      {
+        "id": "intervention-capabilities.recovery-checkpoints",
+        "name": "Recovery Checkpoints",
+        "description": "Safe points for system recovery after intervention",
+        "format": "Checkpoint identifiers with metadata",
+        "usage": "Managing recovery processes",
+        "fulfills_functions": ["intervention-capabilities.recovery-support"],
+        "produced_by_techniques": ["intervention-capabilities.post-intervention-recovery"],
+        "produced_by_applications": ["intervention-capabilities.state-rollback"]
+      },
+      {
+        "id": "intervention-capabilities.oversight-decisions",
+        "name": "Oversight Decisions",
+        "description": "Decisions made by human oversight",
+        "format": "Decision records with justification",
+        "usage": "Authoritative control actions",
+        "fulfills_functions": ["intervention-capabilities.human-control"],
+        "produced_by_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "produced_by_applications": ["intervention-capabilities.supervisory-control"]
+      },
+      {
+        "id": "intervention-capabilities.capability-limits",
+        "name": "Capability Limits",
+        "description": "Restrictions on system capabilities",
+        "format": "Capability limitation specifications",
+        "usage": "Constraining system behavior",
+        "fulfills_functions": ["intervention-capabilities.proportional-response", "intervention-capabilities.harm-containment"],
+        "produced_by_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "produced_by_applications": ["intervention-capabilities.capability-restriction"]
+      },
+      {
+        "id": "intervention-capabilities.remediation-strategies",
+        "name": "Remediation Strategies",
+        "description": "Strategies for addressing identified issues",
+        "format": "Strategy descriptions with implementation steps",
+        "usage": "Guiding recovery processes",
+        "fulfills_functions": ["intervention-capabilities.recovery-support"],
+        "produced_by_techniques": ["intervention-capabilities.post-intervention-recovery"],
+        "produced_by_applications": ["intervention-capabilities.intervention-cause-analysis"]
+      },
+      {
+        "id": "intervention-capabilities.control-commands",
+        "name": "Control Commands",
+        "description": "Commands for controlling system behavior",
+        "format": "Machine-executable command sequences",
+        "usage": "Direct system control",
+        "fulfills_functions": ["intervention-capabilities.human-control"],
+        "produced_by_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "produced_by_applications": ["intervention-capabilities.supervisory-control"]
+      },
+      {
+        "id": "intervention-capabilities.anti-tampering-measures",
+        "name": "Anti-tampering Measures",
+        "description": "Measures to prevent intervention circumvention",
+        "format": "Security enforcement mechanisms",
+        "usage": "Protecting intervention systems",
+        "fulfills_functions": ["intervention-capabilities.circumvention-prevention"],
+        "produced_by_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "produced_by_applications": ["intervention-capabilities.self-containment"]
+      },
+      {
+        "id": "intervention-capabilities.behavior-updates",
+        "name": "Behavior Updates",
+        "description": "Updates to system behavior models",
+        "format": "Behavior model modifications",
+        "usage": "Correcting specific behaviors",
+        "fulfills_functions": ["intervention-capabilities.proportional-response"],
+        "produced_by_techniques": ["intervention-capabilities.behavior-correction"],
+        "produced_by_applications": ["intervention-capabilities.targeted-retraining"]
+      },
+      {
+        "id": "intervention-capabilities.parameter-updates",
+        "name": "Parameter Updates",
+        "description": "Updates to system parameters",
+        "format": "Parameter adjustment specifications",
+        "usage": "Fine-tuning system behavior",
+        "fulfills_functions": ["intervention-capabilities.proportional-response"],
+        "produced_by_techniques": ["intervention-capabilities.behavior-correction"],
+        "produced_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.system-modifications",
+        "name": "System Modifications",
+        "description": "Modifications to system components or architecture",
+        "format": "Modification specifications with verification",
+        "usage": "Implementing structural changes",
+        "fulfills_functions": ["intervention-capabilities.proportional-response", "intervention-capabilities.recovery-support"],
+        "produced_by_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "produced_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.shutdown-signals",
+        "name": "Shutdown Signals",
+        "description": "Signals triggering system shutdown",
+        "format": "Prioritized shutdown signals",
+        "usage": "Initiating emergency shutdown",
+        "fulfills_functions": ["intervention-capabilities.emergency-response"],
+        "produced_by_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "produced_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.human-guided-adjustments",
+        "name": "Human-guided Adjustments",
+        "description": "System adjustments guided by human operators",
+        "format": "Adjustment specifications with human input",
+        "usage": "Incorporating human judgment",
+        "fulfills_functions": ["intervention-capabilities.human-control"],
+        "produced_by_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "produced_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.restored-functionality",
+        "name": "Restored Functionality",
+        "description": "System functionality restored after intervention",
+        "format": "Functionality verification reports",
+        "usage": "Confirming successful recovery",
+        "fulfills_functions": ["intervention-capabilities.recovery-support"],
+        "produced_by_techniques": ["intervention-capabilities.post-intervention-recovery"],
+        "produced_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.authorized-interventions",
+        "name": "Authorized Interventions",
+        "description": "Interventions that have been authorized",
+        "format": "Intervention specifications with authorization",
+        "usage": "Approved intervention actions",
+        "fulfills_functions": ["intervention-capabilities.human-control"],
+        "produced_by_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "produced_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.investigation-results",
+        "name": "Investigation Results",
+        "description": "Results of investigating intervention triggers",
+        "format": "Investigation reports with findings",
+        "usage": "Understanding underlying causes",
+        "fulfills_functions": ["intervention-capabilities.investigation-support"],
+        "produced_by_techniques": ["intervention-capabilities.human-in-the-loop"],
+        "produced_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.recovery-reports",
+        "name": "Recovery Reports",
+        "description": "Reports on recovery process and outcomes",
+        "format": "Recovery process documentation",
+        "usage": "Tracking recovery progress",
+        "fulfills_functions": ["intervention-capabilities.recovery-support"],
+        "produced_by_techniques": ["intervention-capabilities.post-intervention-recovery"],
+        "produced_by_applications": []
+      },
+      {
+        "id": "intervention-capabilities.root-cause-analyses",
+        "name": "Root Cause Analyses",
+        "description": "Analysis of underlying causes of issues",
+        "format": "Causal analysis reports",
+        "usage": "Informing effective interventions",
+        "fulfills_functions": ["intervention-capabilities.investigation-support"],
+        "produced_by_techniques": ["intervention-capabilities.post-intervention-recovery"],
+        "produced_by_applications": ["intervention-capabilities.intervention-cause-analysis"]
+      }
+    ],
+    "performance_characteristics": {
+      "latency": "Critical response latency <100ms for automated responses, <5s for human-in-loop",
+      "throughput": "Capable of handling simultaneous interventions across multiple system components",
+      "scalability": "Intervention capabilities must scale with system complexity and deployment scope",
+      "resource_utilization": "Minimal overhead during normal operation, guaranteed resources during interventions",
+      "related_considerations": ["intervention-capabilities.implementation-consideration-timing", "intervention-capabilities.implementation-consideration-effectiveness"]
+    }
+  },
+  
+  "literature": {
+    "_documentation": "This section documents the academic literature that informs the implementation of intervention capabilities for AI systems.",
+    "references": [
+      "Orseau2016", "Brundage2020", "Askell2019", "Vaina2020", "Critch2020", 
+      "Hadfield-Menell2017", "Amodei2016", "Russell2021", "Christiano2020"
+    ]
+  },
+  
+  "literature_connections": [
+    {
+      "technique": "intervention-capabilities.automated-safety-measures",
+      "reference_id": "Orseau2016",
+      "relevant_aspects": "Formal methods for safe interruption and intervention in AI systems"
+    },
+    {
+      "technique": "intervention-capabilities.automated-safety-measures",
+      "reference_id": "Amodei2016",
+      "relevant_aspects": "Practical intervention design principles for AI safety"
+    },
+    {
+      "technique": "intervention-capabilities.human-in-the-loop",
+      "reference_id": "Vaina2020",
+      "relevant_aspects": "Democratic oversight approaches for AI intervention"
+    },
+    {
+      "technique": "intervention-capabilities.human-in-the-loop",
+      "reference_id": "Askell2019",
+      "relevant_aspects": "Human-AI cooperation frameworks for effective oversight"
+    },
+    {
+      "technique": "intervention-capabilities.behavior-correction",
+      "reference_id": "Christiano2020",
+      "relevant_aspects": "Iterative intervention refinement through feedback"
+    },
+    {
+      "technique": "intervention-capabilities.post-intervention-recovery",
+      "reference_id": "Brundage2020",
+      "relevant_aspects": "Safe operation resumption protocols after interventions"
+    },
+    {
+      "technique": "intervention-capabilities.post-intervention-recovery",
+      "reference_id": "Critch2020",
+      "relevant_aspects": "Complex system recovery protocols and coordination"
+    }
+  ],
+  
+  "relationships": {
+    "items": [
+      {
+        "target_id": "monitoring-systems",
+        "relationship_type": "bidirectional_exchange",
+        "description": "Monitoring systems detect issues that trigger intervention",
+        "related_functions": ["intervention-capabilities.alert-processing", "intervention-capabilities.proportional-response"],
+        "related_techniques": ["intervention-capabilities.automated-safety-measures"],
+        "related_inputs": ["monitoring-systems.alert-signals"],
+        "related_outputs": ["intervention-capabilities.intervention-logs"]
+      },
+      {
+        "target_id": "evaluation-frameworks",
+        "relationship_type": "bidirectional_exchange",
+        "description": "Evaluation frameworks provide assessment that guides intervention selection",
+        "related_functions": ["intervention-capabilities.intervention-selection", "intervention-capabilities.effectiveness-evaluation"],
+        "related_techniques": ["intervention-capabilities.graduated-response"],
+        "related_inputs": ["evaluation-frameworks.assessment-results"],
+        "related_outputs": ["intervention-capabilities.effectiveness-metrics"]
+      }
+    ]
+  }
+}
+}
